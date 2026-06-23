@@ -12,7 +12,8 @@
     tooltip,
     formulas = {},
     scope,
-  }: { tooltip: string; formulas?: Record<string, string>; scope: Scope } = $props()
+    bare = false,
+  }: { tooltip: string; formulas?: Record<string, string>; scope: Scope; bare?: boolean } = $props()
 
   // Stoneshard color codes -> fixed CSS values. Unknown codes inherit.
   const COLORS: Record<string, string> = {
@@ -29,7 +30,7 @@
   const segments = $derived(renderTooltip(tooltip, formulas, scope))
 </script>
 
-<div class="tooltip" role="tooltip">
+<div class="tooltip" class:boxed={!bare} role="tooltip">
   {#each segments as seg, i (i)}
     {#if seg.kind === 'break'}
       {#if seg.paragraph}<span class="pbreak"></span>{:else}<br />{/if}
@@ -45,14 +46,17 @@
 
 <style>
   .tooltip {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--text);
+  }
+  /* Standalone box; omitted when rendered inside a host panel (bare). */
+  .tooltip.boxed {
     max-width: 22rem;
     padding: 0.6rem 0.75rem;
     background: var(--bg-panel-2);
     border: 1px solid var(--border);
     border-radius: 6px;
-    font-size: 0.85rem;
-    line-height: 1.45;
-    color: var(--text);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
   }
 

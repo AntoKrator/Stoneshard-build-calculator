@@ -153,7 +153,9 @@
     align-items: start;
   }
   .tree-scroll {
-    overflow: auto;
+    /* SkillTree owns the scrolling viewport now; this frame must not clip the
+       tooltip panel that floats over the right edge. */
+    overflow: visible;
     border: 1px solid var(--border);
     border-radius: 6px;
     background: var(--bg-panel);

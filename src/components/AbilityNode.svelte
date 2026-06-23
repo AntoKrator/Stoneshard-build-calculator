@@ -1,29 +1,27 @@
 <script lang="ts">
   // One skill node. Left-click ranks up (only when affordable); a taken node shows
   // a visible refund (−) control so rank-down is discoverable and keyboard-reachable
-  // (U5). The tooltip appears on hover/focus and is dismissed on leave/blur, without
-  // consuming the rank gesture.
+  // (U5). Hovering/focusing the node reports the skill upward so the tree can render
+  // a single tooltip outside the scroll clip — the node never draws the tooltip
+  // itself (it would be clipped and stack behind siblings).
   import Icon from './Icon.svelte'
-  import Tooltip from './Tooltip.svelte'
   import type { Skill } from '../lib/types'
   import type { NodeState } from '../lib/build/node-state'
-  import type { Scope } from '../lib/formula/eval'
 
   let {
     skill,
     status,
-    scope,
     onPick,
     onRefund,
+    onHover,
   }: {
     skill: Skill
     status: NodeState
-    scope: Scope
     onPick: (key: string) => void
     onRefund: (key: string) => void
+    onHover: (skill: Skill, entering: boolean) => void
   } = $props()
 
-  let hovered = $state(false)
   const canPick = $derived(status === 'affordable')
   const taken = $derived(status === 'taken')
 </script>
@@ -35,10 +33,10 @@
     aria-label={skill.name.english}
     aria-pressed={taken}
     onclick={() => canPick && onPick(skill.key)}
-    onmouseenter={() => (hovered = true)}
-    onmouseleave={() => (hovered = false)}
-    onfocus={() => (hovered = true)}
-    onblur={() => (hovered = false)}
+    onmouseenter={() => onHover(skill, true)}
+    onmouseleave={() => onHover(skill, false)}
+    onfocus={() => onHover(skill, true)}
+    onblur={() => onHover(skill, false)}
   >
     <Icon icon={skill.icon} alt={skill.name.english} size={48} />
   </button>
@@ -51,15 +49,6 @@
     >
       −
     </button>
-  {/if}
-
-  {#if hovered}
-    <div class="tip">
-      <strong class="tip-name">{skill.name.english}</strong>
-      {#if skill.tooltip?.english}
-        <Tooltip tooltip={skill.tooltip.english} formulas={skill.formulas} {scope} />
-      {/if}
-    </div>
   {/if}
 </div>
 
@@ -116,19 +105,5 @@
     font-weight: 700;
     line-height: 1;
     cursor: pointer;
-  }
-
-  .tip {
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 20;
-    width: max-content;
-  }
-  .tip-name {
-    display: block;
-    margin-bottom: 0.25rem;
-    color: var(--accent);
   }
 </style>
