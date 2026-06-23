@@ -11,6 +11,7 @@
  * throw. Soft gaps accumulate into the report for the `validate-data` gate.
  */
 import { computeTierPosition, checkEdges, type TopoNode } from './topology'
+import { KNOWN_IDENTIFIERS } from '../formula/identifiers'
 
 interface RawSkill {
   key: string
@@ -48,45 +49,6 @@ const META_TO_CATEGORY: Record<string, string> = {
   utility: 'utility',
   sorcery: 'sorcery',
 }
-/** Non-attribute identifiers a formula may legitimately reference. */
-const KNOWN_IDENTIFIERS = new Set([
-  // derived stats
-  'Arcanistic_Power',
-  'Block_Chance',
-  'Block_PowerMax',
-  'Body_DEF',
-  'EVS',
-  'Electromantic_Power',
-  'Geomantic_Power',
-  'HP',
-  'Knockback_Chance',
-  'Legs_DEF',
-  'Magic_Power',
-  'Mainhand_Efficiency',
-  'Miracle_Chance',
-  'Miracle_Power',
-  'Miscast_Chance',
-  'Offhand_Efficiency',
-  'Pyromantic_Power',
-  'Retaliation',
-  'Shield_Block_Chance',
-  'Spell_Hit_Chance',
-  'Vitality',
-  'max_hp',
-  'max_mp',
-  'open_weapon_one_hand_skills',
-  'open_weapon_skills',
-  'ranged_skill_learned',
-  // functions
-  'math_round',
-  'max',
-  'min',
-  'floor',
-  'ceil',
-  'round',
-  'abs',
-])
-
 /** Replace whole-token stat aliases (never a substring like `PRC_bonus`). */
 function normalizeFormula(expr: string): string {
   return expr.replace(/[A-Za-z_][A-Za-z0-9_]*/g, (tok) => STAT_ALIASES[tok] ?? tok)

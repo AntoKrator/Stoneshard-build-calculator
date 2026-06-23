@@ -22,6 +22,7 @@ function loadComposed(): unknown {
       trees: readJson(resolve(dataDir, 'trees.json')),
       skills: readJson(resolve(dataDir, 'skills.json')),
       constants: readJson(resolve(dataDir, 'constants.json')),
+      statModel: readJson(resolve(dataDir, 'stat-model.json')),
     }
   } catch (e) {
     console.error(

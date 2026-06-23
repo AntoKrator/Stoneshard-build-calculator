@@ -5,7 +5,9 @@ import globals from 'globals'
 
 export default ts.config(
   {
-    ignores: ['dist/', 'node_modules/', 'src/data/**', 'coverage/'],
+    // `vendor/` holds provenance-only third-party sources (nstratos JS, game data
+    // snapshots) — referenced, never imported or executed; not our code to lint.
+    ignores: ['dist/', 'node_modules/', 'src/data/**', 'coverage/', 'vendor/'],
   },
   js.configs.recommended,
   ...ts.configs.recommended,

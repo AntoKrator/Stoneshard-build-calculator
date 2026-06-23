@@ -1,0 +1,119 @@
+{
+  "_provenance": "Transcribed from vendored nstratos calculator/stat-bonuses.js (MAIN_STAT_BONUSES, MAIN_STAT_THRESHOLDS) and calculator/character.js (resetComputedStats bases), pinned at commit 1a9ada41 (see vendor/nstratos/manifest.json). Cross-checked against the official wiki (patch 0.9.4.x). Keys use the formula-identifier vocabulary so the engine scope is a direct merge (KTD14/KTD15).",
+  "_classificationBasis": "KTD14: a derived stat is in-scope for Phase 1 iff it is attribute-derived (appears in the coefficient table). Under this set, 248/345 (71.9%) of skill formula strings fully resolve; the deferred 97 are dominated by the elemental sorcery *_Power schools (gear/passive-driven, modeled in Phases 2-3). The day-one archetype (KTD16) whose tooltips fully resolve is a melee/physical build (athletics, warfare, maces, spears, axes, swords).",
+  "baseAttributeValue": 10,
+  "mainStatThresholds": [15, 20, 25, 30],
+  "attributeBonuses": {
+    "STR": {
+      "perPoint": [
+        { "stat": "Block_Chance", "amount": 1.5 },
+        { "stat": "Weapon_Damage", "amount": 1.5 }
+      ],
+      "perThreshold": [
+        { "stat": "Bodypart_Damage", "amount": 7.5 },
+        { "stat": "Crit_Efficiency", "amount": 10 },
+        { "stat": "Armor_Damage", "amount": 15 }
+      ]
+    },
+    "AGI": {
+      "perPoint": [
+        { "stat": "Counter_Chance", "amount": 1.5 },
+        { "stat": "Fumble_Chance", "amount": -1.5 },
+        { "stat": "Backfire_Chance", "amount": -1.5 }
+      ],
+      "perThreshold": [
+        { "stat": "Dodge_Chance", "amount": 5 },
+        { "stat": "Mainhand_Efficiency", "amount": 2.5 },
+        { "stat": "Offhand_Efficiency", "amount": 2.5 },
+        { "stat": "Move_Resistance", "amount": 7.5 }
+      ]
+    },
+    "PER": {
+      "perPoint": [
+        { "stat": "Accuracy", "amount": 1.5 },
+        { "stat": "Armor_Penetration", "amount": 1.5 }
+      ],
+      "perThreshold": [
+        { "stat": "Vision", "amount": 1 },
+        { "stat": "Bonus_Range", "amount": 1 },
+        { "stat": "Crit_Chance", "amount": 5 },
+        { "stat": "Miracle_Chance", "amount": 5 }
+      ]
+    },
+    "VIT": {
+      "perPoint": [
+        { "stat": "max_mp", "amount": 4 },
+        { "stat": "Energy_Restoration", "amount": 2 }
+      ],
+      "perThreshold": [
+        { "stat": "max_hp", "amount": 15 },
+        { "stat": "Block_Power_Recovery", "amount": 5 },
+        { "stat": "Control_Resistance", "amount": 7.5 }
+      ]
+    },
+    "WIL": {
+      "perPoint": [
+        { "stat": "Cooldowns_Duration", "amount": -1.5 },
+        { "stat": "Abilities_Energy_Cost", "amount": -1.5 }
+      ],
+      "perThreshold": [
+        { "stat": "Magic_Power", "amount": 7.5 },
+        { "stat": "Pain_Resistance", "amount": 7.5 },
+        { "stat": "Fortitude", "amount": 7.5 }
+      ]
+    }
+  },
+  "derivedStats": [
+    { "key": "Weapon_Damage", "name": "Weapon Damage", "base": 100, "category": "offense", "unit": "%" },
+    { "key": "Mainhand_Efficiency", "name": "Mainhand Efficiency", "base": 100, "category": "offense", "unit": "%" },
+    { "key": "Offhand_Efficiency", "name": "Offhand Efficiency", "base": 100, "category": "offense", "unit": "%" },
+    { "key": "Accuracy", "name": "Accuracy", "base": 80, "category": "offense", "unit": "%" },
+    { "key": "Armor_Penetration", "name": "Armor Penetration", "base": 0, "category": "offense", "unit": "%" },
+    { "key": "Bodypart_Damage", "name": "Bodypart Damage", "base": 0, "category": "offense", "unit": "%" },
+    { "key": "Armor_Damage", "name": "Armor Damage", "base": 0, "category": "offense", "unit": "%" },
+    { "key": "Crit_Chance", "name": "Crit Chance", "base": 1, "category": "offense", "unit": "%" },
+    { "key": "Crit_Efficiency", "name": "Crit Efficiency", "base": 25, "category": "offense", "unit": "%" },
+    { "key": "Counter_Chance", "name": "Counter Chance", "base": 1, "category": "offense", "unit": "%" },
+    { "key": "Fumble_Chance", "name": "Fumble Chance", "base": 20, "category": "offense", "unit": "%" },
+    { "key": "Bonus_Range", "name": "Bonus Range", "base": 0, "category": "offense", "unit": "flat" },
+    { "key": "Block_Chance", "name": "Block Chance", "base": 0, "category": "defense", "unit": "%" },
+    { "key": "Dodge_Chance", "name": "Evasion", "base": 1, "category": "defense", "unit": "%" },
+    { "key": "Block_Power_Recovery", "name": "Block Power Recovery", "base": 0, "category": "defense", "unit": "%" },
+    { "key": "max_hp", "name": "Health", "base": 100, "category": "survival", "unit": "flat" },
+    { "key": "max_mp", "name": "Energy", "base": 100, "category": "survival", "unit": "flat" },
+    { "key": "Energy_Restoration", "name": "Energy Restoration", "base": 20, "category": "survival", "unit": "%" },
+    { "key": "Move_Resistance", "name": "Move Resistance", "base": 0, "category": "resistances", "unit": "%" },
+    { "key": "Control_Resistance", "name": "Control Resistance", "base": 0, "category": "resistances", "unit": "%" },
+    { "key": "Pain_Resistance", "name": "Pain Resistance", "base": 0, "category": "resistances", "unit": "%" },
+    { "key": "Fortitude", "name": "Fortitude", "base": 0, "category": "resistances", "unit": "%" },
+    { "key": "Magic_Power", "name": "Magic Power", "base": 100, "category": "magic", "unit": "%" },
+    { "key": "Miracle_Chance", "name": "Miracle Chance", "base": 5, "category": "magic", "unit": "%" },
+    { "key": "Backfire_Chance", "name": "Backfire Chance", "base": 20, "category": "magic", "unit": "%" },
+    { "key": "Vision", "name": "Vision", "base": 12, "category": "utility", "unit": "flat" },
+    { "key": "Cooldowns_Duration", "name": "Cooldowns Duration", "base": 100, "category": "utility", "unit": "%" },
+    { "key": "Abilities_Energy_Cost", "name": "Abilities Energy Cost", "base": 100, "category": "utility", "unit": "%" }
+  ],
+  "aliases": {
+    "Vitality": "VIT",
+    "HP": "max_hp"
+  },
+  "deferredIdentifiers": [
+    "Arcanistic_Power",
+    "Pyromantic_Power",
+    "Geomantic_Power",
+    "Electromantic_Power",
+    "Miracle_Power",
+    "Miscast_Chance",
+    "Spell_Hit_Chance",
+    "Block_PowerMax",
+    "Body_DEF",
+    "Legs_DEF",
+    "Shield_Block_Chance",
+    "Retaliation",
+    "EVS",
+    "Knockback_Chance",
+    "open_weapon_skills",
+    "open_weapon_one_hand_skills",
+    "ranged_skill_learned"
+  ]
+}

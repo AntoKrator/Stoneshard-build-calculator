@@ -1,8 +1,11 @@
 {
   "startingLevel": 1,
+  "maxLevel": 30,
   "startingAttributePoints": 0,
-  "attributePointsPerLevel": 0,
-  "skillPointsPerLevel": 0,
+  "startingSkillPoints": 2,
+  "attributePointsPerLevel": 1,
+  "skillPointsPerLevel": 1,
+  "baseAttributeValue": 10,
   "damageTypes": [],
   "values": {}
 }

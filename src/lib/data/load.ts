@@ -12,7 +12,8 @@ import attributesJson from '../../data/attributes.json'
 import treesJson from '../../data/trees.json'
 import skillsJson from '../../data/skills.json'
 import constantsJson from '../../data/constants.json'
-import { parseDataset, type Dataset } from '../types'
+import statModelJson from '../../data/stat-model.json'
+import { parseDataset, type Dataset, type StatModel } from '../types'
 
 const composed = {
   meta: metaJson,
@@ -20,6 +21,7 @@ const composed = {
   trees: treesJson,
   skills: skillsJson,
   constants: constantsJson,
+  statModel: statModelJson,
   statFormulas: [],
   items: [],
   enchantments: [],
@@ -28,3 +30,10 @@ const composed = {
 export const dataset: Dataset = import.meta.env.DEV
   ? parseDataset(composed)
   : (composed as unknown as Dataset)
+
+/**
+ * The Phase-1 derived-stat coefficient model, guaranteed present (composed above
+ * and validated in dev). Exposed as a non-optional value so `computeDerivedStats`
+ * and the engine scope can consume it without a null check.
+ */
+export const statModel: StatModel = dataset.statModel as StatModel

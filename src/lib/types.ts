@@ -132,14 +132,99 @@ export const Constants = z.object({
   startingLevel: z.number().int().positive().default(1),
   maxLevel: z.number().int().positive().optional(),
   startingAttributePoints: z.number().int().nonnegative().default(0),
+  /** Skill points granted at the starting level (nstratos convention: 2). */
+  startingSkillPoints: z.number().int().nonnegative().default(0),
   attributePointsPerLevel: z.number().nonnegative().default(0),
   skillPointsPerLevel: z.number().nonnegative().default(0),
+  /** The value every attribute starts at before allocation (10 in Stoneshard). */
+  baseAttributeValue: z.number().int().positive().default(10),
   /** Recognized damage types, kept as data to avoid hardcoding a guess. */
   damageTypes: z.array(z.string()).default([]),
   /** Misc numeric constants referenced by formulas. */
   values: z.record(z.string(), z.number()).default({}),
 })
 export type Constants = z.infer<typeof Constants>
+
+/* ------------------------------------------------------------------ */
+/* Derived-stat coefficient model (Phase 1 — KTD14)                    */
+/* ------------------------------------------------------------------ */
+
+/**
+ * One coefficient: an attribute contributes `amount` to a derived `stat`, either
+ * once per point above the base value (`perPoint`) or once per crossed threshold
+ * (`perThreshold`). `stat` is a formula-vocabulary key matching a {@link DerivedStatDef}.
+ */
+export const AttributeBonus = z.object({
+  stat: z.string().min(1),
+  amount: z.number(),
+})
+export type AttributeBonus = z.infer<typeof AttributeBonus>
+
+/** The per-point and per-threshold bonus lists contributed by one attribute. */
+export const AttributeBonusSet = z.object({
+  perPoint: z.array(AttributeBonus).default([]),
+  perThreshold: z.array(AttributeBonus).default([]),
+})
+export type AttributeBonusSet = z.infer<typeof AttributeBonusSet>
+
+/**
+ * An enumerated Phase-1 derived stat the coefficient model produces. Keyed in the
+ * formula-identifier vocabulary (e.g. `Magic_Power`, `Block_Chance`, `max_hp`) so
+ * the engine scope is a direct merge (KTD14/KTD15).
+ */
+export const DerivedStatDef = z.object({
+  key: z.string().min(1),
+  name: z.string().min(1),
+  base: z.number(),
+  category: z.string().min(1),
+  unit: z.string().optional(),
+})
+export type DerivedStatDef = z.infer<typeof DerivedStatDef>
+
+/**
+ * The attribute → derived-stat coefficient table plus the explicitly enumerated
+ * in-scope stat set (KTD14). `computeDerivedStats` produces exactly `derivedStats`;
+ * `aliases` map extra formula identifiers onto an attribute or a derived stat;
+ * `deferredIdentifiers` documents formula identifiers known to be out-of-scope in
+ * Phase 1 (gear/passive-driven) so tooltips referencing them degrade to a marker.
+ *
+ * Cross-checked at parse time: every coefficient and alias must target an
+ * enumerated stat (or attribute), so a typo can't silently drop a contribution.
+ */
+export const StatModel = z
+  .object({
+    baseAttributeValue: z.number().int().positive(),
+    mainStatThresholds: z.array(z.number()),
+    attributeBonuses: z.record(AttributeKey, AttributeBonusSet),
+    derivedStats: z.array(DerivedStatDef).min(1),
+    aliases: z.record(z.string(), z.string()).default({}),
+    deferredIdentifiers: z.array(z.string()).default([]),
+  })
+  .superRefine((model, ctx) => {
+    const statKeys = new Set(model.derivedStats.map((s) => s.key))
+    const attrKeys = new Set(AttributeKey.options)
+    for (const [attr, set] of Object.entries(model.attributeBonuses)) {
+      for (const phase of ['perPoint', 'perThreshold'] as const) {
+        for (const bonus of set[phase]) {
+          if (!statKeys.has(bonus.stat)) {
+            ctx.addIssue({
+              code: 'custom',
+              message: `attributeBonuses.${attr}.${phase} references unknown derived stat "${bonus.stat}"`,
+            })
+          }
+        }
+      }
+    }
+    for (const [alias, target] of Object.entries(model.aliases)) {
+      if (!statKeys.has(target) && !attrKeys.has(target as AttributeKey)) {
+        ctx.addIssue({
+          code: 'custom',
+          message: `alias "${alias}" targets unknown stat/attribute "${target}"`,
+        })
+      }
+    }
+  })
+export type StatModel = z.infer<typeof StatModel>
 
 /* ------------------------------------------------------------------ */
 /* Equipment & enchantments (forward-looking; refined in Phase 3/4)    */
@@ -198,6 +283,12 @@ export const Dataset = z.object({
   trees: z.array(SkillTree),
   skills: z.array(Skill),
   statFormulas: z.array(StatFormula).default([]),
+  /**
+   * The Phase-1 derived-stat coefficient model. Optional at the schema level so
+   * the bootstrap transform (which emits only nstratos-derived sections) still
+   * validates; the committed dataset and both loaders always include it.
+   */
+  statModel: StatModel.optional(),
   constants: Constants,
   items: z.array(Item).default([]),
   enchantments: z.array(Enchantment).default([]),
