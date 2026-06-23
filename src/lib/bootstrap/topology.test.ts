@@ -56,6 +56,12 @@ describe('parseAbilityPicks', () => {
     })
     expect(nodes[0].unlock).toBeUndefined()
   })
+
+  it('throws when an element has no parseable coordinates', () => {
+    expect(() =>
+      parseAbilityPicks('<ability-pick id="x-1" key="X" style="top: ; left: 5px">'),
+    ).toThrow()
+  })
 })
 
 describe('computeTierPosition', () => {

@@ -34,9 +34,13 @@ function loadComposed(): unknown {
 const composed = loadComposed()
 
 const reportPath = resolve(dataDir, 'bootstrap-report.json')
-const warnings: BootstrapWarning[] = existsSync(reportPath)
-  ? (readJson(reportPath).warnings ?? [])
-  : []
+if (!existsSync(reportPath)) {
+  console.error(
+    'bootstrap-report.json is missing — run `npm run bootstrap`. The warning gate cannot run without it.',
+  )
+  process.exit(1)
+}
+const warnings: BootstrapWarning[] = readJson(reportPath).warnings ?? []
 const allowlistPath = resolve(root, 'scripts/warning-allowlist.json')
 const allowlist: string[] = existsSync(allowlistPath) ? readJson(allowlistPath) : []
 

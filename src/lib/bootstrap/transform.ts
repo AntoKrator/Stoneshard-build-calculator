@@ -203,11 +203,14 @@ export function transform(input: TransformInput): { dataset: unknown; report: Bo
       const energy = coerce(bag.energy ?? '')
       const cooldown = coerce(bag.cooldown ?? '')
 
-      // requires: parent node ids -> skill keys.
-      const requires = node.parents
-        .map((pid) => nodes.find((n) => n.id === pid))
-        .map((p) => (p ? (p.key ?? nameToKey.get(`${p.tree}::${p.label}`)) : undefined))
-        .filter((k): k is string => Boolean(k))
+      // requires: parent node ids -> skill keys. Fail closed if any parent does
+      // not resolve, so a prerequisite can never be silently dropped.
+      const requires = node.parents.map((pid) => {
+        const p = nodes.find((n) => n.id === pid)
+        const k = p ? (p.key ?? nameToKey.get(`${p.tree}::${p.label}`)) : undefined
+        if (!k) throw new Error(`Skill "${key}": parent "${pid}" did not resolve to a skill key`)
+        return k
+      })
 
       if (!node.icon) {
         warnings.push({ category: 'unmapped-icon', message: `Skill "${key}" has no icon` })

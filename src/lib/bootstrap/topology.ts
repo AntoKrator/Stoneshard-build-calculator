@@ -66,6 +66,11 @@ export function parseAbilityPicks(html: string): TopoNode[] {
     const style = attr(tag, 'style') ?? ''
     const top = Number(style.match(/top:\s*(-?\d+(?:\.\d+)?)px/)?.[1] ?? NaN)
     const left = Number(style.match(/left:\s*(-?\d+(?:\.\d+)?)px/)?.[1] ?? NaN)
+    // Coordinates drive tier/position; a non-parseable style is fail-closed
+    // rather than silently bucketed into a plausible-but-wrong tier.
+    if (!Number.isFinite(top) || !Number.isFinite(left)) {
+      throw new Error(`Ability-pick "${id}" has no parseable top/left in style "${style}"`)
+    }
     const unlockLevel = attr(tag, 'unlock-level')
     const unlockPoints = attr(tag, 'unlock-attribute-points')
     const unlockAttrs = attr(tag, 'unlock-attributes')
