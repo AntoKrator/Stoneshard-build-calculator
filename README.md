@@ -64,11 +64,14 @@ Game data lives in `src/data/` as normalized, validated JSON. Two sources keep i
 
 ## Credits
 
-- Game data and the data-extraction approach are derived from the
-  [**nstratos/stoneshard-talent-calculator**](https://github.com/nstratos/stoneshard-talent-calculator)
-  (MIT licensed) — huge thanks for the open dataset and UMT exporter. Their MIT notice is preserved
-  alongside the bootstrapped data in `src/data/`.
-- Stoneshard is developed by [Ink Stains Games](https://stoneshard.com/).
+- The data-extraction approach and any reused **code** come from the
+  [**nstratos/stoneshard-talent-calculator**](https://github.com/nstratos/stoneshard-talent-calculator),
+  whose code is MIT licensed (© 2025 Stratos Neiros) — huge thanks for the open tooling and UMT
+  exporter. Where we reuse their code, their MIT notice is preserved in [`NOTICE.md`](./NOTICE.md).
+- The **game data and icons** are the property of [Ink Stains Games](https://stoneshard.com/) — they
+  are _not_ MIT-licensed assets. We reuse them under the same non-commercial fair-use assumption
+  nstratos documents, not a clean redistribution license. See [`NOTICE.md`](./NOTICE.md) and the
+  in-app disclaimer. Stoneshard is developed by Ink Stains Games.
 
 ## License
 
