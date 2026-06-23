@@ -1,7 +1,16 @@
 <script lang="ts">
   // App shell. The real calculator UI (skill trees, attributes, equipment,
-  // character sheet, share bar) is built out in Phase 1+.
+  // character sheet, share bar) is built out in Phase 1+. This shell loads the
+  // validated dataset and shows a smoke summary, proving the data foundation works.
   import { APP_VERSION, TARGET_GAME_VERSION } from './lib/version'
+  import { dataset } from './lib/data/load'
+
+  const skillCount = dataset.skills.length
+  const treeCount = dataset.trees.length
+  const byCategory = dataset.trees.reduce<Record<string, number>>((acc, t) => {
+    acc[t.category] = (acc[t.category] ?? 0) + 1
+    return acc
+  }, {})
 </script>
 
 <div class="layout">
@@ -14,9 +23,10 @@
 
   <main>
     <section class="panel">
-      <h2>Project scaffolded</h2>
+      <h2>Dataset loaded</h2>
       <p>
-        The app foundation is in place (Svelte + TypeScript + Vite). The build calculator UI is
+        <strong>{skillCount}</strong> skills across <strong>{treeCount}</strong> skill trees ({byCategory.weaponry}
+        weaponry · {byCategory.utility} utility · {byCategory.sorcery} sorcery). The calculator UI is
         under construction.
       </p>
       <p class="dim">App v{APP_VERSION} · targeting Stoneshard {TARGET_GAME_VERSION}</p>
