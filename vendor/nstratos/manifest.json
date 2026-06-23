@@ -1,0 +1,11 @@
+{
+  "repo": "nstratos/stoneshard-talent-calculator",
+  "ref": "master",
+  "retrievedAt": "2026-06-23",
+  "note": "Vendored snapshot for npm run bootstrap (network-independent). Game data is Ink Stains Games IP under fair use \u2014 see /NOTICE.md. Code-derived structure is MIT (Stratos Neiros).",
+  "checksums": {
+    "tooltips.json": "sha256:d4b9010e0f16b28eec551ee11069e52a508fd5059728f26dd0343b6f7b290d6e",
+    "index.html": "sha256:52b2251e2b3260b2875d7c3c23aeb2f207f09cb67d12bc2a1ed032323f192453",
+    "skill-keys.json": "sha256:b047ce507981c979aef8d7d7ff0497022478a65b86d229737d25e410819b6de0"
+  }
+}

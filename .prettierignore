@@ -3,4 +3,5 @@ node_modules
 coverage
 src/data
 public
+vendor
 *.csx

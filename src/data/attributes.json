@@ -1,0 +1,22 @@
+[
+  {
+    "key": "STR",
+    "name": "Strength"
+  },
+  {
+    "key": "AGI",
+    "name": "Agility"
+  },
+  {
+    "key": "PER",
+    "name": "Perception"
+  },
+  {
+    "key": "VIT",
+    "name": "Vitality"
+  },
+  {
+    "key": "WIL",
+    "name": "Willpower"
+  }
+]

@@ -1,5 +1,5 @@
 ---
-title: "feat: Phase 0 — data foundation (bootstrap, validation, UMT skeleton, CI/Pages)"
+title: 'feat: Phase 0 — data foundation (bootstrap, validation, UMT skeleton, CI/Pages)'
 type: feat
 date: 2026-06-23
 deepened: 2026-06-23
@@ -19,8 +19,8 @@ Tasks 1–2 of Phase 0 are done: the Svelte 5 + TS + Vite scaffold is green, and
 
 This plan executes the next bounded, unblocking increment — the data foundation. It deliberately stops short of Phase 1 (formula engine, skill-tree UI, ledger, share codes), because Phase 1's details sharpen once the real bootstrapped data exists. Two findings from research shape the work:
 
-1. **Licensing was mis-stated.** The roadmap and README imply we bootstrap from nstratos's "MIT-licensed data." Their *code* is MIT (© 2025 Stratos Neiros), but their *extracted JSON and icon PNGs are Ink Stains Games IP*, reused under an assumed non-commercial fair-use posture — MIT can't relicense them. We inherit the same fair-use footing, not a clean data license.
-2. **Tree topology isn't in their JSON.** `tooltips/stoneshard-tooltips-and-formulas.json` carries skills, formulas, and a stringly-typed attribute bag, but tier/position and prerequisite edges live only in their `index.html` as `<ability-pick>` elements. Our schema *requires* topology, so the transform must parse the HTML, not just the JSON.
+1. **Licensing was mis-stated.** The roadmap and README imply we bootstrap from nstratos's "MIT-licensed data." Their _code_ is MIT (© 2025 Stratos Neiros), but their _extracted JSON and icon PNGs are Ink Stains Games IP_, reused under an assumed non-commercial fair-use posture — MIT can't relicense them. We inherit the same fair-use footing, not a clean data license.
+2. **Tree topology isn't in their JSON.** `tooltips/stoneshard-tooltips-and-formulas.json` carries skills, formulas, and a stringly-typed attribute bag, but tier/position and prerequisite edges live only in their `index.html` as `<ability-pick>` elements. Our schema _requires_ topology, so the transform must parse the HTML, not just the JSON.
 
 Project context: this is not yet a git repository, and none of the build-out directories (`scripts/`, `tools/`, `src/data/`, `.github/`) exist.
 
@@ -31,7 +31,7 @@ Project context: this is not yet a git repository, and none of the build-out dir
 ### Version control and licensing
 
 - R1. The project is a git repository with a clean baseline commit before any generated data files land, and `.gitignore` excludes `node_modules/` and `dist/`.
-- R2. The README and an in-repo attribution note state the correct posture: nstratos *code* is MIT (attributed); the *game data and icons* are Ink Stains Games IP used under non-commercial fair use, with the existing "unofficial fan tool" disclaimer preserved.
+- R2. The README and an in-repo attribution note state the correct posture: nstratos _code_ is MIT (attributed); the _game data and icons_ are Ink Stains Games IP used under non-commercial fair use, with the existing "unofficial fan tool" disclaimer preserved.
 
 ### Dataset bootstrap and validation
 
@@ -53,7 +53,7 @@ Project context: this is not yet a git repository, and none of the build-out dir
 
 ## Key Technical Decisions
 
-- **Licensing posture: code MIT, data/icons fair-use.** Treat any borrowed nstratos *code* as MIT (preserve their notice, attribute Stratos Neiros). Treat the *data and icons* as Ink Stains Games IP under the same non-commercial fair-use assumption they document — not as MIT-licensed assets. This corrects the README and keeps attribution honest. Verified against their `LICENSE` (MIT) and README Disclaimer (assets carved out as Ink Stains IP).
+- **Licensing posture: code MIT, data/icons fair-use.** Treat any borrowed nstratos _code_ as MIT (preserve their notice, attribute Stratos Neiros). Treat the _data and icons_ as Ink Stains Games IP under the same non-commercial fair-use assumption they document — not as MIT-licensed assets. This corrects the README and keeps attribution honest. Verified against their `LICENSE` (MIT) and README Disclaimer (assets carved out as Ink Stains IP).
 
 - **Topology comes from `index.html`, not the JSON.** The skills JSON has no tier/position/edges; they're encoded on `<ability-pick>` elements (`parents=` / `children=` for prerequisite edges, `style="top:…;left:…"` pixel coords for layout, node ids like `swords-1`). The bootstrap parses the HTML, maps node-id ↔ skill `key`, and converts pixel rows into integer `tier`/`position`. This is the highest-effort part of the transform.
 
@@ -271,7 +271,7 @@ The single-bundle-vs-split-files choice for `src/data/` is an open question (see
 - **Requirements:** R9 (build-config portion)
 - **Dependencies:** U1
 - **Files:** `package.json` (build script copies the built `404.html`), `vite.config.ts` (keep the existing relative `base`)
-- **Approach:** Keep the existing `base: './'` already set in `vite.config.ts` — relative base serves correctly under `https://<user>.github.io/<repo>/` without hardcoding the repo name, which is preferable to a `/<repo>/`-prefixed absolute base that breaks on rename. (This corrects the earlier draft, which proposed switching to an absolute base.) Add a `404.html` that duplicates the *built* `dist/index.html` (copy after `vite build`, so injected hashed-asset tags are preserved) for deep-link/refresh fallback once a client router lands in Phase 1. `.nojekyll` is not needed with the artifact workflow.
+- **Approach:** Keep the existing `base: './'` already set in `vite.config.ts` — relative base serves correctly under `https://<user>.github.io/<repo>/` without hardcoding the repo name, which is preferable to a `/<repo>/`-prefixed absolute base that breaks on rename. (This corrects the earlier draft, which proposed switching to an absolute base.) Add a `404.html` that duplicates the _built_ `dist/index.html` (copy after `vite build`, so injected hashed-asset tags are preserved) for deep-link/refresh fallback once a client router lands in Phase 1. `.nojekyll` is not needed with the artifact workflow.
 - **Patterns to follow:** The existing `vite.config.ts` relative-base comment; current Vite static-deploy guidance.
 - **Test scenarios:** Test expectation: none — build configuration. Verify via `npm run build && npm run preview`: assets resolve under a subpath and `dist/404.html` exists and equals the built `dist/index.html`.
 - **Verification:** Local preview serves correctly under a subpath; `dist/404.html` is present and mirrors the built index.
