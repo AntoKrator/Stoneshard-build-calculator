@@ -48,4 +48,8 @@ non-commercial, community-driven purposes** that nstratos documents. We inherit 
 footing — it is not a clean redistribution license. All rights to the game data and assets belong to
 Ink Stains Games or their respective owners. This usage is non-commercial only.
 
+The ability icons are bundled under `public/img/abilities/`, vendored from the
+[nstratos snapshot](https://github.com/nstratos/stoneshard-talent-calculator) pinned in
+`vendor/nstratos/manifest.json`. They are served as-is for identification of in-game skills only.
+
 If Ink Stains Games requests removal of any data or asset, it will be removed.
