@@ -50,7 +50,18 @@ Game data lives in `src/data/` as normalized, validated JSON. Two sources keep i
    (skills, items, enchantments, attribute→stat formulas) directly from the game's `data.win`, so
    the dataset can be refreshed independently on each patch. See `tools/README.md`.
 
-`npm run validate-data` runs the Zod schema gate over the dataset (also enforced in CI).
+`npm run validate-data` runs the Zod schema gate over the dataset (also enforced in CI). The
+bootstrap reads a vendored, checksum-pinned snapshot under `vendor/nstratos/`, so it runs offline
+and reproducibly.
+
+## Deployment
+
+CI (`.github/workflows/deploy.yml`) runs lint, type-check, tests, and `validate-data` on every push
+and pull request. On a push to `main` that passes, it builds and deploys to GitHub Pages via the
+artifact workflow (SHA-pinned actions; the OIDC deploy token is scoped to the deploy job only).
+
+**One-time setup:** in the repo's **Settings → Pages**, set **Source** to **GitHub Actions**. The
+workflow cannot do this itself; without it the deploy job has nowhere to publish.
 
 ## Roadmap
 

@@ -1,0 +1,12 @@
+version: 2
+updates:
+  # Keep the SHA-pinned GitHub Actions current.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+  # Keep npm dependencies current.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
