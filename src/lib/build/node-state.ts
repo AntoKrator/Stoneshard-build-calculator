@@ -25,7 +25,12 @@ export function nodeState(
   if (character.taken.has(skill.key)) return 'taken'
 
   const requiresMet = skill.requires.every((r) => character.taken.has(r))
-  const unlockMet = isUnlocked(skill.unlock, character.level, character.attributes, baseAttributeValue)
+  const unlockMet = isUnlocked(
+    skill.unlock,
+    character.level,
+    character.attributes,
+    baseAttributeValue,
+  )
   if (!requiresMet || !unlockMet) return 'locked'
 
   const hasPoint = character.skillsSpent < character.skillBudget
@@ -72,7 +77,10 @@ const DEFAULT_CONFIG: LayoutConfig = { cellWidth: 84, cellHeight: 92 }
  * Place a tree's skills on a grid (column = position, row = tier) and connect each
  * skill to its in-tree prerequisites. Pure: identical input → identical layout.
  */
-export function computeTreeLayout(skills: Skill[], config: LayoutConfig = DEFAULT_CONFIG): TreeLayout {
+export function computeTreeLayout(
+  skills: Skill[],
+  config: LayoutConfig = DEFAULT_CONFIG,
+): TreeLayout {
   const { cellWidth, cellHeight } = config
 
   let maxPosition = 0

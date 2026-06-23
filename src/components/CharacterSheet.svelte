@@ -28,7 +28,7 @@
     return CATEGORY_ORDER.filter((c) => byCat[c]).map((c) => [c, byCat[c]] as const)
   })
 
-  function fmt(v: number, unit?: string): string {
+  function fmt(v: number, unit: string | undefined): string {
     const n = Number.isInteger(v) ? v : Number(v.toFixed(1))
     return unit === '%' ? `${n}%` : `${n}`
   }
