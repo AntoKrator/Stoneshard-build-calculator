@@ -1,0 +1,83 @@
+:root {
+  /* Stoneshard-ish dark parchment palette. Tweak freely in later phases. */
+  --bg: #14110d;
+  --bg-panel: #1f1a13;
+  --bg-panel-2: #2a2319;
+  --border: #4a3f2c;
+  --text: #e8dec5;
+  --text-dim: #a89b7c;
+  --accent: #c9a227;
+  --accent-dim: #8a6f1e;
+  --danger: #b4452e;
+  --ok: #6a8f3c;
+
+  color-scheme: dark;
+  font-family:
+    'Segoe UI',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+  background-color: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  margin: 0 0 0.4em;
+  color: var(--text);
+}
+
+p {
+  margin: 0 0 0.6em;
+}
+
+a {
+  color: var(--accent);
+}
+
+code {
+  font-family: ui-monospace, Consolas, monospace;
+  background: var(--bg-panel-2);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
+}
+
+button {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg-panel-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.4em 0.8em;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  border-color: var(--accent-dim);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
