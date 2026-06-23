@@ -15,6 +15,9 @@ export interface IntegrityIssue {
     | 'self-prerequisite'
     | 'tree-missing-tier-1'
     | 'orphan-skill'
+    | 'requires-cycle'
+    | 'tree-membership-mismatch'
+    | 'non-monotonic-tier'
   message: string
 }
 
@@ -29,6 +32,9 @@ export function checkIntegrity(ds: Dataset): IntegrityIssue[] {
     }
     skillKeys.add(s.key)
   }
+  // Lookup for the cross-checks below (last wins on duplicate keys, which are
+  // already reported above).
+  const skillByKey = new Map(ds.skills.map((s) => [s.key, s]))
 
   const treeIds = new Set<string>()
   for (const t of ds.trees) {
@@ -91,7 +97,89 @@ export function checkIntegrity(ds: Dataset): IntegrityIssue[] {
     }
   }
 
+  // A skill listed under a tree must actually belong to that tree. Catches the
+  // case where tree.skills[] and skill.treeId disagree (each is built from a
+  // different source during bootstrap).
+  for (const t of ds.trees) {
+    for (const key of t.skills) {
+      const s = skillByKey.get(key)
+      if (s && s.treeId !== t.id) {
+        issues.push({
+          kind: 'tree-membership-mismatch',
+          message: `Skill "${key}" is listed under tree "${t.id}" but its treeId is "${s.treeId}"`,
+        })
+      }
+    }
+  }
+
+  // Tier must strictly increase along a prerequisite edge: a skill sits below
+  // everything it requires. An independent cross-check on topology — a pixel
+  // bucketing error that disagrees with the prereq edges fails here.
+  for (const s of ds.skills) {
+    for (const req of s.requires) {
+      const r = skillByKey.get(req)
+      if (r && s.tier <= r.tier) {
+        issues.push({
+          kind: 'non-monotonic-tier',
+          message: `Skill "${s.key}" (tier ${s.tier}) requires "${req}" (tier ${r.tier}); a skill's tier must exceed its prerequisites'`,
+        })
+      }
+    }
+  }
+
+  // Cycle detection over the requires graph (resolvable edges only; dangling
+  // prerequisites are reported separately). Phase 1's stat/unlock resolution
+  // assumes a DAG, so a cycle is a hard integrity failure.
+  issues.push(...findRequiresCycles(ds.skills, skillByKey))
+
   return issues
+}
+
+/** DFS cycle detection; each distinct cycle is reported once. */
+function findRequiresCycles(
+  skills: Dataset['skills'],
+  skillByKey: Map<string, Dataset['skills'][number]>,
+): IntegrityIssue[] {
+  const found: IntegrityIssue[] = []
+  const enum_WHITE = 0
+  const enum_GRAY = 1
+  const enum_BLACK = 2
+  const color = new Map<string, number>()
+  const stack: string[] = []
+  const reported = new Set<string>()
+
+  const visit = (key: string): void => {
+    color.set(key, enum_GRAY)
+    stack.push(key)
+    const skill = skillByKey.get(key)
+    if (skill) {
+      for (const req of skill.requires) {
+        if (req === key || !skillByKey.has(req)) continue // self/dangling handled elsewhere
+        const c = color.get(req) ?? enum_WHITE
+        if (c === enum_GRAY) {
+          const start = stack.indexOf(req)
+          const cycle = stack.slice(start)
+          const fingerprint = [...cycle].sort().join(',')
+          if (!reported.has(fingerprint)) {
+            reported.add(fingerprint)
+            found.push({
+              kind: 'requires-cycle',
+              message: `Prerequisite cycle: ${[...cycle, req].join(' → ')}`,
+            })
+          }
+        } else if (c === enum_WHITE) {
+          visit(req)
+        }
+      }
+    }
+    stack.pop()
+    color.set(key, enum_BLACK)
+  }
+
+  for (const s of skills) {
+    if ((color.get(s.key) ?? enum_WHITE) === enum_WHITE) visit(s.key)
+  }
+  return found
 }
 
 /**

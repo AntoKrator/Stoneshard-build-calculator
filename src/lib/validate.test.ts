@@ -79,6 +79,47 @@ describe('checkIntegrity', () => {
     const issues = checkIntegrity(parseDataset(d))
     expect(issues.map((i) => i.kind)).toContain('orphan-skill')
   })
+
+  it('does not flag a cycle in an acyclic dataset', () => {
+    const issues = checkIntegrity(parseDataset(baseDataset()))
+    expect(issues.map((i) => i.kind)).not.toContain('requires-cycle')
+  })
+
+  it('flags a two-node requires cycle', () => {
+    const d = baseDataset()
+    d.skills[0].requires = ['advance']
+    d.skills[1].requires = ['cleave']
+    const issues = checkIntegrity(parseDataset(d))
+    expect(issues.map((i) => i.kind)).toContain('requires-cycle')
+  })
+
+  it('detects a longer cycle (a -> b -> c -> a)', () => {
+    const d = baseDataset()
+    d.trees[0].skills = ['a', 'b', 'c']
+    d.skills = [
+      { key: 'a', treeId: 'swords', name: { english: 'A' }, tier: 1, position: 0, requires: ['c'] },
+      { key: 'b', treeId: 'swords', name: { english: 'B' }, tier: 2, position: 0, requires: ['a'] },
+      { key: 'c', treeId: 'swords', name: { english: 'C' }, tier: 3, position: 0, requires: ['b'] },
+    ]
+    const issues = checkIntegrity(parseDataset(d))
+    expect(issues.map((i) => i.kind)).toContain('requires-cycle')
+  })
+
+  it('flags a tree-membership mismatch', () => {
+    const d = baseDataset()
+    // 'advance' (treeId 'swords') is also listed under a different tree.
+    d.trees.push({ id: 'axes', name: 'Axes', category: 'weaponry', skills: ['advance'] })
+    const issues = checkIntegrity(parseDataset(d))
+    expect(issues.map((i) => i.kind)).toContain('tree-membership-mismatch')
+  })
+
+  it('flags a non-monotonic tier across a prerequisite edge', () => {
+    const d = baseDataset()
+    d.skills[0].requires = ['advance'] // cleave (tier 1) requires advance (tier 2)
+    d.skills[1].requires = []
+    const issues = checkIntegrity(parseDataset(d))
+    expect(issues.map((i) => i.kind)).toContain('non-monotonic-tier')
+  })
 })
 
 describe('validateDataset', () => {
