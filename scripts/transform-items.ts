@@ -11,7 +11,7 @@
  * Run with: `npm run transform-items` (after `npm run vendor:wiki`). Output is
  * committed; CI does not run this.
  */
-import { readFileSync, writeFileSync } from 'node:fs'
+import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { z } from 'zod'
@@ -56,9 +56,22 @@ const existing = readJson(reportPath) as {
   warnings: { category: string; message: string }[]
 }
 
+// Item keys with a vendored icon (M3 U6) — set item.icon for these. The icon
+// files are named by key; reading the dir keeps the transform the single writer
+// of item.icon and needs no separate manifest.
+const iconDir = resolve(root, 'public/img/items')
+const iconKeys = new Set(
+  existsSync(iconDir)
+    ? readdirSync(iconDir)
+        .filter((f) => f.endsWith('.png'))
+        .map((f) => f.slice(0, -'.png'.length))
+    : [],
+)
+
 const { items, itemStatKeys, report } = transformItems({
   pages,
   damageTypes: constants.damageTypes ?? [],
+  iconKeys,
 })
 
 // Validate shape + referential integrity BEFORE writing anything — the same

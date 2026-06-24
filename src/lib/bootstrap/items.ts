@@ -41,6 +41,10 @@ export interface ItemTransformInput {
   /** Recognized damage-type vocabulary (constants.damageTypes) for the weapon
    *  damageType foreign-key check. */
   damageTypes: string[]
+  /** Item keys with a vendored icon under public/img/items/ (M3 U6). An item in
+   *  this set gets `icon: img/items/<key>.png`; the rest fall back to the glyph.
+   *  Injected so the transform stays pure (no filesystem access). */
+  iconKeys?: ReadonlySet<string>
 }
 
 /** Columns mapped to typed identity fields, handled before the stat/property split. */
@@ -127,7 +131,7 @@ export function transformItems(input: ItemTransformInput): {
   itemStatKeys: string[]
   report: ItemTransformReport
 } {
-  const { pages, damageTypes } = input
+  const { pages, damageTypes, iconKeys } = input
   const notes: string[] = []
   const warnings: ItemWarning[] = []
   const items: Item[] = []
@@ -218,8 +222,9 @@ export function transformItems(input: ItemTransformInput): {
         }
       }
 
+      const key = slug(name)
       const item: Item = {
-        key: slug(name),
+        key,
         name: { english: name },
         category,
         slot,
@@ -230,6 +235,7 @@ export function transformItems(input: ItemTransformInput): {
         ...(damageType ? { damageType } : {}),
         stats: sortKeys(stats),
         properties: sortKeys(properties),
+        ...(iconKeys?.has(key) ? { icon: `img/items/${key}.png` } : {}),
       }
       items.push(item)
       if (category === 'weapon') weapons++

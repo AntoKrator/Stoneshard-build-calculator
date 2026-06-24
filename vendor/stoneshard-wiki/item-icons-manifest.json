@@ -1,0 +1,10 @@
+{
+  "source": "stoneshard.com/wiki Special:FilePath",
+  "retrievedAt": "2026-06-24",
+  "note": "Item icons vendored from the official wiki by display name. Items absent here have no wiki art and fall back to the Icon glyph. Refresh with `npm run vendor:item-icons`; then `npm run transform-items` to set item.icon. Game art is Ink Stains Games IP under fair use — see /NOTICE.md.",
+  "count": 730,
+  "missingCount": 1,
+  "missing": [
+    "dwarven-shield"
+  ]
+}

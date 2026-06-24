@@ -18,6 +18,7 @@
     "validate-data": "tsx scripts/validate-data.ts",
     "bootstrap": "tsx scripts/bootstrap-from-nstratos.ts",
     "vendor:wiki": "tsx tools/wiki-extractor/fetch.ts",
+    "vendor:item-icons": "tsx tools/wiki-extractor/fetch-icons.ts",
     "transform-items": "tsx scripts/transform-items.ts"
   },
   "devDependencies": {
