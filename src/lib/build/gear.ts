@@ -58,8 +58,10 @@ export function aggregateGear(
   equipped: Partial<Record<EquipmentSlot, Item>>,
   knownIdentifiers: ReadonlySet<string>,
 ): GearAggregate {
-  const contributions: Record<string, number> = {}
-  const display: Record<string, number> = {}
+  // Null-prototype so an item-stat key like `__proto__` can't pollute the
+  // accumulator (matching the derived-stat accumulator in stats.ts).
+  const contributions: Record<string, number> = Object.create(null)
+  const display: Record<string, number> = Object.create(null)
 
   for (const item of Object.values(equipped)) {
     if (!item) continue

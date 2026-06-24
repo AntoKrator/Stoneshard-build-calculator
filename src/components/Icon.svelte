@@ -9,6 +9,13 @@
 
   let failed = $state(false)
   const src = $derived(icon ? iconSrc(icon, import.meta.env.BASE_URL) : '')
+
+  // Reset the error state whenever the icon changes: a slot reuses one Icon
+  // instance across item swaps, so a prior item's 404 must not stick to the next.
+  $effect(() => {
+    void icon
+    failed = false
+  })
 </script>
 
 {#if icon && !failed}

@@ -218,6 +218,14 @@ describe('recompute — gear → derived sheet (M3 U3, R6)', () => {
     expect(ch.derived.Magic_Power).toBe(9) // 6 + 3
   })
 
+  it('surfaces a deferred-identifier gear contribution in gearStats for display (R6)', () => {
+    // Pyromantic_Power is a known identifier but not an enumerated derived stat, so
+    // the main sheet loop never shows it — it must appear in the From Gear view.
+    const ch = rc([eq('main_hand', 'staff')])
+    expect(ch.derived.Pyromantic_Power).toBe(5) // merged for the tooltip/scope
+    expect(ch.gearStats.Pyromantic_Power).toBe(5) // and surfaced for the sheet
+  })
+
   it('carries unmapped gear stats (resistances) in gearStats, not derived', () => {
     const ch = rc([eq('body', 'robe')])
     expect(ch.gearStats.fire_resistance).toBe(8)

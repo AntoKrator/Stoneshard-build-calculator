@@ -22,16 +22,16 @@
 
   let query = $state('')
 
-  // Only items whose canonical slot is this one are equippable here; sort by tier
-  // then name so the list reads like the in-game progression.
-  const matches = $derived(
-    items
-      .filter((i) => i.slot === slot)
-      .filter((i) => i.name.english.toLowerCase().includes(query.trim().toLowerCase()))
-      .sort(
-        (a, b) => (a.tier ?? 0) - (b.tier ?? 0) || a.name.english.localeCompare(b.name.english),
-      ),
-  )
+  // The items equippable in this slot depend only on items+slot, so derive them
+  // once; the search then filters that smaller subset with the query normalized
+  // a single time per keystroke. Sort by tier then name (in-game progression).
+  const slotItems = $derived(items.filter((i) => i.slot === slot))
+  const matches = $derived.by(() => {
+    const q = query.trim().toLowerCase()
+    return slotItems
+      .filter((i) => i.name.english.toLowerCase().includes(q))
+      .sort((a, b) => (a.tier ?? 0) - (b.tier ?? 0) || a.name.english.localeCompare(b.name.english))
+  })
 </script>
 
 <div class="picker">
@@ -61,7 +61,7 @@
             <Icon icon={item.icon} alt={item.name.english} size={28} />
             <span class="name">{item.name.english}</span>
             <span class="meta">
-              {#if item.tier}T{item.tier}{/if}
+              {#if item.tier != null}T{item.tier}{/if}
               {#if item.damageType}· {item.damageType}{:else if item.material}· {item.material}{/if}
             </span>
           </button>

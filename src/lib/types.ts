@@ -262,7 +262,10 @@ export type ItemCategory = z.infer<typeof ItemCategory>
  * recompute equip-resolution pass, and the equip UI's per-slot filtering.
  */
 export const SLOTS_BY_CATEGORY: Record<ItemCategory, readonly EquipmentSlot[]> = {
-  weapon: ['main_hand', 'off_hand'],
+  // M3 models every weapon as main_hand (the source has no off-hand flag) and the
+  // off-hand as shields only; dual-wield / off-hand weapons need 1H-vs-2H weapon
+  // classification and are deferred to a later milestone.
+  weapon: ['main_hand'],
   armor: ['off_hand', 'head', 'body', 'gloves', 'boots', 'cloak'],
   accessory: ['amulet', 'ring', 'belt'],
 }

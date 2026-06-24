@@ -87,6 +87,29 @@ export interface Character {
 
 const ATTR_KEYS = AttributeKey.options
 
+/**
+ * The formula-identifier sets gear is checked against, memoized per stat model.
+ * `known` (the formula vocabulary ∪ enumerated derived stats) decides whether a
+ * gear stat merges into the sheet/scope; `enumerated` decides whether it shows as
+ * a main sheet row or in the From Gear view. recompute runs on every build edit,
+ * so memoizing avoids rebuilding these ~50-element sets on the interactive path.
+ */
+interface IdentifierSets {
+  known: ReadonlySet<string>
+  enumerated: ReadonlySet<string>
+}
+const identifierCache = new WeakMap<StatModel, IdentifierSets>()
+function identifierSetsFor(statModel: StatModel): IdentifierSets {
+  let sets = identifierCache.get(statModel)
+  if (!sets) {
+    const enumerated = new Set(statModel.derivedStats.map((d) => d.key))
+    const known = new Set<string>([...KNOWN_STAT_IDENTIFIERS, ...enumerated])
+    sets = { known, enumerated }
+    identifierCache.set(statModel, sets)
+  }
+  return sets
+}
+
 function baseAttributes(base: number): Attributes {
   const a = {} as Attributes
   for (const k of ATTR_KEYS) a[k] = base
@@ -206,13 +229,15 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
   //    (merged additively into the derived sheet, so a stat gear provides — incl.
   //    a previously-deferred identifier — enters the scope and lights up its
   //    tooltip) and a display bag for everything without an identifier (U2/U3).
-  const knownIdentifiers = new Set<string>([
-    ...KNOWN_STAT_IDENTIFIERS,
-    ...statModel.derivedStats.map((d) => d.key),
-  ])
-  const gear = aggregateGear(equipped, knownIdentifiers)
+  const { known, enumerated } = identifierSetsFor(statModel)
+  const gear = aggregateGear(equipped, known)
+  const gearStats: Record<string, number> = Object.assign(Object.create(null), gear.display)
   for (const [id, v] of Object.entries(gear.contributions)) {
     derived[id] = (derived[id] ?? 0) + v
+    // A contribution to an enumerated stat shows in its main sheet row; one to a
+    // deferred identifier (Pyromantic_Power, Knockback_Chance, …) would otherwise
+    // render nowhere, so surface it in the From Gear view too.
+    if (!enumerated.has(id)) gearStats[id] = (gearStats[id] ?? 0) + v
   }
 
   return {
@@ -223,7 +248,7 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
     taken,
     takenOrder,
     equipped,
-    gearStats: gear.display,
+    gearStats,
     attributeBudget,
     skillBudget,
     attributesSpent,
