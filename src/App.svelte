@@ -141,6 +141,7 @@
     border: 1px solid var(--border);
     border-left: 3px solid var(--accent);
     border-radius: 6px;
+    box-shadow: var(--frame-shadow);
     padding: 0.6rem 0.85rem;
     margin-bottom: 1rem;
     font-size: 0.9rem;
@@ -159,6 +160,7 @@
     border: 1px solid var(--border);
     border-radius: 6px;
     background: var(--bg-panel);
+    box-shadow: var(--frame-shadow);
     margin-top: 0.75rem;
     padding: 0.5rem;
   }

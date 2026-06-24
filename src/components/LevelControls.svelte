@@ -70,12 +70,7 @@
 </section>
 
 <style>
-  .panel {
-    background: var(--bg-panel);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 1rem;
-  }
+  /* Frame comes from the shared global .panel treatment (U2). */
   .level-row {
     display: flex;
     align-items: center;
@@ -87,6 +82,7 @@
     font-size: 1.1rem;
   }
   .level .num {
+    font-family: var(--font-display);
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--accent);

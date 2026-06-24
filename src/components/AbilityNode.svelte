@@ -82,13 +82,17 @@
   .unlocked-unaffordable :global(.icon) {
     filter: grayscale(0.4) brightness(0.8);
   }
+  /* Four states stay distinguishable in the new palette: locked = darkest icon +
+     plain bronze border; unaffordable = mildly dimmed icon; affordable = brass-dim
+     border + soft brass glow; taken = full brass border + stronger glow. Glows are
+     mixed from --accent so they track the token, not a hard-coded literal. */
   .affordable .pick {
     border-color: var(--accent-dim);
-    box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.25);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 32%, transparent);
   }
   .taken .pick {
     border-color: var(--accent);
-    box-shadow: 0 0 0 2px rgba(201, 162, 39, 0.4);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 48%, transparent);
   }
 
   .refund {

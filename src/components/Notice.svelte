@@ -32,7 +32,7 @@
     gap: 0.75rem;
     padding: 0.6rem 0.85rem;
     margin-bottom: 1rem;
-    background: rgba(180, 69, 46, 0.15);
+    background: color-mix(in srgb, var(--danger) 16%, transparent);
     border: 1px solid var(--danger);
     border-radius: 6px;
     font-size: 0.85rem;

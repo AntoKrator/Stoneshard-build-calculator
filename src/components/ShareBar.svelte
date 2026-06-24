@@ -64,12 +64,7 @@
 </section>
 
 <style>
-  .panel {
-    background: var(--bg-panel);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 1rem;
-  }
+  /* Frame comes from the shared global .panel treatment (U2). */
   .share {
     width: 100%;
     border-color: var(--accent-dim);

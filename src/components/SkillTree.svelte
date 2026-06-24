@@ -106,12 +106,16 @@
     background: var(--bg-panel-2);
     border: 1px solid var(--accent-dim);
     border-radius: 6px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+    box-shadow:
+      var(--frame-shadow),
+      0 8px 24px rgba(0, 0, 0, 0.55);
     pointer-events: none;
   }
   .tt-name {
     display: block;
     margin-bottom: 0.35rem;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
     color: var(--accent);
   }
   .tt-empty {

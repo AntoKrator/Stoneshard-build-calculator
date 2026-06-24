@@ -30,7 +30,7 @@
     stroke-width: 2;
   }
   line.active {
-    stroke: var(--accent-dim);
+    stroke: var(--accent);
     stroke-width: 3;
   }
 </style>

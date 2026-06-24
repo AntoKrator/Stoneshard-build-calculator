@@ -56,12 +56,7 @@
 </section>
 
 <style>
-  .panel {
-    background: var(--bg-panel);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 1rem;
-  }
+  /* Frame comes from the shared global .panel treatment (U2). */
   .note {
     color: var(--text-dim);
     font-size: 0.8rem;
@@ -73,13 +68,13 @@
     gap: 0.75rem 1.25rem;
   }
   h3 {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.08em;
     color: var(--accent);
     border-bottom: 1px solid var(--border);
-    padding-bottom: 0.2rem;
-    margin-bottom: 0.35rem;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.4rem;
   }
   dl {
     margin: 0;
