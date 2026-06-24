@@ -3,7 +3,7 @@
  * integrity that Zod can't express on its own — dangling prerequisites,
  * unknown tree references, duplicate keys, and tree/skill cross-links.
  */
-import { parseDataset, type Dataset } from './types'
+import { parseDataset, type Dataset, type ItemCategory, type EquipmentSlot } from './types'
 
 export interface IntegrityIssue {
   kind:
@@ -18,7 +18,20 @@ export interface IntegrityIssue {
     | 'requires-cycle'
     | 'tree-membership-mismatch'
     | 'non-monotonic-tier'
+    | 'duplicate-item-key'
+    | 'unknown-damage-type'
+    | 'weapon-missing-damage'
+    | 'unknown-stat-key'
+    | 'slot-category-mismatch'
   message: string
+}
+
+/** Which equipment slots each item family may occupy. A weapon in `head`, or a
+ *  ring in `body`, is a categorization error caught here. */
+const VALID_SLOTS: Record<ItemCategory, Set<EquipmentSlot>> = {
+  weapon: new Set(['main_hand', 'off_hand']),
+  armor: new Set(['off_hand', 'head', 'body', 'gloves', 'boots', 'cloak']),
+  accessory: new Set(['amulet', 'ring', 'belt']),
 }
 
 /** Run referential-integrity checks over an already shape-valid dataset. */
@@ -131,6 +144,65 @@ export function checkIntegrity(ds: Dataset): IntegrityIssue[] {
   // prerequisites are reported separately). Phase 1's stat/unlock resolution
   // assumes a DAG, so a cycle is a hard integrity failure.
   issues.push(...findRequiresCycles(ds.skills, skillByKey))
+
+  issues.push(...checkItems(ds))
+
+  return issues
+}
+
+/**
+ * Referential integrity for items, mirroring the skill checks: unique keys, a
+ * slot that fits the item's family, and — for weapons — a damage type that
+ * resolves to the recognized vocabulary (M2 U4). The damage-type and stat-key
+ * cross-checks span two dataset sections (items × constants), so they live here
+ * rather than in the per-item Zod schema. The vocabulary checks are skipped when
+ * the relevant constants list is empty, so a minimal/partial dataset isn't
+ * flagged for a vocabulary it never declared.
+ */
+function checkItems(ds: Dataset): IntegrityIssue[] {
+  const issues: IntegrityIssue[] = []
+  const damageTypes = new Set(ds.constants.damageTypes)
+  const statKeys = new Set(ds.constants.itemStatKeys)
+
+  const seen = new Set<string>()
+  for (const it of ds.items) {
+    if (seen.has(it.key)) {
+      issues.push({ kind: 'duplicate-item-key', message: `Duplicate item key "${it.key}"` })
+    }
+    seen.add(it.key)
+
+    if (!VALID_SLOTS[it.category].has(it.slot)) {
+      issues.push({
+        kind: 'slot-category-mismatch',
+        message: `Item "${it.key}" is a ${it.category} but sits in slot "${it.slot}"`,
+      })
+    }
+
+    if (it.category === 'weapon') {
+      if (!it.damageType) {
+        issues.push({
+          kind: 'weapon-missing-damage',
+          message: `Weapon "${it.key}" has no damage type`,
+        })
+      } else if (damageTypes.size && !damageTypes.has(it.damageType)) {
+        issues.push({
+          kind: 'unknown-damage-type',
+          message: `Weapon "${it.key}" damage type "${it.damageType}" is not in constants.damageTypes`,
+        })
+      }
+    }
+
+    if (statKeys.size) {
+      for (const key of Object.keys(it.stats)) {
+        if (!statKeys.has(key)) {
+          issues.push({
+            kind: 'unknown-stat-key',
+            message: `Item "${it.key}" stat "${key}" is not in constants.itemStatKeys`,
+          })
+        }
+      }
+    }
+  }
 
   return issues
 }

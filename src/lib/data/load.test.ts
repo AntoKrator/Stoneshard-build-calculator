@@ -7,6 +7,7 @@ import treesJson from '../../data/trees.json'
 import skillsJson from '../../data/skills.json'
 import constantsJson from '../../data/constants.json'
 import statModelJson from '../../data/stat-model.json'
+import itemsJson from '../../data/items.json'
 
 describe('dataset loader', () => {
   it('loads the committed dataset with the expected counts', () => {
@@ -155,7 +156,33 @@ describe('dual-loader parity (KTD10)', () => {
       skills: skillsJson,
       constants: constantsJson,
       statModel: statModelJson,
+      items: itemsJson,
     })
     expect(composedLikeGate).toEqual(parseDataset(dataset))
+  })
+})
+
+describe('item dataset (M2 U4, R3/R4/R15)', () => {
+  it('loads the committed items into the dataset', () => {
+    expect(dataset.items.length).toBe(731)
+    const byCategory = (c: string) => dataset.items.filter((i) => i.category === c).length
+    expect(byCategory('weapon')).toBe(350)
+    expect(byCategory('armor')).toBe(290)
+    expect(byCategory('accessory')).toBe(91)
+  })
+
+  it('round-trips a representative weapon (damage type + per-type stat)', () => {
+    const sword = dataset.items.find((i) => i.key === 'footman-sword')
+    expect(sword?.category).toBe('weapon')
+    expect(sword?.slot).toBe('main_hand')
+    expect(sword?.damageType).toBe('slashing')
+    expect(sword?.stats.slashing_damage).toBe(21)
+  })
+
+  it('every weapon damage type resolves to the constants vocabulary', () => {
+    const types = new Set(dataset.constants.damageTypes)
+    const weapons = dataset.items.filter((i) => i.category === 'weapon')
+    expect(weapons.length).toBeGreaterThan(0)
+    expect(weapons.every((w) => w.damageType && types.has(w.damageType))).toBe(true)
   })
 })

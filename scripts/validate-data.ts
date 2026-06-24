@@ -23,6 +23,7 @@ function loadComposed(): unknown {
       skills: readJson(resolve(dataDir, 'skills.json')),
       constants: readJson(resolve(dataDir, 'constants.json')),
       statModel: readJson(resolve(dataDir, 'stat-model.json')),
+      items: readJson(resolve(dataDir, 'items.json')),
     }
   } catch (e) {
     console.error(
@@ -61,6 +62,12 @@ const counts = new Map<string, number>()
 for (const s of skills) counts.set(s.treeId, (counts.get(s.treeId) ?? 0) + 1)
 
 console.log(
-  `✓ ${result.skillCount} skills across ${result.treeCount} trees — schema + integrity clean, 0 blocking warnings.`,
+  `✓ ${result.skillCount} skills across ${result.treeCount} trees + ${result.itemCount} items — schema + integrity clean, 0 blocking warnings.`,
 )
 for (const t of trees) console.log(`  ${t.id} (${t.category}): ${counts.get(t.id) ?? 0}`)
+
+// Item counts by category so a thin or empty item dataset is obvious at a glance.
+const { items } = composed as { items: { category: string }[] }
+const itemCounts = new Map<string, number>()
+for (const it of items) itemCounts.set(it.category, (itemCounts.get(it.category) ?? 0) + 1)
+for (const [category, n] of [...itemCounts].sort()) console.log(`  items/${category}: ${n}`)

@@ -18,6 +18,7 @@ export interface GateResult {
   errors: string[]
   skillCount: number
   treeCount: number
+  itemCount: number
 }
 
 /** A stable signature for allowlisting an individual warning. */
@@ -33,11 +34,13 @@ export function gateDataset(
   const errors: string[] = []
   let skillCount = 0
   let treeCount = 0
+  let itemCount = 0
 
   try {
     const { dataset, issues } = validateDataset(composed)
     skillCount = dataset.skills.length
     treeCount = dataset.trees.length
+    itemCount = dataset.items.length
     for (const i of issues) errors.push(`[${i.kind}] ${i.message}`)
   } catch (e) {
     errors.push(`schema: ${(e as Error).message}`)
@@ -49,5 +52,5 @@ export function gateDataset(
     }
   }
 
-  return { ok: errors.length === 0, errors, skillCount, treeCount }
+  return { ok: errors.length === 0, errors, skillCount, treeCount, itemCount }
 }
