@@ -16,7 +16,9 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "validate-data": "tsx scripts/validate-data.ts",
-    "bootstrap": "tsx scripts/bootstrap-from-nstratos.ts"
+    "bootstrap": "tsx scripts/bootstrap-from-nstratos.ts",
+    "vendor:wiki": "tsx tools/wiki-extractor/fetch.ts",
+    "transform-items": "tsx scripts/transform-items.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

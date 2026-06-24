@@ -237,6 +237,7 @@ export const EquipmentSlot = z.enum([
   'body',
   'gloves',
   'boots',
+  'belt',
   'cloak',
   'amulet',
   'ring',

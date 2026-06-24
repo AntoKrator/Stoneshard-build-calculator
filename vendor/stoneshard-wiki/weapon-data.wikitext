@@ -1,0 +1,721 @@
+<noinclude>Page for all Stoneshard weapon data.
+
+This data is edited with the parser. If you need to edit this manually, here's the order of values as of Rags to Riches patch.
+
+ 0;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;23;24;25;26;27;28;29;30;31;32;33;34;35;36;37;38;39;40;41;42;43;44;45;46;47;48;49;50;51;52;53;54;55;56;57;58;59;60;61;62;63;64;65;66;67;68;69
+ Tier;ID;Type;Rarity;Material;Durability;Markup;Price;Range;Armor Damage;Armor Penetration;Bodypart Damage;Slashing Damage;Piercing Damage;Crushing Damage;Rending Damage;Fire Damage;Shock Damage;Poison Damage;Caustic Damage;Frost Damage;Arcane Damage;Unholy Damage;Sacred Damage;Psionic Damage;Accuracy;Crit Chance;Crit Efficiency;Block Chance;Block Power;Counter Chance;Fumble Chance;Bleed Chance;Daze Chance;Stun Chance;Knockback Chance;Immobilization Chance;Stagger Chance;Energy;Energy Restoration;Cooldowns Duration;Skill Energy Cost;Spell Energy Cost;Magic Power;Backfire Chance;Miracle Chance;Miracle Potency;Pyromantic Power;Geomantic Power;Venomantic Power;Electromantic Power;Cryomantic Power;Arcanistic Power;Astromantic Power;Psionic Power;Health Restoration;Health Drain;Energy Drain;Bonus Range;Damage Taken;Healing Efficiency;Block Recovery;Fatigue Resistance;Crit Avoidance;Max Health;Balance (???);Tags;Total damage (of all types);Obtainability;Description
+
+==Usage==
+You can copy the values above and copy the line (or lines) you want to edit, and import them into a CSV editor, for example [[https://edit-csv.net https://edit-csv.net]]. Open the Read options and check the "Has Header" checkbox.
+
+You'll get a table format that's easier to read.
+</noinclude><includeonly>{{#switch: {{{1}}}
+<!--
+
+----- WEAPONS -----
+
+-->
+
+|Arna's Sword=2;sword01;Sword;Unique;metal;80;1;475;1;;5;;17;;;;;;;;;;;;;;;;7;5;;-3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2;special exc;17;;The surface of the blade bears an inscription, faded by time. The words are no longer decipherable, but Arna can still recite them from memory.
+ 
+|Drifter Sword=2;sword02;Sword;Common;metal;80;1;475;1;;5;;18;;;;;;;;;;;;;;;;6;4;5;;;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;18;;The roads are dangerous, the turns unpredictable - the only thing worth trusting is your own blade.
+ 
+|Footman Sword=3;sword03;Sword;Common;metal;100;1;1250;1;;10;;21;;;;;;;;;;;;;;;;8;6;6;;;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;21;;Most suitable for a fight in tight formation.
+ 
+|Veteran Sword=4;sword04;Sword;Common;metal;120;1;2775;1;;10;;24;;;;;;;;;;;;;;;;10;8;7;;;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;24;;This sword has witnessed many a front line and survived plenty of close battles.
+ 
+|Skonfert Sword=4;sword05;Sword;Common;metal;130;1;2925;1;;10;;24;;;;;;;;;;;;;3;;;10;10;4;;;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;24;;Skonfert is famous for its furnaces and masterful smiths. In times of great conflict, it was there that victories were forged.
+ 
+|Heirloom Sword=4;sword06;Sword;Unique;metal;110;1;2775;1;;10;;24;;;;;;;;;;;;;;;;8;6;6;-3;;;;;;;;;;5;-5;5;;;;;;;;;;;;;;;;;;;;;;2;unique;24;;The ornate pommel bears the crest of yet another noble house that did not survive the war.
+ 
+|Knight Blade=5;sword07;Sword;Common;metal;140;1;5875;1;;15;;28;;;;;;;;;;;;;;;;12;10;8;;;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;28;;A single glance at this noble blade is all it takes to realize that only a select few are worthy to wield it.
+ 
+|Radiant Sword=5;sword08;Sword;Unique;metal;140;1;5875;1;;15;;25;;;;;;;;;;;2;;;;;12;12;8;;;;;;;;;5;;5;;;;;;;;;;;;;;;;;;;;5;5;;;2;unique;27;;In the times of the Radiant Wars, many high-born lords were more than happy to join King Etbert's army. Some did it to earn the Host's favor, others - for more practical reasons, such as glory and new riches.
+ 
+|Homemade Sword=1;sword09;Sword;Common;metal;55;1;100;1;;5;;16;;;;;;;;;;;;;3;;;2;;;;8;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;16;;Apparently, it was forged by a commoner with a dream of heroic feats.
+ 
+|Recruit Blade=2;sword10;Sword;Common;metal;70;1;500;1;;5;;18;;;;;;;;;;;;;4;;;4;;;;11;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;18;;Forging a similar sword is a graduation exam of sorts for apprentice blacksmiths.
+ 
+|Guard Blade=2;sword11;Sword;Common;metal;70;1;500;1;;5;;18;;;;;;;;;;;;;4;;;4;;2;;4;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;18;;Commonly issued to guards of higher rank.
+ 
+|Brigand Blade=2;sword12;Sword;Common;metal;70;1;500;1;;5;4;18;;;;;;;;;;;;;3;;;4;;;;11;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;2;special;18;;These swords are forged by the dozen in underground smithies, far from prying eyes and unwanted questions.
+ 
+|Guild Blade=3;sword13;Sword;Common;metal;90;1;1300;1;;10;;21;;;;;;;;;;;;;5;;;6;;;;14;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;21;;Making these swords is a routine job for the Guild's smiths - day after day, night after night...
+ 
+|Norse Blade=3;sword14;Sword;Common;metal;90;1;1300;1;;10;;21;;;;;;;;;;;;;3;1;5;3;;;;9;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;2;fjall;21;;Skirmishing, plundering, murdering - nothing is impossible with this blade!
+ 
+|Katzbalger=4;sword15;Sword;Common;metal;110;1;2900;1;;10;;24;;;;;;;;;;;;;6;;;8;;;;17;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;24;;A sword of newfangled design that has been growing in popularity among the mercenaries of the Grand Magistrate.
+ 
+|Jarl Blade=4;sword16;Sword;Unique;metal;105;1;2900;1;;10;7;24;;;;;;;;;;;;;4;3;10;8;;;;17;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;2;unique;24;;Entire wars have been fought in Fjall to claim such a sword - and the title that comes with it.
+ 
+|Templar Sword=5;sword17;Sword;Common;metal;125;1;6125;1;;15;;24;;;;;;;;;;;2;;7;;;10;;;-1;20;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;26;;There is an etching on the blade's surface, pledging loyalty to the Host and the court... the usual kind of court.
+ 
+|Royal Blade=5;sword18;Sword;Unique;metal;145;1;6125;1;;15;;28;;;;;;;;;;;;;7;;;10;;;;20;;;;;;;;;-5;;;;;;;;;;;;;;;;;;-5;;;;;;2;unique;28;;A sword from King Etbert's personal armory. Clearly not his favorite, otherwise it would have followed the monarch into his tomb.
+ 
+|Theurgist Blade=5;sword19;Sword;Unique;metal;115;1;6125;1;;15;;24;;;;;;;;;;;4;;7;;;10;;;;20;;;;;;;;-5;5;;;;3;10;;;;;;;;;;;;;;;;;;;2;unique;28;;Forged by great weaponsmiths in times immemorial, this blade still carries the blessing of the Host.
+ 
+|Battle Cleaver=1;sword20;Sword;Common;metal;50;1;75;1;;3;;17;;;;;;;;;;;;;;3;;;;;4;10;;;;;;;;;10;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;17;;A simple butcher's cleaver, crudely refashioned into a sword-like shape by an unknown craftsman.
+ 
+|Militia Falchion=2;sword21;Sword;Common;metal;70;1;450;1;;3;;19;;;;;;;;;;;;;;4;;;;;5;13;;;;;;;;;10;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;19;;Will slice through a brigand's gambeson or a beast's hide - and for the militia, it's all that's needed.
+ 
+|Jagged Falchion=3;sword22;Sword;Common;metal;85;1;1200;1;;7;;22;;;;;;;;;;;;;;5;;;;;6;16;;;;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;22;;A peculiar imitation of eastern blades, this sword is a product of the recent fascination with all things elven.
+ 
+|Mercenary Falchion=4;sword23;Sword;Common;metal;100;1;2650;1;;7;;26;;;;;;;;;;;;;;6;;;;;7;20;;;;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;26;;Light, durable, sits well in hand, and can most certainly put an arrogant knight in his place.
+ 
+|Captain Messer=5;sword24;Sword;Common;metal;120;1;5600;1;;10;;29;;;;;;;;;;;;;;7;;;;;8;24;;;;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;29;;It strikes a perfect balance between aesthetics, battlefield performance, and comfort of use - such swords are often carried by captains of the most renowned mercenary companies.
+ 
+|Guardsman Broadsword=5;sword25;Sword;Unique;metal;115;1;5600;1;;10;15;29;;;;;;;;;;;;;;7;15;5;3;;8;24;;;;;;;;;15;-5;;;;;;;;;;;;;;;;;;;;;;;2;unique;29;;These swords were intended for King Etbert's bodyguards. After the monarch's death, at least several of them ended up stolen from the royal arsenal.
+ 
+|Nomad Saber=3;sword26;Sword;Common;metal;75;1;1400;1;;5;15;22;;;;;;;;;;;;;;;;4;;;;20;;;;;;;;;10;;;;;;;;;;;;;;;;;;;;;;;;1;elven;22;;The edge requires surprisingly little maintenance. If the rumors are true, the tribes of the Yellow Steppe achieve this by treating their swords with some special solution.
+ 
+|Elven Saber=4;sword27;Sword;Common;metal;90;1;3150;1;;5;20;25;;;;;;;;;;;;;;;;6;;;;24;;;;;;;;;10;;;;;;;;;;;;;;;;;;;;;;;;1;elven;25;;Some of the local aristocrats favor eastern sabers over traditional Aldorian swords - despite any weird looks they get from their subjects.
+ 
+|Jibean Scimitar=5;sword28;Sword;Common;metal;105;1;6625;1;;5;25;28;;;;;;;;;;;;;;;;8;;;;28;;;;;;;;;10;;;;;;;;;;;;;;;;;;;;;;;;1;elven;28;;Half the stories about distant Jibey one way or another mentions its legendary scimitars. Acquiring one in Aldor costs a fortune.
+ 
+|Ancient Scimitar=5;sword29;Sword;Unique;metal;85;1;6625;1;;5;31;25;;;;;;;;;;;;;;5;10;8;;;;36;;;;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;1;unique;25;;Despite being at least half a millennia old, it somehow continues to perfectly hold the edge.
+ 
+|Ornate Saber=5;sword30;Sword;Unique;metal;105;1;6625;1;;10;25;28;;;;;;;;;;;;;3;;;8;;;-3;28;;;;;;;;;5;-5;;;;;;;;;;;;;;;;;;;;;;;1;unique;28;;The gilded guard is decorated with intricate eastern ornaments - this weapon is a true work of art.
+ 
+|Wooden Sword=1;sword01f;Sword;Common;wood;25;1;5;1;-50;-50;;;;9;;;;;;;;;;;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1;special;9;;Hefty enough to roughen up a training dummy.
+ 
+|Rusty Sword=1;sword02f;Sword;Common;metal;15;1;5;1;-30;;;;;10;;;;2;;;;;;;-10;-33;;;-10;;33;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1;special;12;;A sword that has seen better days. It looks like it's about to crumble to dust.
+ 
+|Peasant Hatchet=1;axe01;Axe;Common;metal;60;1;75;1;10;5;13;17;;;;;;;;;;;;;3;;;;;;;8;;;;;;;;;10;;;;;;;;;;;;;;;;;;;;;;;;3;aldor;17;;The only thing it's decent at is splitting firewood.
+ 
+|Bearded Hatchet=2;axe02;Axe;Common;metal;80;1;400;1;15;10;16;19;;;;;;;;;;;;;4;;;;;;;12;;;;;;;;;10;;;;;;;;;;;;;;;;;;;;;;;;4;aldor;19;;Lends itself to a higher grip whenever the enemy gets too close for a full swing.
+ 
+|Skadian Hatchet=3;axe03;Axe;Common;metal;100;1;1025;1;23;10;19;22;;;;;;;;;;;;;4;;5;;;;;16;;;;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;2;skadia;22;;These axes don't see much use in Aldor, but in Skadia they are ubiquitous. If the axeblade ever gets too chipped to use, you can always switch your grip and strike with the hammerhead.
+ 
+|Vault Raider Hatchet=3;axe04;Axe;Common;metal;100;1;1025;1;20;10;19;22;;;;;;;;;;;;;5;;;;;;;13;;;;;5;;;;10;;;;;;;;;;;;;;;;;;;;;;;;2;fjall;22;;Left behind by the Ancestors, the Vaults conceal boundless riches and unspeakable horrors alike. Only the most capable warriors have the courage to explore their forsaken halls.
+ 
+|Sergeant Hatchet=4;axe05;Axe;Common;metal;120;1;2300;1;25;15;22;26;;;;;;;;;;;;;6;;;;;;;20;;;;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;3;aldor;26;;This small, easy to carry hatchet comes into play when a sword just doesn't cut it anymore.
+ 
+|Knight Hatchet=5;axe06;Axe;Common;metal;140;1;4850;1;30;15;25;29;;;;;;;;;;;;;7;;;;;;;24;;;;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;3;aldor;29;;Invented by an unknown Aldwynn smith, this design quickly caught the eye of the local knights.
+ 
+|Honorary Hatchet=5;axe07;Axe;Unique;metal;120;1;4850;1;30;15;31;28;;;;;;;;;;;;;4;;;;;;;31;;;;;;;;-5;15;-5;;;;;;;;;;;;;;;;;;;;;;;2;unique;28;;Engraved on the blade is a phrase in Sentian Aldorian: "To Gill Korde, for the valor and courage demonstrated by him and his troops at the Battle of Arnem."
+ 
+|Haakon's Axe=5;axe08;Axe;Unique;metal;155;1;4850;1;30;15;25;29;;;;;;;;;;;;;7;;;;;;-3;24;;;;;;;5;;20;;;;;;;;;;;;;;;;5;;;;;;;;3;unique;29;;Entire sagas have been woven about the martial valor and tireless spirit of the legendary konung Haakon the Graybeard. Under his command, the dwarves managed, if only briefly, to conquer several Skadian cities.
+ 
+|Hunter Hatchet=2;axe09;Axe;Common;metal;90;1;375;1;;10;11;19;;;;;;;;;;;;;;;;5;;4;;11;;;;;;;;;10;;;;;;;;;;;;;;;;;;;;;;;;3;aldor;19;;A handy tool that can be used to carve a path through the thicket, chop some wood, or skin a dead animal.
+ 
+|Naval Hatchet=3;axe10;Axe;Common;metal;110;1;975;1;;10;14;22;;;;;;;;;;;;;;;;6;;5;;14;;;;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;4;aldor;22;;The trade fleet of Brynn is small but well equipped - each sailor is required to always carry a hatchet in case of a pirate attack.
+ 
+|Nomad Sagaris=3;axe11;Axe;Common;metal;120;1;1075;1;;10;17;22;;;;;;;;;;;;;;;;6;;3;;14;;;;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;4;elven;22;;A weapon frequently carried by the nomads of the Ohirian barrens - every tribesman is given one after surviving his first battle.
+ 
+|Boarding Hatchet=4;axe12;Axe;Common;metal;130;1;2175;1;;15;17;26;;;;;;;;;;;;;;;;8;;6;;17;;;;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;26;;A weapon of choice among the corsairs of the Bronze archipelago, utterly indispensable during boardings.
+ 
+|Siege Engineer Hatchet=4;axe13;Axe;Common;metal;160;1;2175;1;;15;17;26;;;;;;;;;;;;;;;;12;3;5;;9;;;;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;3;aldor;26;;A squad of competent engineers can determine the outcome of an entire siege. Therefore, it pays to keep them well-protected and properly armed: tunnel skirmishes beneath the walls are a common occurrence.
+ 
+|Brynn Hatchet=5;axe14;Axe;Common;metal;140;1;4600;1;;15;20;27;;;;;;;;;;;;;;;;10;;10;;27;;;;;;;;;10;;;;;;;;;;;;;;;;;;;;;;;;4;aldor;27;;A weapon of rank, proudly carried by captains of the Brynn garrison. The way they strut about with these axes on their belts is a sight to behold.
+ 
+|Noble Hatchet=5;axe15;Axe;Common;metal;170;1;4600;1;;15;20;29;;;;;;;;;;;;;;;;10;;7;;20;;;;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;3;aldor;29;;As the centuries-old tradition of knightly ransom becomes a thing of the past, aristocratic weapons grow increasingly more deadly, aiming to kill the opponent right on the spot.
+ 
+|Ancestral Hatchet=5;axe16;Axe;Common;metal;200;1;4600;1;;20;20;29;;;;;;;;;;;;;;3;;10;;7;;20;;;;;;;;;15;;;;;;;;;;;;;;;;;;;;5;;;;4;unique;29;;A legacy of an age when the skill and artistry of the dwarven smiths were the envy of the entire Continent.
+ 
+|Makeshift Axe=1;axe17;Axe;Common;metal;45;1;50;1;;10;21;16;;;;;;;;;;;;;;;10;;;;2;;;;;;10;;;;15;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;16;;It seems like someone tried to improvise a battle axe of sorts. Not the worst result, all things considered.
+ 
+|Felling Axe=1;axe18;Axe;Common;metal;65;1;75;1;;10;21;18;;;;;;;;;;;;;;;10;;;;;;;;;;10;;;;15;;;;;;;;;;;;;;;;;;;;;;;;;aldor;18;;More than a few Aldorian folk songs were shaped to the rhythm of this axe.
+ 
+|Norse Axe=2;axe19;Axe;Common;metal;90;1;450;1;;15;24;20;;;;;;;;;;;;;;;12;;;;;;;;;;13;;;;20;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;20;;A traditional weapon of Fjall clans, first adopted by the guards protecting the Northern Borderlands and then - by the rest of the kingdom.
+ 
+|Broadaxe=3;axe20;Axe;Common;metal;110;1;1200;1;;15;27;23;;;;;;;;;;;;;;;15;;;;;;;;;;17;;;;25;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;23;;It's best to keep your distance when someone is swinging this axe around - it chops limbs and heads with equal ease.
+ 
+|Dwarven Axe=3;axe21;Axe;Common;metal;95;1;1075;1;;15;20;24;;;;;;;;;;;;;;;24;;;;4;;;;;;17;;;;30;;;;;;;;;;;;;;;;;;;;;;;;1;fjall;24;;If there's anything that dwarves appreciate more than booze and looting, it's a good axe.
+ 
+|Heavy Broadaxe=4;axe22;Axe;Common;metal;130;1;2650;1;;20;30;27;;;;;;;;;;;;;;;18;;;;;;;;;;20;;;;25;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;27;;A frequent joke among the free companies is to hand one of these to a fresh recruit during drill, then stand back and enjoy the spectacle.
+ 
+|Noble Axe=5;axe23;Axe;Common;metal;155;1;5600;1;;20;33;31;;;;;;;;;;;;;;;20;;;;;;;;;;24;;;;30;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;31;;No armor can resist a blow dealt with such a monstrously heavy axeblade.
+ 
+|Exquisite Tabar=5;axe24;Axe;Unique;metal;145;1;5600;1;15;20;33;31;;;;;;;;;;;;;;;20;;;;;15;;;;;24;;;;20;;;;;;;;;;;;;;;;;;;;;;;;2;unique;31;;A tabar is a symbol of maafs, the warrior estate which holds the most power in the Ahjat Empire. Even the nobility require a special permission to arm themselves with one.
+ 
+|Gilded Axe=5;axe25;Axe;Unique;metal;130;1;5600;1;;20;33;31;;;;;;;;;;;;;;;20;;;4;;;;;;;30;5;;;30;;;;;;;;;;;;;;;;;;;;;;;;2;unique;31;;A successful attempt at making an axe look luxurious without sacrificing its battle performance.
+ 
+|Footman Axe=3;axe26;Axe;Common;metal;130;1;1075;1;30;25;20;23;;;;;;;;;;;;;5;;10;;;;;;;;;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;23;;Light enough to swing with relative ease while still carrying enough weight to hack through armor and shields.
+ 
+|Raider Axe=3;axe27;Axe;Common;metal;110;1;1075;1;30;25;27;22;;;;;;;;;;;;;;1;5;;;;;;;;;;;;;;16;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;22;;It sits snugly in the grip, ideal for lightning-fast assaults on straggling enemy caravans.
+ 
+|Mercenary Axe=4;axe28;Axe;Common;metal;155;1;2425;1;35;25;25;27;;;;;;;;;;;;;6;;12;;;;;;;;;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;27;;Over the last few decades, Aldorians have attained incredible mastery in forging heavy plate armor. Axes like this are simply an attempt at evening the odds.
+ 
+|Knight Axe=5;axe29;Axe;Common;metal;180;1;5100;1;40;30;30;31;;;;;;;;;;;;;7;;15;;;;;;;;;;;;;;25;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;31;;Such axes are well-suited for mounted combat. Aldorian knights often choose them over the rest of their arsenal when they ride into battle.
+ 
+|Aldwynn Axe=5;axe30;Axe;Common;metal;180;1;5100;1;40;30;30;31;;;;;;;;;;;;;7;3;15;;;;2;;;;;;;;;;25;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;31;;Aldwynn smiths are known for two things: crafting the heaviest and the most durable armor in Aldor and forging arms that can chop through it.
+ 
+|Baron Axe=5;axe31;Axe;Unique;metal;200;1;5100;1;40;30;30;31;;;;;;;;;;;;;7;;15;;;;;;;;;;;;;-5;20;;;;;;;;;;;;;;;;;;;;;;;;2;unique;31;;For the longest time, Aldorian nobles had been rather dismissive towards axes. Their perspective took a turn when the late King Etbert introduced a fashion for richly decorated axes, turning them into a symbol of power.
+ 
+|Spiked Club=1;mace01;Mace;Common;wood;60;1;75;1;;15;7;;2;14;;;;;;;;;;;;;;;;;;4;5;;;;10;;;;10;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;16;;The spikes alone are menacing enough to make any tavern loudmouth reconsider his words.
+ 
+|Militia Morgenstern=2;mace02;Mace;Common;wood;80;1;375;1;;15;10;;3;16;;;;;;;;;;;;;;;;;;8;7;;;;15;;;;10;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;19;;Add a bunch of cheaply-made spikes, and suddenly a simple mace becomes far more deadly and menacing.
+ 
+|Morgenstern=3;mace03;Mace;Common;metal;100;1;975;1;;20;20;;2;19;;;;;;;;;;;;;;;;;;12;10;;;;20;;;;15;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;21;;A hit or two, and this morgenstern will be the last star your enemy will ever see.
+ 
+|Skadian Bludgeon=3;mace04;Mace;Common;metal;120;1;1125;1;;20;;;;21;;;;;;;;;;;;;18;;;;-5;;13;;;;13;;;;15;;;;;;;;;;;;;;;;;;;;;;;;2;skadia;21;;A bludgeon is a surprisingly deadly piece of gear. If anyone knows their maces, it's Skadians.
+ 
+|Veteran Morgenstern=4;mace05;Mace;Common;metal;120;1;2175;1;;20;16;;2;22;;;;;;;;;;;;;;;;;;16;12;;;;25;;;;20;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;24;;A reliable weapon which doesn't require much skill or maintenance, an easy choice for many common soldiers.
+ 
+|Druzhyna Bludgeon=4;mace06;Mace;Common;metal;145;1;2625;1;;20;;;;24;;;;;;;;;;;;;22;;;;-6;;16;;;;16;;;;20;;;;;;;;;;;;;;;;;;;;;;;;2;skadia;24;;The Elder Prince's druzhyna doesn't give ground even in the face of insurmountable odds. It's most distinguished members may receive a great privilege - a gift of an honorary weapon granted personally by the Prince.
+ 
+|Knight Morgenstern=5;mace07;Mace;Common;metal;140;1;4600;1;;25;20;;3;25;;;;;;;;;;;;;;;;;;20;15;;;;30;;;;20;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;28;;Perfectly suited for knocking the life out of your opponent with a single well-placed strike, once you've gotten them off-balance.
+ 
+|Chervenian Mace=5;mace08;Mace;Common;metal;160;1;4600;1;;25;;;;28;;;;;;;;;;;;;26;;;;-7;;20;;;;20;;;;20;;;;;;;;;;;;;;;;;;;;;;;;2;nistra;28;;The Chervenian nobility is small but proud. Centuries of rivalry with the rest of Nistra's aristocracy have driven them to cultivate a unique style in dress and arms, ensuring they always stand out.
+ 
+|Baron Morgenstern=5;mace09;Mace;Unique;metal;135;1;4600;1;;25;25;;4;25;;;;;;;;;;;;3;10;;;;;26;15;;;;30;;;;20;;;;;;;;;;;;;;;;;;;;;;;;1;unique;29;;The Council's nobles expected a swift and decisive victory - and miscalculated. As a result, baronial weaponry is now being passed down from one new owner to the next.
+ 
+|Voivod Mace=5;mace10;Mace;Unique;metal;175;1;4600;1;;33;;;;28;;;;;;;;;;;;;26;;;;-7;;20;5;;;20;;5;-5;20;;;;;;;;;;;;;;;;;;;;;;;;2;unique;28;;Maces are held in great regard in Skadia, where even high-born military commanders don't scoff at using them on the battlefield - although this particular weapon looks somewhat ceremonial in nature.
+ 
+|Cudgel=1;mace11;Mace;Common;wood;45;1;25;1;;10;;;;14;;;;;;;;;;;;;;;;3;;;8;4;5;;;;;;10;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;14;;A crude club for a crude peasant.
+ 
+|Reinforced Club=1;mace12;Mace;Common;wood;70;1;75;1;;20;;;;15;;;;;;;;;;;;;;;;3;;;10;4;5;;;;;;10;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;15;;Clubs like this one are often employed by city guards - don't need anything more substantial to intimidate a pickpocket.
+ 
+|Militia Club=2;mace13;Mace;Common;metal;95;1;375;1;;20;;;;17;;;;;;;;;;;;;;;;5;-2;;12;7;11;;;;;;10;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;17;;Peasants call these clubs "snails" - the curled head adds weight to every blow.
+ 
+|Recruit Club=2;mace14;Mace;Common;metal;100;1;375;1;;20;;;;17;;;;;;;;;;;;;;;;4;;;14;8;8;;;;;;10;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;17;;Despite being more dangerous than a simple makeshift club, it's still no real mace.
+ 
+|Flanged Mace=3;mace15;Mace;Common;metal;120;1;975;1;;25;;;;19;;;;;;;;;;;;;;;;5;;;16;10;12;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;19;;What's the main advantage of flanged maces? They don't get stuck when they crush skulls and plate armor.
+ 
+|Shishpar=3;mace16;Mace;Common;metal;140;1;1125;1;10;25;;;;19;;;;;;;;;;;;;;;;3;;;18;10;14;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;2;elven;19;;A shishpar is a flanged mace used by soldiers of Jibey and the Maaf Empire. It particularly excels at punching through scaled armor, which is quite popular in those lands.
+ 
+|Reinforced Flanged Mace=4;mace17;Mace;Common;metal;150;1;2175;1;;25;;;;22;;;;;;;;;;;;;;;;6;;;20;13;16;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;22;;A mace that offers the best value for its price - it's simple, easy to wield, and utterly lethal.
+ 
+|Bozdogan=4;mace18;Mace;Common;metal;145;1;2500;1;15;25;;;;22;;;;;;;;;;;;;;;;4;;;24;13;16;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;2;elven;22;;After the Maafs conquered Jarimad, the nomad chieftains presented their bozdogans to the conquerors - who, unexpectedly, took quite a liking to the weapon.
+ 
+|Knight Flanged Mace=5;mace19;Mace;Common;metal;170;1;4600;1;;30;;;;25;;;;;;;;;;;;;;;;7;;;25;15;20;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;25;;Knights are demanding customers, expecting both excellent combat performance and elegant appearance from their weapon - hence the elaborate shaping of the head and handle.
+ 
+|Noble Flanged Mace=5;mace20;Mace;Common;metal;195;1;4825;1;;30;10;;;25;;;;;;;;;;;;;;;;4;-1;;25;15;20;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;25;;With the exception of Aldwynn weaponsmiths, there aren't that many craftsmen in Aldor who can produce a mace of similar quality.
+ 
+|Ghazi Flanged Mace=5;mace21;Mace;Unique;metal;175;1;4600;1;5;30;;;;24;;;;;;;;;1;;;;;;;7;;;33;19;20;;;;;;15;;;;;;;;;;;;;;;;;;;;;5;;;1;unique;25;;Ghazi are warriors of the Jacinth Kingdoms who voluntarily joined the holy war against King Etbert's invasion. Naturally, their ranks included many highborn elves...
+ 
+|Ornate Flanged Mace=5;mace22;Mace;Unique;metal;160;1;4600;1;25;35;;;;25;;;;;;;;;;;;;;;;7;;;25;15;25;;25;;;;20;;;;;;;;;;;;;;;;;;;;;;;;1;unique;25;;It's clear as day that the master smith, who meticulously crafted this weapon, put his heart and soul into it. The lord ordering it must have had money to spare.
+ 
+|Footman Warhammer=3;mace23;Mace;Common;metal;110;1;1075;1;40;30;;;;20;;;;;;;;;;;5;;;;;;-2;;12;;;;16;;;;15;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;20;;Has the capacity to injure even a heavily armored foe, but there are far better options if your opponent is light on defenses.
+ 
+|Brynn Warhammer=3;mace24;Mace;Common;metal;120;1;1075;1;40;30;;;;20;;;;;;;;;;;5;3;;;;;;5;6;;;;16;;;;15;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;20;;The design has unmistakably Brynnian roots, blending a multi-pronged hammerhead with a sharp spike, typical of the South.
+ 
+|Chekan=3;mace25;Mace;Common;metal;125;1;1200;1;46;33;10;;;20;;;;;;;;;;;2;;;;;;;;10;;;;10;;;;15;;;;;;;;;;;;;;;;;;;;;;;;1;skadia;20;;Skadian warhammers are forged to last and are sought after even outside of their country of origin.
+ 
+|Mercenary Warhammer=4;mace26;Mace;Common;metal;130;1;2425;1;45;30;;;;23;;;;;;;;;;;6;;;;;;-3;;16;;;;20;;;;20;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;23;;A heavy warhammer is one of the few weapons that can give an infantryman a fighting chance against a dismounted knight.
+ 
+|Fisted Warhammer=4;mace27;Mace;Common;metal;120;1;2425;1;45;35;;;;23;;;;;;;;;;;6;;;;;;;;21;;;;24;;;;20;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;23;;Initially crafted in jest, this hammer shape quickly caught on and is no longer treated as an outlandish curiosity.
+ 
+|Captain Warhammer=5;mace28;Mace;Common;metal;145;1;5100;1;50;40;;;;27;;;;;;;;;;;7;;;;;;;;20;;;;30;;;;20;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;27;;In the hands of mercenary captains, warhammers are mainly treated as a symbol of command. Nevertheless, this doesn't prevent them from being highly effective tools of war.
+ 
+|Knight Warhammer=5;mace29;Mace;Common;metal;155;1;5100;1;50;35;;;;27;;;;;;;;;;;7;3;;;;;;;26;;;;20;;;;20;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;27;;In the Aldorian tradition, a sword is the only "knightly" weapon there is. Lately, however, the nobility has been demonstrating a growing appreciation for warhammers and maces.
+ 
+|Fish Warhammer=5;mace30;Mace;Common;metal;140;1;5100;1;50;35;;;;27;;;;;;;;;;;7;;;;;;-4;;20;5;;;25;;;;20;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;27;;A short-lived fad had weaponsmiths in each major Aldorian city competing fiercely to create the most extravagant warhammer. This one was clearly among the winners.
+ 
+|Ornate Warhammer=5;mace31;Mace;Unique;metal;145;1;5100;1;56;35;15;;;27;;;;;;;;;;;7;;;;;;;;20;;;;25;;;-5;15;;;;;;;;;;;;;;;;;;;;;;;;1;unique;27;;The sentiment that maces are a weapon of the peasantry is long obsolete. Adorned with gold and horsehair, this warhammer demonstrates it better than anything.
+ 
+|Peasant Flail=1;mace32;Mace;Common;wood;50;1;75;1;;5;5;;;18;;;;;;;;;;;-3;2;;;;;4;;6;;;;10;;;;15;;;;;;;;;;;;;;;;;;;;;;;;;aldor;18;;During peacetime these flails are used to thresh wheat. During wartime - to chase off marauding deserters.
+ 
+|Rebel Flail=1;mace33;Mace;Common;wood;50;1;75;1;;5;5;;;18;;;;;;;;;;;-2;3;;;;;6;;6;;;;10;;;;15;;;;;;;;;;;;;;;;;;;;;;;;;aldor;18;;As the common folk like to say, a flail is the final argument of peasants.
+ 
+|Militia Flail=2;mace34;Mace;Common;metal;70;1;425;1;;5;7;;;20;;;;;;;;;;;-4;3;;;;;6;;10;;;;15;;;;15;;;;;;;;;;;;;;;;;;;;;;;;;aldor;20;;Village militias are called upon only as a last resort. And when the going gets dire, even a farming tool can become a weapon.
+ 
+|Recruit Flail=2;mace35;Mace;Common;metal;75;1;425;1;;5;12;;;20;;;;;;;;;;;-5;3;;;;;8;3;8;;;;15;;;;15;;;;;;;;;;;;;;;;;;;;;;;;;aldor;20;;A flail like this can be quite unpredictable, demanding much more finesse than you might initially assume.
+ 
+|Footman Flail=3;mace36;Mace;Common;metal;95;1;1125;1;;10;15;;2;21;;;;;;;;;;;-8;4;;;;;8;6;10;;;;23;;;;20;;;;;;;;;;;;;;;;;;;;;;;;;aldor;23;;Has the potential for many surprises - whether they harm or help the opponent is up to the wielder's skill.
+ 
+|Vehement Flail=3;mace37;Mace;Common;metal;80;1;1250;1;;10;10;;;22;;;;;;;;;1;;-6;5;5;;;;10;;14;;;;20;;;;15;-5;;;;;;;;;;;;;;;;;;;;;;;;aldor;23;;The ease of maintenance and lethal power of flails make them a staple choice among the Vehement, particularly in battles against the undead.
+ 
+|Nistrian Flail=4;mace38;Mace;Common;metal;135;1;2925;1;;15;12;;;27;;;;;;;;;;;-8;5;;;;;10;;23;;;;25;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;nistra;27;;A typical weapon of Zeinesh mountain brigands. During times of conflict, they descend to the flatlands, offering to fight for the highest bidder.
+ 
+|Veteran Flail=4;mace39;Mace;Common;metal;100;1;2550;1;;10;18;;;27;;;;;;;;;;;-6;6;8;;;;12;7;13;;;;29;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;27;;Only a seasoned fighter can handle a two-headed flail without embarrassing themselves.
+ 
+|Knight Flail=5;mace40;Mace;Common;metal;120;1;5350;1;;15;15;;;31;;;;;;;;;;;-10;6;;;;;12;;22;;;;30;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;31;;Flails are considered to be a weapon of the low-born, but sometimes they are used by lords as well. Such "noble" flails are crafted with quality in mind.
+ 
+|Three-Headed Flail=5;mace41;Mace;Common;metal;105;1;5350;1;;15;26;;3;28;;;;;;;;;;;-8;7;12;;;;14;9;15;;;;35;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;31;;A risky weapon for those who are confident in their skill.
+ 
+|Elven Flail=5;mace42;Mace;Common;metal;135;1;5900;1;;20;15;;;29;;;;;;;;;;;-10;3;;;;;12;;25;10;;;27;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;elven;29;;Elven flails serve mostly a ceremonial purpose, carried only by the most skillful of warriors to flaunt their status. No money is spared to make these weapons look the part.
+ 
+|Emir Flail=5;mace43;Mace;Common;metal;120;1;5350;1;;15;30;;;31;;;;;;;;;;;-8;6;20;;;;12;10;17;;;;38;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;unique;31;;The apparent unity of Jibey, Ahjat, and other realms of Jacinth is merely a mirage. In reality, each is a patchwork of diverse tribes, khanates, and emirates, with every local "monarch" wielding almost absolute power over their people.
+ 
+|Grandmaster Flail=5;mace44;Mace;Common;metal;130;1;5350;1;;15;15;;;26;;;;;;;;;5;;-10;6;;;;;14;;25;;;;25;;;;25;-10;;;;;;;;;;;;;;;5;;;;;;;;;unique;31;;The Grandmaster was the highest rank in the now-disbanded Order of the Triune Hand, yet their flails of office bore almost no adornments, honoring the vow of austerity.
+ 
+|Iron Bar=1;mace01f;Mace;Common;metal;50;1;5;1;;;;;;14;;;;;;;;;;;;;;1;;;3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2;special;14;;Passable as a club, though each blow bends it further out of shape.
+ 
+|Carpenter Hammer=1;mace02f;Mace;Common;metal;40;1;25;1;;3;;;;15;;;;;;;;;;;;;;;;;2;;;;;;3;;;;;;;;;;;;;;;;;;;;;;;;;;;;2;special;15;;An ordinary hammer that can also be used to pull out bent or errant nails.
+ 
+|Blacksmith Hammer=1;mace03f;Mace;Common;metal;60;1;50;1;;5;;;;17;;;;;;;;;;;;;;;;;1;;3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3;special;17;;It's almost asking to be put to work.
+ 
+|Commoner Dagger=1;dagger01;Dagger;Common;metal;40;1;50;1;;5;;;13;;;;;;;;;;;;3;2;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4;aldor;13;;Swords are prohibitively expensive for most commoners, while axes and clubs can't be comfortably tucked into a belt. What else is left to an honest peasant?
+ 
+|Shiv=1;dagger02;Dagger;Common;metal;25;1;25;1;;5;;;13;;;;;;;;;;;;1;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4;aldor;13;;A makeshift blade wrapped in a piece of cloth. A common weapon of urchins and vagabonds.
+ 
+|Bollock Dagger=2;dagger03;Dagger;Common;metal;50;1;275;1;;5;;;15;;;;;;;;;;;;4;3;;;;;;10;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4;aldor;15;;As gamblers like to say, always keep an ace up your sleeve and a dagger down your boot.
+ 
+|Dirk=2;dagger04;Dagger;Common;metal;50;1;275;1;;5;;;15;;;;;;;;;;;;4;3;;;;;1;14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4;aldor;15;;The very name of this dagger sounds like someone is choking on their own blood.
+ 
+|Rondel=3;dagger05;Dagger;Common;metal;65;1;750;1;;10;;;17;;;;;;;;;;;;5;4;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4;aldor;17;;With its disk-shaped guard and pommel, this dagger offers a firm grip while keeping the blade from driving too deep into the enemy's body.
+ 
+|Baselard=3;dagger06;Dagger;Common;metal;65;1;750;1;;10;;;17;;;;;;;;;;;;5;2;;;;3;;15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4;aldor;17;;Baselards are so popular among both the nobility and townsmen that they are often viewed as an accessory rather than an actual weapon.
+ 
+|Misericorde=4;dagger07;Dagger;Common;metal;80;1;1700;1;;10;;;19;;;;;;;;;;;;6;5;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4;aldor;19;;Knightly etiquette dictates that a mercy blow to an incapacitated opponent can only be delivered with this dagger.
+ 
+|Jambiya=4;dagger08;Dagger;Common;metal;80;1;1950;1;;10;10;;19;;;;;;;;;;;;3;5;;;;;;24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3;elven;19;;In southern regions of Ahjat, it would be considered a traditional coming-of-age gift to a young free man.
+ 
+|Ornate Dagger=4;dagger09;Dagger;Unique;metal;70;1;1700;1;;10;;;19;;;;;;;;;;;;8;5;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4;unique;19;;Local noblemen have an ancient tradition of exchanging daggers. As a rule, it's done by plunging them into each other's back.
+ 
+|Stiletto=5;dagger10;Dagger;Common;metal;90;1;3575;1;;15;;;22;;;;;;;;;;;;7;6;;;;;-2;30;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4;elven;22;;Slender and elegant - like a sonnet spoken over the grave of an old foe.
+ 
+|Assassin Dagger=5;dagger11;Dagger;Common;metal;95;1;3575;1;;18;;;22;;;;;;;;;;;;7;7;5;;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4;aldor;22;;One of King Etbert's decrees prohibited his vassals from quarreling with one another. Therefore, most conflicts began involving middlemen - assassins for hire, for instance.
+ 
+|Ceremonial Dagger=5;dagger12;Dagger;Unique;metal;75;1;3575;1;;15;5;;18;;;;;;;;;;3;;7;6;;;;;;33;;;;;;;;;;;;;1;;;;;;;;;;;;;;;;;;;;4;unique;21;;A true piece of art - many weapon connoisseurs would pay through the nose to acquire it for their collection.
+ 
+|Recruit Dagger=2;dagger13;Dagger;Common;metal;70;1;250;1;;5;;;14;;;;;;;;;;;;;;;4;3;4;;8;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4;aldor;14;;A crudely reforged hunting knife suitable for butchering game and slitting throats.
+ 
+|Soldier Dagger=3;dagger14;Dagger;Common;metal;85;1;650;1;;10;;;16;;;;;;;;;;;;;;;6;4;6;;12;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4;aldor;16;;You never know, it just might save your life one day.
+ 
+|Merchant Dagger=3;dagger15;Dagger;Common;metal;85;1;650;1;;10;;;16;;;;;;;;;;;;;;;6;1;6;-1;12;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4;aldor;16;;Every self-respecting merchant has a similar dagger. It can add more weight to your words when dealing with disgruntled clients - unless they come in numbers.
+ 
+|Duelist Dagger=4;dagger16;Dagger;Common;metal;100;1;1450;1;;10;;;18;;;;;;;;;;;;;;;11;7;9;;7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4;aldor;18;;Some duelists become so apt at wielding a dagger that even sword strikes are no challenge for them to parry and counter.
+ 
+|Veteran Dagger=4;dagger17;Dagger;Common;metal;100;1;1450;1;;10;;;18;;;;;;;;;;;;;;;8;6;8;;16;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4;aldor;18;;The presence of a dagger on one's belt is what sets apart an experienced warrior from a greenhorn: it gives you an indisputable edge the moment the fight moves to the ground.
+ 
+|Gilded Dagger=4;dagger18;Dagger;Unique;metal;90;1;1450;1;;10;;;18;;;;;;;;;;;;5;;;8;6;8;;16;;;;;;;;;;;;-2;;;;;;;;;;;;;5;;;;;;;;4;unique;18;;No need to spend countless crowns to convince the onlookers of your great wealth: an elegant gilded dagger on your hip will speak for itself.
+ 
+|Parrying Dagger=5;dagger19;Dagger;Common;metal;125;1;3050;1;;15;;;21;;;;;;;;;;;;;;;13;11;12;;10;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3;aldor;21;;On the Bronze Isles, every dispute is resolved in a duel. These daggers are a product of the times.
+ 
+|Quillon Dagger=5;dagger20;Dagger;Common;metal;120;1;3050;1;;15;;;21;;;;;;;;;;;;;;;10;8;10;;20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3;aldor;21;;In the aftermath of the Council's crushing defeat under the walls of Brynn, many patricians decided to purchase themself a quillon to at least partly resemble Duke di Berro, whose daring deeds allowed the Magistrate to emerge victorious.
+ 
+|Ducal Dagger=5;dagger21;Dagger;Unique;metal;135;1;3050;1;;15;;;21;;;;;;;;;;;;;2;;11;9;10;-2;20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3;unique;21;;The seal on the pommel leaves no room for interpretation: this exotic dagger used to belong to Orro Denye, the one and only Duke of Bronza.
+ 
+|Kitchen Knife=1;dagger01f;Dagger;Common;metal;25;1;10;1;;-20;;;9;;;;;;;;;;;;;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3;special;9;;Too dull to cut anything but cheese.
+ 
+|War Scythe=1;gsword01;Two-handed Sword;Common;metal;70;1;125;1;;10;;18;;;;;;;;;;;;;2;;;4;;;;;;;;;10;;;;15;;;;;;;;;;;;;;;;;;;;;;;;;aldor;18;;A weapon of uncertain times - a humble scythe blade, fastened to a wooden handle.
+ 
+|Crude Longsword=2;gsword02;Two-handed Sword;Common;metal;95;1;675;1;;10;;21;;;;;;;;;;;;;4;;;6;;;;;;;;;15;;;;20;;;;;;;;;;;;;;;;;;;;;;;;;aldor;21;;A commendable, even if not particularly successful, attempt at forging a real longsword.
+ 
+|Footman Longsword=3;gsword03;Two-handed Sword;Common;metal;120;1;1775;1;;15;;24;;;;;;;;;;;;;6;;;8;;;;;;;;;20;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;24;;These swords can improve your chances when fighting a heavily armored opponent, making them a popular choice among common foot soldiers.
+ 
+|Mercenary Longsword=4;gsword04;Two-handed Sword;Common;metal;145;1;4000;1;;20;;28;;;;;;;;;;;;;10;;;8;;;;;;;;;25;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;28;;As mercenaries like to jest, the longer the sword, the shorter the opposition.
+ 
+|Sergeant Longsword=4;gsword05;Two-handed Sword;Common;metal;150;1;4000;1;;20;;28;;;;;;;;;;;;;8;;;10;;;;15;;;;;15;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;28;;A well-made sword, forged from good steel and completely bereft of any trifling decorations.
+ 
+|Noble Longsword=5;gsword06;Two-handed Sword;Common;metal;170;1;8425;1;;20;;32;;;;;;;;;;;;;10;;;12;;;;;;;;;30;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;aldor;32;;It could have easily belonged to either a small-time baron or a duke - basically the kind of person who doesn't skimp on expanding their arsenal.
+ 
+|Ornate Longsword=5;gsword07;Two-handed Sword;Unique;metal;145;1;8425;1;;20;;32;;;;;;;;;;;;;10;;;10;;5;;;;;;;30;;4;;20;;;;;;;;;;;;;;;;;;;;;;;;;unique;32;;The blade is inscribed with words of dedication to one Idrich Jorg of Aldwynn.
+ 
+|Warbrand=1;gsword08;Two-handed Sword;Common;metal;65;1;125;1;;10;;18;;;;;;;;;;;;;;2;;;;;2;5;;;;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;;aldor;18;;It's sharp to such a degree that a strong enough strike will easily separate your opponent's head from their body.
+ 
+|Recruit Bastard Sword=2;gsword09;Two-handed Sword;Common;metal;90;1;700;1;;10;;21;;;;;;;;;;;;;;3;;;;;4;10;;;;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;;aldor;21;;This wide blade is best wielded with both hands.
+ 
+|Footman Bastard Sword=3;gsword10;Two-handed Sword;Common;metal;110;1;1825;1;;15;;24;;;;;;;;;;;;;;4;;;;;6;15;;;;;;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;24;;Seasoned soldiers expect to be provided with better weapons, usually purchased with the gold directly from their lord's coffers.
+ 
+|Nistrian Rhomphaia=3;gsword11;Two-handed Sword;Common;metal;110;1;2025;1;;10;;25;;;;;;;;;;;;;-3;4;;;;;7;18;;;;;8;;;;20;;;;;;;;;;;;;;;;;;;;;;;;;nistra;25;;Even to this day, Nistrian smiths continue producing certain types of antique weaponry, although they use steel instead of iron now.
+ 
+|Claymore=4;gsword12;Two-handed Sword;Common;metal;130;1;4125;1;;20;;28;;;;;;;;;;;;;;5;;;;;8;20;;;;;;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;28;;Initially these swords were used only by the nobility of the Firn foothills, but now they can be found all over Aldor.
+ 
+|Flamberge=5;gsword13;Two-handed Sword;Common;metal;140;1;8675;1;;20;15;34;;;;;;;;;;;;;;6;;;;;14;30;;;;;;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;aldor;34;;A flamberge's wavy blade deals such dreadful wounds, that the voices for prohibiting it outright grow louder with each passing day.
+ 
+|Grossmesser=5;gsword14;Two-handed Sword;Common;metal;155;1;8675;1;;20;;32;;;;;;;;;;;;;-3;7;10;;;;10;25;;;;;;;;;40;;;;;;;;;;;;;;;;;;;;;;;;;aldor;32;;Technically not a sword but a very large knife - though who besides weapon collectors would lose sleep over such a distinction?
+ 
+|Captain Greatsword=5;gsword15;Two-handed Sword;Common;metal;160;1;8675;1;;20;;32;;;;;;;;;;;;;3;6;;;;;9;25;;;;;;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;aldor;32;;For a mercenary warband's captain, a greatsword isn't just a weapon but a proof of their rank and combat experience. And if they need to spend some extra gold to make it stand out, then so be it.
+ 
+|Blademaster Greatsword=5;gsword16;Two-handed Sword;Unique;metal;170;1;8675;1;;33;;32;;;;;;;;;;;;;;6;;3;;3;13;30;;;;;;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;unique;32;;Blademasters are paid double wages to fight on the frontline - and they don't need to be asked twice to demonstrate why this expense is well-founded.
+ 
+|Vanguard Two-Hander=3;gsword17;Two-handed Sword;Common;metal;140;1;1725;1;;15;;24;;;;;;;;;;;;;;;;10;9;6;;;;;;;;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;24;;The backbone of the Magistrate's army, the Vanguard, is formed by mercenaries. A decent pay, plentiful drinks, and honorary swords make for a surefire way to earn the loyalty of the dogs of war.
+ 
+|Dueling Two-Hander=4;gsword18;Two-handed Sword;Common;metal;150;1;3875;1;;20;;28;;;;;;;;;;;;;;;;12;11;8;;;;;;;;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;28;;Single combat with two-handed swords is a form of art, where your reflexes and precision matter just as much as brute strength.
+ 
+|Sergeant Two-Hander=4;gsword19;Two-handed Sword;Common;metal;170;1;3875;1;;20;;28;;;;;;;;;;;;;;;;10;11;6;;7;;;;;;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;28;;A weapon often used by sergeants of the Magistrate. Such blades aren't cheap but definitely worth it.
+ 
+|Knight Two-Hander=5;gsword20;Two-handed Sword;Common;metal;195;1;8150;1;;20;;32;;;;;;;;;;;;;;;;14;13;10;-2;;;;;;;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;aldor;32;;This two-handed sword was created with pure functionality in mind: its strength lies in perfect simplicity and great balance.
+ 
+|Exquisite Two-Hander=5;gsword21;Two-handed Sword;Unique;metal;215;1;8150;1;;20;;34;;;;;;;;;;;;;;;;15;16;12;;;;;;;15;;;;30;;;;;;;;;;;;;;;;;;;;;-5;;;;unique;34;;The handle makes this sword's origins crystal clear - Brynn weaponsmiths have a soft spot for elegant and somewhat ostentatious detailing.
+ 
+|Espadon=5;gsword22;Two-handed Sword;Unique;metal;185;1;8150;1;;30;;32;;;;;;;;;;;;;3;3;;14;13;10;;;;;;;;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;unique;32;;Despite the strict isolation, some goods still get smuggled from the Bronze Isles to Aldor. A lot of the time the contraband includes various swords: if anything, the islanders have had a lot of practice crafting weaponry.
+ 
+|Peasant Spear=1;spear01;Spear;Common;metal;80;1;100;1;;10;;;17;;;;;;;;;;;;4;;;;;;-2;10;;;;8;;;;;10;;;;;;;;;;;;;;;;;;;;;;;;3;aldor;17;;A plain homemade spear, handy for driving off wolves that follow your cart a little too closely.
+ 
+|Hilda's Spear=2;spear02;Spear;Unique;metal;95;1;525;1;;15;5;;17;;;;;;;;;;;;6;;;;;;-4;12;;;;18;;;;;10;;;;;;;;;;;;;;;;;;;;;;;;3;special exc;17;;Hilda crafted this spear herself from the debris washed ashore after the shipwreck. Her hands remember every scratch and groove on the weathered shaft.
+ 
+|Hunting Spear=2;spear03;Spear;Common;metal;105;1;525;1;;15;;;19;;;;;;;;;;;;6;;;;;;-4;15;;;;12;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;3;aldor;19;;A scourge of deer, wolves, and boars, this weapon was made for large game.
+ 
+|Goedendag=2;spear04;Spear;Common;metal;115;1;525;1;;15;;;17;;;;;;;;;;;;2;;;;;;2;20;10;;;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;3;aldor;17;;To the knightly estate's great displeasure, this modest peasant weapon is perfectly capable of slipping through gaps in even the heaviest armor.
+ 
+|Ox Tongue Spear=3;spear05;Spear;Common;metal;130;1;1400;1;;20;;;22;;;;;;;;;;;;8;;;;;;-6;20;;;;16;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;22;;When properly sharpened, the broad edges of the "ox tongue" spearhead bite into flesh, leaving gruesome, slow-to-heal wounds.
+ 
+|Awl Pike=4;spear06;Spear;Common;metal;155;1;3400;1;;25;;;26;;;;;;;;;;;;10;;;;;;-8;25;;;;20;;;;;25;;;;;;;;;;;;;;;;;;;;;;;;3;aldor;26;;A distant cousin of a goedendag, forged by a skilled weaponsmith.
+ 
+|Spontoon=5;spear07;Spear;Common;metal;180;1;7150;1;;30;;;29;;;;;;;;;;;;12;;;;;;-10;30;;;;24;;;;;30;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;29;;Another great example of the Bronze Isles craftsmanship, where a weapon's aesthetics is prized just as much as its killing potential.
+ 
+|Spear of the Faceless=5;spear08;Spear;Unique;metal;200;1;7150;1;;30;15;;29;;;;;;;;;;;;12;3;5;;;;-10;30;;;36;12;;;;;30;;;;;;;;;;;;;;;;;;;;;;;;2;unique;29;;The Faceless are the Palace Guard of the Great Jacinth and are considered the best warriors in all the Elven Kingdoms. Among other feats, they distinguished themselves on the frontlines of the Radiant Wars by repelling the advance of King Etbert's army.
+ 
+|Radiant Spear=5;spear09;Spear;Unique;metal;165;1;7150;1;;30;;;26;;;;;;;;;;3;;12;;;;;;-10;30;;;;24;;;3;;20;;;;;;;;;;;;;;;;3;;;;;9;;;2;unique;29;;The Radiant Wars offered plenty of opportunities to make a show of one's piety: the nobility spared no expense in adorning their weapons and armor with symbols of the Host.
+ 
+|Militia Spear=2;spear10;Spear;Common;metal;130;1;500;1;;15;;;19;;;;;;;;;;;;4;;;7;7;6;;;;;20;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;3;aldor;19;;It doesn't take much time to learn how to use a spear efficiently. For this very reason, it became almost synonymous with peasant militias.
+ 
+|Footman Spear=3;spear11;Spear;Common;metal;160;1;1300;1;;20;;;22;;;;;;;;;;;;6;;;10;9;8;;;;;25;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;3;aldor;22;;Its main purpose is to halt the enemy cavalry in its tracks, and it does so with flying colors.
+ 
+|Norse Spear=3;spear12;Spear;Common;metal;160;1;1300;1;;20;5;;22;;;;;;;;;;;;6;;20;7;5;8;;;;;25;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;3;fjall;22;;The dwarves of Fjall rarely use spears in combat, deeming them a hunting weapon, unworthy of the battlefield.
+ 
+|Veteran Spear=4;spear13;Spear;Common;metal;190;1;3025;1;;25;;;26;;;;;;;;;;;;8;;;13;11;10;;;;;30;;;;;;25;;;;;;;;;;;;;;;;;;;;;;;;3;aldor;26;;As one prominent Aldorian commander used to say, wars are waged by knights but are won with spears. Spears like this one.
+ 
+|Partizan=5;spear14;Spear;Common;metal;225;1;6375;1;;30;;;29;;;;;;;;;;;;10;;;16;13;12;;;;;35;;;;;;30;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;29;;The protrusions on both sides of the spearhead allow for some fancy moves, such as parrying sluggish sword strikes.
+ 
+|Castellier Spear=5;spear15;Spear;Unique;metal;260;1;7150;1;;30;;;29;;;;;;;;;;;;10;;;21;20;12;;;;;35;;;;;;30;;;;;;;;;;;;;;;;;;-3;;15;;10;;2;unique;29;;The Castelliers were the Bronzian branch of the Order of the Triune Hand, famed for their relentless fight against piracy and the construction of impregnable fortresses, from which they took their name.
+ 
+|Peasant Pitchfork=1;spear16;Spear;Common;metal;80;1;100;1;;5;;;16;;;;;;;;;;;;2;;;;;;;10;;;;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;16;;Makes short work of haystacks and distracted opponents.
+ 
+|War Pitchfork=2;spear17;Spear;Common;metal;105;1;525;1;;10;;;18;;;;;;;;;;;;4;2;;4;;;;20;;;;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;18;;There isn't a single agricultural tool which hasn't been repurposed for military use.
+ 
+|Mancatcher=2;spear18;Spear;Common;metal;105;1;525;1;;10;;;17;;;;;;;;;;;;2;;;4;;4;;20;;;;20;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;17;;An indispensable tool for pinning down fugitives and wild beasts, it can often be seen in the hands of bounty hunters.
+ 
+|Brandistock=3;spear19;Spear;Common;metal;130;1;1350;1;;15;;;21;;;;;;;;;;;;6;3;;6;;;;25;;;;;;;;;25;;;;;;;;;;;;;;;;;;;;;;;;3;aldor;21;;A brandistock is a fairly uncommon weapon which is sometimes issued to sergeants of the Road Guard.
+ 
+|Fauchard Fork=4;spear20;Spear;Common;metal;155;1;3150;1;;20;;;24;;;;;;;;;;;;8;4;;8;;;;30;;;;;;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;24;;When it comes to inventing weapons for killing their own kind, the creativity of people never fails to achieve new heights.
+ 
+|Spetum=5;spear21;Spear;Common;metal;180;1;6625;1;;25;;;28;;;;;;;;;;;;10;5;;10;;;;45;;;;;;;;;35;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;28;;Unlike a common pitchfork, a spetum has its prongs pointed at different directions, which makes them much more suitable for catching enemy blades.
+ 
+|Ornate Fork=5;spear22;Spear;Unique;metal;165;1;6625;1;;30;;;28;;;;;;;;;;;;10;5;;10;;7;;45;;;;20;;;;-5;30;;;;;;;;;;;;;;;;;;;;;;;;2;unique;28;;At some point, it likely belonged to a Sentian patrician with a keen interest in the weapon traditions of the Bronze Isles.
+ 
+|Guard Halberd=2;spear23;Spear;Common;metal;105;1;625;1;15;20;14;20;;;;;;;;;;;;;;3;;;;;6;;;;;;13;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;20;;These halberds are typically forged from poor steel: city guards don't see a lot of action.
+  
+|Footman Halberd=3;spear24;Spear;Common;metal;130;1;1625;1;20;25;18;23;;;;;;;;;;;;;;4;;;;;8;;;;;;16;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;23;;A halberd is beloved by the Aldorian infantry for its versatility. Being able to use your weapon for both slashing and thrusting attacks is a valuable asset on the battlefield.
+ 
+|Mercenary Halberd=4;spear25;Spear;Common;metal;155;1;3625;1;25;30;22;27;;;;;;;;;;;;;;5;;;;;10;;;;;;19;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;aldor;27;;Halberds were originally a mercenary weapon, so their widespread use among the Grand Magistrate's soldiers is hardly surprising - at least half of them hail from free companies.
+ 
+|Sabre Halberd=5;spear26;Spear;Common;metal;180;1;7650;1;30;35;26;31;;;;;;;;;;;;;;6;;;;;12;;;;;;22;;;;40;;;;;;;;;;;;;;;;;;;;;;;;;aldor;31;;There are two kinds of halberdiers: those who favor thrusting and those who favor slashing. But in case you want to do both, this is a weapon for you.
+ 
+|Ceremonial Halberd=5;spear27;Spear;Unique;metal;165;1;7650;1;30;35;35;31;;;;;;;;;;;;;;8;15;;;;14;12;;;;;22;;;;40;;;;;;;;;;;;;;;;;;;;;;;;;unique;31;;The famed Brynnian weaponsmith, Etien Morel, crafted many masterpieces in his lifetime, and this elaborate halberd is one of them. Tragically, his life was cut short when he perished during the siege of Brynn, burning alive along with his workshop.
+ 
+|Recruit Billhook=2;spear28;Spear;Common;metal;110;1;625;1;8;20;8;;20;;;;;;;;;;;;;;10;;;;4;;;;;11;;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;20;;It would be impossible to count how many noble lords had their lives cut short by this outrageously unassuming peasant weapon.
+ 
+|Guisarme=3;spear29;Spear;Common;metal;140;1;1625;1;12;25;12;;23;;;;;;;;;;;;;;15;;;;6;;;;;14;;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;23;;It's said that Aldorian smiths got the idea of forging such a peculiarly shaped weapon from the inhabitants of the Bronze Isles.
+ 
+|Sergeant Billhook=4;spear30;Spear;Common;metal;170;1;3625;1;16;30;16;;27;;;;;;;;;;;;;;20;;;;8;;;;;17;;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;aldor;27;;It's a common practice for such polearms to be adorned with vibrant scraps of cloth, helping soldiers distinguish friend from foe as they head into the fray.
+ 
+|Scorpion Halberd=5;spear31;Spear;Common;metal;195;1;7650;1;20;35;20;;31;;;;;;;;;;;;;;25;;;;10;;;;;20;;;;;40;;;;;;;;;;;;;;;;;;;;;;;;;aldor;31;;This halberd's name comes from its vague resemblance to a scorpion's tail and the ability to deliver equally painful "stings".
+ 
+|Militia Poleaxe=2;gaxe01;Two-handed Axe;Common;metal;110;1;575;1;;15;;22;;;;;;;;;;;;;;;;6;7;;;20;;;20;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;;aldor;22;;A home-made axe on a long pole - this weapon sees frequent use in the hands of the Gray Army.
+ 
+|Soldier Poleaxe=3;gaxe02;Two-handed Axe;Common;metal;140;1;1500;1;;20;;25;;;;;;;;;;;;;;;;8;9;;;25;;;25;;;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;25;;Such poleaxes are forged by the Council weaponsmiths with less metal than usual, allowing for cheaper production.
+ 
+|Veteran Poleaxe=4;gaxe03;Two-handed Axe;Common;metal;185;1;3400;1;;25;;29;;;;;;;;;;;;;;;;10;11;;;30;;;30;;;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;29;;An axe capable of cleaving open both the laminar armor of maaf riders and the breastplates of Nistrian cataphracts.
+ 
+|Sergeant Poleaxe=4;gaxe04;Two-handed Axe;Common;metal;170;1;3400;1;;25;;29;;;;;;;;;;;;;;;;5;11;3;;30;;;39;;;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;29;;Poleaxes started to gain popularity in Aldor not long before the war, as the need to combat the increasing use of heavy armor had been becoming more and more apparent.
+ 
+|Knight Poleaxe=5;gaxe05;Two-handed Axe;Common;metal;215;1;7150;1;;30;;34;;;;;;;;;;;;;;;;12;13;;;35;;;35;;;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;aldor;34;;Aldorian knights are slow to accept novelty, but the numerous advantages of poleaxes can persuade even the most stubborn.
+ 
+|Captain Poleaxe=5;gaxe06;Two-handed Axe;Common;metal;195;1;7150;1;;30;;34;;;;;;;;;;;;;;;;10;13;4;;35;;;40;;;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;aldor;34;;A captain's poleaxe stands out even at a distance - a rallying point, and a reassuring sign that the company is still in the fight.
+ 
+|Labyrinth Warden Poleaxe=5;gaxe07;Two-handed Axe;Unique;metal;205;1;7150;1;;33;;27;;;;;;;;;3;;3;;;;;11;17;;;33;;;28;18;;;3;;29;-9;9;;;;;;;;;;;;;;;;;;;;;;;unique;33;;It is said that in the very heart of the desert between Hazzun and Al-Qaza lies the Labyrinth, guarded by silent warriors. Whatever is kept within remains secret, for no one who entered it has ever returned alive and sane.
+ 
+|Recruit Heavy Broadaxe=2;gaxe08;Two-handed Axe;Common;metal;105;1;625;1;30;15;;22;;;;;;;;;;;;;;5;7;;;;6;;;;;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;;aldor;22;;Upon closer inspection, it becomes apparent that this poleaxe was inspired by Skadian bardiches.
+ 
+|Soldier Heavy Broadaxe=3;gaxe09;Two-handed Axe;Common;metal;130;1;1625;1;35;20;;25;;;;;;;;;;;;;;6;9;;;;8;;;;;;;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;25;;It takes a truly impressive amount of strength and stamina to handle this axe efficiently.
+ 
+|Nistrian Bardiche=3;gaxe10;Two-handed Axe;Common;metal;135;1;1775;1;20;20;;25;;;;;;;;;;;;;;6;9;;;;8;8;;;;;;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;nistra;25;;It didn't take long for Fjall dwarves to adopt Skadian bardiches. And thanks to their mercenaring varangs, this weapon shape became known to Nistrians as well.
+ 
+|Eederax=4;gaxe11;Two-handed Axe;Common;metal;155;1;3625;1;40;25;;29;;;;;;;;;;;;;;7;12;;;;10;;;;10;;;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;29;;When the Aldorian army was routed by the Nistrian cavalry at the battle of Thorny Hill, the Eeders militia took the humiliating defeat to heart and started attaching special anti-cavalry hooks to their axes.
+ 
+|Garrison Eederax=5;gaxe12;Two-handed Axe;Common;metal;180;1;7650;1;45;30;;34;;;;;;;;;;;;;;8;15;;;;12;;;;12;;;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;aldor;34;;A heavier version of an eederax: the traditional hook became a part of the axeblade itself.
+ 
+|Skadian Bardiche=5;gaxe13;Two-handed Axe;Common;metal;210;1;8425;1;30;30;;34;;;;;;;;;;;;;;8;20;;;;12;12;;;;;;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;skadia;34;;Skadian bardiches are a weapon of status. Only the greatest warriors - the champions and the retinue of Skadian princes - are allowed to carry them.
+ 
+|Doloire=1;gaxe14;Two-handed Axe;Common;metal;80;1;125;1;;10;20;18;;;;;;;;;;;;;2;;;;;2;2;20;;;;;;;;;10;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;18;;The doloire is also known as a "wagoner's axe". It's often carried by caravaneers tasked with escorting military wagons.
+ 
+|Voulge=2;gaxe15;Two-handed Axe;Common;metal;110;1;625;1;;10;25;21;;;;;;;;;;;;;4;;;;;3;;25;;;;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;21;;A predecessor to halberds, a voulge is still occasionally used by guards and some militias.
+ 
+|Militia Bill=2;gaxe16;Two-handed Axe;Common;metal;110;1;625;1;5;10;25;21;;;;;;;;;;;;;4;;;;;3;;19;;;5;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;21;;Every now and then, the clergy and nobility consider outlawing this weapon - with a billhook in hand even a greenhorn can stand his ground against the heavy cavalry.
+ 
+|Jagged Voulge=3;gaxe17;Two-handed Axe;Common;metal;135;1;1625;1;;15;30;24;;;;;;;;;;;;;6;;5;;;4;;36;;;;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;24;;All these spikes offer plenty of options: can use them to intercept an incoming strike, pull down a rider from their horse, finish off a wounded opponent...
+ 
+|Skadian Sovnya=3;gaxe18;Two-handed Axe;Common;metal;150;1;1775;1;;10;30;24;;;;;;;;;;;;;6;2;;;;5;;30;;;;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;2;skadia;24;;This weapon can often be seen in the hands of Skadian horsemen. They weren't the ones who first started using it though: Skadians borrowed the design from the Poleds, a tribe inhabiting the shores of the Icy Sea.
+ 
+|Glaive=4;gaxe19;Two-handed Axe;Common;metal;160;1;3625;1;;20;35;28;;;;;;;;;;;;;8;;;;;5;;35;;;;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;2;aldor;28;;Even though it bears a resemblance to a spear, thrusting with a glaive is not very effective - it's basically a broad sword attached to a shaft.
+ 
+|Forholt Staff=5;gaxe20;Two-handed Axe;Common;metal;190;1;7650;1;;25;40;32;;;;;;;;;;;;;10;;;;;6;;40;;;;;;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;32;;It hails from the area around Forholt, where it was once carried by mounted guards. Contrary to its name, this weapon has more in common with a bardiche than a staff.
+ 
+|Ornate Voulge=5;gaxe21;Two-handed Axe;Unique;metal;170;1;7650;1;;25;45;32;;;;;;;;;;;;;10;3;;;;6;-1;40;;;15;;;;;;25;;;;;;;;;;;;;;;;;;;;;;;;1;unique;32;;The stamp of the Guild makes it safe to assume that this voulge was intended for some high-ranking Magistrate commander.
+ 
+|Lumberjack Axe=1;gaxe22;Two-handed Axe;Common;metal;75;1;125;1;;15;10;20;;;;;;;;;;;;;-7;;;;;;2;;;;;;15;;;;20;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;20;;This axe is great for felling trees. It fares only slightly worse when used for chopping heads.
+ 
+|Militia Longaxe=2;gaxe23;Two-handed Axe;Common;metal;100;1;625;1;;20;15;25;;;;;;;;;;;;;-8;;;;;;;;;;;;20;;;;25;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;25;;Gather a group of peasants, provide them with a handful of longaxes and a clever sergeant, and even a better-equipped opponent might find itself stumped on how to deal with the resulting force.
+ 
+|Footman Longaxe=3;gaxe24;Two-handed Axe;Common;metal;125;1;1625;1;;25;20;29;;;;;;;;;;;;;-10;;;;;;;;;;;;25;;;;30;;;;;;;;;;;;;;;;;;;;;;;;1;fjall;29;;While many will deny it, Aldorians actually learned a few things from dwarves - how to make such axes, as an example.
+ 
+|Veteran Longaxe=4;gaxe25;Two-handed Axe;Common;metal;150;1;3625;1;;30;25;33;;;;;;;;;;;;;-12;;;;;;;;;;;;30;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;aldor;33;;It's hard to imagine armor which would protect from a direct hit with this axe.
+ 
+|Orient Longaxe=4;gaxe26;Two-handed Axe;Common;metal;165;1;4000;1;10;33;25;33;;;;;;;;;;;;;-10;;;;;;;;;;;;30;;;;35;;;;;;;;;;;;;;;;;;;;;;;;2;elven;33;;Jarimad nomads fight on foot only when there's no other option, but when they do, they rely on these axes - the design proved its usefulness through many battles against the heavy maaf infantry.
+ 
+|Double-Headed Longaxe=5;gaxe27;Two-handed Axe;Common;metal;160;1;7650;1;;35;30;38;;;;;;;;;;;;;-14;4;8;;;;8;;;;;;35;;;;40;;;;;;;;;;;;;;;;;;;;;;;;;aldor;38;;Despite its formidable appearance, this axe is rather unwieldy in a real fight.
+ 
+|Elven Longaxe=5;gaxe28;Two-handed Axe;Common;metal;175;1;7650;1;15;35;25;38;;;;;;;;;;;;;-10;;;;;;;;;;;;35;;;;40;;;;;;;;;;;;;;;;;;;;;;;;2;elven;38;;Longaxes are exotic to elven lands - the peoples of Jacinth who use them can be counted on the fingers of one hand.
+ 
+|Exquisite Longaxe=5;gaxe29;Two-handed Axe;Unique;metal;160;1;7650;1;;35;30;38;;;;;;;;;;;;;-9;;;4;;;-3;5;;;;;40;;;;40;;;;;;;;;;;;;;;;;;;;;;;;2;unique;38;;A longaxe is a highly unusual choice for a ceremonial weapon. And by the looks of the decorations, the original owner shelled out a pretty sum for it.
+ 
+|Peasant Scythe=1;gaxe01f;Two-handed Axe;Common;metal;50;;25;1;;-15;;11;;;;;;;;;;;;;;;;;;;10;10;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;special;11;;When a peasant war is about to erupt, a scythe is as good a weapon as any.
+ 
+|Recruit Polemace=2;gmace01;Two-handed Mace;Common;metal;110;1;575;1;35;25;;;;21;;;;;;;;;;;;3;;;;;4;;20;;;;15;;;;20;;;;;;;;;;;;;;;;;;;;;;;;;aldor;21;;A single solid strike from this polemace will make your enemy forget even their own name.
+ 
+|Soldier Polemace=3;gmace02;Two-handed Mace;Common;metal;140;1;1500;1;40;30;;;;24;;;;;;;;;;;;4;;;;;6;;25;;;;20;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;24;;If blunt force alone isn't enough to get through your opponent's armor, this polemace also has a spike for precise jabs to the neck.
+ 
+|Veteran Polemace=4;gmace03;Two-handed Mace;Common;metal;170;1;3400;1;45;35;;;;28;;;;;;;;;;;;5;;;;;8;;30;;;;25;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;28;;The mace head is shaped in such a way that it's equally effective against both lightly and heavily armored opponents.
+ 
+|Nistrian Polemace=4;gmace04;Two-handed Mace;Common;metal;185;1;3725;1;30;35;5;;;28;;;;;;;;;;;;5;5;;;;8;10;30;;;;21;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;nistra;28;;Constant wars with Aldor left a deep mark on Nistrian warfare. Naturally, they've become quite successful at combating heavily armored troops.
+ 
+|Knight Polemace=5;gmace05;Two-handed Mace;Common;metal;195;1;7150;1;50;40;;;;32;;;;;;;;;;;;6;;;;;10;;35;;;;30;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;aldor;32;;Well-suited for fighters who want their every strike to leave the opponent in the dirt.
+ 
+|Exquisite Polemace=5;gmace06;Two-handed Mace;Unique;metal;155;1;7150;1;50;40;;;;32;;;;;;;;;;;4;6;;;;;9;;35;;15;;30;;;;35;;5;;;;;;;;;;;;;;;;;;;;;;;unique;32;;Don't let the glint of gold mislead you: despite its elegant ornaments, this polemace shatters skulls and bones just as efficiently as its plain counterparts.
+ 
+|Militia Polehammer=2;gmace07;Two-handed Mace;Common;metal;130;1;550;1;55;35;;;;20;;;;;;;;;;;5;;;8;8;;;;25;;;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;;aldor;20;;Looks like it used to be a common hammer until some smith reinforced it with additional metal and put it on a longer shaft.
+ 
+|Kriegshammer=3;gmace08;Two-handed Mace;Common;metal;160;1;1450;1;40;40;8;;;23;;;;;;;;;;;6;;;10;10;;;;30;;;;;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;23;;Can break one's jaw just by trying to spell its name.
+ 
+|Mercenary Polehammer=4;gmace09;Two-handed Mace;Common;metal;190;1;3600;1;65;45;;;;27;;;;;;;;;;;7;;;13;10;;;;35;;;;;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;27;;Among the Magistrate mercenaries, polehammers are almost as widespread as halberds.
+ 
+|Veteran Polehammer=4;gmace10;Two-handed Mace;Common;metal;210;1;3275;1;65;45;;;;27;;;;;;;;;;;8;;;12;12;;;;41;;;;;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;27;;The convenience and versatility of these polehammers garner them praise from the veteran soldiers of both the Council and the Magistrate.
+ 
+|Hawk's Beak=4;gmace11;Two-handed Mace;Common;metal;175;1;3275;1;40;40;;;;28;;;;;;;;;;;6;;10;12;12;;;10;35;;;;;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;28;;There aren't that many helmets or cuirasses which can survive a strike from a three-pronged hammerhead.
+ 
+|Knight Polehammer=5;gmace12;Two-handed Mace;Common;metal;245;1;6875;1;70;50;;;;31;;;;;;;;;;;8;;;14;14;;;;44;;;;;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;aldor;31;;Polehammers have recently begun to rise in popularity as a weapon of choice for knightly jousts.
+ 
+|Brynn Polehammer=5;gmace13;Two-handed Mace;Common;metal;225;1;6875;1;50;50;;;;31;;;;;;;;;;;10;1;;14;14;1;;;36;;;;;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;31;;A line of soldiers bristling with such polehammers is a force that can threaten even the heavy cavalry. Especially the heavy cavalry.
+ 
+|Honorary Polehammer=5;gmace14;Two-handed Mace;Unique;metal;215;1;6875;1;70;55;;;;31;;;;;;;;;;;8;;;14;14;;-4;10;40;;;;10;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;unique;31;;It looks like one of the polehammers awarded by Duke Arno di Berro to captains of the Falcon Plume company for their display of heroism during the defense of the Northern Gates.
+ 
+|Ornate Polehammer=5;gmace15;Two-handed Mace;Unique;metal;190;1;6875;1;75;50;;;;31;;;;;;;;;;;8;;;14;14;;;;40;10;;;;5;;;30;;;;;;;;;;;;;;;;;;;;;;;;;unique;31;;A customary weapon of the Royal Armorbreakers - a renowned guard unit currently employed in the service of the Council.
+ 
+|Large Club=1;gmace16;Two-handed Mace;Common;wood;40;0.5;50;1;;20;5;;;17;;;;;;;;;;;-2;;;;;;2;;;5;20;;20;;;;20;;;;;;;;;;;;;;;;;;;;;;;;;aldor;17;;A weapon tested by millennia of hunting and gathering.
+ 
+|Heavy Warclub=1;gmace17;Two-handed Mace;Common;metal;85;1.5;150;1;;25;5;;;19;;;;;;;;;;;-2;;;;;;;;;6;20;;20;;;;20;;;;;;;;;;;;;;;;;;;;;;;;;aldor;19;;Even though a strike from this club is unlikely to harm a well-armored opponent, it still has all the chances to briefly knock the wind out of them.
+ 
+|Reinforced Warclub=2;gmace18;Two-handed Mace;Common;metal;110;1;525;1;;30;8;;;22;;;;;;;;;;;-4;;;;;;;;;10;25;;25;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;22;;A few rows of spiked iron bands is certainly one way to add to your weapon's heftiness.
+ 
+|Spiked Warclub=3;gmace19;Two-handed Mace;Common;metal;140;1;1400;1;;25;15;;;25;;;;;;;;;;;-6;;5;;;;3;15;;10;30;;30;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;25;;It's best not to find yourself on the receiving end of this warclub - its strikes not only shatter bones but also leave deep puncture wounds.
+ 
+|Veteran War Maul=4;gmace20;Two-handed Mace;Common;metal;170;1;3400;1;;40;20;;;29;;;;;;;;;;;-8;;;;;;;;;20;35;;35;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;aldor;29;;Sometimes the simplest solution is the best one - this maul is a testament to it.
+ 
+|Knight War Maul=5;gmace21;Two-handed Mace;Common;metal;195;1;7150;1;;45;33;;;34;;;;;;;;;;;-10;;;;;;;;;25;40;;40;;;;40;;;;;;;;;;;;;;;;;;;;;;;;;aldor;34;;This weapon is a world apart from the tool which originally inspired it - a humble pickaxe.
+ 
+|Elven War Maul=5;gmace22;Two-handed Mace;Common;metal;215;1.2;8200;1;20;50;25;;;34;;;;;;;;;;;-12;;;;;;;;;25;40;;46;;;;45;;;;;;;;;;;;;;;;;;;;;;;;;elven;34;;Elves call this hammer shape a "bull horn" for the distinctive spike on its back end.
+ 
+|Peasant Longflail=1;gmace23;Two-handed Mace;Common;metal;65;1;125;1;;10;20;;;21;;;;;;;;;;;-4;;;;;;6;;10;10;;;15;;;;25;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;21;;An old farm tool, hastily repurposed for war - neither sturdy nor comfortable to wield.
+ 
+|Long Flail=2;gmace24;Two-handed Mace;Common;metal;90;1;600;1;;10;25;;;24;;;;;;;;;;;-6;;;;;;8;;15;15;;;23;;;;30;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;24;;A lucky hit from such a flail can squash a cheap helmet along with the wearer's skull.
+ 
+|Woodwight Longflail=2;gmace25;Two-handed Mace;Common;metal;95;1;775;1;;14;25;;;24;;;;;;;;;;;-5;;;;;;11;;17;17;;;18;;;;30;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;24;;The Woodwights were a band of Eeders rebels who gave the royal authorities a run for their money about a decade ago. Eventually, every Woodwight was captured and quartered, but the flails they used continue to live on.
+ 
+|Maen Heavy Flail=3;gmace26;Two-handed Mace;Common;metal;110;1;1900;1;;15;30;;;28;;;;;;;;;;;-8;2;5;;;;10;;22;20;;;25;;;;35;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;28;;The majority of the Cowls, the fanatical followers of Neer, are former peasants, so it comes as no surprise that their favorite weapon is a heavy flail.
+ 
+|Soldier Longflail=3;gmace27;Two-handed Mace;Common;metal;125;1;1650;1;;15;24;;;28;;;;;;;;;;;-8;;;;;;8;;20;22;;;29;;;;35;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;28;;Even plate armor can only do so much when it catches a solid hit from a full-cast flailhead.
+ 
+|Veteran Longflail=4;gmace28;Two-handed Mace;Common;metal;130;1;3875;1;;15;35;;;32;;;;;;;;;;;-10;;;;;;12;;25;25;;;30;;;;40;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;32;;The two-handed flail is hardly the most widespread weapon. The reason is simple: few soldiers possess the strength, skill, and finesse to master it.
+ 
+|Knight Longflail=5;gmace29;Two-handed Mace;Common;metal;155;1;8150;1;;20;40;;;36;;;;;;;;;;;-12;;;;;;14;;34;30;;;35;;;;45;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;36;;The shift in attitude towards this decidedly non-chivalrous weapon was driven by the rising number of treatises extolling the benefits and virtues of sparring with flails.
+ 
+|Noble Longflail=5;gmace30;Two-handed Mace;Common;metal;160;1;8150;1;;20;46;;2;35;;;;;;;;;;;-12;;15;;;;14;8;27;27;;;35;;;;45;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;37;;Two-handed flails may have originated on tournament grounds, but it's a rare occurrence to see a noble lord using one as he goes to war.
+ 
+|Ordermarshal Longflail=5;gmace31;Two-handed Mace;Unique;metal;140;1;8150;1;;20;40;;;33;;;;;;;;;4;;-12;;;;;;14;;30;34;;;35;;;-9;37;-9;;;;;;;;;;;;;;;;;;;;;;;1;unique;37;;Back in the day, these flails were a symbol of the exceptional strength and impeccable training demonstrated by the marshals of the Triune Hand Order.
+ 
+|Peasant Bow=1;bow01;Bow;Common;wood;40;1;75;8;;10;;;16;;;;;;;;;;;;-65;;;;;;-3;;;;10;;10;;;;15;;;;;;;;;;;;;;;;;;;;;;;;;aldor;16;;These bows can often be found in possession of some particularly bold peasants, who secretly hunt on their lord's land.
+ 
+|Guard Bow=2;bow02;Bow;Common;wood;55;1;400;8;;10;;;18;;;;;;;;;;;;-60;;;;;;-5;;;;15;;15;;;;20;;;;;;;;;;;;;;;;;;;;;;;;;aldor;18;;A perfect example of a weapon's effectiveness relying entirely on the user's skill: this bow is pretty much useless in the hands of a novice archer.
+ 
+|Soldier Bow=3;bow03;Bow;Common;wood;70;1;1075;8;;10;;;21;;;;;;;;;;;;-55;;;;;;-7;;;;20;;20;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;21;;The sooner you start, the better your chances of mastering the bow - which is why in Aldorian villages training begins in early childhood.
+ 
+|Norse Bow=3;bow04;Bow;Common;wood;70;1;1075;8;;10;10;;21;;;;;;;;;;;;-60;;10;;;;-7;;;;20;;20;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;fjall;21;;Dwarves don't hold much respect for bows. They are usually handed out to youngsters who aren't experienced enough to fight on the frontline.
+ 
+|Veteran Bow=4;bow05;Bow;Common;wood;85;1;2425;9;;15;;;24;;;;;;;;;;;;-50;;;;;;-7;;;;25;;25;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;24;;Armed with such a bow, an experienced archer can single-handedly stall the advance of a full squad of light infantry.
+ 
+|Firn Bow=4;bow06;Bow;Common;wood;85;1;2425;9;;15;5;;24;;;;;;;;;;;;-50;;;;;;-9;;;;30;;20;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;24;;The Firns had a reputation not only as excellent marksmen, but also as gifted bowyers: their bow designs still remain in common use.
+ 
+|Aldorian Bow=5;bow07;Bow;Common;wood;100;1;5100;9;;15;;;28;;;;;;;;;;;;-45;;;;;;-12;;;;30;;30;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;aldor;28;;Has enough power to knock a charging knight from his saddle.
+ 
+|Relict Bow=5;bow08;Bow;Unique;wood;125;1;6125;8;;15;;;26;;;;;;;;4;;;;-55;;;;;;-15;;;;30;;30;;;-5;35;;9;;;;;;;;;;;;;;7;;;;;;;;;unique;30;;This marvelous artifact appears to be at least millennia old. It's a mystery how it hasn't yet rotted away.
+ 
+|Training Shortbow=1;bow09;Bow;Common;wood;35;1;75;7;;10;;;16;;;;;;;;;;;;-60;;;;;;-1;15;;;;5;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;;aldor;16;;A simple wooden bow that is remarkably tricky to land a shot with.
+ 
+|Dirwin's Shortbow=2;bow10;Bow;Unique;wood;60;1;375;8;;10;;;18;;;;;;;;;;;;-55;;;;;;-2;20;;;;10;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;;special exc;18;;The sheer number of notches can be a source of either pride or dread. Depends on who does the tallying.
+ 
+|Hunting Shortbow=2;bow11;Bow;Common;wood;50;1;375;7;;10;;;18;;;;;;;;;;;;-55;;;;;;-2;20;;;;10;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;;aldor;18;;It will send an arrow from one end of the glade to the other, but whether it hits the squirrel in the branches - that depends on your aim.
+ 
+|Yew Shortbow=3;bow12;Bow;Common;wood;60;1;975;7;;10;;;21;;;;;;;;;;;;-50;;;;;;-4;25;;;;15;;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;21;;Yew is generally used to make longbows, but sometimes craftsmen settle for something more modest.
+ 
+|Nomad Shortbow=3;bow13;Bow;Common;wood;70;1;1075;7;;10;;;21;;;;;;;;;;;;-50;;;;;;-5;29;;;;10;10;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;elven;21;;For many, the first clash with Jarimad mounted archers is also the last: deadly on foot, they are even deadlier from the saddle.
+ 
+|Skirmisher Shortbow=4;bow14;Bow;Common;wood;70;1;2175;8;;15;;;24;;;;;;;;;;;;-45;;;;;;-6;30;;;;20;;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;24;;Whittling the enemy down with agile maneuvering and constant arrow barrages from a safe distance is the preferred tactic of the Nistrian light infantry.
+ 
+|Nistrian Bow=4;bow15;Bow;Common;wood;70;1;2400;8;;15;;;24;;;;;;;;;;;;-45;;5;;;;-6;39;;;;18;;;;;24;;;;;;;;;;;;;;;;;;;;;;;;;aldor;24;;The Zeineshes of Nistra are among the most skilled mounted archers on the entire Continent, rivaled only by the nomads of the Ohirian barrens and Jarimad.
+ 
+|Curved Shortbow=5;bow16;Bow;Common;wood;85;1;4600;8;;15;;;28;;;;;;;;;;;;-40;;;;;;-8;35;;;;25;;;;;33;;;;;;;;;;;;;;;;;;;;;;;;;aldor;28;;This bow's curved shape allows it to send arrows further and with more precision than usual, though it has a bit of a kick which takes time to get used to.
+ 
+|Ornate Bow=5;bow17;Bow;Unique;wood;85;1;4600;9;;15;12;;28;;;;;;;;;;;;-36;;;;;;-8;44;;;;25;;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;unique;28;;A prize from the Aldwynn Tournament of 407, claimed by Sir Tibalt der Wald, who impressed the King himself by hitting five moving targets squarely in the center in just one minute.
+ 
+|Soldier Longbow=3;bow18;Bow;Common;wood;80;1;1300;9;;15;;;24;;;;;;;;;;;;-60;;;;;;10;;;;25;20;;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;aldor;24;;As the boastful proverb goes, as long as Aldor has at least a dozen longbows, it'll remain unconquered.
+ 
+|Eeders Longbow=4;bow19;Bow;Common;wood;95;1;2900;10;;20;;;28;;;;;;;;;;;;-55;;;;;;12;;;;30;25;;;;;40;;;;;;;;;;;;;;;;;;;;;;;;;aldor;28;;The production process for these famous longbows isn't exactly common knowledge - the denizens of Eeders tend to keep to themselves.
+ 
+|Sharpshooter Bow=5;bow20;Bow;Common;wood;110;1;6125;10;;20;;;32;;;;;;;;;;;;-50;;;;;;14;;;;35;30;;;;;50;;;;;;;;;;;;;;;;;;;;;;;;;aldor;32;;Countless Nistrian commanders, standard-bearers, and mages were left forever in Aldorian soil during the Nistrian Wars. The archers responsible could expect little mercy in return.
+ 
+|Sand Guard Bow=5;bow21;Bow;Unique;wood;110;1;6125;11;;20;15;;32;;;;;;;;;;;;-45;;;;;;7;;;;35;30;;;;-5;40;;;;;;;;;;;;;;;;;;;;;;;;;unique;32;;The deserts of Ahjat are harsh, fickle, and teeming with dangers. Fortunately, the Sand Guard, tasked with escorting caravans, knows exactly how to handle them - whether it's raiding nomadic bands or something even worse...
+ 
+|Carved Longbow=5;bow22;Bow;Unique;wood;100;1;6125;9;;20;;;32;;;;;;;;;;;;-50;3;;;;;14;15;;;39;39;;;;;50;;;;;;;;;;;;;;;;;;;;;;;;;unique;32;;It was most likely crafted for a wealthy Royal Ranger, who had been granted a fief for his loyal service.
+ 
+|Training Crossbow=1;crossbow01;Crossbow;Common;wood;40;1;100;6;;15;;;17;;;;;;;;;;;;-36;;;;;;-3;;;;;5;5;;;;5;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;17;;It's significantly easier to learn how to use a crossbow than a bow, but there's no avoiding practice either way.
+ 
+|Hunting Crossbow=2;crossbow02;Crossbow;Common;wood;55;1;525;6;;15;;;19;;;;;;;;;;;;-32;;;;;;-6;;;;;10;10;;;;10;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;19;;Crossbows are well-suited for hunting - their accuracy and stopping power leave little chance even to large animals.
+ 
+|Soldier Crossbow=3;crossbow03;Crossbow;Common;wood;70;1;1400;7;;20;;;22;;;;;;;;;;;;-28;;;;;;-9;;;;;15;15;;;;10;;;;;;;;;;;;;;;;;;;;;;;;;aldor;22;;A crossbow used by both sides of the conflict - it's equally popular with the soldiers of the Council and the mercenaries of the Magistrate.
+ 
+|Maen Crossbow=3;crossbow04;Crossbow;Common;wood;65;1;1400;7;;20;5;;21;;;;;;;;;;;;-28;3;;;;;-9;;;;;15;15;;;-5;10;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;21;;Soldiers of the Maen garrison hold a deep appreciation for simplicity, light weight, and convenience. This crossbow combines all three qualities in its design.
+ 
+|Blessed Crossbow=3;crossbow06;Crossbow;Unique;wood;55;1.2;1625;7;;20;5;;16;;;;;;;;;;5;;-31;;;;;;-9;;;;;;30;;;;10;;;;;;;;;;;;;;;;;;-3;;;10;;;1;special;21;;An old-fashioned crossbow, restored with care, if somewhat hastily. The opening words of a common Hieronite prayer are carved into its stock.
+ 
+|Aldwynn Crossbow=4;crossbow05;Crossbow;Common;wood;90;1;3150;7;10;25;;;26;;;;;;;;;;;;-24;;;;;;-12;;;;;15;25;;;;10;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;26;;A while ago, His Lordship Brodwyn der Razen made it his personal mission to fit his soldiers with crossbows of this design. His success inspired some other prominent Council commanders to eventually do the same.
+ 
+|Orient Crossbow=4;crossbow06;Crossbow;Common;wood;85;1;3775;8;;20;;;24;;;;;;;;;;;;-24;;;;;;-14;8;;;;20;20;;;;10;;;;;;;;;;;;;;;;;;;;;;;;1;elven;24;;Exquisite carvings, smooth curves... Everything about this crossbow betrays its elven origins.
+ 
+|Brynn Crossbow=5;crossbow07;Crossbow;Common;wood;100;1;6625;7;;30;;;29;;;;;;;;;;;;-20;;;;;;-15;;;;;25;25;;;;15;;;;;;;;;;;;;;;;;;;;;;;;;aldor;29;;The Falcon Company is one of the most infamous detachments of the Magistrate's army. Their crossbows were fashioned by master craftsmen of Brynn in the likeness of elven bolt throwers.
+ 
+|Carved Crossbow=5;crossbow08;Crossbow;Unique;wood;90;1.1;7300;8;;20;;;28;;;;;;;;;;;;-17;;;;;;-15;10;;;;25;25;;;;15;;;;;;;;;;;;;;;;;;;;;;;;;unique;28;;Any weapon has a potential to be transformed into an object of art. It's the age of redundancy after all.
+ 
+|Belt Hook Crossbow=2;crossbow09;Crossbow;Common;wood;50;1;600;7;;20;;;21;;;;;;;;;;;;-42;;;;;;;20;;;20;;20;;;;15;;;;;;;;;;;;;;;;;;;;;;;;;aldor;21;;Rather than relying on your arm strength alone, the belt hook also allows to engage back muscles when drawing the string, which makes reloading this crossbow noticeably less tiring.
+ 
+|Cranequin Crossbow=3;crossbow10;Crossbow;Common;wood;60;1;1575;8;;25;;;24;;;;;;;;;;;;-38;;;;;;;25;;;25;;25;;;;20;;;;;;;;;;;;;;;;;;;;;;;;;aldor;24;;A cranequin is a cunning mechanism which made crossbows even more deadly than they had already been. At least a dozen engineers and master craftsmen from all over Aldor compete for the title of its original inventor.
+ 
+|Mercenary Crossbow=4;crossbow11;Crossbow;Common;wood;70;1;3500;8;;25;;;28;;;;;;;;;;;;-34;;;;;;;30;;;30;;30;;;;20;;;;;;;;;;;;;;;;;;;;;;;;;aldor;28;;A crossbow fitted with a more sophisticated cranequin than usual, allowing for a noticeably smoother reloading process.
+ 
+|Garrison Crossbow=5;crossbow12;Crossbow;Common;wood;85;1;7400;8;;25;;;32;;;;;;;;;;;;-30;;;;;;;35;;;35;;35;;;;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;32;;These crossbows are excellent at taking out siege engineers even when shooting over large distances
+ 
+|Royal Huntmaster Crossbow=5;crossbow13;Crossbow;Unique;wood;85;1;7400;8;;25;15;;32;;;;;;;;;;;;-30;;15;;;;;47;;;35;;35;;;;25;;;;;;;;;;;;;;;;;;;;;10;;;;unique;32;;A royal huntmaster is defined by three duties: the king should have plenty of game to pursue, he must never return from the hunt empty-handed, and he shall always remain safe and sound while doing so.
+ 
+|Guard Crossbow=2;crossbow14;Crossbow;Common;wood;40;1;650;8;;25;20;;23;;;;;;;;;;;;-55;;;;;;;;;;25;20;;;;;30;;;;;;;;;;;;;;;;;;;;;;;;;aldor;23;;Village guards are usually recruited from peasantry, where most are already familiar with a bow. As for town guards, it takes much less effort to arm them with crossbows than teach them archery from scratch.
+ 
+|Pull-Lever Crossbow=3;crossbow15;Crossbow;Common;wood;50;1;1725;9;;30;25;;26;;;;;;;;;;;;-50;;;;;;;;;;30;25;;;;;35;;;;;;;;;;;;;;;;;;;;;;;;1;aldor;26;;Reloading a crossbow with a lever offers much greater convenience without sacrificing the weapon's draw weight.
+ 
+|Windlass Crossbow=4;crossbow16;Crossbow;Common;wood;60;1;3875;9;;30;30;;30;;;;;;;;;;;;-45;;;;;;;;;;35;30;;;;;35;;;;;;;;;;;;;;;;;;;;;;;;;aldor;30;;Spend a few months actively using this crossbow, and even village fair strongmen will envy your muscles.
+ 
+|Siege Crossbow=5;crossbow17;Crossbow;Common;wood;70;1;8150;9;;30;35;;35;;;;;;;;;;;;-40;;;;;;;;;;40;35;;;;;40;;;;;;;;;;;;;;;;;;;;;;;;;aldor;35;;The brutal killing power of this crossbow gave birth to rumors that even soldiers hiding behind mantlets aren't safe from the bolts launched with it.
+ 
+|Citadel Defender Crossbow=5;crossbow18;Crossbow;Common;wood;65;1;8150;9;;30;35;;35;;;;;;;;;;;;-40;;10;;;;;;;;;55;;;;;50;;;;;;;;;;;;;;;;;;;;;;;;;aldor;35;;With crossbows like these, a citadel garrison can tie down an entire army for months on end.
+ 
+|Guardsman Crossbow=5;crossbow19;Crossbow;Unique;wood;80;1;8150;8;15;30;35;;35;;;;;;;;;;;;-35;;;;;;-5;;;;45;40;;;;;40;;;;;;;;;;;;;;;;;;;;;;;;;unique;35;;Not too long before his demise, King Etbert ordered to form a unit of crossbow-wielding guardsmen. The most skilled Aldwynn bowyers were tasked with providing the weaponry, but they'd managed to produce only a few dozen crossbows before the monarch's death.
+ 
+|Makeshift Sling=1;sling01;Sling;Common;leather;65;1;50;6;;5;;;;9;;;;;;;;;;;-70;2;;;;;;;15;;;;10;;;-5;5;;;;;;;;;;;;;;;;;;;;;;;;;aldor;9;;A shepherd's ol' reliable, perfectly adequate for driving stray wolves away from the flock.
+ 
+|Wilder Sling=1;sling02;Sling;Common;leather;45;1;50;6;;5;5;;;9;;;;;;;;;;;-70;2;;;;;;;;;;;18;;;-5;5;;;;;;;;;;;;;;;;;;;;;;;;;fjall;9;;The material leaves much to be desired, but the craftsmanship shows no small measure of ingenuity.
+ 
+|Militia Sling=2;sling03;Sling;Common;leather;90;1;250;6;;5;;;;11;;;;;;;;;;;-65;4;;;;;;;20;;;;15;;;-6;5;;;;;;;;;;;;;;;;;;;;;;;;;aldor;11;;When defending one's home, no weapon is too humble.
+ 
+|Hunting Sling=2;sling04;Sling;Common;leather;90;1;250;6;;;10;;;10;;;;;;;;;;;-65;4;;;;;;;;;;;23;;;-7;5;;;;;;;;;;;;;;;;;;;;;;;;;aldor;10;;A long-established peasant weapon for hunting small game, demanding both training and a fair bit of dexterity.
+ 
+|Raider Sling=3;sling05;Sling;Common;leather;110;1;650;7;;5;;;;12;;;;;;;;;;;-57;6;;;;;;;25;;;;20;;;-7;5;;;;;;;;;;;;;;;;;;;;;;;;;aldor;12;;Light to carry, yet far from harmless - a weapon well suited for clashes with village guards.
+ 
+|Scout Sling=3;sling06;Sling;Common;leather;110;1;650;8;;5;;;;11;;;;;;;;;;;-60;6;;;;;;;38;;;;;;;-7;5;;;;;;;;;;;;;;;;;;;;;;;;;aldor;11;;Brought out when a scouting mission calls for a probing strike.
+ 
+|Nomad Sling=3;sling07;Sling;Common;leather;125;1.1;725;7;;5;;;;12;;;;;;;;;;;-60;6;;;;;;;;;;;30;;;-8;5;;;;;;;;;;;;;;;;;;;;;;12;;;elven;12;;The Ohirian barrens offer nothing but sand and rocks, yet the tribes who dwell there make do with little else.
+ 
+|Mercenary Sling=4;sling08;Sling;Common;leather;130;1;1450;7;;5;;;;13;;;;;;;;;;;-55;8;;;;;;;30;;;;25;;;-8;10;;;;;;;;;;;;;;;;;;;;;;;;;aldor;13;;Not all free companies are sent to the front - some are contracted to protect supply convoys and undertake other auxiliary duties.
+ 
+|Skirmisher Sling=4;sling09;Sling;Common;leather;110;1;1450;6;;5;;;;14;;;;;;;;;;;-55;8;15;;;;;;;;;;45;;;-8;5;;;;;;;;;;;;;;;;;;;;;;;;;aldor;14;;Attrition through small engagements is certainly one way to tip the decisive battle in your favor.
+ 
+|Sentian Sling=5;sling10;Sling;Common;leather;155;1;3050;7;;8;;;;15;;;;;;;;;;;-50;10;;;;;;;42;;;;30;;;-9;8;;;;;;;;;;;;;;;;;;;;;;;;;aldor;15;;"As vexing as a Sentian slinger" - a saying dating back to the wars of Aldor's unification, still in use in the kingdom's western reaches.
+ 
+|Beastslayer Sling=5;sling11;Sling;Common;leather;155;1;3050;7;;5;15;;;17;;;;;;;;;;;-55;10;;;;;;;35;;;;30;;;-9;15;;;;;;;;;;;;;;;;;;;;;;;;;fjall;17;;In the eyes of the Fjall dwarves, the sling is a far more honorable weapon than the bow - so much so that even battle-hardened veterans readily wield it in combat.
+ 
+|Ornate Sling=5;sling12;Sling;Unique;leather;155;1;3050;8;;5;20;;;15;;;;;;;;;;;-50;10;;;;;-5;;35;;;;30;;;-10;8;;;;;;;;;;;;;;;;;;;;;10;;;;unique;15;;To the nobility, the sling is more a plaything than a true weapon, fit only for occasional displays of skill at a tournament.
+ 
+|Peasant Staff Sling=1;sling13;Sling;Common;leather;75;1;50;6;;10;10;;;10;;;;;;;;;;;-75;;;;;;;;;10;;;20;;;-2;10;;;;;;;;;;;;;;;;;;;;;;;;;aldor;10;;If the old tales are to be trusted, Saint Dekar once struck down a forest troll with a sling much like this.
+ 
+|Militia Staff Sling=2;sling14;Sling;Common;leather;100;1;300;7;;10;15;;;12;;;;;;;;;;;-70;;;;;;;;;15;;;25;;;-3;10;;;;;;;;;;;;;;;;;;;;;;;;;aldor;12;;Peasants are seldom accustomed to close combat, so outfitting them with slings is a sound strategy - though usually overlooked by noble lords.
+ 
+|Woodwight Staff Sling=3;sling15;Sling;Common;leather;100;1;800;7;;10;20;;;14;;;;;;;;;;;-65;;;;;;;;;20;;;30;;;-4;15;;;;;;;;;;;;;;;;;;;;;;;;;aldor;14;;While suppressing the Eeders' rebellion a dozen years ago, the nobles received an unexpected and rather unwelcome reminder: staff slings are far deadlier than one might assume.
+ 
+|Soldier Staff Sling=3;sling16;Sling;Common;metal;125;1.3;1050;7;10;10;20;;;15;;;;;;;;;;;-65;3;10;;;;;;;28;;;;;;-4;15;;;;;;;;;;;;;;;;;;;;;;;;;aldor;15;;The siege caught Brynn unprepared, and the defenders soon realized their supply of arrows would not last. To combat this, they quickly crafted and distributed a great number of slings.
+ 
+|Veteran Staff Sling=4;sling17;Sling;Common;metal;150;1;1825;8;;10;25;;;16;;;;;;;;;;;-60;;;;;;;;;25;;;35;;;-5;20;;;;;;;;;;;;;;;;;;;;;;;;;aldor;16;;A soldier adept with the sling can be every bit as lethal as a seasoned archer or crossbowman.
+ 
+|Highlander Staff Sling=5;sling18;Sling;Common;metal;175;1;3825;8;;10;30;;;18;;;;;;;;;;;-55;;;;;;;;;30;;;40;;;-6;25;;;;;;;;;;;;;;;;;;;;;;;;;aldor;18;;To this very day, certain noble Firn lineages still preserve the tradition of instructing male heirs in the art of the sling.
+ 
+|Theobrand's Staff Sling=5;sling19;Sling;Unique;metal;175;1;3825;7;20;20;30;;;13;;;;;;;;;4;;-55;;20;;;;;;;35;;;40;;;-6;33;;;;;;;;;;;;;;;;;;;;;;;;;unique;17;;The legendary templar Theobrand was born and raised in a poor shepherd's family. A master of the sling since childhood, he kept up the practice even after joining the Order.
+ 
+|Healer Staff=2;staff01;Staff;Common;wood;60;1;400;1;;10;;;;12;;;;;;;;;;;;;;;;;;;;;;;;;3;;10;-5;;-4;;;;;;;;;;;1;;;;;7;;6;;;2;aldor;12;;Some Aldorian healers place special enchantments on their staves, much to the displeasure of village priests.
+ 
+|Monk Staff=3;staff02;Staff;Common;wood;75;1;1075;1;;10;;;;13;;;;;;;;;1;;;;;;;;;;;;;;;;4;-3;15;-6;;-5;;;;;;;;;;;;;;;;;;8;7;;2;magic;14;;Aldorian monks' staves are blessed by the Host themself to help the faithful endure the hardships of daily toil and distant travels.
+ 
+|Dwarven Staff=3;staff03;Staff;Common;wood;75;1;1075;1;;10;;;;11;;3;;;;;;;;;;4;;;;;;;;;;;;;4;-3;15;-6;;;2;;;;;;;;;;;;;;;;;8;;;2;fjall;14;;The headpiece in the form of a sea leviathan is carved with such attention to detail that it looks like it could start spewing flames at any moment.
+ 
+|Hierophant Staff=4;staff04;Staff;Common;metal;90;1;2425;1;;10;;;;11;;;;;;;;;4;;;;;;;;-3;;;;;;;;8;-4;20;-7;;-6;;;;;;;;;;;;;;;-3;;;10;;;2;magic;15;;These staves, still bearing the mark of the Host, are the main proof of the clerical estate's divine patronage.
+ 
+|Vanguard Staff=4;staff15;Staff;Common;metal;100;1;2425;1;;12;;;;16;;;;;;;;;;;;;;;;;;;;;;;;3;5;-4;10;-7;;-6;;;;;;;;;;;;;;;;;;10;8;;2;magic;16;;Seemingly cumbersome, this steel staff is actually quite light. It's also an excellent conduit for magic.
+ 
+|Skadian Staff=4;staff05;Staff;Common;metal;90;1;2425;1;;10;;;;13;;;;;;3;;;;;;;;;;;;;;;;;;;5;-4;20;-7;;-6;;;;;;;;;;;2;;;;;;;10;;4;2;skadia;16;;Distant Skadia is notable for its powerful spellcasters, known as volkhvs. There must be quite a story to this staff.
+ 
+|Spellweaver Staff=5;staff06;Staff;Common;metal;105;1;5100;1;;10;;;;18;;;;;;;;;;;;;;;;;;;;;;;;;6;-6;25;-8;5;-7;;;;;;;;;;;;;;;;;;12;;;2;magic;18;;The ranks of Spellweavers only accept the best of the best - even prominent Academy mentors often find themself snubbed and rebuked.
+ 
+|Farseer Staff=5;staff07;Staff;Unique;metal;105;1;5100;1;;10;;;;13;;;;;;;3;;3;;;;;;;;-5;;;;;;;;6;-5;25;-8;;-9;;;;;;;;;;;;;;5;;;;12;10;;2;unique;19;;The multiple attempts to marry Hieronite teachings with elven rituals produced a number of prominent Aldorian saints capable of glimpsing into the future - nevertheless, most of the clergy rejected this path, branding it as a perversion of the church traditions.
+ 
+|Traveling Staff=1;staff08;Staff;Common;wood;65;1;75;1;;5;;;;13;;;;;;;;;;;;;;6;;;;;;;10;;10;;;;-3;-3;;;;;;;;;;;;;;;;;;;;;7;;2;aldor;13;;Any journey feels easier with a staff in hand.
+ 
+|Pilgrim Staff=2;staff09;Staff;Common;wood;90;1;400;1;;5;;;;13;;;;;;;;;1;;;;;8;;;;;;;8;;13;4;;;-3;-3;;;;;;;;;;;;;;;;;;;;5;10;;2;aldor;14;;A trusty companion for long journeys between holy sites.
+ 
+|Quarterstaff=2;staff10;Staff;Common;metal;100;1;400;1;;5;;;;15;;;;;;;;;;;;;;9;3;;;;;;12;;10;;;;-3;-3;;;;;;;;;;;;;;;;;;;;;10;;2;aldor;15;;Though mainly a practice weapon, it can still cave in the skull of a careless foe.
+ 
+|Reinforced Staff=3;staff11;Staff;Common;metal;125;1;1075;1;;5;;;;17;;;;;;;;;;;;;;10;;;;;10;;14;;17;;;;-4;-4;;;;;;;;;;;;;;;;;;;;;13;;2;aldor;17;;With enough dexterity, this staff's heavy knob is all you need to beat the living daylights out of a slow-witted brigand.
+ 
+|Vehement Warstaff=3;staff12;Staff;Common;metal;110;1;1075;1;;5;;;;15;;;;;;;;;2;;;2;;10;;;;;;;12;;17;;;;-4;-4;;;;;;;;;;;;;;;;;;;;;9;;2;magic;17;;Quite a few mages are drawn to the Vehement ranks, seeking to apply their knowledge and skills for the benefit of the common folk.
+ 
+|Maen Warstaff=4;staff13;Staff;Common;metal;130;1;2425;1;;5;;;;19;;;;;;;;;;;4;;;12;;;;;;;16;;21;;;;-4;-4;;;2;5;;;;;;;;;;;;;;;;10;16;;2;aldor;19;;For years, the Maen Academy was the crucible that forged battlemages in service of the crown. Predictably, it fell on hard times after the King's death and the rise of the Gray Army.
+ 
+|Battlemage Warstaff=4;staff14;Staff;Common;metal;145;1;2425;1;;5;;;;18;;;;;;;2;;;;;;;12;;5;;;;;16;;21;;;;-6;-4;5;;;;;;;;;;;;;;;;;;5;;16;;2;magic;20;;Every so often, there's simply no time for casting spells, and fighting up close becomes the only option.
+ 
+|Geomancer Staff=4;staff16;Staff;Common;wood;160;1;2425;1;;5;;;;18;;;;;;;4;;;;;;;12;8;;;;;;16;;21;;;;-4;-4;;;;;;5;;;;;;;;;;;-4;;;;16;;2;magic;22;;A staff fashioned from nigh indestructible stone, yet somehow it still weighs lighter than wood.
+ 
+|Cryomancer Staff=4;staff17;Staff;Common;metal;120;1;2425;1;;5;;;;14;;;;;;6;;;;;;;;12;;;;;;;16;;33;;;;-4;-4;;;;;;;;;5;;;;;;;;;;;;16;;2;magic;20;;Cryomancers love to joke about this staff's bone-chilling properties. The last time anyone laughed at this pun was a century ago.
+ 
+|Arcanist Staff=4;staff18;Staff;Common;metal;120;1;2425;1;;5;;;;14;;;;;;;6;;;;;;;12;;;;;;;16;;21;6;;;-4;-4;3;;;;;;;;;5;;;;;5;;;;;;16;;2;magic;20;;Don't even try prying the enchanted amethyst out of this staff's headpiece - that is unless you want to spend the rest of your life outside of this plane of existence.
+ 
+|Aristocrat Warstaff=5;staff19;Staff;Common;metal;185;1;5100;1;10;8;;;;22;;;;;;;;;;;;;;15;5;;;;;;25;;25;;;;-5;-5;;;;;;;;;;;;;;;;;;;5;;25;;2;aldor;22;;Staff duels are a staple of fencers' training, with some fighters growing so confident in their prowess that they don't shy away from bringing the weapon into real combat.
+ 
+|Gilded Warstaff=5;staff20;Staff;Common;metal;125;1;5600;1;;5;;;;22;;;;;;;;;;;;;;15;;;;;;;20;;20;9;;-4;-5;-5;7;;;;;;;;;;;;;;;;;;;;15;;2;magic;22;;A distinguished staff for a distinguished mage: with gilding this lavish, there is plenty of precious metal for magic to course through.
+ 
+|Templar Warstaff=5;staff21;Staff;Common;metal;155;1;5100;1;;5;;;;20;;;;;;;;;2;;;;;10;;;;;;;15;;20;5;;;-5;-5;;;3;8;;;;;;;;;;;5;;;;;;20;;2;magic;22;;Templars of the Order united chivalric discipline and magic mastery with the relentless study of the Host - all in the hopes of earning the gift of thaumaturgy.
+ 
+|Axonian Warstaff=5;staff22;Staff;Unique;metal;145;1;5100;1;;5;;;;16;;;;;;;7;;;;;4;;15;;;;;;;20;;25;;;;-5;-5;;;4;;;;;;;;;;;;;;;;;;20;;1;unique;23;;Hundreds of years ago, this boar-shaped piece was carried at the head of countless battle-hardened phalanxes.
+ 
+|Mage General Warstaff=5;staff23;Staff;Unique;metal;155;1;5100;1;;5;;;;16;;;;;;;3;;;3;;;;15;;;;;;;20;;25;;;;-5;-5;8;-4;;;;;;;;;;;;4;4;;;;;;20;;2;unique;22;;Kasper Stern, a legendary sorcerer and mentor at the Maen Academy, lived about a century ago and was an exceptionally versatile individual. Conrad II Ironhand held the mage in such high esteem that he entrusted him with leading a part of the royal army - an unprecedented decision!
+ 
+|Sky-Reader Warstaff=5;staff24;Staff;Unique;metal;140;1;5100;1;;5;;;;16;;;;;;;4;;2;;;;;15;;3;-3;;;;20;;25;;;;-5;-5;;-3;;;;;;;;;;;;;;;-3;;;;33;;2;unique;22;;"Sky-readers" was the name given by King Etbert's soldiers to the elven oracles who fought on the Jacinth's side during the Radiant Wars. Many attribute the Aldorian army's defeat to their involvement, for how can one defeat an enemy who sees the outcome of every battle in advance?
+ 
+|Hermit Staff=5;staff25;Staff;Unique;wood;175;1;5100;1;;5;;;;16;;;;3;;;;;3;;;;;15;;;;;;;20;;25;8;4;;-5;-5;;;;;;;;;;;;;4;;;;;5;;;20;8;2;unique;22;;The reclusive Sages are long-time protectors of Aldor, yet very little is known about them. There seems to be a growing rumor that many of them have disappeared without a trace over the past few years.
+ 
+|Vampiric Staff=5;staff26;Staff;Unique;metal;130;1;5100;1;;13;;;;13;;;;;;;;9;;;;;9;13;;;;13;;;13;;26;;;;-6;-6;;;;;;;;;;;;;-9;13;;;;;;;26;;2;special;22;;This staff saturates the surrounding air with a heavy stench of stale blood.
+ 
+|Cammock=1;staff27;Staff;Common;wood;30;1;125;1;;10;;;;10;;;;;;;;;;;;;;;;;;;;;;;;;;;10;-2;4;-1;;3;;;;;;;;;;;;;;;;;;;2;aldor;10;;So withered that it's almost impossible to think of any good use for it.
+ 
+|Hexer Staff=2;staff28;Staff;Common;wood;40;1;650;1;;10;;;;9;;;;;;;;3;;;;;;;;;;;;;;;;;;;10;-3;5;;;5;;;;;;;;;;;;;;;;;;;2;magic;12;;A tree branch, darkened from age and covered with strange etchings - simply looking at it fills you with a sense of deep-seated anxiety.
+ 
+|Witch Staff=2;staff29;Staff;Unique;wood;30;1;650;1;;10;;;;6;;;;;;;;3;;3;;;;;;;;;;;;;;;;;10;-3;5;;3;5;;;;;;;;;;;;;;;;;;;2;special;12;;In a witch's hands, it lays terrible hexes - and sustains her life by doing so.
+ 
+|Sorcerer Staff=3;staff30;Staff;Common;metal;50;1;1725;1;;10;;;;10;;1;;;;1;1;;;;;;;;;;;;;;;;;;;;15;-3;6;;;7;;;;;;;;;;;;;;;;;;;2;magic;13;;After surviving the Academy and the first handful of battles, most mages usually seek to invest their earnings into a proper staff.
+ 
+|Necromancer Staff=3;staff31;Staff;Unique;wood;33;1;1725;1;;10;;;;9;;;;;;;;6;;;;;;;;;;;;;;;;;;;13;-13;13;-6;;13;;;;;;;;;;;9;;-6;;;-9;;;2;special;15;;Necromancers aren't bereft of a sense of humor, albeit theirs comes with a morbid twist: most of them find joy in desecrating graves of the clergy, using harvested skulls as a decoration for their staves.
+ 
+|Pyromancer Staff=4;staff32;Staff;Common;metal;60;1;3875;1;;10;;;;11;;5;;;;;;;;;;;;;;;;;;;;;;;;;20;-4;6;;;18;5;;;;;;;;;;;;;;;;;;2;magic;16;;The spherical headpiece radiates extreme heat, which, paradoxically, doesn't seem to cause any harm - at least for the time being...
+ 
+|Electromancer Staff=4;staff33;Staff;Common;wood;60;1;3875;1;;10;;;;11;;;5;;;;;;;;;;;;;;;;;;;;;6;;;20;-4;4;;;9;;;;5;;;;;;;;;;;;;;;2;magic;16;;The Pyromancy Circle used to spread malicious rumors that the death of Frid Konnoken, the founder of the Electromancy Circle, was caused by him foolishly allowing a similar staff to come in contact with a street puddle.
+ 
+|Astromancer Staff=4;staff34;Staff;Common;metal;60;1;3875;1;;10;;;;10;;2;;;;2;2;;;;;;;;;;;;;;;;;;;-5;20;-4;4;;;9;;;;;;;5;;;;;;;;;;;;2;magic;16;;Astromancers claim such staves to possess an astonishingly precise ability to model the motion of our... What do they call it? Right, our "planet".
+ 
+|Psimancer Staff=4;staff35;Staff;Common;wood;60;1;3875;1;;10;;;;11;;;;;;;;;;5;;;;;;;;;;;;;;;;;20;-4;4;-3;;9;;;;;;;;5;;;;;;;;;;;2;magic;16;;The open palm on top has a strange tendency to attract glances... A truly mesmerizing feeling.
+ 
+|Venomancer Staff=4;staff36;Staff;Common;metal;60;1;3875;1;;10;;;;10;;;;3;3;;;;;;;;;;;;;;;;;;;;;;20;-4;4;;;9;;;5;;;;;;;;5;;;;;;;;2;magic;16;;In knowledgeable hands, this staff can turn even the weakest poison into a deadly one.
+ 
+|Court Mage Staff=5;staff37;Staff;Common;wood;55;1;8150;1;;10;;;;15;;;;;;;3;;;;;;;;;;;;;;;;;;;;25;-4;10;;1;15;;;;;;;;;;;;;;;;;;;2;magic;18;;This enchanted staff's headpiece was designed for conducting all types of magic.
+ 
+|Orient Staff=5;staff38;Staff;Unique;wood;75;1;8150;1;;10;;;;13;;3;;;;;;;3;;;;;;;;;;;;;;;5;5;-5;25;-5;10;;;12;;;;;;;;;;;;;;;;;;;2;unique;19;;At the end of the day, few things can beat fine elven craftsmanship: it clearly took a lot of skill to create a staff this magnificent.
+
+|Shackles=1;shackles;;Common;metal;100;1;50;1;;;;;;;;;;;;;;;;;;-100;;;;-100;100;;;;;;;;;100;;;;100;;;;;;;;;;;;;;;;;;;;;1;special;0;;A set of shackles with a short chain. The bracelets dig viciously into the skin, hindering arm movements and making it difficult to even lift a spoon to one's mouth.
+ 
+|Chain=1;chain;Tool;Common;metal;100;1;50;1;;;;;;10;;;;;;;;;;;;;;;;;20;;10;10;;;10;;;;;;;;;;;;;;;;;;;;;;;;;;;;2;special;10;;A chain is a weapon of street and tavern fights, hardly suitable for real combat.
+ 
+|Lute=1;lute;Lute;Common;wood;10;1;100;1;;;;;;8;;;;;;;;;;;;;;;;;50;;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2;special;8;;Be it Aldorian troubadours, Nistrian vagantes, or elven gusans - a lute is beloved by minstrels all over the world. Recently it made its way even to Fjall, although not every skald was happy with such a frivolous turn of events. Many of them refuse to play the instrument, deeming it a major threat to their long-established craft and musical tradition.
+ 
+|Pickaxe=1;pick;;Common;metal;60;1;60;1;10;10;10;;15;;;;;;;;;;;;;1;;;;;15;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;;;;;2;special;15;;These pickaxes see use all over the realm, from the gold mines of Forholt to the convict quarries of the Northern Borderlands.
+ 
+|Sickle=1;sickle;;Common;metal;20;1;30;1;;;;10;;;;;;;;;;;;;;;;;;;25;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2;special;10;;Sickles are generally wielded by women and children - during the harvesting season, they are tasked with cleaning up patches of grain that were missed during scything.
+ 
+|Broom=1;broom;;Common;wood;10;1;10;1;;;;;;6;;;;;;;;;;;;;;;;;;;3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2;special;6;;Your main ally in the never-ending struggle for tidiness and order.
+
+|#default = Data does not exist.}}</includeonly><noinclude>[[Category:Data]]</noinclude>

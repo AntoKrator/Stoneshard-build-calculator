@@ -1,0 +1,781 @@
+<noinclude>Page for all Stoneshard armor data.
+
+This data is edited with the parser. If you need to edit this manually, here's the order of values as of Rags to Riches patch.
+
+ 1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;21;22;23;24;25;26;27;28;29;30;31;32;33;34;35;36;37;38;39;40;41;42;43;44;45;46;47;48;49;50;51;52;53;54;55;56;57;58;59;60;61;62;63;64;65;66;67;68;69;70;71;72;73;74;75;76;77;78;79;80;81;82;83;84;85;86;87;88;89;90;91;92;93
+ ID;Slot;Armor Class;Rarity;Material;Price;Markup;Durability;Protection;Block Chance;Block Power;Block Recovery;Dodge Chance;Crit Avoidance;Vision;Fumble Chance;Energy;Energy Restoration;Skill Energy Cost;Spell Energy Cost;Magic Power;Backfire Chance;Miracle Chance;Miracle Potency;Damage Taken;Cooldowns Duration;Accuracy;Crit Chance;Crit Efficiency;Counter Chance;Max Health;Health Restoration;Healing Efficiency;Health Drain;Energy Drain;Fortitude;Damage Reflected;Experience Gain;Move Resistance;Bleed Resistance;Control Resistance;Pain Resistance;Fatigue Resistance;Pyromantic Power;Geomantic Power;Venomantic Power;Electromantic Power;Cryomantic Power;Arcanistic Power;Astromantic Power;Psionic Power;Physical Resistance;Nature Resistance;Magic Resistance;Slashing Resistance;Piercing Resistance;Crushing Resistance;Rending Resistance;Fire Resistance;Shock Resistance;Poison Resistance;Caustic Resistance;Frost Resistance;Arcane Resistance;Unholy Resistance;Sacred Resistance;Psionic Resistance;Tags;IsOpen;NoDrop;fragment_cloth01;fragment_cloth02;fragment_cloth03;fragment_cloth04;fragment_leather01;fragment_leather02;fragment_leather03;fragment_leather04;fragment_metal01;fragment_metal02;fragment_metal03;fragment_metal04;fragment_gold;Weapon Damage;Bonus Range;Armor Penetration;Armor Damage;Alternative images (for wiki);Alternative images (for wiki);Alternative images (for wiki);Obtainability;Alternative name (for wiki);Description
+
+==Usage==
+You can copy the values above and copy the line (or lines) you want to edit, and import them into a CSV editor, for example [[https://edit-csv.net https://edit-csv.net]]. Open the Read options and check the "Has Header" checkbox.
+
+You'll get a table format that's easier to read.
+</noinclude><includeonly>{{#switch: {{{1}}}
+<!--
+
+----- ARMOR -----
+
+-->
+
+|Board Shield=1;shield01;Shield;Light;Common;wood;25;0.5;60;;10;8;10;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;This homemade shield is just a few rough planks cobbled together. Still better than nothing.
+ 
+|Oaken Shield=2;shield02;Shield;Light;Common;wood;250;1;80;;12;10;10;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Not particularly durable, but it serves its purpose well enough.
+ 
+|Round Shield=3;shield03;Shield;Light;Common;wood;625;1;100;;14;12;10;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;A wooden shield reinforced with a few strips of metal. A common armament of the Aldorian infantry.
+ 
+|Dwarven Shield=3;shield04;Shield;Light;Common;wood;625;1;100;;12;11;10;;;;;;;;;;;;;;;;;;3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;fjall;;;;;;;;;;;;;;;;;;;;Dwarven Shield A.png;Dwarven Shield B.png;Dwarven Shield C.png;;;Dwarves have a preference for round shields - they are suitable for tight formations as well as one-on-one combat.
+   
+|Kalkan=4;shield05;Shield;Light;Common;wood;1400;1;120;;16;14;10;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;elven;;;;;;;;;;;;;;;;;;;;;;;;;To make a kalkan, nomads weave reed stalks into a desired shape, then fasten it with a metal ring. The resulting shield is both lightweight and durable.
+ 
+|Reinforced Kalkan=5;shield06;Shield;Light;Common;wood;2975;1;170;;18;18;10;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;;;;elven;;;;;;;;;;;;;;;;;;;;;;;;;This kalkan is larger and heavier than usual. Perhaps it once belonged to some nomadic nobleman.
+ 
+|Orient Shield=5;shield07;Shield;Light;Common;metal;3275;1.1;140;;20;20;15;;;;;;;;;;;;;;;;;;;;;;;;;;;8;;;;;;;;;;;;;;;;;;;;;;;;;;;;;elven;;;;;;;;;;;;;;;;;;;;;;;;;Elven shields are reliable and don't weigh the arm down. The alloy they are made of is exotic to Aldor.
+ 
+|Fist Shield=1;shield08;Shield;Light;Common;wood;50;2;45;;5;4;15;;;;;;;;;;;;;;;;;;3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Fist shields don't get in the way and allow to safely parry weaker attacks.
+ 
+|Leather Targe=2;shield09;Shield;Light;Common;leather;125;1;60;;7;6;15;;;;;;;;;;;;;;;;;;4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;The Firns' descendants strictly adhere to tradition: these shields are almost exactly the same as the ones used a thousand years ago.
+ 
+|Recruit Buckler=2;shield10;Shield;Light;Common;wood;125;1;60;;6;9;12;;;;;;;;;;;;;;;;;;3;;;;;;;;;4;;4;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Recruits typically need time to adjust to carrying and properly using a shield, which is why they prefer to start out with something lighter.
+ 
+|Buckler=3;shield11;Shield;Light;Common;metal;325;1;75;;9;8;15;;;;;;;;;;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Any duelist worth their salt must possess three things: a buckler, a trusty blade, and a carefully rehearsed Brynn accent.
+ 
+|Rondache=4;shield12;Shield;Light;Common;metal;750;1;90;;11;10;15;;;;;;;;;;;;;;;;;;6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Rondaches were brought to Aldor from the Bronze Isles. As with all things new and alien, the locals regard them with a certain amount of prejudice.
+ 
+|Aristocrat Shield=5;shield13;Shield;Light;Common;metal;1575;1;90;;13;12;15;;;;;;;;;;;;;;;;;;7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;There are letters painted along the rim - words of prayer, perhaps, or a noble family's motto.
+ 
+|Maaf Shield=5;shield14;Shield;Light;Common;metal;2050;1.3;105;;14;14;12;;;;;-2;;;;;;;;;;;;;5;;;;;;;;;5;;5;;;;;;;;;;;;;;;;;;;;;;;;;;;elven;;;;;;;;;;;;;;;;;;;;;;;;;Maafs are the warrior estate which seized power in Ahjat a few centuries ago. Their round shields are hard to mistake for anything else.
+ 
+|Magistrate Heater Shield=2;shield15;Shield;Medium;Common;wood;325;1;140;;18;18;;-2;;;;-4;-2;;;;;;;;;;;;;;;;;;;;;6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;A solid choice when fighting on foot. This particular shield bears the colors of the Grand Magistrate.
+ 
+|Council Heater Shield=2;shield15b;Shield;Medium;Common;wood;325;1;140;;18;18;;-2;;;;-4;-2;;;;;;;;;;;;;;;;;;;;;6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;special;;;;;;;;;;;;;;;;;;;;;;;;;A solid choice when fighting on foot. This particular shield bears the colors of the Royal Council.
+ 
+|Gray Army Heater Shield=2;shield15c;Shield;Medium;Common;wood;325;1;140;;18;18;;-2;;;;-4;-2;;;;;;;;;;;;;;;;;;;;;6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;special;;;;;;;;;;;;;;;;;;;;;;;;;A solid choice when fighting on foot. This particular shield bears the colors of the Gray Army.
+ 
+|Heater Shield D=2;shield15d;Shield;Medium;Common;wood;325;1;140;;18;18;;-2;;;;-4;-2;;;;;;;;;;;;;;;;;;;;;6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;A solid choice when fighting on foot.
+ 
+|Heater Shield E=2;shield15e;Shield;Medium;Common;wood;325;1;140;;18;18;;-2;;;;-4;-2;;;;;;;;;;;;;;;;;;;;;6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;special;;;;;;;;;;;;;;;;;;;;;;;;;A solid choice when fighting on foot. This particular shield bears King Etbert's crest.
+ 
+|Heater Shield F=2;shield15f;Shield;Medium;Common;wood;325;1;140;;18;18;;-2;;;;-4;-2;;;;;;;;;;;;;;;;;;;;;6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;special;;;;;;;;;;;;;;;;;;;;;;;;;A solid choice when fighting on foot. This particular shield bears an insignia of some noble house.
+ 
+|Skadian Shield=3;shield16;Shield;Medium;Common;wood;850;1;175;;22;21;;-4;;;;-6;-2;;;;;;;;;;;;;;;;;;;;;9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;skadia;;;;;;;;;;;;;;;;;;;;;;;;;A shield bearing the crest of the Elder Prince, likely brought to Aldor by a mercenary who once served in the Prince's retinue.
+ 
+|Kite Shield=4;shield17;Shield;Medium;Common;wood;1875;1;210;;26;24;;-6;;;;-8;-2;;;;;;;;;;;;;;;;;;;;;12;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Although this shield offers reliable cover to the entire body, from feet to shoulders, you won't run far with it weighing you down.
+ 
+|Huscarl Shield=4;shield18;Shield;Medium;Common;wood;1875;1;210;;23;22;;-5;;;;-8;-2;;;;;;;;;;;;4;;;;;;;;;12;;;;;;;;;;;;;;;;;;;;;;;;;;;;;fjall;;;;;;;;;;;;;;;;;;;;;;;;;Dwarven huscarls sleep in their clothes, keeping weapons and shields within arm's reach. Life in Fjall is unpredictable, and you never know when your master may require protection.
+ 
+|Raven Heater Shield=4;shield19;Shield;Medium;Unique;wood;2250;1.2;210;;22;25;;-2;;;;-4;-2;;;;;;;;;;;;;;;;;;10;;;6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;unique;;;;;;;;;;;;;;;;;;;;;;;;;The fearsome Raven Gang, which used to be the scourge of the entire realm, suffered their first and final defeat in the battle of the Hangman's Hill. There were almost no survivors: Sir Wolfard's troops immediately hanged those few bandits they had captured, giving the previously nameless hill its moniker.
+ 
+|Long Shield=5;shield20;Shield;Medium;Common;wood;3950;1;245;;30;27;;-8;;;;-10;-2;;;;;;;;;;;;;;;;;;;;;15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;A shield that combines the convenience of heater shields with the coverage of kite shields. On the downside, it's rather heavy.
+ 
+|Brotherhood of Ouroboros' Shield=5;shield21;Shield;Medium;Unique;wood;3950;1;245;;27;24;;-8;;;;-8;-2;;;3;;;;;;;;;;6;;10;;;;10;;15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;unique;;;;;;;;;;;;;;;;3;;;;;;;;;Among the brotherhoods created after the dissolution of the Triune Hand Order, the Brotherhood of Ouroboros is the most secretive and mysterious one. Its symbol has a plethora of interpretations: the most popular one is a righteous death followed by a rebirth.
+ 
+|Ald Chieftain Shield=5;shield22;Shield;Medium;Unique;metal;3950;1;185;;26;27;;-10;;;;-12;-3;;;;;;;;;;;;;;;;;;;;;15;10;;;15;;;;;;;;;5;10;10;;;;;;;;;;;;;;unique;;;;;;;;;;;;;;;;;;;;;;;;;The mastery of metalworking techniques was one of the ancient Alds' greatest strengths - some of the miraculously surviving relics from their time continue to inspire awe even today.
+ 
+|Nomad Adarga=3;shield23;Shield;Medium;Common;leather;975;1.15;165;;15;19;5;-2;4;;;-4;-1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;elven;;;;;;;;;;;;;;;;;;;;;;;;;Horsemen of the Ohirian barrens usually prefer adargas over kalkans: a light leather shield is much more convenient when fighting from horseback.
+ 
+|Rider Shield=3;shield24;Shield;Medium;Common;wood;850;1;150;;19;17;5;-2;;;;-4;-1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;A cavalryman's shield of choice - it helps with deflecting spears while on horseback and increases your chances of survival when the situation requires you to dismount.
+ 
+|Squire Shield=4;shield25;Shield;Medium;Common;wood;1875;1;180;;23;20;5;-3;;;;-6;-1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;It's customary for a squire to have his shield painted in his master's colors to limit the confusion that may arise in the midst of a raging battle.
+ 
+|Skirmisher Shield=4;shield26;Shield;Medium;Common;wood;1875;1;180;;21;18;8;;;;;-5;-1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;A favorite shield of the Nistrian light cavalry - its curved form protects a good portion of the rider's back from arrows.
+ 
+|Knight Shield=5;shield27;Shield;Medium;Common;wood;3950;1;210;;27;23;5;-4;;;;-8;-1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Sometimes a knight needs to fight on foot. This shield is excellent for such scenarios.
+ 
+|Albrecht the Beastbane's Shield=5;shield28;Shield;Medium;Unique;wood;3950;1;210;;24;22;5;-4;;;;-8;-1;;;;;;;;;;;;;;;;;;;;;8;8;8;8;;;;;;;;;;;;;;;;15;;;;;;;;;;unique;;;;;;;;;;;;;;;;;;;;;;;;;The infamous Beast of Ratten terrorized the countryside for several years, slaughtering at least a hundred livestock and a couple dozen peasants. Fortunately, it was tracked down and slain by Sir Albrecht - may the Host bless his brave soul.
+ 
+|Jousting Shield=5;shield29;Shield;Medium;Unique;wood;3950;1;210;;30;29;5;-4;;;;-8;-1;;;;;;;-5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;unique;;;;;;;;;;;;;;;;;;;;;;;;;The main purpose of jousts is to show off, so no expense is too great when it comes to elaborate shield paintings. In fact, the last joust before the war was so exceedingly festive that it was more reminiscent of a carnival than a celebration of combat prowess.
+ 
+|Footman Shield=3;shield30;Shield;Heavy;Common;wood;1000;1;250;;28;26;-20;-12;4;;;-10;-4;;;;;;;;;;;;;;;;;;;;;16;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;A long, sturdy shield. Its rims are reinforced with iron bands.
+ 
+|Assault Shield=4;shield31;Shield;Heavy;Common;wood;2250;1;300;;32;30;-20;-14;6;;;-12;-4;;;;;;;;;;;;;;;;;;;;;20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Might come in handy if you ever need to hide from arrows raining down from the walls of a besieged castle.
+ 
+|Shield of Truth's Eternal Sun=5;shield32;Shield;Heavy;Unique;wood;4750;1;350;;34;34;-20;-16;8;;;-14;-4;;-3;;;7;;;-5;;;;;;;;;;;;;24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;unique;;;;;;;;;;;;;;;;;;;;;;;;;It's a well-known fact that the Brotherhood of Truth's Eternal Sun favors the pursuit of Knowledge over prayers and martial training. And yet, it doesn't affect the Brotherhood knights' combat readiness in the slightest: if anything, their study of the world's secrets fills them with incredible zeal on the battlefield.
+ 
+|Guardsman Shield=5;shield33;Shield;Heavy;Unique;wood;4750;1;350;;37;37;-13;-16;8;;;-14;-4;;;;;;;;;;;;5;;;;;;10;;;24;;5;;;;;;;;;;;;;;;;;;;;;;;;;;;unique;;;;;;;;;;;;;;;;;;;;;;;;;After the Royal Guard was disbanded, many former guardsmen decided to try their luck as mercenaries. Rather predictably, they took all their equipment with them, these shields included.
+ 
+|Nistrian Shield=3;shield34;Shield;Heavy;Common;wood;1175;1;300;;31;32;-25;-16;10;;;-13;-5;;;;;;;;;;;;;;;;;;;;;20;;9;;;;;;;;;;;;;;;;;;;;;;;;;;;nistra;;;;;;;;;;;;;;;;;;;;;;;;;To the Great Despot it is a matter of prestige to be perceived as a successor to the great Axonian Empire and its rulers. This is why so many Nistrian armor and weaponsmiths continue to dutifully replicate centuries-old designs.
+ 
+|Mercenary Tower Shield=4;shield35;Shield;Heavy;Common;wood;2625;1;360;;33;32;-20;-20;11;;;-15;-5;;;;;;;;;;;;;;;;;;;;;25;;12;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;About a third of someone' contract reward went toward the paints and hiring an artist. Well, we only live once.
+ 
+|Tower Shield=4;shield36;Shield;Heavy;Common;wood;2625;1;360;;35;36;-25;-18;14;;;-15;-5;;;;;;;;;;;;;;;;;;;;;25;;12;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;The growing prevalence of archers and crossbowmen keeps driving shields to become taller, thicker, and heavier.
+ 
+|Brynn Pavise=5;shield37;Shield;Heavy;Common;wood;5550;1;420;;38;40;-25;-20;14;;;-17;-5;;;;;;;;;;;;;;;;;;;;;30;;15;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;These shields are employed by famous Crossbow Brigades, the elite units of the Brynn garrison.
+ 
+|Orient Tower Shield=5;shield38;Shield;Heavy;Unique;wood;5550;1;420;;42;44;-31;-24;18;;;-17;-6;;;;;;;;;;;;;;;;;;;;;36;;18;;-10;;;;;;;;;;;;;;;;;;;;;;;;;unique;;;;;;;;;;;;;;;;;;;;;;;;;Forged in the fabled land of Shanguo, this shield had traveled for thousands of miles before finding its way to Aldor - it's nigh impossible to imagine the circumstances of its journey.
+ 
+|Broad-Brimmed Hat=1;head01;Headgear;Light;Common;cloth;25;0.5;25;2;;;;3;;;-1;;;;;;;;;;;;;;;;;;;;;;;;3;2;;5;;;;;;;;;4;;;;;;;;;;;;;;;;aldor;1;;1;;;;;;;;;;;;;;;;;;;;;;Offers a bit of respite from the scorching midday sun.
+ 
+|Peasant Hat=1;head02;Headgear;Light;Common;cloth;25;0.5;25;2;;;;5;;;;;2;;;;;;;;;;;;;;;;;;;;;;3;2;;;;;;;;;;;4;;;;;3;3;;;;;;;;;;aldor;1;;1;;;;;;;;;;;;;;;;;;;;;;In case of heat or rain, its brims can be slightly turned down.
+ 
+|Hood=2;head03;Headgear;Light;Common;cloth;225;1;30;3;;;;4;;;-1;;;;;;;;;;;;2;;;;;;;;;;;;5;4;;;;;;;;;;;5;;;;;;;;;;;;;;;;aldor;1;;1;;;;;;;;;;;;;;;;;;;;;;A woolen hood with a playfully folded tip. These were once popular among Maen townsmen.
+ 
+|Hired Blade Cowl=2;head04;Headgear;Light;Unique;cloth;250;1.15;40;3;;;;3;;;-2;;;;;;;;;;;;2;;;;;;;;;;;;5;4;;;;;;;;;;;5;;;;;;;;;;;;;;;;special exc;;;2;;;;;;;;;;;;;;;;;;;;;;The Blades were a group of assassins operating in every major Aldorian city. They didn't last long though: betrayed by their client, most of them were found out, apprehended, and executed after a series of high-profile murders.
+ 
+|Gamekeeper Bicocket=3;head05;Headgear;Light;Common;cloth;725;1;40;4;;;;5;;;;;;;;;;;;;;4;3;;;;;;;;;;;;7;6;;;;;;;;;;;6;;;;;;;;;;;;;;;;aldor;1;;1;;;;;;;;;;;;;;;;;;;;;;These feathered hats are a distinguishing mark of the gamekeepers at the service of local lords.
+ 
+|Mercenary Hat=4;head06;Headgear;Light;Common;cloth;1600;1;50;5;;;;6;;;-1;;;;;;;;;;;;4;7;;;;;;;;;;;9;8;;;;;;;;;;;7;;;;;;;;;;;;;;;;aldor;1;;1;;;;1;;;;;;;;;;;;;;;;;;The life of a mercenary is too short and violent for dull outfits.
+ 
+|Noble Beret=5;head07;Headgear;Light;Common;cloth;3400;1;55;5;;;;10;;;-3;;;-4;;;;;;;-4;;5;;;;;;;;;;;;15;10;;;;;;;;;;;8;;;;;;;;;;;;;;;;aldor;1;;1;;;;1;;;;;;;;;;;;;;;;;;A fashionable Aldwynn style, marked by unmistakable Nistrian motifs, likely adopted from passing merchants.
+ 
+|Blademaster Bonnet=5;head08;Headgear;Light;Common;cloth;3400;1;60;6;3;;;7;;;;;;;;;;;;;;;5;10;3;;;;;;;;;;12;10;;;;;;;;;;;8;;;;;;;;;;;;;;;;aldor;1;;1;;;;1;;;;;;;;;;;;;;;;;;What need is there for a helmet, when in an honest duel no blade could hope to reach your head?
+ 
+|Royal Ranger Bicocket=5;head09;Headgear;Light;Unique;cloth;3900;1.15;65;6;;;;5;;;;;;;;;;;;;;5;5;;;;;;;;;;;;12;10;;8;;;;;;;;;8;15;;;;;13;;;;;;;;;;special;1;;1;;;;1;;;;;;;;;;5;;;;;;;;The right to hunt in His Majesty's preserves was among the chief privileges of the Royal Rangers. Some even adorned their hats with writs bearing the highest permission.
+ 
+|Peasant Cap=1;head10;Headgear;Light;Common;cloth;25;1;60;3;;;;1;;;;;;;;;;;;;;;;;;;;;;;;;;;8;5;;;;;;;;;;;6;;;3;;;3;;;;;;;;;;aldor;1;;2;;;;;;;;;;;;;;;;;;;;;;The only distinguishing feature about this cap is that it hasn't been washed for way too long.
+ 
+|Arming Cap=2;head11;Headgear;Light;Common;cloth;225;1;80;4;;;;2;;;;;;;;;;;;;;;;;;;;;;;;;;;10;7;;;;;;;;;;;8;;;;;2;;;;;;;;;;;aldor;1;;;2;;;;;;;;;;;;;;;;;;;;;It might soften a club blow. Can't expect more from it.
+ 
+|Plague Doctor Mask=2;head12;Headgear;Light;Unique;leather;225;1;80;4;;;;;;-2;;;;;;;;;;;;;;;;;5;15;;;;;;;10;7;;;;;;;;;;;5;;;;;;;;;65;;;;;;;special;1;;;;;;2;;;;;;;;;;;;;;;;;;The tip of this unsettling mask's beak is packed with a mix of medicinal herbs, their smell repelling plague-bearing miasmas. That's how most healers explain it anyway.
+ 
+|Padded Coif=3;head13;Headgear;Light;Common;cloth;600;1;100;6;;;;3;;;;;;;;;;;;;;;;;;;;;;;;;;;12;9;;;;;;;;;;;10;;;;;3;;;;;;;;;;;aldor;1;;;2;;;;;;;;;;;;;;;;;;;;;It'll make you sweat like a pig, but safety is above all.
+ 
+|Fjall Hunter Helmet=3;head14;Headgear;Light;Common;cloth;600;1;100;4;;;;4;10;;-1;;;;;;;;;;;;;;;;;;;;8;;;;12;9;;;;;;;;;;;7;7;7;;;;;;;;;;;;;;fjall;1;;;1;;;2;;;;;;;;;;;;;;;;;;What it lacks in physical defenses, it makes up for with runesingers' enchantments.
+ 
+|Freeholder Coif=4;head15;Headgear;Light;Common;cloth;1375;1;110;6;;;;4;;;;;4;;;;;;;;;4;;;;;;;;;;;;;12;8;;;;;;;;;;;12;;;;;4;;;;;;;;;;;aldor;1;;;2;;;;;;;;;;;;;;;;;;;;;Prosperous landholding peasants make up the backbone of the Aldorian militia, arriving at their lord's summons equipped with their own arms and armor.
+ 
+|Closed Coif=4;head16;Headgear;Light;Common;cloth;1375;1;120;8;;;;4;;;;;-1;;;;;;;;;;;;;;;;;;;;;;14;14;;;;;;;;;;;12;;;;;8;;;;;;;;;;;aldor;;;;3;;;;;;;;;;;;;;;;;;;;;The high collar and layered padding should be more than enough to keep the wearer from spitting their teeth after taking a club to the face.
+ 
+|Norrheim Helmet=4;head17;Headgear;Light;Common;leather;1575;1.15;100;7;;;;2;7;;;;;;;;;;;;;;2;;2;;;;;;;;;;18;10;;;;;;;;;;;12;8;;;;;15;;;;;;;;;;fjall;1;;;;;;3;;;;;;;;;;;;;;;;;;If a piece of armor is decorated with wild animals' horns, furs, and bones, then it most likely belonged to a member of the Norrheim clan, where a person's merit is based exclusively on their hunting prowess.
+ 
+|Berserker Bear Cowl=5;head18;Headgear;Light;Common;leather;3900;1.15;90;7;;;;4;;;;;;;;;;;;;-3;;3;;;;;;;;;;;;22;10;10;;;;;;;;;;10;10;;;;;20;;;;;;;;;;fjall;1;;2;;;;2;;;;;;;;;3;;;;;;;;;Fjall berserkers draw strength not only from the Ancestors' protection but also from the spirit of their guardian beast.
+ 
+|Knight Coif=5;head19;Headgear;Light;Common;metal;2775;0.95;150;10;;;;5;;;;-1;;;;;;;;;;;;;;;;;;;;;;;16;18;;;;;;;;;;;14;;;6;;8;;;;;;;;;;;aldor;;;;2;;;;;;;;1;;;;;;;;;;;;;In war, anything can go wrong: the mail around the neck and jaw serves to keep the head where it belongs, even after losing the helmet.
+ 
+|Mail Coif=3;head20;Headgear;Light;Common;metal;1225;2;160;8;;;;;;;;-2;;;;;;;;;;;;;;;;;;;;;;;12;9;;;;;;;;;;;15;;;12;;;12;;;;;;;;;;aldor;1;;;;;;;;;;;2;;;;;;;;;;;;;Mail coifs are ubiquitous - they don't cost much, are lightweight, and provide adequate protection against slashing strikes.
+ 
+|Squire Mail Coif=4;head21;Headgear;Light;Common;metal;2750;2;190;10;;;;;;;;-2;;;;;;;;;;;;;;;;;;;;;;;14;12;;;;;;;;;;;18;;;12;;;12;;;;;;;;;;aldor;1;;;;;;;;;;;3;;;;;;;;;;;;;With this coif on your head, it's only appropriate to join a quest for some holy chalices or rocks with a sword stuck in them.
+ 
+|Cervelliere=2;head22;Headgear;Medium;Common;metal;375;1;105;7;;;;;;;;-1;;;;;;;;;;;;;;;;;;;;;;;15;13;;;;;;;;;;;12;;;;;;;;;;;;;;;;aldor;1;;;;;;;;;;2;;;;;;;;;;;;;;Small, light, and, quite importantly, cheap - a helmet worn by many guards and militia.
+ 
+|Cone Helmet=2;head23;Headgear;Medium;Common;metal;275;0.75;105;5;;;;;;;;-1;;;;;;;;;;;;;;;;;;;;;;;12;11;;;;;;;;;;;10;;;;;;;;;;;;;;;;aldor;1;;;;;;;;;;2;;;;;;;;;;;;;;Helmets of this shape have been in use for centuries, commonly worn by those who can't afford anything better.
+ 
+|Skadian Helmet=2;head24;Headgear;Medium;Unique;metal;375;1;105;7;;;;;;;;-1;;;;;;;;;;;;;;;;;;;;;;;15;11;;;;;;;;;;;12;;;;;;;;;;;;;;;;special exc;1;;;;;;;;;;2;;;;;;;;;;;;;;Generations of conflicts with Fjall dwarves and Jarimad nomads left an indelible mark of their culture on Skadian armor and weaponry.
+ 
+|Kettle Helmet=2;head25;Headgear;Medium;Common;metal;425;1.15;105;8;;;;;3;;;-1;;;;;;;;;;;;;;;;;;;;;;;15;11;;;;;;;;;;;12;;;;;;;;;;;;;;;;aldor;1;;;;;;;;;;2;;;;;;;;;;;;;;A kettle helmet is essentially a hat, albeit made of metal. Even an amateurish village blacksmith can be tasked with crafting one.
+ 
+|Mail Cervelliere=3;head26;Headgear;Medium;Common;metal;1175;1.15;155;11;;;;;;;;-3;-1;;;;;;;;;;;;;;;;;;;;;;19;15;;;;;;;;;;;16;;;15;;;15;;;;;;;;;;aldor;1;;;;;;;;;;2;1;;;;;;;;;;;;;Additional neck protection is never redundant. Still, it pays not to get overly confident while wearing something as light as a cervellier.
+ 
+|War Hat=3;head27;Headgear;Medium;Common;metal;1025;1;130;10;;;;;5;;;-2;;;;;;;;;;;;;;;;;;;;;;;20;15;;;;;;;;;;;16;;;;;;;;;;;;;;;;aldor;1;;;;;;;;;;3;;;;;;;;;;;;;;A step above the kettle helmet, tougher and more resistant to both melee and ranged weaponry.
+ 
+|Open Sentinet=3;head28;Headgear;Medium;Common;metal;925;0.9;115;10;;;;;;;;-2;;;;;;;;;;;;;;;;;;;3;;;;17;17;;;;;;;;;;;16;;;;;;;;;;;;;;;;aldor;1;;;;;;;;;;3;;;;;;;;;;;;;;Some people spitefully suggest that, contrary to their name, sentinets weren't invented in Sentia but were brought there from the Bronze Isles. The truth is, no one knows for sure anymore.
+ 
+|Cervelliere with Ear Guards=3;head29;Headgear;Medium;Unique;metal;1225;1.2;115;9;;;;;7;;;-2;;;;;;;;;;;;;;;;;;;10;;;;19;24;;;;;;;;;;;16;;;5;;;5;;;;;;;;;;special;1;;;;;;;;;;2;;1;;;;;;;;;;;;Judging by the eye-catching band and the pair of metal discs added for extra protection, this helmet likely belonged to a merchant's son during his service in the town militia.
+ 
+|Bounty Hunter War Hat=4;head30;Headgear;Medium;Common;metal;2075;0.9;145;12;;;;;10;-1;;-3;;;;;;;;;;;;;;;;;;;;;;;26;19;;;;;;;;;;;20;;;5;;;;;;;;;;;;;aldor;1;;;;;;;;;;3;;;;;;;;;;;;;;Criminals and cutthroats with a handsome price on their heads are dangerous quarry, so hunting them calls for every precaution and defense one can muster.
+ 
+|Sallet=4;head31;Headgear;Medium;Common;metal;2300;1;165;13;;;;;;;;-3;;;;;;;;;;;;;;;;;;;;;;;23;19;;;;;;;;;;;20;;;;;;;;;;;;;;;;aldor;1;;;;;;;;;;4;;;;;;;;;;;;;;Sallets aren't uncommon among Aldorian soldiers. An open version is comfortable to wear, compromising neither your vision nor the ability to take deep breaths.
+ 
+|Barbute=5;head32;Headgear;Medium;Common;metal;4850;1;180;16;;;;;;;;-4;;;;;;;;;;;;;;;;;;;;;;;27;23;;;;;;;;;;;24;;;;;;;;;;;;;;;;aldor;1;;;;;;;;;;5;;;;;;;;;;;;;;Barbutes offer a great balance between protection and unobtrusiveness, which makes them well-suited for archers and light infantry.
+ 
+|Pot Helmet=2;head33;Headgear;Medium;Common;metal;350;0.85;100;8;;;;;;;;-4;-1;;;;;;;;;;;;;;;;;;;;;;16;14;;;;;;;;;;;12;;;;;;;;;;;;;;;;aldor;1;;;;;;;;;;2;;;;;;;;;;;;;;Its glory years are long behind it. In this day and age, Aldorian armorsmiths are capable of forging much more efficient designs.
+ 
+|Guard Helmet=2;head34;Headgear;Medium;Common;metal;475;1.15;120;9;;;;;;;;-2;-1;;;;;;;;;;;;;;;;;;;;;;18;14;;;;;;;;;;;15;;;;;;;;;;;;;;;;aldor;1;;;;;;1;;;;2;;;;;;;;;;;;;;When King Etbert ascended the throne, Aldor was drowning in crime and infighting. His swift success in regaining control over the brigand-infested roads can mostly be attributed to the creation of guard units that answered directly to him rather than local lords.
+ 
+|Reinforced Sentinet=3;head35;Headgear;Medium;Common;metal;1000;0.9;135;11;;;;;;;;-2;-1;;;;;;;;;;;;;;;;;;5;;;;22;21;;;;;;;;;;;19;;;;;;;;;;;;;;;;aldor;1;;;;;;;;;;3;;;;;;;;;;;;;;A pair of cheek plates instantly transforms this light helmet into a noticeably more protective piece.
+ 
+|Open Bascinet=3;head36;Headgear;Medium;Common;metal;1125;1;150;12;;;;;;;;-4;-1;;;;;;;;;;;;;;;;;;3;;;;22;18;;;;;;;;;;;21;;;;;;;;;;;;;;;;aldor;1;;;;;;1;;;;2;;;;;;;;;;;;;;Thanks to its domed shape, a bascinet can reliably redirect incoming strikes, preventing them from doing significant harm.
+ 
+|Raider Helmet=3;head37;Headgear;Medium;Common;metal;1000;0.9;105;10;2;;;;;;;-4;-1;;;;;;;;;;1;;;;;;;;;;;;20;14;10;;;;;;;;;;17;;;;;;8;;;;;;;;;;fjall;1;;;;;;2;;;;1;1;;;;;;;;;;;;;A helmet most favored by dwarven fighters: inexpensive to make, lightweight, and sufficiently intimidating.
+ 
+|Wolf Ribs Bascinet=4;head38;Headgear;Medium;Common;metal;2525;1;180;15;;;;;;;;-6;-1;;;;;;;;;;;;;;;;;;5;;;;26;22;;;;;;;;;;;25;;;;;;;;;;;;;;;;aldor;;;;;;;1;;;;4;;;;;;;;;;;;;;A bascinet with a grated visor and a nose guard. Protects the face better than an open variant.
+ 
+|Captain Barbute=5;head39;Headgear;Medium;Common;metal;5350;1;210;18;;;;;;;;-8;-1;;;;;;;;;;;;;;;;;;7;;;;30;26;;;;;;;;;;;27;;;;;;;;;;;;;;;;aldor;1;;;;;;;;;;5;;;;;;;;;;;;;;A reinforced variant of a barbute, preferred by those who don't find scars attractive.
+ 
+|Ornate Barbute=5;head40;Headgear;Medium;Unique;metal;5350;1;210;18;;;;;;;;-8;-1;;;5;;;;;;4;;;;;;;;;9;;;;30;26;;;;;;;;;;;27;;;;;;;;;;;;;;;;unique;1;;;;;;;;;;3;;;;2;;;;;;;;;;A generously gilded helmet you'd be expected to wear while leading parades in celebration of ceaseless victories.
+ 
+|Visored Cervelliere=3;head41;Headgear;Heavy;Common;metal;1425;1;200;15;;;;;6;-2;;-12;-3;;;;;;;;;-2;;;;;;;;;10;;;;27;28;;;;;;;;;;;26;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;3;;;;;;;;;;;;;;High-born or not, some knights don't have a single coin to their name. Affording first-rate armor is out of the question, so is wearing a common soldier's kettle helmet. And that's where cervelliers come into play.
+ 
+|Visored Cervelliere (Open)=3;;Headgear;Heavy;Common;metal;1425;1;200;9;;;;;4;;;-12;-2;;;;;;;;;;;;;;;;;;6;;;;16;28;;;;;;;;;;;16;;;;;;;;;;;;;;;;special;1;;;;;;;;;;3;;;;;;;;;;;;;;High-born or not, some knights don't have a single coin to their name. Affording first-rate armor is out of the question, so is wearing a common soldier's kettle helmet. And that's where cervelliers come into play.
+ 
+|Bellows-Visored Sallet=4;head42;Headgear;Heavy;Common;metal;3225;1;205;19;;;;;6;-2;;-11;-3;;;;;;;;;-2;;;;;;;;;8;;;;27;29;;;;;;;;;;;26;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;4;;;;;;;;;;;;;;Named after forge bellows, this helmet's visor has numerous perforations, allowing for less restricted breathing and improved air flow.
+ 
+|Bellows-Visored Sallet (Open)=4;;Headgear;Heavy;Common;metal;3225;1;240;11;;;;;4;;;-11;-2;;;;;;;;;;;;;;;;;;5;;;;16;29;;;;;;;;;;;15;;;;;;;;;;;;;;;;special;1;;;;;;;;;;4;;;;;;;;;;;;;;Named after forge bellows, this helmet's visor has numerous perforations, allowing for less restricted breathing and improved air flow.
+ 
+|Visored Sallet=4;head43;Headgear;Heavy;Common;metal;3225;1;240;19;;;;;9;-2;;-14;-3;;;;;;;;;-3;;;;;;;;;13;;;;32;34;;;;;;;;;;;30;;;;;;;;;;;;;;;;aldor;1;;;;;;;;;;4;;;;;;;;;;;;;;Fear makes the wolf bigger than he is, and it's hard to see a damn thing in one of these sallets - as a result, they are often worn by soldiers fighting on the front line.
+ 
+|Visored Sallet (Open)=4;;Headgear;Heavy;Common;metal;3225;1;240;11;;;;;5;;;-14;-2;;;;;;;;;;;;;;;;;;8;;;;19;34;;;;;;;;;;;18;;;;;;;;;;;;;;;;special;1;;;;;;;;;;4;;;;;;;;;;;;;;Fear makes the wolf bigger than he is, and it's hard to see a damn thing in one of these sallets - as a result, they are often worn by soldiers fighting on the front line.
+ 
+|Visored Barbute=4;head44;Headgear;Heavy;Common;metal;3225;1;265;20;;;;;11;-2;;-18;-4;;;;;;;;;-4;;;;;;;;;10;;;;37;39;;;;;;;;;;;30;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;4;;;;;;;;;;;;;;Visored barbutes are in no way inferior to sallets and bascinets. Choosing one over another is a matter of preference.
+ 
+|Visored Barbute (Open)=4;;Headgear;Heavy;Common;metal;3225;1;240;12;;;;;6;;;-18;-2;;;;;;;;;;;;;;;;;;6;;;;22;39;;;;;;;;;;;18;;;;;;;;;;;;;;;;special;1;;;;;;;;;;4;;;;;;;;;;;;;;Visored barbutes are in no way inferior to sallets and bascinets. Choosing one over another is a matter of preference.
+ 
+|Ornate Sallet=5;head45;Headgear;Heavy;Unique;metal;6800;1;280;23;;;;;24;-2;;-16;-3;;;;;;;;;-4;;;;;;;;;30;;;;37;40;;;;;;;;;;;34;;5;;;;;;;;;;;10;;;unique;;;;;;;;;;;5;;;;;;;;;;;;;;A sallet painted in black with a line of prayer meticulously inscribed on its rim - supposedly, it should provide additional protection against stray arrows and sudden strikes.
+ 
+|Visored Sentinet=5;head46;Headgear;Heavy;Common;metal;6800;1;265;23;;;;;10;-2;;-16;-5;;;;;;;;;-5;;;;;;;;;18;;;;42;45;;;;;;;;;;;36;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;5;;;;;;;;;;;;;;Complete with a full visor, sentinets offer protection on par with the more widespread sallets and barbutes. In some aspects, they even surpass them.
+ 
+|Visored Sentinet (Open)=5;;Headgear;Heavy;Common;metal;6800;1;280;14;;;;;6;;;-16;-3;;;;;;;;;;;;;;;;;;11;;;;25;45;;;;;;;;;;;22;;;;;;;;;;;;;;;;special;;;;;;;;;;;5;;;;;;;;;;;;;;Complete with a full visor, sentinets offer protection on par with the more widespread sallets and barbutes. In some aspects, they even surpass them.
+ 
+|Gryphon Sallet=5;head47;Headgear;Heavy;Common;metal;6800;1;280;23;;;;;12;-2;;-16;-5;;;;;;;;;-5;;;;;;;;;15;;;;40;53;;;;;;;;;;;34;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;5;;;;;;;;;;;;;;The beak-like visor of this sallet keeps the wearer's face safe from most dangers. In general, such helmets are worn by warriors of noble blood.
+ 
+|Gryphon Sallet (Open)=5;;Headgear;Heavy;Common;metal;6800;1;280;14;;;;;7;;;-16;-3;;;;;;;;;;;;;;;;;;9;;;;24;53;;;;;;;;;;;20;;;;;;;;;;;;;;;;special;;;;;;;;;;;5;;;;;;;;;;;;;;The beak-like visor of this sallet keeps the wearer's face safe from most dangers. In general, such helmets are worn by warriors of noble blood.
+ 
+|Luxurious Sallet=5;head48;Headgear;Heavy;Unique;metal;6800;1;310;23;;;;5;12;-2;;-16;-5;;;5;;;;;;-5;;;;;;;;;15;;5;;37;40;;;;;;;;;;;34;;;;;;;;;;;;;;;;unique;;;;;;;;;;;3;;;;2;;;;;;;;;;This helmet's original owner was Lord Nothward, notorious for his obsession with weapons and armor. Rather peculiarly, he was also an irredeemable coward insistent on avoiding the battlefield.
+ 
+|Luxurious Sallet (Open)=5;;Headgear;Heavy;Common;metal;6800;1;280;14;;;;5;7;;;-16;-3;;;5;;;;;;;;;;;;;;;9;;5;;22;40;;;;;;;;;;;20;;;;;;;;;;;;;;;;special;1;;;;;;;;;;3;;;;2;;;;;;;;;;This helmet's original owner was Lord Nothward, notorious for his obsession with weapons and armor. Rather peculiarly, he was also an irredeemable coward insistent on avoiding the battlefield.
+ 
+|Ceremonial Sentinet=5;head49;Headgear;Heavy;Unique;metal;6800;1;280;23;;;;;10;-2;;-13;-4;;;;;;;;-5;-4;;;;;;;;;23;;;;40;45;;;;;;;;;;;34;;;;;;;;;;;;;;;;unique;;;;;;;;;;;3;;;;3;;;;;;;;;;The gilded ornaments seem to be the craftsman's attempt at adapting the traditional Radiant Wars motifs to fit the shape of a modern helmet.
+ 
+|Ceremonial Sentinet (Open)=5;;Headgear;Heavy;Common;metal;6800;1;280;14;;;;;6;;;-13;-2;;;;;;;;-5;;;;;;;;;;14;;;;24;45;;;;;;;;;;;20;;;;;;;;;;;;;;;;special;;;;;;;;;;;3;;;;3;;;;;;;;;;The gilded ornaments seem to be the craftsman's attempt at adapting the traditional Radiant Wars motifs to fit the shape of a modern helmet.
+ 
+|Vagabond Knight's Sentinet=5;head50;Headgear;Heavy;Unique;metal;6800;1;225;21;;;;;18;-2;;-16;-5;;-6;3;;3;;;;-5;;;;;;;;6;15;;;;40;45;;;;;;;;;;;34;11;11;;;;;;;;;;;;;;unique;;;;;;;;;;;5;;;;;3;;;;;;;;;The absolute mystery of this helmet's origins deepens with its engraved interior, which calls to mind elven craftsmanship - though, given the overall design, such a claim makes very little sense.
+ 
+|Vagabond Knight's Sentinet (Open)=5;;Headgear;Heavy;Common;metal;6800;1;280;13;;;;;11;;;-16;-3;;-6;3;;3;;;;;;;;;;;;6;9;;;;24;45;;;;;;;;;;;20;;;;;;;;;;;;;;;;special;;;;;;;;;;;5;;;;;3;;;;;;;;;The absolute mystery of this helmet's origins deepens with its engraved interior, which calls to mind elven craftsmanship - though, given the overall design, such a claim makes very little sense.
+ 
+|Jousting Bascinet=3;head51;Headgear;Heavy;Unique;metal;1625;1;270;17;4;;;;12;-2;;-16;-5;;;;;;;-5;;-3;;;;;;;;;12;;;;31;33;;;;;;;;;;;30;;;;;;;;;;;;;;;;unique;;;;;;;1;;;;4;;;;;;;;;;;;;;The flowers adorning its brow symbolize nobility, temperance, and purity of intention.
+ 
+|Jousting Bascinet (Open)=3;;Headgear;Heavy;Common;metal;1625;1;270;12;;;;;8;;;-16;-3;;;;;;;-5;;;;;;;;;;;8;;;;22;33;;;;;;;;;;;21;;;;;;;;;;;;;;;;special;1;;;;;;1;;;;4;;;;;;;;;;;;;;The flowers adorning its brow symbolize nobility, temperance, and purity of intention.
+ 
+|Klappvisor Bascinet=3;head52;Headgear;Heavy;Common;metal;1625;1;300;17;;;;;12;-2;;-16;-5;;;;;;;;;-3;;;;;;;;;12;;;;31;33;;;;;;;;;;;30;;;;;;;;;;;;;;;;aldor;;;;;;;1;;;;4;;;;;;;;;;;;;;This bascinet's visor forms a solid barrier against blades and arrows. As a trade-off, it also greatly limits your vision.
+ 
+|Klappvisor Bascinet (Open)=3;;Headgear;Heavy;Common;metal;1625;1;300;12;;;;;8;;;-16;-3;;;;;;;;;;;;;;;;;;8;;;;22;33;;;;;;;;;;;21;;;;;;;;;;;;;;;;special;1;;;;;;1;;;;4;;;;;;;;;;;;;;This bascinet's visor forms a solid barrier against blades and arrows. As a trade-off, it also greatly limits your vision.
+ 
+|Hounskull Bascinet=4;head51;Headgear;Heavy;Common;metal;3675;1;360;21;;;;;16;-2;;-18;-5;;;;;;;;;-4;;;;;;;;;16;;;;36;39;;;;;;;;;;;34;;;;;;;;;;;;;;;;aldor;;;;;;;1;;;;4;;;;;;;;;;;;;;A hounskull visor may look peculiar, but it actually excels at deflecting blows to the face while also providing more breathing room.
+ 
+|Hounskull Bascinet (Open)=4;;Headgear;Heavy;Common;metal;3675;1;360;13;;;;;11;;;-18;-3;;;;;;;;;;;;;;;;;;11;;;;25;39;;;;;;;;;;;24;;;;;;;;;;;;;;;;special;1;;;;;;1;;;;4;;;;;;;;;;;;;;A hounskull visor may look peculiar, but it actually excels at deflecting blows to the face while also providing more breathing room.
+ 
+|Pig-Faced Bascinet=5;head53;Headgear;Heavy;Common;metal;7775;1;420;26;;;;;20;-3;;-20;-5;;;;;;;;;-5;;;;;;;;;20;;;;40;45;;;;;;;;;;;38;;;;;;;;;;;;;;;;aldor;;;;;;;1;;;;4;;;;;;;;;;;;;;Bascinets with such visors are novel to Aldor, but they are growing more and more fashionable with each passing day.
+ 
+|Pig-Faced Bascinet (Open)=5;;Headgear;Heavy;Common;metal;7775;1;420;16;;;;;14;;;-20;-3;;;;;;;;;;;;;;;;;;14;;;;28;45;;;;;;;;;;;27;;;;;;;;;;;;;;;;special;1;;;;;;1;;;;4;;;;;;;;;;;;;;Bascinets with such visors are novel to Aldor, but they are growing more and more fashionable with each passing day.
+ 
+|Visored Grand Bascinet=5;head54;Headgear;Heavy;Common;metal;7775;1;460;29;;;;;22;-3;;-25;-6;;;;;;;;;-7;;;;;;;;;20;;;;42;47;;;;;;;;;;;40;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;6;;;;;;;;;;;;;;One of the heaviest helmets out there, it can protect your head and neck from just about anything - not to mention how formidable it looks.
+ 
+|Visored Grand Bascinet (Open)=5;;Headgear;Heavy;Common;metal;7775;1;460;20;;;;;15;;;-25;-4;;;;;;;;;;;;;;;;;;14;;;;29;47;;;;;;;;;;;28;;;;;;;;;;;;;;;;special;;;;;;;;;;;6;;;;;;;;;;;;;;One of the heaviest helmets out there, it can protect your head and neck from just about anything - not to mention how formidable it looks.
+ 
+|Visored Pot Helmet=3;head55;Headgear;Heavy;Common;metal;1225;1;250;16;;;;;5;-2;;-14;-4;;;;;;;;;-4;;;;;;;;;6;;;;26;31;;;;;;;;;;;28;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;4;;;;;;;;;;;;;;Its glory years are long behind it. In this day and age, Aldorian armorsmiths are capable of forging much more efficient designs. And even though the visor adds an extra layer of protection, the whole thing is still outrageously outdated.
+ 
+|Topfhelm=4;head56;Headgear;Heavy;Common;metal;2750;1;300;20;;;;;8;-2;;-16;-4;;;;;;;;;-5;;;;;;;;;8;;;;31;37;;;;;;;;;;;27;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;4;;;;;;;;;;;;;;Topfhelms have been out of fashion for quite a while. Nowadays they are worn almost exclusively by gray-haired, irredeemably nostalgic veterans.
+ 
+|Jousting Topfhelm=4;head57;Headgear;Heavy;Unique;metal;2750;1;270;20;4;;;;8;-2;;-16;-4;;;;;;;-5;;-5;;;;;;;;;8;;;;31;37;;;;;;;;;;;27;;;;;;;;;;;;;;;;unique;;;;;;;;;;;4;;;;1;;;;;;;;;;If you ignore the lavish decorations, it's just a simple, hopelessly outdated topfhelm: the only thing it'll help you conquer it is the hearts of fair maidens.
+ 
+|Radiant Topfhelm=5;head58;Headgear;Heavy;Unique;metal;5825;1;350;24;;;;;14;-2;;-14;-4;;;;;3;;;;-3;;;;;;;;;8;;;;35;45;;;;;;;;;;;30;;;;;;;;;;;;;33;;;unique;;;;;;;;;;;4;;;;1;;;;;;;;;;A variant of a topfhelm improved upon by Aldorian craftsmen, boasting a slicker shape and exquisite ornaments. These were all the rage during the Radiant Wars.
+ 
+|Vagrant Cowl=1;head59;Headgear;Light;Common;cloth;75;1;20;1;;;;;;;;;1;;;;-1;;;;;;;;;;;;;;;;;;3;;;;;;;;;;;;1;;;;;;;;;;;;;;;;aldor;1;;1;;;;;;;;;;;;;;;;;;;;;;Doesn't make you look any more trustworthy, to put it bluntly.
+ 
+|Fledgling Mage Cowl=2;head60;Headgear;Light;Common;cloth;475;1;40;2;;;;;;;;3;2;;;5;-2;;;;;;;;;;;;;;;;;;4;;;;;;;;;;;;2;;;;;;;;;;;;;;;;magic;1;;2;;;;;;;;;;;;;;;;;;;;;;Its colors are reminiscent of the cowls worn by students of the Academy.
+ 
+|Witch Hat=2;head61;Headgear;Light;Unique;cloth;575;1.2;20;2;;;;;;;;;;;;6;;3;6;;;;;;;;;;;;;;;;4;;;;;;;;;;;;2;;;;;;;;;;;;;;;;special;1;;2;;;;;;;;;;;;;;;;;;;;;;Just an old, dusty hat, but for some reason you are compelled to put it on your head.
+ 
+|Wanderer Cowl=3;head62;Headgear;Light;Common;cloth;1275;1;50;3;;;;;;;;5;2;;;6;-3;;;;;;;;;;;;;;;;;;5;;;;;;;;;;;;3;;;;;;;;;;;;;;;;magic;1;;2;;;;;;;;;;;;;;;;;;;;;;These cowls are usually pulled over one's eyes: many commoners believe that a mage's gaze brings woes and misfortune, so why not ease their fears?
+ 
+|Battlemage Cowl=4;head63;Headgear;Light;Common;cloth;2450;0.85;70;5;;;;;;1;;7;3;;;8;-4;;;;;;;;;;;;;;;;;;9;;;;;;;;;;;;6;9;9;;;;;;;;;;;;;;magic;1;;;3;;;;;;;;;;;;;;;;;;;;;Its inner layer is embroidered with protective spells.
+ 
+|Arcanist Cowl=4;head64;Headgear;Light;Common;cloth;2875;1;60;4;;;;4;;1;;6;2;;;;-4;;;;;;;;;;;;;9;;;;;6;;;;;;;;;6;;;4;;;;;;;;;;;;20;;;;magic;1;;;3;;;;;;;;;;;;;;;;;;;;;Barely forms any wrinkles when subjected to portal jumps.
+ 
+|Pyromancer Cowl=4;head65;Headgear;Light;Common;cloth;2875;1;60;4;;;;;;1;;6;2;;;;-4;2;5;;;;;;;;;;;;;;;;6;;;;6;;;;;;;;4;;;;;;;20;;;;;;;;;magic;1;;;3;;;;;;;;;;;;;;;;;;;;;Fire magic can be hazardous even to pyromancers themselves. This cowl is capable of extinguishing the flames that creep dangerously close to its wearer's face.
+ 
+|Geomancer Cowl=4;head66;Headgear;Light;Common;cloth;2875;1;80;5;;;;;;1;;6;2;;;;-4;;;-5;;;;;;;;;;;8;;;;6;;;;;6;;;;;;;5;;;;;;;;;;;;10;;;;magic;1;;;3;;;;;;;;;;;;;;;;;;;;;Pulling up this cowl makes you feel inexplicable unity with the ground under your feet.
+ 
+|Electromancer Cowl=4;head67;Headgear;Light;Common;cloth;2875;1;60;4;;;;;;1;;8;3;;-5;;-4;;;;;;;;;;;;;;;;;;6;;;;;;;6;;;;;4;;;;;;;;20;;;;;;;;magic;1;;;3;;;;;;;;;;;;;;;;;;;;;Novice electromancers often complain about being constantly distracted by the constant electric crackling produced by these cowls. They quickly grow accustomed to it though.
+ 
+|Cryomancer Cowl=4;head68;Headgear;Light;Common;cloth;2875;1;60;4;;;;;10;1;;6;2;;;;-5;;;;;;;;;5;;;;;;;;;6;;;;;;;;6;;;;4;;;;;;;;;;;25;;;;;magic;1;;;3;;;;;;;;;;;;;;;;;;;;;Keeps your mind cold and your ears warm.
+ 
+|Spellweaver Cowl=5;head69;Headgear;Light;Common;cloth;6075;1;70;5;;;;;;1;;9;3;;-6;8;-5;;;;-4;;;;;;;;;;;;;;7;;;;;;;;;;;;5;;;;;;;;;;;;;;;;magic;1;;;3;;;;;;;;;;;;;;;;;;;;;Spellweavers perceive the world very differently from other people, their minds finely tuned to sense magical disturbances in their surroundings.
+ 
+|Crimson Headband=1;head70;Headgear;Light;Common;cloth;20;;15;;;;;2;;;;;;;;;;2;;;;;2;;;;;;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;1;;1;;;;;;;;;;;;;;;;;;;;;;A tribute to the principle that offense is the finest form of defense.
+ 
+|Academy Circlet=2;head71;Headgear;Light;Common;gem;575;1;25;;;;;;;;;;;;;8;;1;3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;magic;1;;;;;;1;;;;;;;;1;;;;;;;;;;An item familiar to every Maen Academy student - the resonance created by precious metals makes it easier to overcome the hurdles of learning magic.
+ 
+|Topaz Circlet=3;head72;Headgear;Light;Common;gem;1375;0.9;40;;;;;;;;;;;;;9;;2;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;magic;1;;;;;;1;;;;;;;;;;;;;;;;;;Topazes can be relatively cheap - pieces of equipment encrusted with them are commonly purchased by mages of modest income.
+ 
+|Gilded Circlet=3;head73;Headgear;Light;Common;gold;1825;1.2;20;;;;;;;;;;;;;11;-1;2;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;magic;1;;;;;;1;;;;;;;;2;;;;;;;;;;Hardly the most elegant piece of jewelry - the craftsman was clearly more interested in the practical applications of gold than its aesthetics.
+ 
+|Dwarven Circlet=4;head74;Headgear;Light;Common;wood;4150;1.2;70;;;;;;5;;;;;;;11;;5;9;;;;;;;;;;;;;;;;;;;;;;;;;;;;7;7;7;;;;;;;;;;;;;;fjall;1;;;;;;1;;;;;;;;;;5;;;;;;;;A customary headwear of Fjall seidrs, practitioners of the bizarre mix of Axonian magic and local pagan rituals.
+ 
+|Battlemage Circlet=4;head75;Headgear;Light;Common;gem;3450;1;35;;;;;;;;;6;3;;;12;;3;7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;magic;1;;;;;;1;;;;;;;;;;5;;;;;;;;Battlemages aren't averse to risks. Many of them willingly forgo proper head protection to stay unhindered while casting complex spells.
+ 
+|Ruby Circlet=5;head76;Headgear;Light;Common;gem;7300;1;55;;;;;;;;;;;;-5;13;;3;9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;magic;1;;;;;;1;;;;;;;;;;5;;;;;;;;The ability of rubies to withstand violent energies makes them particularly attractive to sorcerers who favor dangerous and unpredictable schools of magic, such as pyromancy.
+ 
+|Court Mage Diadem=5;head77;Headgear;Light;Common;gold;8375;1.15;20;;;;;;;;;;;;;15;;4;12;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;10;;;;;;;;;;;;;;magic;1;;;;;;;;;;;;;;3;;5;;;;;;;;Just a few years worth of village taxes is all it costs for a lord to adorn his court mage with one of these diadems.
+ 
+|Hermit Wreath=5;head78;Headgear;Light;Unique;wood;7300;1;40;;;;;;;;;4;2;;;11;;4;7;;;;;;;4;2;;;;;;;;;;;;;;;;;;;;;15;;;;;;;;;;;;;;;unique;1;;;;;;1;;;;;;;;;;10;;;;;;;;Inexplicably, the strips of bark still appear to be fresh, alive even... What power makes it possible?
+ 
+|Tattered Rags=1;chest01;Chestpiece;Light;Common;cloth;1;;15;1;;;;2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;special;;;1;;;;;;;;;;;;;;;;;;;;;;It's completely soaked in blood and sweat.
+ 
+|Old Shirt=1;chest02;Chestpiece;Light;Common;cloth;10;;10;1;;;;4;;;;;;-3;;;;;;;;;;;;;;;;;;;;;1;;;3;;;;;;;;;1;;;;;;;;;;;;;;;;aldor;;;1;;;;;;;;;;;;;;;;;;;;;;A ragged shirt littered with stitches, patches, and oily spots.
+ 
+|Linen Shirt=1;chest03;Chestpiece;Light;Common;cloth;25;1;20;1;;;;6;;;;;;-5;;;;;;;;;;;;;;;;;;;;;2;;;5;;;;;;;;;1;;;;;;;;;;;;;;;;aldor;;;1;;;;;;;;;;;;;;;;;;;;;;Some peasants own only a shirt on their back. Naturally, it's worn for every occasion.
+ 
+|Fine Shirt=2;chest04;Chestpiece;Light;Common;cloth;125;1;20;1;;;;8;;;;;;-6;;;;;;;;;;;;;;;;;;;;;4;;;7;;;;;;;;;2;;;;;;;;;;;;;;;;aldor;;;1;;;;;;;;;;;;;;;;;;;;;;Rich peasants like to look the part - after all, why not wear better clothes if you have the funds?
+ 
+|Dirwin's Vest=2;chest05;Chestpiece;Light;Unique;cloth;100;0.8;20;1;;;;3;;;;;;-6;;;;;;;;3;;;;;;;;;;;;;4;;;9;;;;;;;;;2;5;;;;;5;;;;;;;;;;special exc;;;;1;;;1;;;;;;;;;;;;;;;;;;Dirwin has been wearing this vest for so long, it's a miracle it hasn't yet fused with him.
+ 
+|Velmir's Embroidered Caftan=2;chest06;Chestpiece;Light;Unique;cloth;100;0.8;20;1;;;;5;;;;;;-4;;;;;;;;;;;2;;;;;;5;;;;10;;;4;;;;;;;;;5;;;;;;;;;;;;;;;;special exc;;;1;1;;;;;;;;;;;;;;;;;;;;;A well-made caftan, now battered and worn out, a distant echo of the life left behind.
+ 
+|Merchant Vest=3;chest07;Chestpiece;Light;Common;cloth;325;1;25;2;;;;9;;;;;;-7;;;;;;;;;;;;;;;;;;;;;6;;;9;;;;;;;;;3;;;;;;;;;;;;;;;;aldor;;;2;;;;;;;;;;;;;;;;;;;;;;A well-to-do city merchant can be easily recognized by their attire. Such flashiness worked a bit too well in Maen - anyone dressed in a fancy garb was among the first to face the gallows.
+ 
+|Elven Garment=4;chest08;Chestpiece;Light;Common;cloth;1000;1.35;30;2;;;;11;;;;;;-8;;;;;;;;;;;5;;;;;;;;;;8;;;12;;;;;;;;;4;;;;;;;;;;;;;;;;elven;;;1;1;;;;;;;;;;;;;;;;;;;;;There is a faint flowery scent coming from the cloth. It reminds you of places you've never had a chance to travel to.
+ 
+|Leather Vest=1;chest09;Chestpiece;Light;Common;leather;75;1;30;2;;;;4;;;;;;;;;;;;;;;;;2;;;;;;;;;;4;;;;;;;;;;;;4;;;;;;;;;;;;;;;;aldor;;;;;;;3;;;;;;;;;;;;;;;;;;Comfortable and pragmatic, such vests are favored by peasants with spare gold in their pockets.
+ 
+|Fur Vest=1;chest10;Chestpiece;Light;Common;leather;75;1;20;2;;;;8;;;;;;;;;;;;;;;1;5;2;;;;;;;;;;4;;;;;;;;;;;;10;;;;;;;;;;;20;;;;;fjall;;;1;;;;1;;;;;;;;;;;;;;;;;;It won't protect you from anything but cold. On the other hand, Fjall dwarves don't usually need more than that.
+ 
+|Leosthenes' Doublet=2;chest11;Chestpiece;Light;Unique;cloth;600;1.5;40;3;;;;3;;;;;;;;3;;;;;;;;;2;;;;;;;;;;3;;;;;;;;;;;;3;;;;;;;;;;;;;;;;special exc;;;;2;;;1;;;;;;;;;3;;;;;;;;;A Nistrian-style doublet, reeking of sweat and blood. The only reminder of its owner's Agemon past is a few gilded clasps bearing the crest of the Great Despot.
+ 
+|Padded Leather Vest=2;chest12;Chestpiece;Light;Common;leather;400;1;40;3;;;;5;;;;;;;;;;;;;;;;;3;;;;;;;;;;6;;;;;;;;;;;;5;;;;;;;;;;;;;;;;aldor;;;1;;;;2;;;;;;;;;;;;;;;;;;An attire that would be the main source of pride for any show-off from the slums.
+ 
+|Padded Doublet=3;chest13;Chestpiece;Light;Common;cloth;1050;1;50;4;;;;6;;;-2;;;;;;;;;;;;;;4;;;;;;;;;;8;;;;;;;;;;;;6;;;;;;;;;;;;;;;;aldor;;;1;1;;;;;;;;;;;;;;;;;;;;;It's suitable for a night out, a duel, or both at the same time. You'll look appropriate either way.
+ 
+|Duelist Doublet=4;chest14;Chestpiece;Light;Common;cloth;2350;1;60;5;;;;7;;;;;;;;;;;;;;;2;;5;;;;;;;;;;10;;5;;;;;;;;;;7;;;;;;;;;;;;;;;;aldor;;;1;;1;;;;;;;;;;;;;;;;;;;;A fair number of duelists prefer wearing all black when showing up for a fight. Why? Blood is harder to spot on dark fabric.
+ 
+|Pourpoint=4;chest15;Chestpiece;Light;Common;cloth;2350;1;75;7;;;;5;5;;;;;;;;;;;-5;;;;;3;;;;;;;;;;20;;;;;;;;;;;;11;;;;;5;;;;;;;;;;;aldor;;;1;;1;;;;;;;;;;;;;;;;;;;;The fashion for wearing gambesons as civil clothing was spearheaded by King Etbert himself. Thanks to his efforts, it became a sign of good taste to wear a pourpoint when attending the court.
+ 
+|Skarhogg Garment=4;chest16;Chestpiece;Light;Common;cloth;2600;1.1;40;4;;;;3;;;-3;;;;;;;;;;;;4;20;3;;;;;;;;;;6;;;;;;;;;;;;4;;;;;;;;;;;15;;;;;fjall;;;;;1;;1;;;;;;;;;;;;;;;;;;There's a dwarven belief that an attire blessed by Skarhogg shamans can fortify strength and resolve of any warrior who puts it on.
+ 
+|Blademaster Doublet=5;chest17;Chestpiece;Light;Common;cloth;4975;1;90;8;2;;;5;;;;;;;;;;;;;;2;2;;4;;;;;;;;;;15;;;;;;;;;;;;12;;;5;5;;;;;;;;;;;;aldor;;;1;;2;;;;;;;;;;;;;;;;;;;;Lightweight, resilient, and cut for mobility - despite the many metal plates sewn into the lining.
+ 
+|Fencer Doublet=5;chest18;Chestpiece;Light;Common;cloth;4975;1;70;6;;;;9;;;;;;;;;;;;;;;;;7;;;;;;;;;;10;;;;;;;;;;;;8;;;;;;;;;;;;;;;;aldor;;;;1;1;;;;;;;;;;;6;;;;;;;;;A garment beloved by the aristocrats who spend all their free time on mastering the sword: it's tough, boasts strong seams, and looks fancy to boot.
+ 
+|Aristocrat Doublet=5;chest19;Chestpiece;Light;Common;cloth;4975;1;80;7;;;;7;8;;;;;-5;;;;;;;-5;;;;6;;;;;;5;;;;17;;;;;;;;;;;;10;;;;;;;;;;;;;;;;aldor;;;2;;1;;;;;;;;;;;;;;;;;;;;From the stitching to the buckles, every single part is crafted from the finest materials and with flawless workmanship.
+ 
+|Gambeson=2;chest20;Chestpiece;Light;Common;cloth;300;1;55;4;4;;;2;;;;;;;;;;;;;;;;;;;;;;;;;;;10;;;;;;;;;;;;8;;;;;;;;;;;;;;;;aldor;;;;2;;;;;;;;;;;;;;;;;;;;;Makes you look fat, but who cares about appearances in the thick of a fight?
+ 
+|Magistrate Gambeson=2;chest21;Chestpiece;Light;Common;cloth;300;1;55;4;4;;;2;;;;;;;;;;;;;;;;;;;;;;;;;;;10;;;;;;;;;;;;8;;;;;;;;;;;;;;;;aldor;;;;2;;;;;;;;;;;;;;;;;;;;;A regular quilted gambeson, painted with the blues and whites of the Magistrate. It's often worn by village militias and light infantry.
+ 
+|Long Gambeson=3;chest22;Chestpiece;Light;Common;cloth;775;1;80;6;6;;;2;;;;;;;;;;;;;;;;;;;;;;;;;;;14;;;;;;;;;;;;10;;;;;;;;;;;;;;;;aldor;;;;;3;;;;;;;;;;;;;;;;;;;;It protects well for its price. The main concern is overheating to death.
+ 
+|Vehement Gambeson=3;chest23;Chestpiece;Light;Common;cloth;900;1.15;55;4;2;;;3;;;;;;;;3;;;;;-3;;;;;;;;;;;;;;8;;;;;;;;;;;;10;10;10;;;;;;;;;;;10;;;magic;;;;2;1;;;;;;;;;;;;;;;;;;;;The Vehement are militant Hieronites who took up arms to fight against all manner of ghouls, warlocks, and unholy monstrosities.
+ 
+|Sentian Gambeson=3;chest24;Chestpiece;Light;Common;cloth;775;1;70;5;3;;;5;;;;;;;;;;;;;;;;;;;;;;;;;;;11;;;;;;;;;;;;10;;;;;;;;;;;;;;;;aldor;;;;;3;;;;;;;;;;;;;;;;;;;;The Sentians have always been known for their ability to add a touch of refinement to even the most simple and mundane items.
+ 
+|Lamellar Gambeson=4;chest25;Chestpiece;Light;Common;leather;1775;1;85;8;6;;;4;;;;;;;;;;;;;;;;;;;;;;;;;;;14;;;;;;;;;;;;12;;;5;10;10;;;;;;;;;;;aldor;;;;;;;;1;3;;;;;;;;;;;;;;;;A quilted chestpiece reinforced with multiple rows of leather plates to better disperse the force of incoming strikes.
+ 
+|Norrheim Garment=4;chest26;Chestpiece;Light;Common;leather;2025;1.15;55;7;4;;;6;;;;;;;;;;;;-5;;;;;;;;;;;;;;;12;;;;;;;;;;;;7;10;5;;;;;;;;;20;;;;;fjall;;;;;;;2;2;;;;;;;;;;;;;;;;;The dwarves of the Norrheim clan have to deal with the most dangerous beasts the North can offer on a daily basis, so their warriors' garments are frequently imbued with protective enchantments.
+ 
+|Battlemage Gambeson=4;chest27;Chestpiece;Light;Common;cloth;2025;1.15;65;6;2;;;4;;;;;;;;6;-2;;;;;;;;;;;;;;;;;;14;;;;;;;;;;;;10;15;20;;;;;;;;;;;;;;magic;;;;;2;2;;;;;;;;;;;;;;;;;;;Much lighter than a common gambeson and much sturdier than a mantle, this chestpiece combines the best of both worlds.
+ 
+|Mirror Plate Gambeson=5;chest28;Chestpiece;Light;Common;cloth;4300;1.15;115;11;7;;;3;5;;;;;;;;;;;;;;;;;;;;;;;;;;20;;;;;;;;;;;;18;;;;;5;10;;;;;;;;;;aldor;;;;;2;;;2;;;1;;;;;;;;;;;;;;The idea of strapping a round metal chestplate to a gambeson has its roots in Nistra, but the benefits it provides quickly became apparent to Aldorian armorsmiths as well.
+ 
+|Magehunter Gambeson=5;chest29;Chestpiece;Light;Common;cloth;4300;1.15;85;9;6;;;5;;;;;;;;4;;;;;;;;;;;;;;;;;;;14;;;;;;;;;;;;12;20;15;;;;;;;;;;;10;;;aldor;;;;1;;2;;2;;;;;;;;;;;;;;;;;The life of a magehunter is full of uncertainty. However, with a gambeson like this, managing that uncertainty becomes so much easier.
+ 
+|Captain Gambeson=5;chest30;Chestpiece;Light;Common;cloth;3750;1;100;10;8;;;4;3;;;;;;;;;;;;;;;;;;;;;;5;;;;16;;;;;;;;;;;;14;;;;;;;;;;;;;;;;aldor;;;;;2;2;1;;;;;;;;;;;;;;;;;;Anyone who lives long enough to earn the rank of captain knows full well how to avoid putting themselves into unnecessary danger - sometimes you just don't need more than a gambeson.
+ 
+|Jarl Garment=5;chest31;Chestpiece;Light;Unique;cloth;4675;1.25;130;11;;;6;5;;;;;;;;;;;;;;;3;;;5;;;;;;;;;16;;12;;;;;;;;;;14;10;;;;;;;;;;25;;;;;unique;;;;3;;2;;;;;;;;;;;;;;;;;;;Given sufficient materials, time, and patronage, dwarven craftsmen are still capable of producing true masterpieces.
+ 
+|Royal Ranger Gambeson=5;chest32;Chestpiece;Light;Unique;cloth;4675;1.25;145;10;;;;6;;;-5;;;;;;;;;;;5;;;;;;;;;;;;;24;;;;;;;;;;;;20;20;;;;;20;;;;;;;;;;unique;;;1;1;;3;;;;;;;;;;;;;;;;;;;The main task of the Royal Rangers was to patrol the hunting grounds of His Majesty. Their gambesons were sewn by the best craftsmen the realm had to offer.
+ 
+|Der Vyrne Heirloom Cuirass=2;chest33;Chestpiece;Medium;Unique;metal;550;1;84;7;;;;-1;6;;;-2;-1;;;;;;;;;;;;;;;;;;;;4;;11;;;5;;;;;;;;;11;;;;4;;;;;;;;;;;;special exc;;;1;;;;;;;;2;;;1;;;;;;;;;;;This cuirass holds sentimental value to Arna - it used to be the most treasured heirloom of the House der Vyrne, passed down through generations. Time wasn't kind to it.
+ 
+|Soldier Cuirass=3;chest34;Chestpiece;Medium;Common;metal;1450;1;130;12;;;;-2;8;;;-4;-1;;;;;;;;;;;;;;;;;;;;;;22;;;;;;;;;;;;19;;;;11;;;;;;;;;;;;aldor;;;;;;1;;;;;1;;;1;;;;;;;;;;;Rapid advancements in steel forging are slowly but steadily driving down the cost of plate armor - enough that wealthier foot soldiers can now afford individual pieces.
+ 
+|Mercenary Cuirass=4;chest35;Chestpiece;Medium;Common;metal;3250;1;155;15;;;;-3;10;;;-6;-1;;;;;;;;;;;;;;;;;;;;;;26;;;;;;;;;;;;23;;;;12;;;;;;;;;;;;aldor;;;;;;1;;;;;1;;;2;;;;;;;;;;;A breastplate worn by lonely mercenaries - it's relatively light, covers the vital spots, and doesn't cost all that much.
+ 
+|Captain Cuirass=5;chest36;Chestpiece;Medium;Common;metal;6850;1;180;18;;;;-4;12;;;-8;-1;;;;;;;;;;;;;;;;;;;;;;30;;7;;;;;;;;;;28;;;;12;;;;;;;;;;;;aldor;;;;1;;;;;;;1;1;;2;;;;;;;;;;;It's not unusual for leaders of the most celebrated mercenary warbands to amass fortunes that eclipse those of many aristocrats. Naturally, much of it is spent on acquiring the best equipment available.
+ 
+|Recruit Mail=2;chest37;Chestpiece;Medium;Common;metal;475;0.95;115;6;;;;;;;;-1;;;;;;;;;;;;;;;;;;;2;;;;15;;;;;;;;;;;;10;;;12;;;;;;;;;;;;;aldor;;;;;;;;1;;;;2;;;;;;;;;;;;;Mail shirts have stood the test of time: they were already in use when the Ald tribes, the ancestors of the modern Aldorians, took over the Firn foothills.
+ 
+|Road Guard Armor=2;chest38;Chestpiece;Medium;Common;metal;575;1.15;130;7;;;;;;;;-1;;;;;;;;;;;;;;;;;;;2;;;;17;;;5;;;;;;;;;12;;;;6;3;;;;;;;;;;;aldor;;;;;;;;1;;;;2;;;;;;;;;;;;;Under the rule of King Etbert, the Road Guard's upkeep was often an afterthought - the soldiers had to make do with worn-down chainmail and battered brigandines.
+ 
+|Vehement Mail=3;chest39;Chestpiece;Medium;Common;metal;1175;0.9;175;8;;;;1;;;;-2;;;;;;;;;;;;;;;;;;;6;;;;24;;;;;;;;;;;;10;5;10;8;;;;;;;;;;10;;;aldor;;;;;;;;1;;;;2;;;;;;;;;;;;;The initiation into the Vehement is incomplete without a sacred vow: to stand always with the Hieron and the common folk, doing all in one's power to purge the evils of this world
+ 
+|Footman Mail=3;chest40;Chestpiece;Medium;Common;metal;1300;1;195;10;;;;;;;;-2;;;;;;;;;;;;;;;;;;;4;;;;19;;;;;;;;;;;;10;;;15;;;;;;;;;;;;;aldor;;;;;;;;;;;;3;;;;;;;;;;;;;Hauberks protect well and don't restrict mobility. On the downside, you can't make one without thousands of metal rings and lots and lots of time - obviously, all of that adds to the price.
+ 
+|Magistrate Mail=3;chest41;Chestpiece;Medium;Common;metal;1300;1;195;10;;;;;;;;-2;;;;;;;;;;;;;;;;;;;4;;;;19;;;;;;;;;;;;10;;;15;;;;;;;;;;;;;aldor;;;;;;;;;;;;3;;;;;;;;;;;;;A mail shirt with a blue and white tabard - a standard chestpiece of the Magistrate's garrisons.
+ 
+|Footman Brigandine=3;chest42;Chestpiece;Medium;Common;metal;1300;1;150;10;;;;;;;;-2;;;;;;;;;;;;;;;;;;;4;;;;19;;;;;;;;;;;;13;;;;7;4;;;;;;;;;;;aldor;;;;;;1;;;;;;2;;;;;;;;;;;;;A favorite chestpiece of the Aldorian light infantry - it protects much better than a simple gambeson while being less cumbersome than plate armor.
+ 
+|Mail Mantle=4;chest43;Chestpiece;Medium;Common;metal;3100;1.05;135;13;;;;;;;;-2;;;-5;5;;;;;;;;;;;;;;;6;;;;16;;;5;;;;;;;;;11;15;15;11;;;;;;;;;;;;;magic;;;;2;;;;;;;;2;;;;;;;;;;;;;Such mantles have been a common garb of Aldorian battlemages ever since the Radiant Wars - the long range of maaf bows would make short work of anyone wearing light clothes.
+ 
+|Skadian Yushman=4;chest44;Chestpiece;Medium;Common;metal;3400;1.15;215;13;;;;;;;;-3;;;;;;;;;;;;;;;;;;;6;;;;25;;;;;;;;;;;;17;;;21;6;;;;;;;;;;;;skadia;;;;;;;;;;;;3;1;;;;;;;;;;;;Skadians borrowed the practice of reinforcing mail armor with iron plates from Jarimad warriors. Such chestpieces are more than capable of protecting the cavalry from stray arrows and spear thrusts.
+ 
+|Veteran Brigandine=4;chest45;Chestpiece;Medium;Common;metal;2950;1;180;13;;;;;;;;-3;;;;;;;;;;;;;;;;;;;6;;;;23;;;;;;;;;;;;20;;;;8;5;;;;;;;;;;;aldor;;;;1;;;;;;;;2;;;;;;;;;;;;;Properly outfitting a commoner for war typically requires a collective effort, sometimes involving the entire extended family.
+ 
+|Duelist Brigandine=4;chest46;Chestpiece;Medium;Common;metal;2950;1;135;11;;;;;;;;-3;;;;;;;;;;;1;;2;;;;;;6;;;;33;;;;;;;;;;;;12;;;;20;10;;;;;;;;;;;aldor;;;;1;;;;1;;;;;1;;;;;;;;;;;;An effective safeguard against treacherous thrusts and jabs at vital areas.
+ 
+|Border Guard Brigandine=5;chest47;Chestpiece;Medium;Common;metal;6225;1;195;15;3;;;;7;;;-2;;;;;;;;;-3;;;;;;;;;;6;;;7;24;;;;;;;;;;;;22;;;;8;6;;;;;;;;;;;aldor;;;;;;;;2;;;;1;2;;;;;;;;;;;;Few corners of Aldor are as perilous as the Northern Borderlands, where the reach of raiders and monsters from Fjall is held in check only by the preparedness of the local garrisons, whose gear could inspire envy in even some noble lords.
+ 
+|Captain Brigandine=5;chest48;Chestpiece;Medium;Common;metal;6225;1;210;16;;;;;;;;-4;;;;;;;;;;;;;;;;;;;8;;;;32;;;;;;;;;;;;24;;;;10;8;;;;;;;;;;;aldor;;;;;;1;;1;;;;2;1;;;;;;;;;;;;Fashioned to keep the wearer in one piece, letting them live through scrapes they have no business surviving.
+ 
+|Vehement Heavy Brigandine=3;chest49;Chestpiece;Heavy;Common;metal;2200;1.2;160;14;;;;-8;10;;;-12;-3;;;;;;;;;;;;;;;;;;7;;;;27;;;;;;;;;;;;23;10;15;;4;4;;;;;;;;10;;;magic;;;;;;;;;;2;;1;;;;;;;;;;;;;When it comes to the Vehement, their members hail from all walks of life - there are peasants, fanatical pilgrims, knights errant, and even battlemages.
+ 
+|Sergeant Heavy Brigandine=4;chest50;Chestpiece;Heavy;Common;metal;4550;1.1;265;19;;;;-10;15;;;-14;-3;;;;;;;;;;;;;;;;;;10;;;;34;;;;;;;;;;;;26;;;;7;12;;;;;;;;;;;aldor;;;;;;;;;;1;;2;1;;;;;;;;;;;;Sergeants and veteran mercenaries sport this type of armor while they're saving up for something more substantial.
+ 
+|Mercenary Heavy Brigandine=4;chest51;Chestpiece;Heavy;Common;metal;4125;1;240;18;;;;-8;13;;;-13;-3;;;;;;;;;;;;;;;;;;10;;;;30;;;;;;;;;;;;22;;;;5;10;;;;;;;;;;;aldor;;;;;;;;;;2;;;2;1;;;;;;;;;;;The longer mercenaries stay alive, the better they're paid - and the better they're paid, the longer they stay alive...
+ 
+|Knight Heavy Brigandine=5;chest52;Chestpiece;Heavy;Common;metal;8725;1;280;23;;;;-12;16;;;-16;-3;;;;;;;;;;;;;;;;;;12;;;;37;;;;;;;;;;;;30;;;;7;12;;;;;;;;;;;aldor;;;;;;;;;;;;3;;2;;;;;;;;;;;A chestpiece held in high esteem by Aldorian knights. It provides almost the same level of protection as full plate but costs less and looks fancier.
+ 
+|Elven Heavy Brigandine=5;chest53;Chestpiece;Heavy;Common;metal;9600;1.1;310;24;;;;-14;16;;;-16;-4;;;;;;;;;;;;;;;;;;9;;;5;39;;;;;;;;;;;;30;;;;10;10;;;;;;;;;;;elven;;;;;;;;;;;;4;;1;;;;;;;;;;;Sipahi are the heavy cavalry that forms the core of the Ahjat Empire's army, a cornerstone of its many victories. Unsurprisingly, their gear is crafted only by the best armorsmiths on the personal orders of Ahjat emirs.
+ 
+|Old-Fashioned Armor=3;chest54;Chestpiece;Heavy;Common;metal;2100;1;300;17;;;;-12;15;;;-16;-5;;;;;;;;;;;;;;;;;;;;;;31;;;;;;;;;;;;30;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;1;;2;;;;;;;;;;;A relatively affordable piece of plate armor, worn by landless knights, mercenaries, and everyone else who isn't rolling in gold at the moment.
+ 
+|Flagbearer Armor=4;chest55;Chestpiece;Heavy;Common;metal;4725;1;360;21;;;;-15;20;;;-18;-5;;;;;;;;;;;;;;;;;;;;;;36;;;;;;;;;;;;34;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;1;;3;;;;;;;;;;;When flagbearers are slain in battle, their comrades are usually quick to follow suit - providing the former with quality armor is plain common sense.
+ 
+|Scaled Armor=4;chest56;Chestpiece;Heavy;Common;metal;3775;0.8;400;19;;;;-12;16;;;-14;-5;;;;;;;;;;;;;;;;;;;;;;32;;;;;;;;;;;;34;;;;;;;;;;;;;;;;aldor;;;;2;;;;;;;;;;4;;;;;;;;;;;Scaled armor was at its peak during the latest war with Nistra, from where it was borrowed by Aldorian knights to begin with.
+ 
+|Fjall Armor=4;chest53;Chestpiece;Heavy;Common;metal;3775;0.8;250;15;;;;-11;11;;-2;-13;-4;;;;;;;-3;;;;;;;;;;;;;;;25;;7;;;;;;;;;;26;10;;;5;;15;;;;;;;;;;fjall;;;1;;;;;;;;;3;;;;;;;;;;;;;Fjall iron is hardly of the best quality, yet dwarves have an incredible knack for forging relatively decent armor from it.
+ 
+|Jousting Armor=4;chest57;Chestpiece;Heavy;Unique;metal;4725;1;360;21;5;5;;-15;20;;;-18;-5;;;;;;;-5;;;;;;;;;;;;;;;36;;;;;;;;;;;;34;;;;;;;;;;;;;;;;unique;;;;;;;;;;;;;1;3;1;;;;;;;;;;Some of its combat effectiveness was stripped away in favor of imposing aesthetics. Still, it's hard to deny that this armor makes quite an impression.
+ 
+|Noble Armor=5;chest58;Chestpiece;Heavy;Common;metal;10975;1.1;440;27;;;;-18;29;;;-20;-5;;;;;;;;;;;;;;;;;;;;;5;40;;;5;;;;;;;;;40;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;2;3;;;;;;;;;;;Some nobles wouldn't mind bartering away one of their smaller, less prosperous fiefs in exchange for a similar chestpiece.
+ 
+|Knight Armor=5;chest59;Chestpiece;Heavy;Common;metal;9975;1;420;26;4;;5;-18;25;;;-16;-5;;;;;;;;;;;;;;;;;;;;;;36;;;;;;;;;;;;38;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;1;1;3;;;;;;;;;;;Making a single suit of noble plate armor demands multiple craftsmen and months of hard work.
+ 
+|Ceremonial Armor=5;chest60;Chestpiece;Heavy;Unique;metal;12450;1.25;420;27;;;;-18;33;;;-20;-5;;;;;;;;;;;;;7;5;25;;;;;;;40;;;;;;;;;;;;38;;;;;;;;;;;;;;;;unique;;;;;;;;;;;;1;2;2;;;;;;;;;;;Judging by the engraving, it once belonged to Sir der Ulne, a famous glutton and a drunkard. A dozen years ago, during one of his feasts, Sir der Ulne met a heroic death in a prolonged battle with a whole roast hog.
+ 
+|Vagabond Knight's Armor=5;chest61;Chestpiece;Heavy;Unique;metal;12450;1.25;300;24;;;;-14;25;;;-16;-4;;;;-6;6;;;;;;;;;;;;6;;;;;33;;;;;;;;;;;;33;9;9;;;;;;;;;;;;;;unique;;;;2;;;;;;;;1;;4;;;;;;;;;;;This mysterious armor looks both surprisingly modern and incredibly ancient...
+ 
+|Initiate Robe=1;chest62;Chestpiece;Light;Common;cloth;100;1;30;2;;;;;;;;2;1;;;5;;;;;;;;;;;;;;;;;;;1;;;;;;;;;;;;4;;;;;;;;;;;;;;;;magic;;;;1;;;;;;;;;;;;;;;;;;;;;The black color of this mantle indicates that a student wearing it hasn't yet decided which Circle they wish to pursue.
+ 
+|Mahir's Garment=2;chest63;Chestpiece;Light;Unique;cloth;675;1;40;2;;;;;;;;2;1;;;;;;;;;;;;;;;;;;;;5;;2;;;5;;;;;;;;;5;;;;;;;;;;;;;;;;special exc;;;;1;;;1;;;;;;;;;;;;;;;;;;A manner of robe that is typically the sole possession of wandering dervishes such as Mahir. It offers reliable protection from both the scorching sun of Jacinth as well as the bone-chilling cold of its desert nights.
+ 
+|Jonna's Mantle=2;chest64;Chestpiece;Light;Unique;cloth;675;1;50;2;;;;;;;;;;;;4;-3;;;;;;;;;;;;;;;;;;2;;;;;;;;;;;;5;;;;;;;;;;;;;;;;special exc magic;;;;2;;;;;;;;;;;;;;;;;;;;;A uniform of the Academy student, fashioned by Jonna from a man's mantle.
+ 
+|Fledgling Mage Mantle=2;chest65;Chestpiece;Light;Common;cloth;675;1;40;2;;;;;;;;4;2;;;6;;;;;;;;;;;;;;;;;;;2;;;;;;;;;;;;5;;;;;;;;;;;;;;;;magic;;;2;1;;;;;;;;;;;;;;;;;;;;;A magically gifted person can try their luck as an apprentice to an experienced sorcerer. They rarely turn anyone down - not for the love of teaching, but largely because there's always a use for a personal servant.
+ 
+|Wanderer Mantle=3;chest66;Chestpiece;Light;Common;cloth;1825;1;50;3;;;;;;;;8;5;;;8;;;;;;;;;;;;;;;;;;;3;;;8;;;;;;;;;6;;;;;;;;;;;;;;;;magic;;;2;1;;;;;;;;;;;;;;;;;;;;;There are mages who make a living by wandering the world, offering their services to anyone willing to pay. Most of them suffer a miserable fate: some die after taking on a contract they can't handle, some join brigand gangs, while others fall victim to the mob, which is quick to act upon its prejudice.
+ 
+|Hired Mage Mantle=3;chest67;Chestpiece;Light;Common;cloth;1825;1;70;4;;;;;;;;4;2;;;5;;;;;;;;;;;;;;;;;;;6;;;;;;;;;;;;9;7;7;;;;;;;;;;;;;;magic;;;;3;;;;;;;;;;;;;;;;;;;;;A sturdy garment that can take a beating, a reasonable choice for most contracts.
+ 
+|Soldier Mantle=3;chest68;Chestpiece;Light;Common;cloth;1825;1;55;3;;;;;;;;6;3;;;7;-3;1;;;;;;;;;;;;;;;;;3;;;;;;;;;;;;6;;;;;;;;;;;;;;;;magic;;;1;2;;;;;;;;;;;;;;;;;;;;;One of King Etbert's decrees demanded all mages to join the army in the event of war, which handily provided him with lots of additional troops during his Radiant campaigns. These army-issued mantles aren't much to look at, but the craftsmanship is perfectly serviceable.
+ 
+|Battlemage Mantle=4;chest69;Chestpiece;Light;Common;cloth;4125;1;90;5;;;;;;;;8;4;;;7;;;;;;;;;;;;;;;;;;;12;;;7;;;;;;;;;14;;;;;;;;;;;;;;;;magic;;;;2;;;;;;1;;;;;;;;;;;;;;;Battle-proven mages are always in demand and, consequently, are wealthy enough to afford custom-tailored, hard-wearing mantles.
+ 
+|Maen Mantle=4;chest70;Chestpiece;Light;Common;cloth;4125;1;80;4;;;;;;;;8;5;;;8;;;;;-3;;;;;;;;;;;;;;4;;;;;;;;;;;;7;8;8;;;;;;;;;;;;;;magic;;;;2;;;;1;;;;;;;;;;;;;;;;;Most of the time, the weather in Maen is rather chilly, so local mages have a preference for thick, heavy mantles. Why risk catching a cold if you can avoid it?
+ 
+|Arcanist Mantle=4;chest71;Chestpiece;Light;Common;cloth;4125;1;60;4;;;;;;;;5;2;;;;;;;;;;;;;;;;;9;;;;;4;;;;;;;;;9;;;7;;;;;;;;;;;;20;;;;magic;;;;4;;;;;;;;;;;;;;;;;;;;;A distinct mantle of the Circle of Arcanistics, thoroughly imbued with pure magic essence.
+ 
+|Pyromancer Mantle=4;chest72;Chestpiece;Light;Common;cloth;4125;1;60;4;;;;;;;;5;2;;;;;2;4;;;;;;;;;;;;;;;;4;;;;9;;;;;;;;7;;;;;;;20;;;;;;;;;magic;;;;4;;;;;;;;;;;;;;;;;;;;;It bears a special enchantment: the fabric is not exactly flameproof, but it's definitely slow to catch fire.
+ 
+|Geomancer Mantle=4;chest73;Chestpiece;Light;Common;cloth;4125;1;80;4;;;;;;;;5;2;;;;;;;-4;;;;;;;;;;;9;;;;4;;;;;9;;;;;;;7;;;;;;;;;;;;10;;;;magic;;;;4;;;;;;;;;;;;;;;;;;;;;The runic embroidery strengthens the connection between a geomancer and the boulders they summon.
+ 
+|Electromancer Mantle=4;chest74;Chestpiece;Light;Common;cloth;4125;1;60;4;;;;;;;;10;4;;-3;;;;;;;;;;;;;;;;;;;;4;;;;;;;9;;;;;7;;;;;;;;20;;;;;;;;magic;;;;4;;;;;;;;;;;;;;;;;;;;;Barely touching the material sends a sharp, tingling sensation up one's arm. That is unless you're an electromancer.
+ 
+|Cryomancer Mantle=4;chest75;Chestpiece;Light;Common;cloth;4125;1;60;4;;;;;12;;;5;2;;;;-5;;;;;;;;;7;;;;;;;;;4;;;;;;;;9;;;;7;;;;;;;;;;;25;;;;;magic;;;;4;;;;;;;;;;;;;;;;;;;;;Made of deceptively light cloth, this mantle is fortified with cryomantic enchantments that can withstand even the harshest of frosts.
+ 
+|Spellweaver Mantle=5;chest76;Chestpiece;Light;Common;cloth;8725;1;50;5;;;;;;;;10;5;;-5;10;;;;;-6;;;;;;;;;;;;;;5;;;;;;;;;;;;8;;;;;;;;;;;;;;;;magic;;;;5;;;;;;;;;;;;;;;;;;;;;Most mages have to contend with merely reciting the few surviving spells, possessing little to no understanding of the force powering them. But not everyone is satisfied with this state of things: the half-secretive Circle of Spellweavers aims to resurrect the lost art of creating new spells - their efforts are yet to bear fruit.
+ 
+|Red Silk Mantle=5;chest77;Chestpiece;Light;Common;cloth;8725;1;70;5;;;;8;;;;15;8;;;10;-8;;;;;;;;;;;;;;;;;;5;;;;;;;;;;;;8;7;7;;;;;;;;;;;;;;elven;;;;5;;;;;;;;;;;;;;;;;;;;;Red silk is brought to Brynn by elven caravans, from where it eventually finds its way to Maen craftsmen - only they know how to work this fascinating material to unlock its full potential.
+ 
+|Court Mage Mantle=5;chest78;Chestpiece;Light;Common;cloth;8725;1;60;4;;;;;;;;10;5;;;12;;3;6;;;;;;;;;;;;;;;;3;;;;;;;;;;;;4;;;;;;;;;;;;;;;;magic;;;;4;;;;;;;;;;;2;;;;;;;;;;Mages who find themself a part of a noble court are a subject of envy. The life they lead is comfy, lucrative, and devoid of any real dangers - that is until their master decides to participate in a military campaign...
+ 
+|Hermit Garment=5;chest79;Chestpiece;Light;Unique;cloth;10475;1.2;90;7;;;;5;10;;;10;5;;;10;;;;;;;;;;5;;10;;5;;;;;10;;;;;;;;;;;;11;20;;;;;;;;;;;;;;;unique;;;;1;2;;1;;;;;;;;;;;;;;;;;;The enigmatic Sages, who made the deepest thicket of the local forests their home, are one of the greatest Aldorian mysteries. Many believe it was them who'd been protecting the land from the worst of it - and now that their numbers have dwindled, everything comes crashing down.
+ 
+|Work Gloves=1;arms01;Gloves;Light;Common;leather;50;1;45;2;;;;;;;-1;;;-3;;;;;;;;;;5;;;;;;;;;;;8;;;;;;;;;;;;6;;;;;;;;;;;;;;;;aldor;;;1;;;;;;;;;;;;;;;;;;;;;;For when you don't want to get your hands dirty.
+ 
+|Blacksmith Mittens=1;arms02;Gloves;Light;Common;leather;75;1.5;60;2;1;;;;;;1;;;-3;;;;;;;;;;;;;;;;;;;;;20;;;;;;;;;;;;9;;;;;;;25;;;;;;;;;aldor;;;;;;;2;;;;;;;;;;;;;;;;;;Whether they're making armor, blades, or horseshoes, no smith would consider reaching for tongs or hammer before putting on a good pair of mittens.
+ 
+|Leather Gloves=2;arms03;Gloves;Light;Common;leather;275;1;60;3;;;;;;;-2;;;-4;;;;;;;;;;7;;;;;;;;;;;10;;;;;;;;;;;;8;;;;;;;;;;;;;;;;aldor;;;;;;;2;;;;;;;;;;;;;;;;;;These gloves were crafted from finely tanned leather.
+ 
+|Leather Bracers=2;arms04;Gloves;Light;Common;leather;275;1;50;2;;;;;;;-2;;;-6;;;;;;;;2;;7;;;;;;;;;;;6;;;;;;;;;;;;6;;;;;;;;;;;;;;;;aldor;;;;;;;2;;;;;;;;;;;;;;;;;;Decent protection against scrapes and bites - better than nothing for the hunt or a brawl.
+ 
+|Leosthenes' Bracers=2;arms05;Gloves;Light;Unique;leather;350;1.3;55;2;;;;;;;-1;;;;;;-1;;;;;1;;;;;;;;;;;;;8;;;;;;;;;;;;6;;;;;;;;;;;;;;;;special exc;;;;;;;2;;;;;;;;;;;;;;;;;;One of the many rules of the Gymnasium forbade removing these heavy and uncomfortable bracers anywhere but the baths - Leosthenes has grown so accustomed to their presence that he now sees them as just another part of his body.
+ 
+|Falconeer Gloves=3;arms06;Gloves;Light;Common;leather;750;1;75;4;;;;;;;-3;;;-5;;;;;;;;;;10;;;;;;;;;;;12;;;;;;;;;;;;10;;;;;;;;;;;;;;;;aldor;;;;;;;3;;;;;;;;;;;;;;;;;;There was a time in Aldor when hunting birds became an item of prestige. A lord without a personal falconeer would feel inadequate even in front of his own court.
+ 
+|Tied Gloves=4;arms07;Gloves;Light;Common;leather;1500;0.9;90;5;;;;;4;;-4;;;-6;;;;;;;;;1;12;;;;;;;;;;;13;;;;;;;;;;;;12;;;;;;;;;;;;;;;;aldor;;;;;;;3;;;;;;;;;;;;;;;;;;The trick is not to tighten the bindings too much. Numb hands are of little use in a fight.
+ 
+|Duelist Gloves=4;arms08;Gloves;Light;Common;leather;1750;1.05;100;5;;;;;;;-4;;;-6;;;;;;;;;;12;3;;;;;;;;;;15;;;;;;;;;;;;12;;;;;;;;;;;;;;;;aldor;;;;;;;3;;;;;;;;;;;;;;;;;;Career duelists in particular are fond of this style of gloves - they look especially dashing wrapped around a sword hilt.
+ 
+|Blademaster Gloves=5;arms09;Gloves;Light;Common;leather;3525;1;105;6;2;;;;;;-5;;;-7;;;;;;;;2;1;15;;;;;;;;;;;16;;;;;;;;;;;;14;;;;;;;;;;;;;;;;aldor;;;;;;;3;;;;;;;;;;;;;;;;;;Expert fencers can afford to skimp on heavy hand protection, trusting in their ability to parry every blow.
+ 
+|Splint Bracers=2;arms10;Gloves;Medium;Common;metal;375;1;90;7;;;;;;;-1;-2;;;;;;;;;;1;;;;;;;;;;;;;13;;;;;;;;;;;;7;;;;;;;;;;;;;;;;aldor;;;;;;;1;;;;1;;;;;;;;;;;;;;Readily provided to levies by most lords: once the war is over, commoners are expected to return to their crafts and fieldwork, and for that they still need their hands.
+ 
+|Steel Bracers=3;arms11;Gloves;Medium;Common;metal;1000;1;115;9;;;;;;;-2;-3;;;;;;;;;;1;;;;;;;;;;;;;17;;;;;;;;;;;;10;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;1;;;1;;;;;;;;;;;A natural pick for a marksman - or any soldier who values dexterity and precision.
+ 
+|Mail Gloves=3;arms12;Gloves;Medium;Common;metal;1000;1;165;12;;;;;;;;-2;-1;;;;;;;;;;;;;;;;;;;;;;22;;;;;;;;;;;;11;;;10;;;;;;;;;;;;;aldor;;;;;;;;;;;;2;;;;;;;;;;;;;Sensible handwear for anyone who values their fingers.
+ 
+|Soldier Gloves=3;arms13;Gloves;Medium;Common;metal;1000;1;150;13;;;;;;;;-5;-1;;;;;;;;;;;;;;;;;;;;;;22;;;;;;;;;;;;16;;;;;;;;;;;;;;;;aldor;;;;;;;;;;1;;1;;;;;;;;;;;;;Some taverns insist such gloves are to be left at the door - the generous metal plating is deemed reason enough.
+ 
+|Riveted Gloves=4;arms14;Gloves;Medium;Common;metal;2225;1;170;15;;;;;;;-1;-7;-1;;;;;;;;;;;;;;;;;;;;;;22;;;;;;;;;;;;23;;;;;;;;;;;;;;;;aldor;;;;;;;1;;;1;;1;;;;;;;;;;;;;A direct strike to the hands will still hurt like hell, but at least you won't lose them.
+ 
+|Veteran Gloves=4;arms15;Gloves;Medium;Common;metal;2225;1;190;15;;;;;;;;-7;-1;;;;;;;;;1;;;;;;;;;;;;;29;;;;;;;;;;;;18;;;;;;;;;;;;;;;;aldor;;;;;;;1;;;1;;1;;;;;;;;;;;;;Noticeably sturdier than standard soldier gloves - proof that their owner has lasted long enough to amass some decent coin.
+ 
+|Captain Gloves=5;arms16;Gloves;Medium;Common;metal;4700;1;210;18;;;;;;;;-9;-1;;;;;;;;;;;;;;;;;;;;;;30;;;;;;;;;;;;24;;;;;;;;;;;;;;;;aldor;;;;;;;;;;1;2;1;;;;;;;;;;;;;Built for the battlefield, and equally useful for loudly slamming a fist on the war table when the campaign isn't going to plan.
+ 
+|Guardsman Gloves=5;arms17;Gloves;Medium;Unique;metal;5425;1.15;230;16;3;;;;;;;-5;-1;;;;;;;-3;;;;;;;;;;;;;;;35;;;;;;;;;;;;18;;;15;;;;;;;;;;;;;unique;;;;;;;;;;1;1;2;;;;;;;;;;;;;The cuffs are embossed with King Etbert's crest, leaving no question about the original owner's allegiance.
+ 
+|Plate Mittens=3;arms18;Gloves;Heavy;Common;metal;1275;1;250;16;3;;;;6;;2;-14;-4;;;;;;;;;;;;;;;;;;;;;;29;;;;;;;;;;;;28;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;4;;;;;;;;;;;;;;Wrist mobility is of little importance when it takes a small squad of soldiers to get through your armor.
+ 
+|Plate Gauntlets=4;arms19;Gloves;Heavy;Common;metal;2900;1;300;20;4;;;;9;;3;-16;-4;;;;;;;;;;;;;;;;;;;;;;34;;;;;;;;;;;;32;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;3;1;;;;;;;;;;;;;Crafting plate gloves is a form of art which demands consummate skill and impeccable knowledge of the trade.
+ 
+|Knight Gauntlets=5;arms20;Gloves;Heavy;Common;metal;6125;1;350;25;5;;;;12;;4;-18;-4;;;;;;;;;;;;;;;;;;;;;;39;;;;;;;;;;;;36;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;3;2;;;;;;;;;;;;;The satin-lined cuffs are merely another way to parade one's impeccable taste in armor.
+ 
+|Gilded Plate Gauntlets=5;arms21;Gloves;Heavy;Unique;metal;7650;1.25;300;24;5;;;;15;;4;-14;-3;;;;;;;;;;;;;;;;;;;;;;39;;;5;;;;;;;;;36;;;;;;;;;;;;;;;;unique;;;;;;;;;;;2;2;;;1;3;;;;;;;;;Trimmed with velvet and tastefully accented with gold - the sort of gauntlets worn while signing declarations of war and accepting surrenders.
+ 
+|Novice Hand Wraps=1;arms22;Gloves;Light;Common;cloth;50;0.5;30;2;;;;;;;;4;;;;4;-1;;;;;;;;;;;;;;;;;;4;;;;;;;;;;;;4;;;;;;;;;;;;;;;;aldor;;;1;;;;;;;;;;;;;;;;;;;;;;The path to becoming a mage invariably starts with pain and injuries. A few layers of tightly wrapped cloth can slightly reduce the price of initial failures.
+ 
+|Jonna's Casting Bracers=2;arms23;Gloves;Light;Unique;leather;600;1.1;45;1;;;;;;;;5;2;;;5;-2;;;;;;;;;;;;;;;;;;5;;;;;;;;;;;;5;;;;;;;;;;;;;;;;special exc magic;;;;;;;2;;;;;;;;;;;;;;;;;;A reminder of strenuous, yet rewarding days spent studying at the Academy, when the future looked bright and full of promise. So much has changed since then...
+ 
+|Fledgling Mage Gloves=2;arms24;Gloves;Light;Common;leather;550;1;40;1;;;;;;;;5;2;;;5;-1;2;;;;;;;;;;;;;;;;;6;;;;;;;;;;;;5;;;;;;;;;;;;;;;;magic;;;1;;;;1;;;;;;;;;;;;;;;;;;In spellcasting, much hinges on dexterity and nimble fingers - which is why light bracers and thin cloth gloves are the preferred handwear of most sorcerers.
+ 
+|Sorcerer Bracers=3;arms25;Gloves;Light;Common;leather;1475;1;50;3;;;;;;;;6;3;;;6;;3;;;;;;;;;;;;;;;;;8;;;;;;;;;;;;6;6;6;;;;;;;;;;;;;;magic;;;1;;;;1;;;;;;;;;;;;;;;;;;The magic sigils carved into the leather are useful for swiftly redirecting the flow of magical energies in the chaos of combat.
+ 
+|Orient Bracers=4;arms26;Gloves;Light;Common;leather;3350;1;80;2;;;;;;;;7;4;;;7;;4;;;;;;;;;;;;;;;;;10;;;;;;;;;;;;7;;;;;;;;;;;;;;;;elven;;;;;;;2;;;;;;;;2;;;;;;;;;;The gilded acanthus ornaments are a staple of Hazzun jewelry. This technique was invented in ancient times and has seen very little change after being rediscovered by modern craftsmen.
+ 
+|Ruby Mage Bracers=5;arms27;Gloves;Light;Common;leather;7075;1;70;2;;;;;;;;8;3;;;10;;5;;;-5;;;;;;;;;;;;;;12;;;;;;;;;;;;8;;;;;;;;;;;;;;;;magic;;;;;;;2;;;;;;;;2;;;;;;;;;;Mage bracers are usually made of silver or gold and are encrusted with all kinds of gems - the resonance created by putting precious metals and stones together is capable of empowering magic spells.
+ 
+|Sapphire Mage Bracers=5;arms28;Gloves;Light;Common;leather;7075;1;70;2;;;;;;;;12;6;;-4;8;;5;;;;;;;;;;;;6;;;;;12;;;;;;;;;;;;8;;;;;;;;;;;;;;;;magic;;;;;;;2;;;;;;;;2;;;;;;;;;;Mage bracers are usually made of silver or gold and are encrusted with all kinds of gems - the resonance created by putting precious metals and stones together is capable of empowering magic spells.
+ 
+|Ancient Wristbands=5;arms29;Gloves;Light;Unique;metal;7775;1.1;55;2;;;;;;;;8;5;;;11;;5;5;;;;;;;;;;;;;;;;5;;;;;;;;;;;;2;4;4;;;;;;;;;;;;;;unique;;;;;;;;;;;;;;;4;;5;;;;;;;;Fashioned in either the Ald or Firn tradition - the splendor of the adornments suggests they were once worn by a prominent chieftain or high priest.
+ 
+|Mystic Gloves=4;arms30;Gloves;Light;Common;leather;2500;0.9;80;5;;;;;;;;8;2;;;;-4;1;5;;-4;;;;;;;;;;;;;;15;;;;;;;;;;;;11;8;8;;;;;;;;;;;25;;;magic;;;2;;;;1;;;;;;;;;;;;;;;;;;They're covered with peculiar symbols in accordance with an ancient, half-forgotten technique.
+ 
+|Battlemage Gloves=4;arms31;Gloves;Light;Common;leather;3075;1.1;95;6;;;;;;;;6;2;;;;-3;;;;-4;;;;;;;;;;;;;;20;;;;;;;;;;;;14;14;14;;;;;;;;;;;;;;magic;;;;;;;2;1;;;;;;;;;;;;;;;;;Well-trained and experienced mages are a force to be reckoned with, which makes them a prime target on the battlefield. Unsurprisingly, they're always on a lookout for quality armor that doesn't compromise the freedom of movement.
+ 
+|Court Mage Gloves=5;arms32;Gloves;Light;Common;leather;5900;1;105;7;;;;;;;;9;3;;;;-6;2;;;-5;;;;;;;;;;;;;;12;;;;;;;;;;;;14;14;14;;;;;;;;;;;;;;magic;;;;1;;;1;;;;;;;;2;;;;;;;;;;Gems and noble metals are treasured for their ability to resonate with magic. What at first may appear as a display of unrestrained opulence can in fact be a tool of the trade.
+ 
+|Rusted Shackles=1;boots01;Boots;Heavy;Common;metal;;;10;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-100;;;;;;;;;;;;;;;;;;;;;;;;;;;;;special;;;;;;;;;;;;;;;;;;;;;;;;;Shackles so rusty that you shouldn't have any trouble removing them with your bare hands.
+ 
+|Peasant Shoes=1;boots02;Boots;Light;Common;leather;50;1;60;3;;;;4;;;;;;;;;;;;;;;;;1;;;;;;;;;5;8;;;;;;;;;;;;6;;;;;;;;;;;;;;;;aldor;;;;;;;1;;;;;;;;;;;;;;;;;;Such shoes are usually worn until they crumble right off the wearer's feet.
+ 
+|Hide Boots=2;boots03;Boots;Light;Common;leather;275;1;80;4;;;;5;;;;;;;;;;;;;;;;;2;;;;;;;;;7;10;;;;;;;;;;;;8;;;;;;;;;;;;;;;;aldor;;;;;;;;2;;;;;;;;;;;;;;;;;A pair of sturdy boots made out of cow leather. In times of war, this sort of footwear greatly grows in demand.
+ 
+|Tanned Boots=3;boots04;Boots;Light;Common;leather;750;1;100;6;;;;6;;;;;;;;;;;;;;;;;3;;;;;;;;;9;12;;;;;;;;;;;;10;;;;;;;;;;;;;;;;aldor;;;;;;;;3;;;;;;;;;;;;;;;;;Tanned bull hide guarantees longevity for any footwear it's used in.
+ 
+|Norse Boots=3;boots05;Boots;Light;Common;leather;825;1.1;90;6;;;;5;;;;;1;;;;;;;;;;;;4;;;;;;;;;10;17;;;;;;;;;;;;10;;;;;;15;;;;;;;;;;fjall;;;1;;;;;2;;;;;;;;;;;;;;;;;They are waterproof, don't get stuck in mud, and are easy to clean from blood stains.
+ 
+|Elven Boots=4;boots06;Boots;Light;Common;leather;1850;1.1;130;8;;;;6;;;-3;;;-5;;;;;;;;;;;4;;;;;;;;;10;12;;;;;;;;;;;;10;;;;;;;;;;;;;;;;elven;;;;;;;;4;;;;;;;;;;;;;;;;;In Jacinth Kingdoms, felt boots are sported by people from all walks of life, be it Ohirian nomads, maafs of Ahjat, or ghazi of Jibey.
+ 
+|Duelist Boots=4;boots07;Boots;Light;Common;leather;1675;1;120;8;;;;8;;;;;;;;;;;;;;;;;6;;;;;;;;;12;14;;;;;;;;;;;;12;;;;;;;;;;;;;;;;aldor;;;;;;;;4;;;;;;;;;;;;;;;;;In addition to the fighting skill, duelists also continuously sharpen their fashion sense.
+ 
+|Battlemage Boots=4;boots08;Boots;Light;Common;leather;1675;1;100;7;;;;8;;;-1;;;;;;-1;;;;;;;;4;;;;;;;;;10;14;;;;;;;;;;;;12;12;12;;;;;;;;;;;;;;magic;;;;;;;;4;;;;;;;;;;;;;;;;;A stable stance during spellcasting matters just as much as the precision of gestures - and quality boots provide welcome support.
+ 
+|Magehunter Boots=5;boots09;Boots;Light;Common;leather;3525;1;125;9;;;;9;;;-2;;;;;;-2;;;;;;;;4;;;;;;;;;14;16;;;;;;;;;;;;14;20;20;;;;;;;;;;;;;;magic;;;;;;;;5;;;;;;;;;;;;;;;;;The leather was specially treated to protect against fire, electricity, and other harmful elements that may be summoned by a resisting sorcerer.
+ 
+|Blademaster Boots=5;boots10;Boots;Light;Common;leather;3525;1;140;10;;;5;10;;;;;;;;;;;;;;;;;5;;;;;;;;;16;20;;;;;;;;;;;;15;;;;;;;;;;;;;;;;aldor;;;;;;;;5;;;;;;;;;;;;;;;;;With a proper polish, they could easily pass for a mirror.
+ 
+|Pointy Shoes=1;boots11;Boots;Light;Common;leather;25;1;45;2;;;;;;;;;1;;;;;;;;;;;;;;;;;;;;;2;3;;;7;;;;;;;;;4;;;;;;;;;;;;;;;;aldor;;;;;;;1;;;;;;;;;;;;;;;;;;A design that has been the pinnacle of peasant fashion for the last twenty years.
+ 
+|Traveling Shoes=2;boots12;Boots;Light;Common;leather;225;1;60;3;;;;;;;;;2;;;;;;;;;;;;;;;;;;;;;4;5;;;10;;;;;;;;;5;;;;;;;;;;;;;;;;aldor;;;;;;;1;;;;;;;;;;;;;;;;;;Shoes like these are cheap and wear well, the qualities which attract all kinds of vagabonds. Just make sure to keep them free of holes.
+ 
+|Mahir's Boots=2;boots13;Boots;Light;Common;cloth;225;1;60;2;;;;2;;;;;2;;;;;;;;;;;;;;;;;;5;;;4;5;;;15;;;;;;;;;5;;;;;;;;;;;;;;;;special exc;;;;;;;2;;;;;;;;;;;;;;;;;;The steps taken in these felt boots surpass even the number of stars in the sky.
+ 
+|Town Shoes=3;boots14;Boots;Light;Common;leather;600;1;75;4;;;;;;;;;3;;;;;;;;;;;;;;;;;;;;;6;7;;;14;;;;;;;;;6;;;;;;;;;;;;;;;;aldor;;;;;;;2;;;;;;;;;;;;;;;;;;Fancy enough for when you're going out into the world to prove your mettle.
+ 
+|Riding Boots=3;boots15;Boots;Light;Common;leather;725;1.2;85;4;;;;;;;;5;2;;;;;;;;;;;;;;;;;;;;;6;7;;;9;;;;;;;;;6;;;;;;;;;;;;;;;;aldor;;;;;;;3;;;;;;;;;;;;;;;;;;Comfortable for long horse rides. Not so comfortable for long walks.
+ 
+|Fancy Boots=4;boots16;Boots;Light;Common;leather;1350;1;90;5;;;;;;;;;4;;;;;;;;;;;;;;;;;;;;;8;9;;;17;;;;;;;;;7;;;;;;;;;;;;;;;;aldor;;;;;;;;4;;;;;;;;;;;;;;;;;A pair of expertly-crafted boots that will add a spring to your step while promenading the streets.
+ 
+|Court Mage Boots=5;boots17;Boots;Light;Common;leather;3400;1.2;105;6;;;;;;;;;5;;-3;;-1;;3;;;;;;;;;;;;;;;10;12;;;20;;;;;;;;;8;;;;;;;;;;;;;;;;magic;;;2;;;;;3;;;;;;;;;;;;;;;;;Stylish, light, durable, and unbelievably comfortable, a dream come true for most mages.
+ 
+|Recruit Boots=2;boots18;Boots;Medium;Common;metal;375;1;100;9;;;;-3;;;;;;;;;;;;;;;;;;;;;;;;;;17;16;;;;;;;;;;;;15;;;;;5;;;;;;;;;;;aldor;;;;;;;2;;;;;;;1;;;;;;;;;;;Maimed by war, common soldiers become a heavy burden for their families, so each of them tries their best to return home with a full set of limbs.
+ 
+|Splint Boots=2;boots19;Boots;Medium;Common;metal;375;1;120;9;;;;-3;;;;-3;-1;;;;;;;;;;;;;;;;;;;;;11;22;;;;;;;;;;;;15;;;5;;;;;;;;;;;;;aldor;;;;;;;;2;;;;1;;;;;;;;;;;;;A cheap yet effective protection from sudden strikes to the feet.
+ 
+|Mail Boots=3;boots20;Boots;Medium;Common;metal;1000;1;165;12;;;;-4;;;;-5;-1;;;;;;;;;;;;;;;;;;;;;18;22;;;;;;;;;;;;11;;;15;;;;;;;;;;;;;aldor;;;;;;;;;;;;2;;;;;;;;;;;;;Such footwear is cheap to maintain and can withstand a glancing blow to the legs - what else can a warrior wish for?
+ 
+|Veteran Greaves=4;boots21;Boots;Medium;Common;metal;2225;1;180;15;;;;-5;;;;-7;-1;;;;;;;;;;;;;;;;;;;;;22;26;;;;;;;;;;;;23;;;;;;;;;;;;;;;;aldor;;;;;;;3;;;;;;;1;;;;;;;;;;;An obvious choice for any infantryman: a combination of common boots' practicality and some fairly decent protection.
+ 
+|Captain Boots=5;boots22;Boots;Medium;Common;metal;4700;1;210;18;;;;-6;;;;-9;-1;;;;;;;;;;;;;;;;;;;;;26;30;;;;;;;;;;;;27;;;;;;;;;;;;;;;;aldor;;;;;;;;2;;;3;;;;;;;;;;;;;;A dozing sentry will snap to attention at the sound of their heavy tread.
+ 
+|Sardar Boots=5;boots23;Boots;Medium;Unique;metal;4700;1;180;15;;;;3;;;-3;-9;-1;;;;;;;;;;;;;;;;;;;;;23;38;;;;;;;;;;;;23;;;;;;;;;;;;;;;;unique;;;;;1;;;;2;;1;;;1;;;;;;;;;;;Maaf military leaders - sardars - enjoy great power even when not actively leading the armies. In the years between wars, most of them hoard so much wealth that they become almost reluctant to return to the battlefield...
+ 
+|Engraved Greaves=5;boots24;Boots;Medium;Unique;metal;4700;1;170;18;;;;-6;;;;-7;-1;;;5;;;;;;;;;;;;;;;;;;34;30;;;15;;;;;;;;;27;8;8;;;;;;;;;;;;;;unique;;;;;;;;1;;;2;;;1;1;;;;;;;;;;It would be a mistake to perceive the gilding as a mere decoration. To a battlemage, gold rims and edges can actually be of great practical use.
+ 
+|Old-Fashioned Greaves=3;boots25;Boots;Heavy;Common;metal;1275;1;250;16;;;;-5;6;;;-14;-4;;;;;;;;;;;;;;;;;;;;;33;29;;;;;;;;;;;;28;;;;;;;;;;;;;;;;aldor;;;;;;;2;;;;1;;;1;;;;;;;;;;;Battered, antiquated, and possibly passed down from someone's great-grandfather.
+ 
+|Scaled Boots=4;boots26;Boots;Heavy;Common;metal;2325;0.8;330;18;;;;-6;7;;;-12;-3;;;;;;;;;;;;;;;;;;;;;35;27;;;;;;;;;;;;29;;;;;;;;;;;;;;;;aldor;;;;;;;;;;1;;2;;1;;;;;;;;;;;These were obviously inspired by the Nistrian military tradition - scaled armor is still a common sight around those parts.
+ 
+|Sergeant Sabatons=4;boots27;Boots;Heavy;Common;metal;2900;1;300;20;;;;-7;9;;;-16;-4;;;;;;;;;;;;;;;;;;;;;39;34;;;;;;;;;;;;32;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;2;;;2;;;;;;;;;;;Not the most light or comfortable footwear, but, as the saying goes, victory trumps everything.
+ 
+|Noble Sabatons=5;boots28;Boots;Heavy;Common;metal;6125;1;350;25;;;;-9;12;;;-18;-4;;;;;;;;;;;;;;;;;;;;;50;44;;;;;;;;;;;;36;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;2;;;2;;;;;;;;;;;The red velvet fittings are here to remind everyone who the lord of the land is.
+ 
+|Aldwynn Sabatons=5;boots29;Boots;Heavy;Common;metal;7050;1.15;385;26;;;;-10;13;;;-21;-5;;;;;;;;;;;;;;;;;;;;;45;39;;;;;;;;;;;;40;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;2;;2;;;;;;;;;;;With these on your feet, you feel like you can hold your ground against a small army.
+ 
+|Rope Belt=1;belt01;Belt;Light;Common;cloth;25;1;20;;;;;2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;For when you've run out of other options.
+ 
+|Embroidered Belt=2;belt02;Belt;Light;Common;cloth;100;1;25;;;;;3;;;;;;;;;;;;;;1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;1;;;;;;;;;;;;;;;;;;;;;;Perfect for displaying one's fashion sense during a drinking night.
+ 
+|Nomad Girdle=3;belt03;Belt;Light;Common;cloth;275;1.1;35;;;;;4;;;;;;;;;;;;;;;;;1;;;;;;;;;;;;;7;;;;;;;;;;;;;;;;;;;;;;;;;elven;;;1;;;;;;;;;;;;;;;;;;;;;;Tying coins to a belt is an Ohirian custom, each of them commemorating an important event in the wearer's life: surviving a battle, becoming a parent, losing a loved one...
+ 
+|Gilded Belt=3;belt04;Belt;Light;Unique;leather;300;1.2;25;;;;;3;;;;;;;;;;;;;;;1;;1;;;;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;;;special;;;;;;;1;;;;;;;;1;;;;;;;;;;A belt made of durable, high-quality leather in accordance with the latest Brynn fashion trends. Its buckle proudly displays some nobleman's monogram.
+ 
+|Duelist Belt=4;belt05;Belt;Light;Common;leather;575;1;35;;;;;4;4;;;;;-3;;;;;;;;;;;2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;1;;;;1;;;;;;;;;;;;;;A little something to complete the image of a daring fighter and a relentless heartbreaker.
+ 
+|Aristocrat Belt=5;belt06;Belt;Light;Common;leather;1225;1;40;;;;5;5;;;;;;;;;;;;;-3;;;;3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;1;;;;;;;;1;;;;;;;;;;The design was clearly inspired by the styles of the Bronze Isles - Arno di Berro himself wears a similar-looking belt.
+ 
+|Leather Belt=1;belt07;Belt;Light;Common;leather;50;2;35;;3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3;;;;;;;;;;aldor;;;;;;;1;;;;;;;;;;;;;;;;;;A perfectly ordinary leather belt, nothing more.
+ 
+|Chain Belt=2;belt08;Belt;Light;Common;metal;100;1;50;;4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5;;;;;;;;;;;;;aldor;;;;;;;;;;;1;;;;;;;;;;;;;;If you don't have a waist to speak of, it's not wise to wear this belt over a civil garment - the links have a notable tendency to pinch and chafe.
+ 
+|Footman Belt=3;belt09;Belt;Light;Common;leather;250;1;60;;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;10;;;;;;;;;;;;;;;;5;;;;;;;;;;aldor;;;;;;;1;;;;;;;;;;;;;;;;;;A military-style belt - these are often crafted on the request of soldiers and mercenaries.
+ 
+|Veteran Belt=4;belt10;Belt;Light;Common;leather;575;1;70;;5;;;;7;;;;;;;;;;;;;;;;2;;;;;;;;;;;;12;;;;;;;;;;2;;;;;;;;;;;;;;;;aldor;;;;;;;1;;;;1;;;;;;;;;;;;;;Built to persevere - even cleaving it apart would take more than a single strike.
+ 
+|Mercenary Belt=4;belt11;Belt;Light;Common;leather;575;1;70;;6;;;;7;;;;;;;;;;;;;;;;;;;;;;;;;;;;12;3;;;;;;;;;3;;;;;;;;;;;;;;;;aldor;;;;;;;1;;;;1;;;;;;;;;;;;;;A thin belt complete with a few metal buckles. It's still more of a fashion accessory than a functional piece of armor though.
+ 
+|Knight Belt=5;belt12;Belt;Light;Common;metal;1225;1;85;;7;3;;;10;;;;;;;;;;;;;;;;;;;;;;3;;;;;;15;;;;;;;;;;4;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;2;;;;;;;;;;;;;;The art of engraving has reached amazing heights over the last half century: each of the belt's plates is inscribed with scenes of hunts and battles.
+ 
+|Royal Champion Belt=5;belt13;Belt;Light;Unique;metal;1225;1;85;;8;;5;;10;;;;;;;;;;;;;;;;;;;;;;;;;;5;;10;;;;;;;;;;5;;;;;;;;;;;;;;;;unique;;;;;;;2;;;;1;;;;1;;;;;;;;;;Whether due to age, infirmity, or fear, some of the realm's kings steered clear of the tournament grounds, leaving the task of upholding their honor to carefully chosen and trained knights - the royal champions
+ 
+|Peasant Sash=1;belt14;Belt;Light;Common;cloth;25;1;35;;;;;;;;-1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;1;;;;;;;;;;;;;;;;;;;;;;A sash with the nastiest timing for getting loose, so it's best to fasten it as tight as possible.
+ 
+|Norse Belt=2;belt15;Belt;Light;Common;leather;100;1.1;35;;;;;;;;-2;;;;;;;;;;;;1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;fjall;;;;;;;1;;;;;;;;;;;;;;;;;;In the North, there still persists a barbaric tradition of decorating belts with various so-called "trophies".
+ 
+|Jorgrim's Belt=2;belt16;Belt;Light;Unique;leather;125;1.15;40;;;;;;;;-2;;;;;;;;;;;;;5;;;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;special exc;;;;;;;2;;;;;;;;;;;;;;;;;;Used to be generously festooned with scalps and severed fingers, making things rather awkward with the Aldorian folk, forcing Jorgrim to hastily get rid of it all.
+ 
+|Fur Belt=3;belt17;Belt;Light;Common;leather;250;1;45;;;;;;;;-3;;;;;;;;;;;;;9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5;;;;;10;;;;;aldor;;;1;;;;1;;;;;;;;;;;;;;;;;;It's trimmed with luscious fur of some unknown Fjall beast.
+ 
+|Skirmisher Belt=4;belt18;Belt;Light;Common;leather;575;1;55;;;;;;;;-4;;;;;;;;;;;2;;10;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;2;;;;;;;;;;;;;;;;;;Skirmishers are expected to carry a considerable amount of arrows and gear, so they give more thought than most to their choice of belts and bandoleers.
+ 
+|Wolfbrother Belt=4;belt19;Belt;Light;Common;leather;575;1;55;;;;;;;;-4;;;;;;;;;;;;;12;;;;;;;;;;;;;5;5;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;1;;;;1;;;;;;;;5;;;;;;The Wolfbrothers are considered the elite of the Gray Army, even if the words "elite" and "Gray Army" seem to contradict each other.
+ 
+|Captain Waistband=5;belt20;Belt;Light;Common;leather;1225;1;65;;;;;;;;-5;;;;;;;;;;;1;;15;3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;1;1;;;;;;;;;;;;;;;;;Will hold a scabbard, a supply pouch, a key to the war chest, a map case, a list of passwords - and whatever else the situation demands.
+ 
+|Voivod Belt=5;belt21;Belt;Light;Unique;leather;1400;1.15;75;;;;;;;;-5;3;;;;;;;;;;;;10;;3;;;;;5;;;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;unique;;;;;;;3;;;;;;;;;;;;;;;;;;Noble Marrs, Zeineshes, and Chervenians take pride in adorning their clothing with traditional folk patterns, seizing every opportunity to assert their culture in blatant defiance of the ruling Ksifit minority.
+ 
+|Braided Girdle=1;belt22;Belt;Light;Common;cloth;25;1;10;;;;;;;;;;;;;;-1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;1;;;;;;;;;;;;;;;;;;;;;;Has a remarkable tendency to tie itself in impossible knots.
+ 
+|Ornate Girdle=2;belt23;Belt;Light;Common;leather;125;1;15;;;;;;;;;2;1;;;;-2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;magic;;;1;;;;;;;;;;;;;;;;;;;;;;Pairs well with any mantle, making it perfect for mages who care about fashion.
+ 
+|Luxurious Belt=3;belt24;Belt;Light;Common;leather;400;1.2;20;;;;;;;;;3;;;;;-3;;;;-3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;magic;;;;;;;1;;;;;;;;1;;;;;;;;;;The buckle is encrusted with a real ruby, greatly increasing its appeal in the eyes of any mage.
+ 
+|Elven Girdle=3;belt25;Belt;Light;Common;cloth;375;1.1;20;;;;;1;;;;;3;;;;-3;;;;;;;;;;;;;;;;;;;;;3;;;;;;;;;;3;3;;;;;;;;;;;;;;elven;;;1;;;;;;;;1;;;;;;;;;;;;;;Although Eraffa is the dominant faith in the Jacinth Kingdoms, the influence of sun worship remains evident even after many centuries. Various solar motifs frequently appear in elven-made trinkets and adornments - this belt's buckle is as fine an example as any.
+ 
+|Mystic Belt=4;belt26;Belt;Light;Common;leather;750;1;25;;;;;;;;;5;;;-3;;-4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5;;;magic;;;;;;;1;;;;;;;;2;;;;;;;;;;Staring for too long into the mirror-polished buckle summons a creeping sensation of falling into the abyss.
+ 
+|Ruby Sash=4;belt27;Belt;Light;Common;cloth;900;1.2;25;;;;;;;;;;;;;;-4;;;;-4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;elven;;;1;;;;;;;;;;;;;;;;;;;;;;A distinguishing accessory of a noble or wealthy elf.
+ 
+|Court Mage Belt=5;belt28;Belt;Light;Common;leather;1900;1.2;30;;;;;;;;;;;;;;-5;1;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5;;;;;;;;;;;;;;magic;;;;;;;1;;;;;;;;2;;;;;;;;;;It's hard to imagine a more wasteful and extravagant way to belt one's clothes.
+ 
+|Spellweaver Girdle=5;belt29;Belt;Light;Common;cloth;1900;1.2;30;;;;;;;;;;;;-4;;-6;;;;-5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;1;;;;;;;;;;;;1;;;;;;;;;;Intended to be worn with pride as a visible badge of a Spellweaver's high standing and exceptional mastery of magic.
+ 
+|Brotherhood of the Asp's Belt=5;belt30;Belt;Light;Unique;leather;2050;1.3;30;;;;;3;;;;;;;;;-5;;;;;;;;;5;;5;;;;;;;;;;;;;;;;;;;;5;;;;;;;;15;;;;;;;unique;;;;;;;2;;;;1;;;;;;;;;;;;;;The Brotherhood of the Asp's knights are best known for abandoning Aldor to settle in the mountains of Ahjat. According to legends, their hidden citadel stands as a sanctuary of learning at the crossroads of religion, magic, and alchemy - concealed from prying eyes and protected by the Sultan himself.
+ 
+|Verren's Ring=1;ring01;Ring;Light;Unique;metal;40;1;30;;;;;;;;-1;;;;;;;;;;;;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;special exc;;;;;;;;;;;;;;;;;;;;;;;;;Upon parting with this ring, Verren was, as always, stingy on details. It might come in handy at some point... But how?
+ 
+|Velmir's Ring=2;ring02;Ring;Light;Unique;metal;35;1;40;;;;;;;;;;;;;;;;;;;;1;;1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;special exc;;;;;;;;;;;;;;;;;;;;;;;;;This ring used to belong to Velmir's brother. Now it serves as a silent reminder of the path he chose for himself.
+ 
+|Copper Ring=1;ring03;Ring;Light;Common;metal;15;1;40;;;;;;;;;;;;;;;;;;;;;;;;2;4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;The cheapest jewelry money can buy. It's said that wearing copper is beneficial to one's constitution.
+ 
+|Ancient Copper Ring=2;ring04;Ring;Light;Common;metal;20;1;40;;;;;;;;;;;;;;;;;;;;;;;;3;6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;The metal aged so poorly that it's become impossible to tell the ring's age: could be a couple hundred years, could be a thousand.
+ 
+|Brass Ring=2;ring05;Ring;Light;Common;metal;20;1;50;;;;;;;;-1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Brass has been around for centuries - the technique used to make this ring is rooted in the Firn metal-working tradition.
+ 
+|Bronze Amethyst Ring=3;ring06;Ring;Light;Common;metal;60;1;50;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;For a noblewoman, it's a boring ring with a cheap gem. For a poor commoner's daughter - an incredible luxury and her greatest treasure.
+ 
+|Brass Signet=3;ring07;Ring;Light;Common;metal;60;1;50;;;;;;;;-2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;A handy tool for sealing personal letters and business papers.
+ 
+|Steel Signet=3;ring08;Ring;Light;Common;metal;60;1;55;;3;2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;3;;;;;;;King Etbert used to personally award such rings to soldiers who distinguished themselves during his military campaigns.
+ 
+|Brass Agate Ring=3;ring09;Ring;Light;Common;metal;60;1;55;;;;;;;;-3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;A typical coming-of-age gift for a merchant's son.
+ 
+|Silver Ring=2;ring10;Ring;Light;Common;silver;40;1;30;;;;;;;;;;;;;;;;;;;;;;;2;;;;;;;;;4;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;According to local beliefs, silver offers protection against the evil eye and diseases.
+ 
+|Mastercrafted Silver Ring=3;ring11;Ring;Light;Common;silver;120;1;40;;;;;;;;;;;;;;;;;;;;;;;3;;;;;;;;;6;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Somewhat reminiscent of the bands exchanged between newly-weds in Maen - or at least that had been the custom when people there were still getting married.
+ 
+|Silver Jade Ring=3;ring12;Ring;Light;Common;silver;120;1;40;;;;;;;;;;;;;;;;;;;;;;;5;;;;;;;;;4;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Jade isn't as popular in Aldor as it is in the East, but the jewelry made with it is still pretty easy to find.
+ 
+|Berserker Ring=3;ring13;Ring;Light;Common;leather;120;1;40;;;;;;;;;;;;;;;;;3;;;2;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;fjall;;;;;;;;;;;;;;;;;;;5;;;;;;Its previous owner could equally likely be an orc or a dwarf.
+ 
+|Silver Amethyst Ring=4;ring14;Ring;Light;Common;silver;280;1;50;;;;;;;;-2;;;;;;;;;;;;;;;;;8;;;;;5;;6;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;A ring encrusted with an amethyst is a well-known talisman for maintaining mental clarity.
+ 
+|Silver Aquamarine Ring=4;ring15;Ring;Light;Common;silver;280;1;50;;;;;;;;;5;;;;;;;;;;;;;;3;;;;;;;;;6;;;;;;;;;;;;;;5;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;It's believed that every aquamarine carries a heavenly blessing, so they are often used for rings and necklaces.
+ 
+|Silver Topaz Ring=4;ring16;Ring;Light;Common;silver;280;1;50;;;;;;;;;;;;;;;;;;;2;;;;;;;;;;;;;6;;;;;;;;;;;;;5;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Topaz and silver form an exquisite combination, priced precisely to appeal to the wives of respectable merchants.
+ 
+|Silver Emerald Ring=5;ring17;Ring;Light;Common;silver;600;1;55;;;;;;;;-3;;;;;;;;;;;;;;;6;1;5;;;;;;;7;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;In iatrochemistry, emeralds are thought to be the quintessence of life force - which is why they are worn day and night by those obsessed with longevity.
+ 
+|Silver Sapphire Ring=5;ring18;Ring;Light;Common;silver;600;1;55;;;;;;;;;7;2;;;;;;;;;;;;;;;;;;;;;;7;;;;;;;;;;;;;;6;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Jewelers consider the union of silver and sapphires to be one of the most refined and harmonious.
+ 
+|Silver Ruby Ring=5;ring19;Ring;Light;Common;silver;600;1;55;;;;;;;;;;;;;;;;;;-3;3;;;;;;;;;;;;;7;;;;;;;;;;;;;6;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;A frozen spark of the setting sun, now on your finger.
+ 
+|Gold Ring=2;ring20;Ring;Light;Common;gold;100;1;15;;;;;;;;;2;;;;2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Gold is an excellent magical conduit. Maybe that's where its value comes from?
+ 
+|Carved Gold Ring=3;ring21;Ring;Light;Common;gold;260;1;20;;;;;;;;;4;;;;3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;It's amazing how much a plain gold ring can transform in the hands of a skilled craftsman.
+ 
+|Mastercrafted Gold Ring=4;ring22;Ring;Light;Common;gold;580;1;25;;;;;;;;;8;;;;4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;The outer rim is decorated with an elegant pattern - a technique typical of Maen jewelers.
+ 
+|Gold Aquamarine Ring=4;ring23;Ring;Light;Common;gold;580;1;25;;;;;;;;;4;;;;4;;;6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Aquamarine favors the bold and the courageous: reputedly, it brings good luck in risky endeavors.
+ 
+|Gold Ruby Ring=4;ring24;Ring;Light;Common;gold;580;1;25;;;;;;;;;4;;;;4;;;;;-3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Signet rings like this one are beloved by bigwigs of the Grand Magistrate.
+ 
+|Gold Diamond Ring=5;ring25;Ring;Light;Common;gold;1220;1;30;;;;;;;;;5;5;;-3;6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Diamonds this monstrous can usually only be found in royal crowns.
+ 
+|Gold Sapphire Ring=5;ring26;Ring;Light;Common;gold;1220;1;30;;;;;;;;;5;;;;7;;;4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Set with a masterfully cut sapphire. The dream of every sorcerer.
+ 
+|Exquisite Ruby Ring=5;ring27;Ring;Light;Common;gold;1220;1;30;;;;;;;;;5;;;;6;;;;;-4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;From a certain distance, the masterfully cut ruby can easily be mistaken for a drop of fresh blood.
+ 
+|Silver Insert Gold Ring=2;ring28;Ring;Light;Common;silver;80;1;25;;;;;;;;;;;;;2;;;;;;;;;;2;;;;;;;;;2;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Jewelry connoisseurs might wrinkle their noses at mixing gold and silver, but hardly anyone else shares the objection.
+ 
+|Morion Ring=4;ring29;Ring;Light;Common;silver;440;1;35;;;;;;;;;;;;;3;;;;;;;;;;4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;3;;;;;;;;;Gold, silver, morion... Looks like someone wanted to have a piece of jewelry for every occasion.
+ 
+|Hermit Ring=5;ring30;Ring;Light;Unique;wood;920;1;40;;;;;;;;;5;5;;;;;;;;-5;;;;;5;5;;;;;;;;;;;;;;;;;;;;5;10;;;;;;;;;;;;;;;unique;;;;;;;;;;;;;;;;;;;;;;;;;Even though it looks plain and unassuming, putting this wooden ring on your finger brings in the surge of incredible vigor.
+ 
+|Copper Chain=1;neck01;Amulet;Light;Common;metal;20;1;35;;;;;;;;;;;;;;;;;;;;;;;;1;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;In Aldor, a copper chain is as much an accessory as it is a protective charm.
+ 
+|Crude Amulet=1;neck02;Amulet;Light;Common;wood;20;1;35;;1;;;1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;These plain-looking trinkets are popular among the peasantry - supposedly, the hole in the middle can ward off the evil eye.
+ 
+|Amber Amulet=2;neck03;Amulet;Light;Common;gem;120;1;50;;;;;;;;;;;;;;;;;;;;;;;;4;;;;;;;;;8;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;It must have arrived here from either Fjall or Skadia, the lands famous for their amber trade.
+ 
+|Hilda's Amulet=2;neck04;Amulet;Light;Unique;gem;120;1;50;;;;;1;;;;;;;;;;;;;;1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5;;;;;;;;;;special exc;;;;;;;;;;;;;;;;;;;;;;;;;Prone to superstition, Hilda believes the amulet her mother gave her long ago is the very thing that helped her survive on the island.
+ 
+|Silver Aquamarine Amulet=3;neck05;Amulet;Light;Common;silver;320;1;60;;;;;;;;;;;;;;;;;;;;;;;4;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;When purchasing jewelry, mages prioritize craftsmanship and a correct balance between gems and metals, both of which are vital if one hopes to utilize the materials' mystical properties.
+ 
+|Runic Amulet=3;neck06;Amulet;Light;Common;metal;220;0.7;60;;2;;;2;;;-2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;fjall;;;;;;;;;;;;;;;;;;;;;;;;;People of Fjall hold a belief that a properly crafted runic charm can bring success in any endeavor.
+ 
+|Silver Amethyst Amulet=4;neck07;Amulet;Light;Common;silver;700;1;70;;;;;;5;;;;;;;;;;;;;;;;;5;;;;;5;;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Amethyst is also known as the savant's stone - pendants and necklaces encrusted with this gem are often worn by people who have a keen interest in various sciences.
+ 
+|Warding Hand Amulet=4;neck08;Amulet;Light;Unique;gold;700;1;99;;3;;;3;3;;;;;;;;;;;-3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;9;;;unique;;;;;;;;;;;;;;;;;;;;;;;;;Hand imagery is considered a powerful ward in Aldor, capable of protecting its user from misfortune, sickness, and curses.
+ 
+|Silver Emerald Amulet=5;neck09;Amulet;Light;Common;silver;1460;1;85;;;;;;7;;;;;;;;;;;;;;;;;10;;10;;;8;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;elven;;;;;;;;;;;;;;;;;;;;;;;;;The Emir of Jibey buys the loyalty of Ohirian warlords with gold, silk, and amulets not unlike this one - doing so is much cheaper than sending in the army to reestablish his rule over the region.
+ 
+|Crescent Amulet=5;neck10;Amulet;Light;Common;silver;1460;1;85;;;;;;7;1;;;;;;;;;;;;;;;;8;;;;;10;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;elven;;;;;;;;;;;;;;;;;;;;;;;;;Stars and celestial bodies are held in superstitious reverence in Ahjat, as their positions in the sky govern the outcome of rituals performed by Hazzun oracles.
+ 
+|Coin Talisman=2;neck11;Amulet;Light;Common;gold;200;1;25;;;;;;;;;2;;;;;-1;1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;An ancient, preferably Axonian coin with a hole drilled in it is a common charm for better luck.
+ 
+|Hexer Talisman=2;neck12;Amulet;Light;Common;metal;200;1;25;;;;;;;;;;3;;;6;3;;;;;;;;;-6;;;;;;;;;;;;;;;;;;3;;;;;;;;;;;;;;;;9;;;special;;;;;;;;;;;;;;;;;;;;;;;;;The forces from beyond the veil are fickle and vindictive. It's frighteningly easy to fall victim to them if you don't exercise the necessary caution.
+ 
+|Gold Talisman=3;neck13;Amulet;Light;Common;gold;520;1;30;;;;;;;;;5;;;;;;2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;A plain medallion without much flair - its value comes exclusively from the material.
+ 
+|Jade Talisman=3;neck14;Amulet;Light;Common;gold;520;1;30;;;;;;;;;3;;;;3;;2;;;;;;;;2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;elven;;;;;;;;;;;;;;;;;;;;;;;;;Before taking over the rest of the Jacinth Kingdoms, jade first became fashionable in Shenfen, where most of it is currently mined and produced.
+ 
+|Phylactery Talisman=3;neck15;Amulet;Light;Unique;gem;666;1;33;;;;;;;-1;;;3;;;9;;;;13;;;;;;;3;;9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;33;;;special;;;;;;;;;;;;;;;;;;;;;;;;;A vessel for someone's soul, sealed by a forbidden ritual. It always pays to stay on your toes when dealing with dark magic...
+ 
+|Jibean Talisman=4;neck16;Amulet;Light;Common;gold;1160;1;35;;;;;;;;;8;2;;;4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;elven;;;;;;;;;;;;;;;;;;;;;;;;;A gold amulet, generously painted with azure and purple. Such colors are a rare sight in Aldor.
+ 
+|Sapphire Talisman=4;neck17;Amulet;Light;Common;gem;1160;1;35;;;;;;;;;3;;;;6;;3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Whenever there's a source of magic close by, this pendant begins to give off a faint, thrumming sound.
+ 
+|Venemist's Talisman=4;neck18;Amulet;Light;Unique;silver;1160;1;35;;;;;;;1;;;;;;6;;;;;;;;;;;;;;;;;9;;;;;;;;;;;;;;;;;;;;;;;;;;;13;;;special;;;;;;;;;;;;;;;;;6;;;;;;;;It's set with an incredibly large morion that seems to be shifting its color every now and then... Or is it merely a trick of the light?
+ 
+|Gold Diamond Talisman=5;neck19;Amulet;Light;Common;gold;2440;1;40;;;;;;;;;4;2;;;7;;4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Apart from the Academy Circles' archmages, there aren't that many people who have the crowns for this kind of jewelry.
+ 
+|Gold Sapphire Talisman=5;neck20;Amulet;Light;Common;gold;2440;1;40;;;;;;;;;6;;;;9;;2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Niran of Maen spent many years of his life collecting and restoring the scattered knowledge about the magical properties displayed by various gems. His efforts were instrumental to making sapphire what it is today, a stone strongly associated with the practitioners of magic.
+ 
+|Oracle Star=5;neck21;Amulet;Light;Common;gold;2440;1;40;;;;;;;;;10;;;;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;elven;;;;;;;;;;;;;;;;;;;;;;;;;Thanks to these pridefully displayed amulets, one can easily spot an oracle on the streets of Hazzun.
+ 
+|Fang Pendant=1;neck22;Amulet;Light;Common;metal;40;1;50;;;;;;;;;;;;;;;;;;;;1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;A time-honored charm meant to bring luck during a hunt.
+ 
+|Bow Pendant=2;neck23;Amulet;Light;Common;metal;160;1;65;;;;;;;;-1;;;;;;;;;;;2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;The belief that a weapon-shaped talisman helps mastering its full-sized version has been commonplace since the time of ancient Firns.
+ 
+|Trophy Necklace=2;neck24;Amulet;Light;Common;cloth;160;1;65;;;;;;;;;;;;;;;;;;;1;1;10;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;fjall;;;;;;;;;;;;;;;;;;;;;;;;;Both the soldiers of the Northern Borderlands and the dwarves they are getting in constant skirmishes with have a morbid penchant for collecting fingers of slain foes and wearing them as necklaces.
+ 
+|Jorgrim's Pendant=2;neck25;Amulet;Light;Unique;metal;160;1;65;;;;;;;;;;;;;;;;;;;1;;;;;3;;;;;;6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;special exc;;;;;;;;;;;;;;;;;;;;;;;;;The craftsmanship is undoubtedly dwarven, but the imagery has little to do with Fjall... Makes you wonder how exactly this pendant came into Jorgrim's possession.
+ 
+|Pearl Necklace=3;neck26;Amulet;Light;Common;gem;420;1;80;;;;;;;;;;;;;;;;;;-3;1;;;;;;;;;;;;;;;;;;;;;;;;;;10;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;This necklace is not made of the best pearls, but it wouldn't be fair to call it cheap-looking.
+ 
+|Lazurite Pendant=3;neck27;Amulet;Light;Common;gem;420;1;80;;;;;;;;;4;;-5;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;There's something ostensibly pagan about it... Who was it that collected all this lazurite, which is almost non-existent in Aldor, and by what means, is anyone's guess.
+ 
+|Carved Topaz Pendant=4;neck28;Amulet;Light;Common;gem;920;1;95;;;;;;;;;;3;-4;;;;;;;-4;3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;Such necklaces are an essential attribute of prosperous city aristocrats, who never miss a chance to put their wealth on display.
+ 
+|Pagan Pendant=4;neck29;Amulet;Light;Unique;silver;1313;1;66;;;;;;9;;;;;;;;;;;6;;;;;;;;;9;9;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;special;;;;;;;;;;;;;;;;;;;;;;;;;This sinister amulet is older than a century or two.
+ 
+|Ruby Pendant=5;neck30;Amulet;Light;Common;silver;1960;1;110;;;;;;;;;;4;-5;;;;;;;-5;4;;;;;;;;;;;;;5;;;;;;;;;;;;;;;;;;;;;;;;;;;;aldor;;;;;;;;;;;;;;;;;;;;;;;;;The ruby shines the prettiest under the direct sunlight.
+ 
+|Everflaming Pendant=5;neck31;Amulet;Light;Common;gem;1960;1;110;;;;;;;;;;;;;;;;;;-5;;3;;;;;;;;5;;;;;;;;;;;;;;;;;7;;;;;;33;;;;;;;;;elven;;;;;;;;;;;;;;;;;;;;;;;;;The sun-worshiping cult of the Everflaming was outlawed by the grandfather of the current Amir of Jibey. Only a few isolated communes now remain of what was once a popular faith, having fled persecution to the distant fringes of the empire.
+ 
+|Worn Cloak=1;cloak01;Cloak;Light;Common;cloth;25;1;20;;;;;1;;;;;;;;;;;;;;;;;;;1;;;;;;;;;;;5;;;;;;;;;;4;;;;;;;;;;;;;;;aldor;;;2;;;;;;;;;;;;;;;;;;;;;;Judging by the abundant patchwork, this cloak has been in use for many years.
+ 
+|Traveling Cape=2;cloak02;Cloak;Light;Common;cloth;75;0.75;25;;;;;2;;;;;2;;;;;;;;;;;;;;3;;;;;;;;;;;10;;;;;;;;;;6;;;;;;;;;;;;;;;aldor;;;;1;;;;;;;;;;;;;;;;;;;;;It'll keep the rain away, help you stay warm in cold weather, and conceal you in the dark.
+ 
+|Jousting Cloak=3;cloak03;Cloak;Light;Unique;cloth;350;1.25;40;;;;;;;;;;;;;;;;;-5;;;;;;;;;;;;;;;8;;5;;;;;;;;;;5;5;5;;;;;;;;;;;;;;special;;;;4;;;;;;;;;;;;;;;;;;;;;It's embroidered with heraldic crests of a long dead noble house.
+ 
+|Vigilante Cape=3;cloak04;Cloak;Light;Common;cloth;275;1;30;;;;;;;;;;1;;;;;;;;;1;1;5;;;;;;;;;;;5;;;;;;;;;;;;5;;;;;;;;;;;;;;;;aldor;;;;3;;;;;;;;;;;;;;;;;;;;;In the chaotic months following the uprising, the Magistrate struggled to contain the surge of crime that swept over Brynn. The tide turned with the rise of vigilantes - well-armed volunteers who eventually bolstered the ranks of the reformed city guard.
+ 
+|Jibean Cape=4;cloak05;Cloak;Light;Common;cloth;725;1.15;35;;;;;;;;;;;-5;;;;;;;;;2;;3;;;;;;;;;;7;;;;;;;;;;;;7;7;;;;;;;;;;;;;;;elven;;;;3;;;;;;;;;;;;;;;;;;;;;A cape made of the thinnest of silks. The material is incredibly durable: tearing even a single strip from it would require a significant effort.
+ 
+|Nistrian Noble Cloak=5;cloak06;Cloak;Light;Common;cloth;1500;1.15;40;;;;;;9;;;;;;;;;;;-3;;;;;;;;;;;;;;;9;;;;;;;;;;;;9;9;;;;;;;;;;;;;;;nistra;;;;3;;;;;;;;;;;;;;;;;;;;;Nistra is a fascinating land of many intertwined cultures. Nistrian nobles, who still stay true to the ancient traditions of Axonia, also eagerly embrace the customs of Pjesht highlanders - such as a preference for this style of cloak, for example.
+ 
+|Azure Cape=1;cloak07;Cloak;Light;Unique;cloth;75;3;20;;;;;2;;;;;1;;;;;;;;;;;;;;1;5;;;;;;;;;;8;;;;;;;;;;6;;;;;;;;;;;;;;;special exc;;;;2;;;;;;;;;;;;;;;;;;;;;An intricately embroidered cape cut from strange azure fabric. By the looks of its ornamented gold fibula, it was brought to Aldor from the Jacinth Kingdoms.
+ 
+|Academy Cloak=2;cloak08;Cloak;Light;Common;cloth;150;1.3;25;;;;;;;;;3;1;;;;-1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5;5;;;;;;;;;;;;;;magic;;;;2;;;;;;;;;;;;;;;;;;;;;A graduate's cloak speaks far louder of their years at the Academy than any written testimony ever could.
+ 
+|Wanderer Cloak=3;cloak09;Cloak;Light;Common;cloth;275;1;30;;;;;3;;;;;3;-3;;;;;;;;;;;;;3;;;;;;;;;;;12;;;;;;;;;;8;;;;;;;;;;;;;;;aldor;;;;2;;;;;;;;;;;;;;;;;;;;;Thickly woven and fitted with a quilted mantelet - the only source of comfort a wandering mage can truly rely on.
+ 
+|Battlemage Cloak=4;cloak10;Cloak;Light;Common;cloth;800;1.3;35;;;;;;;;-2;;;;;;-2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4;12;12;;;;;;;;;;;;;;magic;;;;2;;;;;;;;;;;;;;;;;;;;;Everything about it speaks of practicality and ease of wear: thick fabric, muted colors, simple - albeit golden - fastenings...
+ 
+|Velvet Cloak=4;cloak11;Cloak;Light;Common;cloth;800;1.3;35;;;;;;;;;5;3;;;;-4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;10;10;;;;;;;;;;;;;;magic;;;;2;;;;;;;;;;;;;;;;;;;;;For a long while, there existed an unspoken rule in Aldor that only those born into nobility can wear red velvet. However, during the last few decades, Brynn merchants have been showing increasingly less respect towards this custom.
+ 
+|Court Mage Cloak=5;cloak12;Cloak;Light;Common;cloth;1700;1.3;40;;;;;;;;;;4;;-4;;;;6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;12;12;;;;;;;;;;;;;;magic;;;;2;;;;;;;;;;;;;;;;;;;;;Court mages have a very particular taste in clothes. Their goal is to dazzle and leave an impression, so they gravitate towards the craziest styles and colors.
+ 
+|Occult Cloak=5;cloak13;Cloak;Light;Unique;cloth;2025;1.55;40;;;;;;;;;;;;;6;;;;;;;;;;;;;3;6;;;;;;;;;;;;;;;;;;9;9;;;;;;;;;;;6;;;special;;;;4;;;;;;;;;;;;;;;;;;;;;Long ago, Brynn was a gathering spot for a secret cult of sanguimancers, coveting the secrets of vampirism. It's unknown whether they were successful with their experiments, but they surely met their demise as it befits vampires - with wooden stakes deep in their chests.
+
+|#default = Data does not exist.}}</includeonly><noinclude>[[Category:Data]]</noinclude>

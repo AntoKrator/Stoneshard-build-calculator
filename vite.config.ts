@@ -12,6 +12,8 @@ export default defineConfig({
     // tests opt into jsdom with a `// @vitest-environment jsdom` header.
     environment: 'node',
     globals: true,
-    include: ['src/**/*.{test,spec}.{ts,js}'],
+    // Pure logic + components live in src/; dev-pipeline helpers (checksum,
+    // item transform) live in scripts/ and are unit-tested there too.
+    include: ['src/**/*.{test,spec}.{ts,js}', 'scripts/**/*.{test,spec}.{ts,js}'],
   },
 })
