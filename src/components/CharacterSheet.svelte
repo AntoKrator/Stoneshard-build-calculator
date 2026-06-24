@@ -1,8 +1,9 @@
 <script lang="ts">
-  // The live partial derived-stat sheet. Values come straight from the tested
-  // computeDerivedStats output on the character; this component only groups and
-  // formats them. Only attribute-driven stats appear in Phase 1 (KTD9/KTD14);
-  // gear/passive contributions arrive in later phases.
+  // The live derived-stat sheet. Enumerated attribute-driven stats now also carry
+  // any equipped-gear contribution (recompute merges gear into character.derived,
+  // M3 U3), so a stat gear supplies shows its combined value. Gear stats with no
+  // formula identifier (per-type resistances, raw weapon damage, …) are surfaced
+  // separately from character.gearStats. Skill passives still arrive later.
   import type { Character } from '../lib/build/character'
   import type { StatModel } from '../lib/types'
 
@@ -32,11 +33,32 @@
     const n = Number.isInteger(v) ? v : Number(v.toFixed(1))
     return unit === '%' ? `${n}%` : `${n}`
   }
+
+  function humanize(key: string): string {
+    return key
+      .split('_')
+      .map((w) => (w ? w[0].toUpperCase() + w.slice(1) : w))
+      .join(' ')
+  }
+
+  // Gear stats without a formula identifier, split resistances vs. the rest, each
+  // sorted by name. Rendered only when something is equipped that carries them.
+  const gearGroups = $derived.by(() => {
+    const res: Row[] = []
+    const other: Row[] = []
+    for (const [key, value] of Object.entries(character.gearStats)) {
+      ;(key.endsWith('_resistance') ? res : other).push({ name: humanize(key), value })
+    }
+    const sort = (rows: Row[]) => rows.sort((a, b) => a.name.localeCompare(b.name))
+    return [['Resistances', sort(res)] as const, ['Other Gear', sort(other)] as const].filter(
+      ([, rows]) => rows.length > 0,
+    )
+  })
 </script>
 
 <section class="panel">
   <h2>Character Sheet</h2>
-  <p class="note">Attribute-driven stats. Gear, enchantments and skill passives arrive later.</p>
+  <p class="note">Attribute- and gear-driven stats. Skill passives arrive later.</p>
 
   <div class="groups">
     {#each groups as [category, stats] (category)}
@@ -53,6 +75,25 @@
       </div>
     {/each}
   </div>
+
+  {#if gearGroups.length > 0}
+    <h3 class="gear-head">From Gear</h3>
+    <div class="groups">
+      {#each gearGroups as [label, stats] (label)}
+        <div class="group">
+          <h3>{label}</h3>
+          <dl>
+            {#each stats as s (s.name)}
+              <div class="stat">
+                <dt>{s.name}</dt>
+                <dd>{fmt(s.value, undefined)}</dd>
+              </div>
+            {/each}
+          </dl>
+        </div>
+      {/each}
+    </div>
+  {/if}
 </section>
 
 <style>
@@ -71,6 +112,13 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 0.75rem 1.25rem;
+  }
+  .gear-head {
+    margin-top: 0.85rem;
+    margin-bottom: 0.5rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--border);
+    border-bottom: none;
   }
   h3 {
     font-size: 0.85rem;
