@@ -40,7 +40,9 @@ const item = (key: string, category: Item['category'], slot: Item['slot'], stats
 const ITEMS: Item[] = [
   item('sword', 'weapon', 'main_hand', { slashing_damage: 10 }),
   item('axe', 'weapon', 'main_hand', { rending_damage: 12 }),
+  item('staff', 'weapon', 'main_hand', { pyromantic_power: 5 }),
   item('helm', 'armor', 'head', { fire_resistance: 5 }),
+  item('robe', 'armor', 'body', { magic_power: 6, fire_resistance: 8 }),
   item('ring1', 'accessory', 'ring', { magic_power: 3 }),
 ]
 
@@ -189,6 +191,37 @@ describe('recompute — gear equipping (M3 U1, R2)', () => {
 
   it('leaves equipped empty for a gearless build', () => {
     expect(rc([up, addS('A')]).equipped).toEqual({})
+  })
+})
+
+describe('recompute — gear → derived sheet (M3 U3, R6)', () => {
+  it('folds a mapped gear stat into the derived sheet', () => {
+    // The fixture stat model has no Magic_Power base, so gear is the whole value.
+    const ch = rc([eq('body', 'robe')])
+    expect(ch.derived.Magic_Power).toBe(6)
+  })
+
+  it('adds a previously-absent deferred identifier when gear provides it (R6)', () => {
+    const geared = rc([eq('main_hand', 'staff')])
+    expect(geared.derived.Pyromantic_Power).toBe(5)
+    // Without gear the identifier is absent → a tooltip referencing it stays "—".
+    expect(rc([]).derived.Pyromantic_Power).toBeUndefined()
+  })
+
+  it('sums gear into an enumerated derived stat additively across pieces', () => {
+    const ch = rc([eq('body', 'robe'), eq('ring', 'ring1')])
+    expect(ch.derived.Magic_Power).toBe(9) // 6 + 3
+  })
+
+  it('carries unmapped gear stats (resistances) in gearStats, not derived', () => {
+    const ch = rc([eq('body', 'robe')])
+    expect(ch.gearStats.fire_resistance).toBe(8)
+    expect(ch.derived.Fire_Resistance).toBeUndefined()
+  })
+
+  it('reverts the sheet when gear is removed', () => {
+    expect(rc([]).derived.Pyromantic_Power).toBeUndefined()
+    expect(rc([]).gearStats).toEqual({})
   })
 })
 

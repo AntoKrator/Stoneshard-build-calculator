@@ -31,6 +31,7 @@ function char(p: Partial<Character> = {}): Character {
     taken: new Set(),
     takenOrder: [],
     equipped: {},
+    gearStats: {},
     attributeBudget: 0,
     skillBudget: 2,
     attributesSpent: 0,

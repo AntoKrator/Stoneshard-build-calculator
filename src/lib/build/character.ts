@@ -27,6 +27,8 @@ import {
   type StatModel,
 } from '../types'
 import { computeDerivedStats } from './stats'
+import { aggregateGear } from './gear'
+import { KNOWN_STAT_IDENTIFIERS } from '../formula/identifiers'
 import { earnedAttributePoints, earnedSkillPoints, isUnlocked, type Attributes } from './economy'
 
 /* ------------------------------------------------------------------ */
@@ -72,6 +74,9 @@ export interface Character {
   takenOrder: string[]
   /** Items currently equipped, one per occupied slot (last-equip-wins). */
   equipped: Partial<Record<EquipmentSlot, Item>>
+  /** Gear stats with no formula identifier (resistances, raw weapon damage, …),
+   *  keyed by their snake_case item key — for the equipped-stats view. */
+  gearStats: Record<string, number>
   attributeBudget: number
   skillBudget: number
   attributesSpent: number
@@ -197,6 +202,19 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
     equipped[e.slot] = it
   }
 
+  // 7. Gear → sheet: split equipped stats into formula-identifier contributions
+  //    (merged additively into the derived sheet, so a stat gear provides — incl.
+  //    a previously-deferred identifier — enters the scope and lights up its
+  //    tooltip) and a display bag for everything without an identifier (U2/U3).
+  const knownIdentifiers = new Set<string>([
+    ...KNOWN_STAT_IDENTIFIERS,
+    ...statModel.derivedStats.map((d) => d.key),
+  ])
+  const gear = aggregateGear(equipped, knownIdentifiers)
+  for (const [id, v] of Object.entries(gear.contributions)) {
+    derived[id] = (derived[id] ?? 0) + v
+  }
+
   return {
     level,
     attributes,
@@ -205,6 +223,7 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
     taken,
     takenOrder,
     equipped,
+    gearStats: gear.display,
     attributeBudget,
     skillBudget,
     attributesSpent,
