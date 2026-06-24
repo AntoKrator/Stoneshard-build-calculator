@@ -30,6 +30,7 @@ function char(p: Partial<Character> = {}): Character {
     derived: {},
     taken: new Set(),
     takenOrder: [],
+    equipped: {},
     attributeBudget: 0,
     skillBudget: 2,
     attributesSpent: 0,

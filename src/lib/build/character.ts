@@ -18,7 +18,14 @@
  *     dataset is skipped and recorded in `notes`, never discarding the build.
  */
 import { z } from 'zod'
-import { AttributeKey, type Dataset, type StatModel } from '../types'
+import {
+  AttributeKey,
+  EquipmentSlot,
+  slotFitsCategory,
+  type Dataset,
+  type Item,
+  type StatModel,
+} from '../types'
 import { computeDerivedStats } from './stats'
 import { earnedAttributePoints, earnedSkillPoints, isUnlocked, type Attributes } from './economy'
 
@@ -36,6 +43,7 @@ export const LedgerEntry = z.discriminatedUnion('op', [
   z.object({ op: z.literal('levelUp') }),
   z.object({ op: z.literal('addAttribute'), attr: AttributeKey }),
   z.object({ op: z.literal('addSkill'), skill: z.string().min(1) }),
+  z.object({ op: z.literal('equip'), slot: EquipmentSlot, item: z.string().min(1) }),
 ])
 export type LedgerEntry = z.infer<typeof LedgerEntry>
 
@@ -48,7 +56,7 @@ export type Ledger = z.infer<typeof Ledger>
 /* ------------------------------------------------------------------ */
 
 export interface RecomputeNote {
-  kind: 'unknown-skill-ref' | 'unknown-tree-ref'
+  kind: 'unknown-skill-ref' | 'unknown-tree-ref' | 'unknown-item-ref' | 'item-slot-mismatch'
   ref: string
   message: string
 }
@@ -62,6 +70,8 @@ export interface Character {
   /** Skills currently taken (legal), and the order they resolved in. */
   taken: Set<string>
   takenOrder: string[]
+  /** Items currently equipped, one per occupied slot (last-equip-wins). */
+  equipped: Partial<Record<EquipmentSlot, Item>>
   attributeBudget: number
   skillBudget: number
   attributesSpent: number
@@ -154,6 +164,39 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
     takenOrder.push(key)
   }
 
+  // 6. Equipment — replay equip entries; last-equip-wins per slot. An equip whose
+  //    item is absent from the dataset, or whose item doesn't fit the target slot,
+  //    is skipped and noted — the same fail-soft posture as skills (patch-drift).
+  const itemByKey = new Map(dataset.items.map((i) => [i.key, i]))
+  const equipped: Partial<Record<EquipmentSlot, Item>> = {}
+  for (const e of entries) {
+    if (e.op !== 'equip') continue
+    const it = itemByKey.get(e.item)
+    if (!it) {
+      if (!flagged.has(`item:${e.item}`)) {
+        flagged.add(`item:${e.item}`)
+        notes.push({
+          kind: 'unknown-item-ref',
+          ref: e.item,
+          message: `Item "${e.item}" is no longer in the dataset and was skipped`,
+        })
+      }
+      continue
+    }
+    if (it.slot !== e.slot || !slotFitsCategory(it.category, e.slot)) {
+      if (!flagged.has(`slot:${e.item}:${e.slot}`)) {
+        flagged.add(`slot:${e.item}:${e.slot}`)
+        notes.push({
+          kind: 'item-slot-mismatch',
+          ref: e.item,
+          message: `Item "${e.item}" (slot "${it.slot}") does not fit slot "${e.slot}" and was skipped`,
+        })
+      }
+      continue
+    }
+    equipped[e.slot] = it
+  }
+
   return {
     level,
     attributes,
@@ -161,6 +204,7 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
     derived,
     taken,
     takenOrder,
+    equipped,
     attributeBudget,
     skillBudget,
     attributesSpent,

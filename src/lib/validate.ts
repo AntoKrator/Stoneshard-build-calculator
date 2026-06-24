@@ -3,7 +3,7 @@
  * integrity that Zod can't express on its own — dangling prerequisites,
  * unknown tree references, duplicate keys, and tree/skill cross-links.
  */
-import { parseDataset, type Dataset, type ItemCategory, type EquipmentSlot } from './types'
+import { parseDataset, slotFitsCategory, type Dataset } from './types'
 
 export interface IntegrityIssue {
   kind:
@@ -24,14 +24,6 @@ export interface IntegrityIssue {
     | 'unknown-stat-key'
     | 'slot-category-mismatch'
   message: string
-}
-
-/** Which equipment slots each item family may occupy. A weapon in `head`, or a
- *  ring in `body`, is a categorization error caught here. */
-const VALID_SLOTS: Record<ItemCategory, Set<EquipmentSlot>> = {
-  weapon: new Set(['main_hand', 'off_hand']),
-  armor: new Set(['off_hand', 'head', 'body', 'gloves', 'boots', 'cloak']),
-  accessory: new Set(['amulet', 'ring', 'belt']),
 }
 
 /** Run referential-integrity checks over an already shape-valid dataset. */
@@ -175,7 +167,7 @@ export function checkItems(ds: Pick<Dataset, 'items' | 'constants'>): IntegrityI
     }
     seen.add(it.key)
 
-    if (!VALID_SLOTS[it.category].has(it.slot)) {
+    if (!slotFitsCategory(it.category, it.slot)) {
       issues.push({
         kind: 'slot-category-mismatch',
         message: `Item "${it.key}" is a ${it.category} but sits in slot "${it.slot}"`,
