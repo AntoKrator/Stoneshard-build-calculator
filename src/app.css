@@ -37,6 +37,8 @@
   --frame-shadow:
     inset 1px 1px 0 var(--bevel-light), inset -1px -1px 0 var(--bevel-dark),
     0 2px 5px rgba(0, 0, 0, 0.4);
+  /* Elevation for floating overlays (tooltips), so they lift off consistently. */
+  --shadow-float: 0 8px 24px rgba(0, 0, 0, 0.5);
 
   color-scheme: dark;
   font-family:

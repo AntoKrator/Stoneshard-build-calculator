@@ -59,9 +59,7 @@
     background: var(--bg-panel-2);
     border: 1px solid var(--border);
     border-radius: 6px;
-    box-shadow:
-      var(--frame-shadow),
-      0 6px 20px rgba(0, 0, 0, 0.45);
+    box-shadow: var(--frame-shadow), var(--shadow-float);
   }
 
   /* A paragraph break: force a new line with extra spacing above. */

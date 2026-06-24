@@ -32,7 +32,9 @@
     gap: 0.75rem;
     padding: 0.6rem 0.85rem;
     margin-bottom: 1rem;
-    background: color-mix(in srgb, var(--danger) 16%, transparent);
+    /* --danger (#bb4329) at low alpha as an rgba literal — universal support, no
+       color-mix fallback needed (the build minifier strips such fallbacks). */
+    background: rgba(187, 67, 41, 0.16);
     border: 1px solid var(--danger);
     border-radius: 6px;
     font-size: 0.85rem;

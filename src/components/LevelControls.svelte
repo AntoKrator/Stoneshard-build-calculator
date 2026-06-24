@@ -82,7 +82,8 @@
     font-size: 1.1rem;
   }
   .level .num {
-    font-family: var(--font-display);
+    /* Stays the readable sans: "Lv {n}" is a live-updating number, and the
+       numeric-readability invariant (KTD2) keeps the pixel font off numbers. */
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--accent);

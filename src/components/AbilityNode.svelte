@@ -59,6 +59,9 @@
     height: 48px;
   }
 
+  /* A skill node is an icon tile, not a text button: its affordance is the border
+     + state glow below, so it deliberately does NOT carry the global beveled-button
+     box-shadow (which the state rules and :disabled override anyway). */
   .pick {
     padding: 2px;
     border-radius: 6px;
@@ -86,13 +89,16 @@
      plain bronze border; unaffordable = mildly dimmed icon; affordable = brass-dim
      border + soft brass glow; taken = full brass border + stronger glow. Glows are
      mixed from --accent so they track the token, not a hard-coded literal. */
+  /* Glow tints are --accent (#d6a93a) at low alpha, written as rgba literals — not
+     color-mix — so they render on every engine with no fallback needed (the build
+     minifier strips duplicate-property fallbacks). Keep in step with --accent. */
   .affordable .pick {
     border-color: var(--accent-dim);
-    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 32%, transparent);
+    box-shadow: 0 0 0 2px rgba(214, 169, 58, 0.32);
   }
   .taken .pick {
     border-color: var(--accent);
-    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 48%, transparent);
+    box-shadow: 0 0 0 2px rgba(214, 169, 58, 0.48);
   }
 
   .refund {
