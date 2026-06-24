@@ -1,15 +1,44 @@
+/* Self-hosted pixel/display font for headers (M1 hybrid reskin, KTD3). Routed
+   through Vite's asset pipeline (relative url from src/) so the emitted URL is
+   fingerprinted and respects base: './' — i.e. it resolves under the GitHub Pages
+   project sub-path, where a root-absolute /fonts/ url would 404. Variable woff2
+   (latin subset) covers weights 400-700; SIL OFL 1.1 — license + provenance in
+   src/assets/fonts/Pixelify-Sans-OFL.txt. */
+@font-face {
+  font-family: 'Pixelify Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('./assets/fonts/pixelify-sans-latin.woff2') format('woff2');
+}
+
 :root {
-  /* Stoneshard-ish dark parchment palette. Tweak freely in later phases. */
-  --bg: #14110d;
-  --bg-panel: #1f1a13;
-  --bg-panel-2: #2a2319;
-  --border: #4a3f2c;
-  --text: #e8dec5;
-  --text-dim: #a89b7c;
-  --accent: #c9a227;
-  --accent-dim: #8a6f1e;
-  --danger: #b4452e;
-  --ok: #6a8f3c;
+  /* Stoneshard hybrid palette (M1): grimdark brown-black grounds, bronze frames,
+     bone-parchment text, brass accent. Retuned from the Phase-1 dark-parchment
+     theme toward the game's denser, bronze-framed look. */
+  --bg: #100d09;
+  --bg-panel: #1c1711;
+  --bg-panel-2: #2a2318;
+  --border: #6b5836;
+  --text: #e4d8b6;
+  --text-dim: #9c8d6c;
+  --accent: #d6a93a;
+  --accent-dim: #8c7026;
+  --danger: #bb4329;
+  --ok: #7c9a3d;
+
+  /* Pixel/display font for headers only; body keeps the readable sans below (KTD2). */
+  --font-display: 'Pixelify Sans', 'Segoe UI', system-ui, sans-serif;
+
+  /* Beveled "game" frame treatment (KTD4): a lit top-left edge and a dark
+     bottom-right edge chisel panels out of the background, asset-free. */
+  --bevel-light: rgba(224, 198, 130, 0.18);
+  --bevel-dark: rgba(0, 0, 0, 0.5);
+  --frame-shadow:
+    inset 1px 1px 0 var(--bevel-light), inset -1px -1px 0 var(--bevel-dark),
+    0 2px 5px rgba(0, 0, 0, 0.4);
+  /* Elevation for floating overlays (tooltips), so they lift off consistently. */
+  --shadow-float: 0 8px 24px rgba(0, 0, 0, 0.5);
 
   color-scheme: dark;
   font-family:
@@ -39,12 +68,28 @@ body {
   min-height: 100vh;
 }
 
+/* Headers wear the pixel/display font; body + numeric text stay the readable sans
+   set on :root (KTD2, R2). Pixel glyphs read best with a hair more line-height. */
 h1,
 h2,
 h3 {
+  font-family: var(--font-display);
   font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
   margin: 0 0 0.4em;
   color: var(--text);
+}
+
+/* Shared beveled "game" panel frame (KTD4, R3). Framed surfaces carry
+   class="panel" and inherit this single treatment, so all frames match; the
+   per-component .panel blocks defer their shared properties to this one (U3). */
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: var(--frame-shadow);
 }
 
 p {
@@ -63,6 +108,8 @@ code {
   font-size: 0.9em;
 }
 
+/* Buttons read as small beveled "game" controls: a raised bevel at rest that
+   presses in on :active, keyed to the shared bevel tokens (R3). */
 button {
   font: inherit;
   color: var(--text);
@@ -71,13 +118,24 @@ button {
   border-radius: 4px;
   padding: 0.4em 0.8em;
   cursor: pointer;
+  box-shadow:
+    inset 1px 1px 0 var(--bevel-light),
+    inset -1px -1px 0 var(--bevel-dark);
 }
 
 button:hover:not(:disabled) {
   border-color: var(--accent-dim);
 }
 
+button:active:not(:disabled) {
+  /* Flip the bevel so the control reads as pressed in. */
+  box-shadow:
+    inset -1px -1px 0 var(--bevel-light),
+    inset 1px 1px 0 var(--bevel-dark);
+}
+
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  box-shadow: none;
 }

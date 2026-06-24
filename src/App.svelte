@@ -131,6 +131,11 @@
     margin-bottom: 1rem;
   }
   h1 {
+    /* The pixel display font carries more weight than the old sans and the title
+       wraps to two lines on narrow screens; scale it down a touch and tighten the
+       wrapped line-height. (No overflow either way — verified at 375px and 1280px.) */
+    font-size: clamp(1.5rem, 4.5vw + 0.5rem, 2rem);
+    line-height: 1.15;
     color: var(--accent);
   }
   .tagline {
@@ -141,6 +146,7 @@
     border: 1px solid var(--border);
     border-left: 3px solid var(--accent);
     border-radius: 6px;
+    box-shadow: var(--frame-shadow);
     padding: 0.6rem 0.85rem;
     margin-bottom: 1rem;
     font-size: 0.9rem;
@@ -159,6 +165,7 @@
     border: 1px solid var(--border);
     border-radius: 6px;
     background: var(--bg-panel);
+    box-shadow: var(--frame-shadow);
     margin-top: 0.75rem;
     padding: 0.5rem;
   }

@@ -15,15 +15,17 @@
     bare = false,
   }: { tooltip: string; formulas?: Record<string, string>; scope: Scope; bare?: boolean } = $props()
 
-  // Stoneshard color codes -> fixed CSS values. Unknown codes inherit.
+  // Stoneshard color codes -> fixed CSS values, retuned (M1) to sit on the
+  // bronze/parchment palette while staying recognizably their semantic hues.
+  // FIXED map keyed by the game's codes — never attacker-influenced (KTD8).
   const COLORS: Record<string, string> = {
-    r: '#d9776a', // red
-    w: '#f0e6cc', // white / highlight
+    r: '#d96f5f', // red
+    w: '#ece0bd', // white / parchment highlight
     p: '#b48ead', // arcane purple
-    bl: '#6aa3d8', // blue
-    lg: '#8fbf5f', // light green
-    g: '#8fbf5f', // green
-    y: '#d8c15a', // yellow
+    bl: '#6c9fcf', // blue
+    lg: '#93b85a', // light green
+    g: '#93b85a', // green
+    y: '#d9b64a', // yellow / brass
   }
   const colorOf = (c: string | null): string => (c && COLORS[c]) || 'inherit'
 
@@ -57,7 +59,7 @@
     background: var(--bg-panel-2);
     border: 1px solid var(--border);
     border-radius: 6px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+    box-shadow: var(--frame-shadow), var(--shadow-float);
   }
 
   /* A paragraph break: force a new line with extra spacing above. */

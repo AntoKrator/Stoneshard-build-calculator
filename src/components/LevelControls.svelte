@@ -70,12 +70,7 @@
 </section>
 
 <style>
-  .panel {
-    background: var(--bg-panel);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 1rem;
-  }
+  /* Frame comes from the shared global .panel treatment (U2). */
   .level-row {
     display: flex;
     align-items: center;
@@ -87,6 +82,8 @@
     font-size: 1.1rem;
   }
   .level .num {
+    /* Stays the readable sans: "Lv {n}" is a live-updating number, and the
+       numeric-readability invariant (KTD2) keeps the pixel font off numbers. */
     font-size: 1.3rem;
     font-weight: 700;
     color: var(--accent);
