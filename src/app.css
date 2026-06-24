@@ -66,12 +66,28 @@ body {
   min-height: 100vh;
 }
 
+/* Headers wear the pixel/display font; body + numeric text stay the readable sans
+   set on :root (KTD2, R2). Pixel glyphs read best with a hair more line-height. */
 h1,
 h2,
 h3 {
+  font-family: var(--font-display);
   font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
   margin: 0 0 0.4em;
   color: var(--text);
+}
+
+/* Shared beveled "game" panel frame (KTD4, R3). Framed surfaces carry
+   class="panel" and inherit this single treatment, so all frames match; the
+   per-component .panel blocks defer their shared properties to this one (U3). */
+.panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: var(--frame-shadow);
 }
 
 p {
@@ -90,6 +106,8 @@ code {
   font-size: 0.9em;
 }
 
+/* Buttons read as small beveled "game" controls: a raised bevel at rest that
+   presses in on :active, keyed to the shared bevel tokens (R3). */
 button {
   font: inherit;
   color: var(--text);
@@ -98,13 +116,24 @@ button {
   border-radius: 4px;
   padding: 0.4em 0.8em;
   cursor: pointer;
+  box-shadow:
+    inset 1px 1px 0 var(--bevel-light),
+    inset -1px -1px 0 var(--bevel-dark);
 }
 
 button:hover:not(:disabled) {
   border-color: var(--accent-dim);
 }
 
+button:active:not(:disabled) {
+  /* Flip the bevel so the control reads as pressed in. */
+  box-shadow:
+    inset -1px -1px 0 var(--bevel-light),
+    inset 1px 1px 0 var(--bevel-dark);
+}
+
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  box-shadow: none;
 }
