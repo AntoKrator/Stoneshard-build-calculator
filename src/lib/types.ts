@@ -243,13 +243,31 @@ export const EquipmentSlot = z.enum([
 ])
 export type EquipmentSlot = z.infer<typeof EquipmentSlot>
 
+/** Broad item family. Drives which fields are meaningful and how the damage/sheet
+ *  model reads an item: weapons carry a damage profile, armor carries mitigation. */
+export const ItemCategory = z.enum(['weapon', 'armor', 'accessory'])
+export type ItemCategory = z.infer<typeof ItemCategory>
+
 export const Item = z.object({
   key: z.string().min(1),
   name: Localized,
+  category: ItemCategory,
   slot: EquipmentSlot,
-  /** Flat stat modifiers the item grants (statKey -> value). */
+  /** In-game item type, e.g. "Sword", "Shield", "Body Armor", "Ring". */
+  type: z.string().optional(),
+  tier: z.number().int().nonnegative().optional(),
+  rarity: z.string().optional(),
+  material: z.string().optional(),
+  /** Weapons (R3): the primary damage type feeding the damage model, drawn from
+   *  `constants.damageTypes` (the cross-check lives in the data gate, not here,
+   *  since it spans two dataset sections). */
+  damageType: z.string().optional(),
+  /** Flat stat modifiers (statKey -> value): per-type damage, accuracy, crit,
+   *  block, resistances, school powers, and the rest the sheet/damage model reads. */
   stats: z.record(z.string(), z.number()).default({}),
-  /** Verbatim extra properties from the game data. */
+  /** Verbatim non-numeric / unmapped columns from the source (durability, price,
+   *  tags, obtainability, description, ...). Loosely typed so new patch columns
+   *  widen the data without breaking validation, exactly as Skill.properties does. */
   properties: PropertyBag.default({}),
   icon: z.string().optional(),
 })

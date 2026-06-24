@@ -6,6 +6,20 @@
   "attributePointsPerLevel": 1,
   "skillPointsPerLevel": 1,
   "baseAttributeValue": 10,
-  "damageTypes": [],
+  "damageTypes": [
+    "slashing",
+    "piercing",
+    "crushing",
+    "rending",
+    "fire",
+    "shock",
+    "poison",
+    "caustic",
+    "frost",
+    "arcane",
+    "unholy",
+    "sacred",
+    "psionic"
+  ],
   "values": {}
 }

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { dataset, statModel } from './load'
-import { parseDataset, StatModel } from '../types'
+import { parseDataset, StatModel, Item } from '../types'
 import metaJson from '../../data/meta.json'
 import attributesJson from '../../data/attributes.json'
 import treesJson from '../../data/trees.json'
@@ -77,6 +77,67 @@ describe('stat model (KTD14)', () => {
     if (!res.success) {
       expect(res.error.issues.some((i) => i.message.includes('Not_A_Real_Stat'))).toBe(true)
     }
+  })
+})
+
+describe('item schema (M2 U1, R3)', () => {
+  it('round-trips a weapon with a damage profile + modifiers', () => {
+    const broom = Item.parse({
+      key: 'broom',
+      name: { english: 'Broom' },
+      category: 'weapon',
+      slot: 'main_hand',
+      type: 'Mace',
+      tier: 1,
+      rarity: 'Common',
+      material: 'wood',
+      damageType: 'crushing',
+      stats: { crushing: 6, fumble_chance: 3 },
+      properties: { durability: 10, price: 10, obtainability: 'special' },
+    })
+    expect(broom.category).toBe('weapon')
+    expect(broom.damageType).toBe('crushing')
+    expect(broom.stats.crushing).toBe(6)
+    // Non-numeric / unmapped columns survive verbatim in the bag.
+    expect(broom.properties.obtainability).toBe('special')
+  })
+
+  it('round-trips an armor piece (shield) and an accessory', () => {
+    const shield = Item.parse({
+      key: 'shield01',
+      name: { english: 'Board Shield' },
+      category: 'armor',
+      slot: 'off_hand',
+      type: 'Shield',
+      stats: { block_chance: 10, crushing_resistance: 8 },
+    })
+    expect(shield.category).toBe('armor')
+    expect(shield.slot).toBe('off_hand')
+
+    const ring = Item.parse({
+      key: 'ring_iron',
+      name: { english: 'Iron Ring' },
+      category: 'accessory',
+      slot: 'ring',
+    })
+    // Defaults apply when absent.
+    expect(ring.stats).toEqual({})
+    expect(ring.properties).toEqual({})
+  })
+
+  it('rejects an item missing its category (typed ZodError)', () => {
+    const res = Item.safeParse({
+      key: 'x',
+      name: { english: 'X' },
+      slot: 'head',
+    })
+    expect(res.success).toBe(false)
+  })
+
+  it('exposes the damage-type vocabulary in constants', () => {
+    expect(dataset.constants.damageTypes).toContain('crushing')
+    expect(dataset.constants.damageTypes).toContain('arcane')
+    expect(dataset.constants.damageTypes.length).toBe(13)
   })
 })
 
