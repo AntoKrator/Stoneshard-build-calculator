@@ -17,6 +17,7 @@
 import type { Item, ItemCategory, EquipmentSlot } from '../types'
 import type { ParsedDatastring } from '../data/wiki-datastring'
 import type { WikiPage } from '../data/wiki-pages'
+import { coerce, sortKeys } from './normalize'
 
 export interface ItemWarning {
   category: string
@@ -113,18 +114,6 @@ export function slug(name: string): string {
     .replace(/['’]/g, '')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
-}
-
-/** '' → undefined; numeric string → number; else the string. */
-function coerce(v: string): string | number | undefined {
-  if (v === '') return undefined
-  return /^-?\d+(\.\d+)?$/.test(v) ? Number(v) : v
-}
-
-function sortKeys<T>(obj: Record<string, T>): Record<string, T> {
-  const out: Record<string, T> = {}
-  for (const k of Object.keys(obj).sort()) out[k] = obj[k]
-  return out
 }
 
 /** Per-type damage columns (`<Type> Damage`), detected structurally from the

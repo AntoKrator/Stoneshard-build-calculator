@@ -12,6 +12,7 @@
  */
 import { computeTierPosition, checkEdges, type TopoNode } from './topology'
 import { KNOWN_IDENTIFIERS } from '../formula/identifiers'
+import { coerce, sortKeys } from './normalize'
 
 interface RawSkill {
   key: string
@@ -62,18 +63,6 @@ function unknownTokens(expr: string): string[] {
     if (KNOWN_IDENTIFIERS.has(tok)) continue
     out.push(tok)
   }
-  return out
-}
-
-/** Coerce a stringly attribute-bag value; '' -> drop, numeric -> number. */
-function coerce(v: string): string | number | undefined {
-  if (v === '') return undefined
-  return /^-?\d+(\.\d+)?$/.test(v) ? Number(v) : v
-}
-
-function sortKeys<T>(obj: Record<string, T>): Record<string, T> {
-  const out: Record<string, T> = {}
-  for (const k of Object.keys(obj).sort()) out[k] = obj[k]
   return out
 }
 
