@@ -46,7 +46,7 @@ export interface ItemTransformInput {
 /** Columns mapped to typed identity fields, handled before the stat/property split. */
 const IDENTITY = new Set(['Tier', 'Type', 'Slot', 'Rarity', 'Material'])
 
-/** Columns carried verbatim in `properties` — never character stats. */
+/** Fixed-name columns carried verbatim in `properties` — never character stats. */
 const NON_STAT = new Set([
   'ID',
   'Armor Class',
@@ -61,24 +61,19 @@ const NON_STAT = new Set([
   'Balance (???)',
   'IsOpen',
   'NoDrop',
-  'fragment_cloth01',
-  'fragment_cloth02',
-  'fragment_cloth03',
-  'fragment_cloth04',
-  'fragment_leather01',
-  'fragment_leather02',
-  'fragment_leather03',
-  'fragment_leather04',
-  'fragment_metal01',
-  'fragment_metal02',
-  'fragment_metal03',
-  'fragment_metal04',
-  'fragment_gold',
-  'Alternative images (for wiki)',
-  'Alternative images (for wiki) (2)',
-  'Alternative images (for wiki) (3)',
-  'Alternative name (for wiki)',
 ])
+
+/** Crafting fragments (`fragment_metal01`…) and wiki-only art/name columns
+ *  (`Alternative images (for wiki) (2)`…) come in numbered families. Match them
+ *  by pattern so a new index added by a future patch stays out of the stat
+ *  vocabulary (KTD4) rather than being misread as a character stat. */
+function isNonStat(label: string): boolean {
+  return (
+    NON_STAT.has(label) ||
+    /^fragment_/i.test(label) ||
+    /^Alternative (images|name) \(for wiki\)/.test(label)
+  )
+}
 
 /** Armor `Slot` label → (category, EquipmentSlot). */
 const ARMOR_SLOT: Record<string, { category: ItemCategory; slot: EquipmentSlot }> = {
@@ -93,9 +88,9 @@ const ARMOR_SLOT: Record<string, { category: ItemCategory; slot: EquipmentSlot }
   Amulet: { category: 'accessory', slot: 'amulet' },
 }
 
-/** A column is a character stat iff it is neither identity nor an explicit non-stat. */
+/** A column is a character stat iff it is neither identity nor a non-stat column. */
 function isStatColumn(label: string): boolean {
-  return !IDENTITY.has(label) && !NON_STAT.has(label)
+  return !IDENTITY.has(label) && !isNonStat(label)
 }
 
 /** `Crit Chance` → `crit_chance`, `fragment_gold` → `fragment_gold`. */
@@ -182,7 +177,7 @@ export function transformItems(input: ItemTransformInput): {
         if (IDENTITY.has(label)) continue
         const value = coerce(raw)
         if (value === undefined) continue
-        if (NON_STAT.has(label)) {
+        if (isNonStat(label)) {
           properties[snake(label)] = value
         } else if (typeof value === 'number') {
           stats[snake(label)] = value
@@ -229,7 +224,7 @@ export function transformItems(input: ItemTransformInput): {
         category,
         slot,
         ...(type ? { type } : {}),
-        ...(f.Tier && /^-?\d+$/.test(f.Tier) ? { tier: Number(f.Tier) } : {}),
+        ...(f.Tier && /^\d+$/.test(f.Tier) ? { tier: Number(f.Tier) } : {}),
         ...(f.Rarity ? { rarity: f.Rarity } : {}),
         ...(f.Material ? { material: f.Material } : {}),
         ...(damageType ? { damageType } : {}),

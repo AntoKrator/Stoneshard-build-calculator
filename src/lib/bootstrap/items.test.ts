@@ -202,6 +202,33 @@ describe('transformItems', () => {
     const keys = transform().items.map((i) => i.key)
     expect(keys).toEqual([...keys].sort())
   })
+
+  it('keeps future numbered fragment/wiki-art columns out of stats (KTD4)', () => {
+    // A patch that adds fragment_metal05 or a 4th alt-image column must not have
+    // it misread as a character stat — the denylist matches these by pattern.
+    const header = [
+      'Tier',
+      'ID',
+      'Type',
+      'Crushing Damage',
+      'fragment_metal05',
+      'Alternative images (for wiki) (4)',
+      'Description',
+    ]
+    const parsed: ParsedDatastring = {
+      header,
+      rows: [row(header, 'Oddity', ['1', 'x01', 'Mace', '6', '3', 'foo.png', 'desc'])],
+    }
+    const { items, itemStatKeys } = transformItems({
+      pages: [{ page: WEAPON_PAGE, parsed }],
+      damageTypes: ['crushing'],
+    })
+    expect(items[0].stats.crushing_damage).toBe(6)
+    expect(items[0].stats.fragment_metal05).toBeUndefined()
+    expect(items[0].properties.fragment_metal05).toBe(3)
+    expect(itemStatKeys).not.toContain('fragment_metal05')
+    expect(itemStatKeys).not.toContain('alternative_images_for_wiki_4')
+  })
 })
 
 describe('key + label helpers', () => {

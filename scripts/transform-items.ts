@@ -15,10 +15,11 @@ import { readFileSync, writeFileSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { z } from 'zod'
-import { Item } from '../src/lib/types'
+import { Item, type Dataset } from '../src/lib/types'
 import { parseDatastring } from '../src/lib/data/wiki-datastring'
 import { WIKI_PAGES } from '../src/lib/data/wiki-pages'
 import { transformItems } from '../src/lib/bootstrap/items'
+import { checkItems } from '../src/lib/validate'
 import { verifyChecksum } from './checksum'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
@@ -44,32 +45,39 @@ const pages = WIKI_PAGES.map((page) => {
   return { page, parsed: parseDatastring(wikitext, { leadingColumns: page.leadingColumns }) }
 })
 
-const constants = readJson(resolve(dataDir, 'constants.json')) as {
-  damageTypes: string[]
+const constants = readJson(resolve(dataDir, 'constants.json')) as Record<string, unknown> & {
+  damageTypes?: string[]
   itemStatKeys?: string[]
 }
-const { items, itemStatKeys, report } = transformItems({
-  pages,
-  damageTypes: constants.damageTypes ?? [],
-})
-
-// Validate shape BEFORE writing anything — a malformed item fails the run.
-const parsed = z.array(Item).parse(items)
-
-// Emit the dataset section (already key-sorted by the transform).
-writeJson(resolve(dataDir, 'items.json'), parsed)
-
-// Write the derived item-stat vocabulary into constants (read-merge).
-writeJson(resolve(dataDir, 'constants.json'), { ...constants, itemStatKeys })
-
-// Fold item warnings/notes/count into the report the gate reads (idempotent:
-// drop any prior item-* entries first, then re-add this run's).
 const reportPath = resolve(dataDir, 'bootstrap-report.json')
 const existing = readJson(reportPath) as {
   counts: Record<string, number>
   notes: string[]
   warnings: { category: string; message: string }[]
 }
+
+const { items, itemStatKeys, report } = transformItems({
+  pages,
+  damageTypes: constants.damageTypes ?? [],
+})
+
+// Validate shape + referential integrity BEFORE writing anything — the same
+// checks the gate runs (against the about-to-be-written vocabulary), so a
+// duplicate key / slot mismatch / unknown stat or damage type fails the run
+// rather than landing in the committed artifact. Mirrors bootstrap-from-nstratos.
+const parsed = z.array(Item).parse(items)
+const updatedConstants = { ...constants, itemStatKeys }
+const issues = checkItems({
+  items: parsed,
+  constants: updatedConstants,
+} as unknown as Pick<Dataset, 'items' | 'constants'>)
+if (issues.length) {
+  const lines = issues.map((i) => `[${i.kind}] ${i.message}`).join('\n  ')
+  throw new Error(`Item integrity check failed — writing nothing:\n  ${lines}`)
+}
+
+// Fold item warnings/notes/count into the report the gate reads (idempotent:
+// drop any prior item-* entries first, then re-add this run's).
 const warnings = [
   ...existing.warnings.filter((w) => !w.category.startsWith('item-')),
   ...report.warnings,
@@ -78,6 +86,10 @@ const notes = [
   ...existing.notes.filter((n) => !n.startsWith('[items]')),
   ...report.notes.map((n) => `[items] ${n}`),
 ]
+
+// All validation passed — now write the three artifacts together.
+writeJson(resolve(dataDir, 'items.json'), parsed)
+writeJson(resolve(dataDir, 'constants.json'), updatedConstants)
 writeJson(reportPath, {
   ...existing,
   counts: { ...existing.counts, items: parsed.length, warnings: warnings.length },

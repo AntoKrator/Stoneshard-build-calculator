@@ -50,13 +50,22 @@ export class DatastringError extends Error {
   }
 }
 
-/** Split a `;`-delimited line, dropping a single trailing-`;` artifact cell. */
+/**
+ * Split a `;`-delimited row to exactly `expected` cells, or fewer (→ caller throws).
+ *
+ * The last column is the free-text Description, which can legitimately contain a
+ * `;` (ordinary prose). Re-joining any overflow into that last cell keeps every
+ * *structured* column aligned by position — so a semicolon in prose never
+ * misaligns a stat or aborts the run, which is the misalignment KTD5 guards
+ * against. A genuinely dropped cell (fewer than `expected`) still fails loudly.
+ * A lone trailing `;` (a spurious empty final cell) is dropped first.
+ */
 function splitCells(line: string, expected: number): string[] {
   const cells = line.split(';')
-  // A trailing `;` yields a spurious empty final cell; drop it only when doing so
-  // hits the expected width, so genuine empty Description fields are preserved and
-  // real drift still fails the width check below.
   if (cells.length === expected + 1 && cells[cells.length - 1] === '') cells.pop()
+  if (cells.length > expected) {
+    return [...cells.slice(0, expected - 1), cells.slice(expected - 1).join(';')]
+  }
   return cells
 }
 
@@ -105,9 +114,12 @@ export function parseDatastring(wikitext: string, opts: ParseOptions = {}): Pars
 
     const cells = splitCells(m[2], header.length)
     if (cells.length !== header.length) {
+      // Fewer cells than the header means a value was dropped — genuine column
+      // drift that would misalign fields. (Overflow is absorbed into the
+      // free-text last column by splitCells and never reaches here.)
       throw new DatastringError(
-        `Row "${name}" has ${cells.length} cells but the header has ${header.length} ` +
-          `(column drift — parse by header, never position)`,
+        `Row "${name}" has only ${cells.length} cells but the header has ${header.length} ` +
+          `(dropped cell — parse by header, never position)`,
       )
     }
     const fields: Record<string, string> = {}

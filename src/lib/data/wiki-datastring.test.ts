@@ -62,14 +62,26 @@ describe('parseDatastring', () => {
     expect(shield.fields.Material).toBe('wood')
   })
 
-  it('fails loudly on a header/column-count mismatch (column drift)', () => {
-    // Header says 5 columns; this row carries 6 non-empty cells.
+  it('fails loudly when a cell is dropped (column drift that misaligns fields)', () => {
+    // Header says 5 columns; this row carries only 4 (a value was dropped).
     const drift = WEAPON_FIXTURE.replace(
       '|Broom=1;broom;;6;Forged by a commoner with a dream.',
-      '|Broom=1;broom;Mace;6;extra;Forged by a commoner.',
+      '|Broom=1;broom;;6',
     )
     expect(() => parseDatastring(drift)).toThrow(DatastringError)
-    expect(() => parseDatastring(drift)).toThrow(/column drift/)
+    expect(() => parseDatastring(drift)).toThrow(/dropped cell/)
+  })
+
+  it('absorbs a semicolon in the free-text Description without misaligning fields', () => {
+    // The last column is free text; an extra `;` in prose must not abort the parse.
+    const prose = WEAPON_FIXTURE.replace(
+      '|Broom=1;broom;;6;Forged by a commoner with a dream.',
+      '|Broom=1;broom;;6;Light, yet sturdy; a commoner can dream.',
+    )
+    const { rows } = parseDatastring(prose)
+    const broom = rows.find((r) => r.name === 'Broom')!
+    expect(broom.fields['Crushing Damage']).toBe('6') // structured columns stay aligned
+    expect(broom.fields.Description).toBe('Light, yet sturdy; a commoner can dream.')
   })
 
   it('tolerates a trailing semicolon without inventing a phantom column', () => {

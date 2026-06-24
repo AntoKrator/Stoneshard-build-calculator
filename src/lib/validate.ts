@@ -158,8 +158,12 @@ export function checkIntegrity(ds: Dataset): IntegrityIssue[] {
  * rather than in the per-item Zod schema. The vocabulary checks are skipped when
  * the relevant constants list is empty, so a minimal/partial dataset isn't
  * flagged for a vocabulary it never declared.
+ *
+ * Exported so the item generator (`scripts/transform-items.ts`) can run the same
+ * checks before it writes `items.json`, the way the bootstrap generator does —
+ * hence the narrow input (only the sections these checks read).
  */
-function checkItems(ds: Dataset): IntegrityIssue[] {
+export function checkItems(ds: Pick<Dataset, 'items' | 'constants'>): IntegrityIssue[] {
   const issues: IntegrityIssue[] = []
   const damageTypes = new Set(ds.constants.damageTypes)
   const statKeys = new Set(ds.constants.itemStatKeys)
