@@ -1,15 +1,42 @@
+/* Self-hosted pixel/display font for headers (M1 hybrid reskin, KTD3). Routed
+   through Vite's asset pipeline (relative url from src/) so the emitted URL is
+   fingerprinted and respects base: './' — i.e. it resolves under the GitHub Pages
+   project sub-path, where a root-absolute /fonts/ url would 404. Variable woff2
+   (latin subset) covers weights 400-700; SIL OFL 1.1 — license + provenance in
+   src/assets/fonts/Pixelify-Sans-OFL.txt. */
+@font-face {
+  font-family: 'Pixelify Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('./assets/fonts/pixelify-sans-latin.woff2') format('woff2');
+}
+
 :root {
-  /* Stoneshard-ish dark parchment palette. Tweak freely in later phases. */
-  --bg: #14110d;
-  --bg-panel: #1f1a13;
-  --bg-panel-2: #2a2319;
-  --border: #4a3f2c;
-  --text: #e8dec5;
-  --text-dim: #a89b7c;
-  --accent: #c9a227;
-  --accent-dim: #8a6f1e;
-  --danger: #b4452e;
-  --ok: #6a8f3c;
+  /* Stoneshard hybrid palette (M1): grimdark brown-black grounds, bronze frames,
+     bone-parchment text, brass accent. Retuned from the Phase-1 dark-parchment
+     theme toward the game's denser, bronze-framed look. */
+  --bg: #100d09;
+  --bg-panel: #1c1711;
+  --bg-panel-2: #2a2318;
+  --border: #6b5836;
+  --text: #e4d8b6;
+  --text-dim: #9c8d6c;
+  --accent: #d6a93a;
+  --accent-dim: #8c7026;
+  --danger: #bb4329;
+  --ok: #7c9a3d;
+
+  /* Pixel/display font for headers only; body keeps the readable sans below (KTD2). */
+  --font-display: 'Pixelify Sans', 'Segoe UI', system-ui, sans-serif;
+
+  /* Beveled "game" frame treatment (KTD4): a lit top-left edge and a dark
+     bottom-right edge chisel panels out of the background, asset-free. */
+  --bevel-light: rgba(224, 198, 130, 0.18);
+  --bevel-dark: rgba(0, 0, 0, 0.5);
+  --frame-shadow:
+    inset 1px 1px 0 var(--bevel-light), inset -1px -1px 0 var(--bevel-dark),
+    0 2px 5px rgba(0, 0, 0, 0.4);
 
   color-scheme: dark;
   font-family:
