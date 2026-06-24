@@ -10,7 +10,14 @@
  * Every operation returns a discriminated result so the UI can surface *why* an
  * action was refused (no points, locked, duplicate) without throwing.
  */
-import type { AttributeKey, Dataset, Skill } from '../types'
+import {
+  slotFitsCategory,
+  type AttributeKey,
+  type Dataset,
+  type EquipmentSlot,
+  type Item,
+  type Skill,
+} from '../types'
 import { recompute, type Character, type Ledger, type LedgerEntry } from './character'
 import { isUnlocked } from './economy'
 
@@ -22,6 +29,8 @@ type Reason =
   | 'min-level'
   | 'max-level'
   | 'not-found'
+  | 'no-item'
+  | 'wrong-slot'
 
 export type LedgerResult = { ok: true } | { ok: false; reason: Reason }
 
@@ -31,10 +40,13 @@ export class BuildLedger {
   readonly #dataset: Dataset
   /** Immutable key→skill lookup (a plain object, so no reactive-collection lint). */
   readonly #skillByKey: Record<string, Skill>
+  /** Immutable key→item lookup, same posture as #skillByKey. */
+  readonly #itemByKey: Record<string, Item>
 
   constructor(dataset: Dataset, entries: LedgerEntry[] = []) {
     this.#dataset = dataset
     this.#skillByKey = Object.fromEntries(dataset.skills.map((s) => [s.key, s]))
+    this.#itemByKey = Object.fromEntries(dataset.items.map((i) => [i.key, i]))
     this.entries = entries
   }
 
@@ -126,5 +138,39 @@ export class BuildLedger {
       }
     }
     return { ok: false, reason: 'not-found' }
+  }
+
+  /**
+   * Equip `itemKey` into `slot`. Refuses an unknown item or one that doesn't fit
+   * the slot. Replaces whatever occupies the slot (removing the prior equip entry
+   * first) so the log holds at most one equip per slot — keeping it clean and the
+   * share code bounded.
+   */
+  equip(slot: EquipmentSlot, itemKey: string): LedgerResult {
+    const item = this.#itemByKey[itemKey]
+    if (!item) return { ok: false, reason: 'no-item' }
+    if (item.slot !== slot || !slotFitsCategory(item.category, slot)) {
+      return { ok: false, reason: 'wrong-slot' }
+    }
+    this.#removeEquip(slot)
+    this.entries.push({ op: 'equip', slot, item: itemKey })
+    return { ok: true }
+  }
+
+  /** Clear a slot by removing its equip entry. */
+  unequip(slot: EquipmentSlot): LedgerResult {
+    return this.#removeEquip(slot) ? { ok: true } : { ok: false, reason: 'not-found' }
+  }
+
+  /** Remove the equip entry for `slot` if present; returns whether one was removed. */
+  #removeEquip(slot: EquipmentSlot): boolean {
+    for (let i = this.entries.length - 1; i >= 0; i--) {
+      const e = this.entries[i]
+      if (e.op === 'equip' && e.slot === slot) {
+        this.entries.splice(i, 1)
+        return true
+      }
+    }
+    return false
   }
 }

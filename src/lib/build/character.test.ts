@@ -28,7 +28,12 @@ const SKILLS: Skill[] = [
   skill('STRgate', 1, [], { level: 99, attributePoints: 2, attributes: ['STR'] }), // attr-path only
 ]
 
-const item = (key: string, category: Item['category'], slot: Item['slot'], stats: Record<string, number> = {}): Item => ({
+const item = (
+  key: string,
+  category: Item['category'],
+  slot: Item['slot'],
+  stats: Record<string, number> = {},
+): Item => ({
   key,
   name: { english: key },
   category,

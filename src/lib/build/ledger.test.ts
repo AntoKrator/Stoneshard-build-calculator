@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { BuildLedger } from './ledger.svelte'
-import type { Dataset, Skill, StatModel } from '../types'
+import type { Dataset, Item, Skill, StatModel } from '../types'
 
 function skill(key: string, tier: number, requires: string[]): Skill {
   return {
@@ -18,6 +18,33 @@ function skill(key: string, tier: number, requires: string[]): Skill {
 }
 
 const SKILLS = [skill('A', 1, []), skill('B', 1, []), skill('C', 1, []), skill('AB', 2, ['A', 'B'])]
+
+const ITEMS: Item[] = [
+  {
+    key: 'sword',
+    name: { english: 'Sword' },
+    category: 'weapon',
+    slot: 'main_hand',
+    stats: {},
+    properties: {},
+  },
+  {
+    key: 'axe',
+    name: { english: 'Axe' },
+    category: 'weapon',
+    slot: 'main_hand',
+    stats: {},
+    properties: {},
+  },
+  {
+    key: 'helm',
+    name: { english: 'Helm' },
+    category: 'armor',
+    slot: 'head',
+    stats: {},
+    properties: {},
+  },
+]
 
 const dataset: Dataset = {
   meta: { gameVersion: 'test', source: 'test' },
@@ -45,7 +72,7 @@ const dataset: Dataset = {
     itemStatKeys: [],
     values: {},
   },
-  items: [],
+  items: ITEMS,
   enchantments: [],
 }
 
@@ -111,5 +138,40 @@ describe('BuildLedger — skills', () => {
     l2.load(snapshot)
     expect(l2.character.level).toBe(2)
     expect(l2.character.taken.has('A')).toBe(true)
+  })
+})
+
+describe('BuildLedger — equip/unequip (M3 U4, R2)', () => {
+  it('equips a fitting item into its slot', () => {
+    const l = new BuildLedger(dataset)
+    expect(l.equip('main_hand', 'sword')).toEqual({ ok: true })
+    expect(l.character.equipped.main_hand?.key).toBe('sword')
+  })
+
+  it('refuses an unknown item', () => {
+    const l = new BuildLedger(dataset)
+    expect(l.equip('main_hand', 'ghost')).toEqual({ ok: false, reason: 'no-item' })
+  })
+
+  it('refuses an item that does not fit the slot', () => {
+    const l = new BuildLedger(dataset)
+    expect(l.equip('head', 'sword')).toEqual({ ok: false, reason: 'wrong-slot' })
+    expect(l.character.equipped.head).toBeUndefined()
+  })
+
+  it('replaces the occupant, keeping one equip per slot in the log', () => {
+    const l = new BuildLedger(dataset)
+    l.equip('main_hand', 'sword')
+    l.equip('main_hand', 'axe')
+    expect(l.character.equipped.main_hand?.key).toBe('axe')
+    expect(l.toLedger().filter((e) => e.op === 'equip')).toHaveLength(1)
+  })
+
+  it('unequips a slot and refuses to unequip an empty one', () => {
+    const l = new BuildLedger(dataset)
+    l.equip('head', 'helm')
+    expect(l.unequip('head')).toEqual({ ok: true })
+    expect(l.character.equipped.head).toBeUndefined()
+    expect(l.unequip('head')).toEqual({ ok: false, reason: 'not-found' })
   })
 })
