@@ -42,6 +42,7 @@ const dataset: Dataset = {
     skillPointsPerLevel: 1,
     baseAttributeValue: 10,
     damageTypes: [],
+    itemStatKeys: [],
     values: {},
   },
   items: [],

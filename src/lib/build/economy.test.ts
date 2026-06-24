@@ -17,6 +17,7 @@ const constants: Constants = {
   skillPointsPerLevel: 1,
   baseAttributeValue: 10,
   damageTypes: [],
+  itemStatKeys: [],
   values: {},
 }
 

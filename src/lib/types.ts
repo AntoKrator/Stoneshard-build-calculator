@@ -140,6 +140,12 @@ export const Constants = z.object({
   baseAttributeValue: z.number().int().positive().default(10),
   /** Recognized damage types, kept as data to avoid hardcoding a guess. */
   damageTypes: z.array(z.string()).default([]),
+  /**
+   * The recognized `item.stats` vocabulary (snake_case), derived from the
+   * weapon/armor datastring columns. Kept as data so the gate can flag an item
+   * stat outside the known set (`unknown-stat-key`) without hardcoding the list.
+   */
+  itemStatKeys: z.array(z.string()).default([]),
   /** Misc numeric constants referenced by formulas. */
   values: z.record(z.string(), z.number()).default({}),
 })
