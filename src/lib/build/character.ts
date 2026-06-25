@@ -243,6 +243,15 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
     if (!enumerated.has(id)) gearStats[id] = (gearStats[id] ?? 0) + v
   }
 
+  // 7b. Body_DEF / Legs_DEF (M4 U3, R5): the equipped chestpiece's and boots'
+  //     Protection feed three melee skill formulas (Battering Ram, Leg Sweep,
+  //     Mighty Kick). Read from the slot directly — NOT the summed
+  //     gearStats.protection, which has lost the per-slot split. Written into
+  //     `derived` (and thus the scope) only when the slot is occupied, so the
+  //     tooltips resolve with armor and degrade to the neutral marker without it.
+  if (equipped.body) derived.Body_DEF = equipped.body.stats.protection ?? 0
+  if (equipped.boots) derived.Legs_DEF = equipped.boots.stats.protection ?? 0
+
   // 8. Combat view (M4): self damage output + mitigation, derived purely from the
   //    sheet, gear bag, and equipped items. Read-only — consumed by UI, not scope.
   const combat = computeCombat({ derived, gearStats, equipped })

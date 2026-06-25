@@ -58,9 +58,11 @@ describe('stat model (KTD14)', () => {
   })
 
   it('classifies deferred (gear/passive) identifiers explicitly', () => {
-    for (const deferred of ['Arcanistic_Power', 'Body_DEF', 'Legs_DEF']) {
-      expect(statModel.deferredIdentifiers).toContain(deferred)
-    }
+    expect(statModel.deferredIdentifiers).toContain('Arcanistic_Power')
+    // M4 (U3) derives Body_DEF / Legs_DEF from equipped body/boots Protection into
+    // the sheet, so they are no longer deferred — they resolve when armored.
+    expect(statModel.deferredIdentifiers).not.toContain('Body_DEF')
+    expect(statModel.deferredIdentifiers).not.toContain('Legs_DEF')
   })
 
   it('rejects a stat-model missing attributeBonuses (typed ZodError)', () => {

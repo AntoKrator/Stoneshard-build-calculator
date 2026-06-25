@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { recompute, type Ledger } from './character'
+import { buildScope } from '../formula/scope'
+import { evaluate } from '../formula/eval'
 import type { AttributeKey, Dataset, Item, Skill, StatModel } from '../types'
 
 /* --- synthetic dataset: small, hand-built topology for precise control --- */
@@ -49,6 +51,8 @@ const ITEMS: Item[] = [
   item('helm', 'armor', 'head', { fire_resistance: 5 }),
   item('robe', 'armor', 'body', { magic_power: 6, fire_resistance: 8 }),
   item('ring1', 'accessory', 'ring', { magic_power: 3 }),
+  item('plate', 'armor', 'body', { protection: 8 }),
+  item('greaves', 'armor', 'boots', { protection: 5 }),
 ]
 
 const statModel = {
@@ -235,6 +239,35 @@ describe('recompute — gear → derived sheet (M3 U3, R6)', () => {
   it('reverts the sheet when gear is removed', () => {
     expect(rc([]).derived.Pyromantic_Power).toBeUndefined()
     expect(rc([]).gearStats).toEqual({})
+  })
+})
+
+describe('recompute — Body_DEF / Legs_DEF from equipped armor (M4 U3, R5)', () => {
+  it('derives Body_DEF from the chestpiece Protection and Legs_DEF from boots', () => {
+    const ch = rc([eq('body', 'plate'), eq('boots', 'greaves')])
+    expect(ch.derived.Body_DEF).toBe(8)
+    expect(ch.derived.Legs_DEF).toBe(5)
+  })
+
+  it('omits Body_DEF / Legs_DEF when the slot is empty, so the tooltip degrades', () => {
+    const ch = rc([eq('body', 'plate')]) // boots slot empty
+    expect(ch.derived.Body_DEF).toBe(8)
+    expect('Legs_DEF' in ch.derived).toBe(false)
+
+    const bare = rc([])
+    expect('Body_DEF' in bare.derived).toBe(false)
+    expect('Legs_DEF' in bare.derived).toBe(false)
+  })
+
+  it('resolves a Body_DEF formula in scope only when body armor is equipped (R5)', () => {
+    const armored = rc([eq('body', 'plate')])
+    const scope = buildScope(armored.attributes, armored.derived, statModel)
+    // 0.5 * Body_DEF(8) + 0.5 * STR(10) = 9
+    expect(evaluate('0.5 * Body_DEF + 0.5 * STR', scope)).toEqual({ kind: 'value', value: 9 })
+
+    const bare = rc([])
+    const bareScope = buildScope(bare.attributes, bare.derived, statModel)
+    expect(evaluate('0.5 * Body_DEF + 0.5 * STR', bareScope)).toMatchObject({ kind: 'unknown-var' })
   })
 })
 
