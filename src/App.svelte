@@ -38,10 +38,23 @@
   const character = $derived(ledger.character)
   const scope = $derived(buildScope(character.attributes, character.derived, statModel))
 
-  let activeTreeId = $state(defaultTreeId)
-  const activeTree = $derived(dataset.trees.find((t) => t.id === activeTreeId) ?? dataset.trees[0])
-  const activeSkills = $derived(
-    activeTree.skills.map((k) => skillByKey.get(k)).filter((s) => s != null),
+  // Several trees can be open at once (multi-tree view, U5). Held as an array used
+  // as a set; reassigned on toggle so Svelte tracks it (no reactive-collection lint,
+  // matching the ledger's plain-collection posture).
+  let openTreeIds = $state<string[]>([defaultTreeId])
+  const toggleTree = (id: string) =>
+    (openTreeIds = openTreeIds.includes(id)
+      ? openTreeIds.filter((x) => x !== id)
+      : [...openTreeIds, id])
+  const closeAllTrees = () => (openTreeIds = [])
+  // Render in the selector's stable category/name order, independent of click order.
+  const openTrees = $derived(
+    sortedTrees
+      .filter((t) => openTreeIds.includes(t.id))
+      .map((t) => ({
+        tree: t,
+        skills: t.skills.map((k) => skillByKey.get(k)).filter((s) => s != null),
+      })),
   )
   const isFresh = $derived(ledger.entries.length === 0)
 
@@ -83,8 +96,8 @@
 
   {#if isFresh}
     <p class="hint">
-      You have <strong>{character.skillBudget} skill points</strong> to spend. Pick skills in the
-      <strong>{activeTree.name}</strong> tree below, allocate attributes, and level up to earn more.
+      You have <strong>{character.skillBudget} skill points</strong> to spend. Open one or more skill
+      trees below, pick skills, allocate attributes, and level up to earn more.
     </p>
   {/if}
 
@@ -93,19 +106,41 @@
       <TreeSelector
         trees={sortedTrees}
         {character}
-        activeId={activeTreeId}
-        onSelect={(id) => (activeTreeId = id)}
+        openIds={openTreeIds}
+        onToggle={toggleTree}
+        onCloseAll={closeAllTrees}
       />
-      <div class="tree-scroll">
-        <SkillTree
-          skills={activeSkills}
-          {character}
-          {scope}
-          baseAttributeValue={base}
-          {onPick}
-          {onRefund}
-        />
-      </div>
+      {#if openTrees.length === 0}
+        <p class="empty-trees">No trees open — pick one or more above to start planning.</p>
+      {:else}
+        <!-- Each tree scrolls within its own card; a shorter per-tree viewport when
+             several are open so they tile without one tree dominating the page. -->
+        <div
+          class="tree-grid"
+          style="--grid-max-height: {openTreeIds.length > 1 ? '60vh' : 'calc(100vh - 230px)'}"
+        >
+          {#each openTrees as o (o.tree.id)}
+            <section class="tree-card">
+              <header class="tree-card-head">
+                <h2>{o.tree.name}</h2>
+                <button
+                  class="close"
+                  aria-label={`Close ${o.tree.name}`}
+                  onclick={() => toggleTree(o.tree.id)}>×</button
+                >
+              </header>
+              <SkillTree
+                skills={o.skills}
+                {character}
+                {scope}
+                baseAttributeValue={base}
+                {onPick}
+                {onRefund}
+              />
+            </section>
+          {/each}
+        </div>
+      {/if}
     </div>
 
     <aside class="side">
@@ -169,15 +204,46 @@
     gap: 1.5rem;
     align-items: start;
   }
-  .tree-scroll {
-    /* SkillTree owns the scrolling viewport now; this frame must not clip the
-       tooltip panel that floats over the right edge. */
-    overflow: visible;
+  /* Open trees tile in responsive columns (two-up on wide viewports, stacked on
+     narrow); each card owns its own scroll. min-width:0 lets a track shrink below
+     its content so a wide tree scrolls inside the card instead of overflowing. */
+  .tree-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+  .tree-card {
     border: 1px solid var(--border);
     border-radius: 6px;
     background: var(--bg-panel);
-    margin-top: 0.75rem;
     padding: 0.5rem;
+    min-width: 0;
+  }
+  .tree-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0 0.25rem 0.3rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .tree-card-head h2 {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--accent);
+  }
+  .tree-card-head .close {
+    padding: 0.1rem 0.45rem;
+    line-height: 1;
+  }
+  .empty-trees {
+    margin-top: 0.75rem;
+    padding: 1.25rem;
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    color: var(--text-dim);
+    text-align: center;
   }
   .side {
     display: grid;

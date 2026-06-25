@@ -1,41 +1,75 @@
 <script lang="ts">
-  // Navigation among the 21 trees, with a per-tree count of taken skills surfaced
-  // so progress is visible at a glance.
+  // Multi-select navigation among the 21 trees: toggle any number open at once,
+  // with a per-tree count of taken skills surfaced so progress is visible. A small
+  // toolbar shows how many trees are open and offers a close-all shortcut.
   import type { SkillTree } from '../lib/types'
   import type { Character } from '../lib/build/character'
 
   let {
     trees,
     character,
-    activeId,
-    onSelect,
+    openIds,
+    onToggle,
+    onCloseAll,
   }: {
     trees: SkillTree[]
     character: Character
-    activeId: string
-    onSelect: (id: string) => void
+    openIds: string[]
+    onToggle: (id: string) => void
+    onCloseAll: () => void
   } = $props()
 
   const takenCount = (tree: SkillTree) => tree.skills.filter((k) => character.taken.has(k)).length
+  const isOpen = (id: string) => openIds.includes(id)
 </script>
 
 <nav class="tree-selector" aria-label="Skill trees">
-  {#each trees as t (t.id)}
-    {@const count = takenCount(t)}
-    <button
-      class="tab {t.category}"
-      class:active={t.id === activeId}
-      aria-current={t.id === activeId}
-      onclick={() => onSelect(t.id)}
-    >
-      <span class="name">{t.name}</span>
-      {#if count > 0}<span class="count">{count}</span>{/if}
+  <div class="bar">
+    <span class="open-count">
+      {openIds.length}
+      {openIds.length === 1 ? 'tree' : 'trees'} open
+    </span>
+    <button class="close-all" disabled={openIds.length === 0} onclick={() => onCloseAll()}>
+      Close all
     </button>
-  {/each}
+  </div>
+  <div class="tabs">
+    {#each trees as t (t.id)}
+      {@const count = takenCount(t)}
+      <button
+        class="tab {t.category}"
+        class:active={isOpen(t.id)}
+        aria-pressed={isOpen(t.id)}
+        onclick={() => onToggle(t.id)}
+      >
+        <span class="name">{t.name}</span>
+        {#if count > 0}<span class="count">{count}</span>{/if}
+      </button>
+    {/each}
+  </div>
 </nav>
 
 <style>
   .tree-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .open-count {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+  }
+  .close-all {
+    font-size: 0.78rem;
+    padding: 0.2rem 0.55rem;
+  }
+  .tabs {
     display: flex;
     flex-wrap: wrap;
     gap: 0.35rem;

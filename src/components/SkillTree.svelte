@@ -80,10 +80,12 @@
   .tree-area {
     position: relative;
   }
-  /* The grid scrolls within a bounded viewport; the tooltip panel lives outside it. */
+  /* The grid scrolls within a bounded viewport; the tooltip panel lives outside it.
+     The height is set by the host (App) via --grid-max-height so several open trees
+     get a shorter per-tree viewport and tile without one dominating the page (U5). */
   .grid-scroll {
     overflow: auto;
-    max-height: calc(100vh - 230px);
+    max-height: var(--grid-max-height, calc(100vh - 230px));
   }
   .skill-tree {
     position: relative;
