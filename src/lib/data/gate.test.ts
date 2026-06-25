@@ -114,3 +114,50 @@ describe('gateDataset — item integrity (M2 U4)', () => {
     expect(r.errors.join(' ')).toContain('slot-category-mismatch')
   })
 })
+
+// A dataset with a presets section referencing the base trees/skills above.
+function datasetWithPresets(presets: unknown[]) {
+  const d = baseDataset() as Record<string, unknown>
+  d.presets = presets
+  return d
+}
+const preset = {
+  id: 'cleaver',
+  name: 'Cleaver',
+  attributes: { STR: 11, AGI: 10, PER: 10, VIT: 11, WIL: 10 },
+  startingSkills: ['cleave'],
+  trait: 'Test Trait',
+  affinities: ['swords'],
+}
+
+describe('gateDataset — preset integrity (U1)', () => {
+  it('passes a clean preset dataset and reports the preset count', () => {
+    const r = gateDataset(datasetWithPresets([preset]), [], [])
+    expect(r.ok).toBe(true)
+    expect(r.presetCount).toBe(1)
+  })
+
+  it('flags a duplicate preset id', () => {
+    const r = gateDataset(datasetWithPresets([preset, { ...preset }]), [], [])
+    expect(r.errors.join(' ')).toContain('duplicate-preset-id')
+  })
+
+  it('flags a starting skill that is not a known skill', () => {
+    const r = gateDataset(datasetWithPresets([{ ...preset, startingSkills: ['nope'] }]), [], [])
+    expect(r.errors.join(' ')).toContain('unknown-preset-skill')
+  })
+
+  it('flags an affinity that is not a known tree', () => {
+    const r = gateDataset(datasetWithPresets([{ ...preset, affinities: ['nope'] }]), [], [])
+    expect(r.errors.join(' ')).toContain('unknown-preset-tree')
+  })
+
+  it('rejects a preset missing an attribute (schema shape failure)', () => {
+    const { attributes, ...rest } = preset
+    void attributes
+    const bad = { ...rest, attributes: { STR: 11, AGI: 10, PER: 10, VIT: 11 } }
+    const r = gateDataset(datasetWithPresets([bad]), [], [])
+    expect(r.ok).toBe(false)
+    expect(r.errors.join(' ')).toContain('schema')
+  })
+})

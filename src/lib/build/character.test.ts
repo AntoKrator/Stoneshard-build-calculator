@@ -85,6 +85,7 @@ const dataset: Dataset = {
   },
   items: ITEMS,
   enchantments: [],
+  presets: [],
 }
 
 const up = { op: 'levelUp' } as const

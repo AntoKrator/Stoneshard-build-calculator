@@ -74,6 +74,7 @@ const dataset: Dataset = {
   },
   items: ITEMS,
   enchantments: [],
+  presets: [],
 }
 
 describe('BuildLedger — level + attribute economy', () => {
