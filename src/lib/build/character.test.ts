@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest'
 import { recompute, type Ledger } from './character'
 import { buildScope } from '../formula/scope'
 import { evaluate } from '../formula/eval'
-import type { AttributeKey, Dataset, Item, Skill, StatModel } from '../types'
+import type { AttributeKey, Dataset, Item, Preset, Skill, StatModel } from '../types'
 
 /* --- synthetic dataset: small, hand-built topology for precise control --- */
 
@@ -55,6 +55,35 @@ const ITEMS: Item[] = [
   item('greaves', 'armor', 'boots', { protection: 5 }),
 ]
 
+const preset = (
+  id: string,
+  attributes: Preset['attributes'],
+  startingSkills: string[] = [],
+): Preset => ({
+  id,
+  name: id,
+  attributes,
+  startingSkills,
+  trait: `${id}-trait`,
+  affinities: [],
+  dlc: false,
+})
+
+const N = { STR: 10, AGI: 10, PER: 10, VIT: 10, WIL: 10 } as const
+
+const PRESETS: Preset[] = [
+  preset('neutral', { ...N }),
+  // raises STR/AGI/PER to 11 and starts with AB (a tier-2 skill needing A+B —
+  // normally locked at level 1; an innate seed must bypass that).
+  preset('warrior', { ...N, STR: 11, AGI: 11, PER: 11 }, ['AB']),
+  // a level-3-gated innate, seeded at level 1 (innate bypass).
+  preset('gated', { ...N }, ['L3']),
+  // STR 12 -> 2 invested, enough to unlock the attribute-gated STRgate user skill.
+  preset('strong', { ...N, STR: 12 }),
+  // references a skill absent from the dataset -> defensive skip-and-note.
+  preset('drifted', { ...N }, ['ghost_skill']),
+]
+
 const statModel = {
   baseAttributeValue: 10,
   mainStatThresholds: [15, 20, 25, 30],
@@ -85,12 +114,14 @@ const dataset: Dataset = {
   },
   items: ITEMS,
   enchantments: [],
+  presets: PRESETS,
 }
 
 const up = { op: 'levelUp' } as const
 const addA = (attr: AttributeKey) => ({ op: 'addAttribute', attr }) as const
 const addS = (skill: string) => ({ op: 'addSkill', skill }) as const
 const eq = (slot: Item['slot'], item: string) => ({ op: 'equip', slot, item }) as const
+const sel = (id: string) => ({ op: 'selectCharacter', id }) as const
 const rc = (entries: Ledger) => recompute(entries, dataset)
 
 describe('recompute — level + budgets (R3)', () => {
@@ -268,6 +299,82 @@ describe('recompute — Body_DEF / Legs_DEF from equipped armor (M4 U3, R5)', ()
     const bare = rc([])
     const bareScope = buildScope(bare.attributes, bare.derived, statModel)
     expect(evaluate('0.5 * Body_DEF + 0.5 * STR', bareScope)).toMatchObject({ kind: 'unknown-var' })
+  })
+})
+
+describe('recompute — character preset seeding (U2, R1/R2/R3)', () => {
+  it('seeds starting attributes outside the budget (attributesSpent stays 0)', () => {
+    const ch = rc([sel('warrior')])
+    expect(ch.level).toBe(1)
+    expect(ch.attributes).toMatchObject({ STR: 11, AGI: 11, PER: 11, VIT: 10, WIL: 10 })
+    expect(ch.attributeBudget).toBe(0) // level 1: no earned attribute points
+    expect(ch.attributesSpent).toBe(0) // seeded points are free
+    expect(ch.invested.STR).toBe(1) // but they count as invested (unlock gating)
+    expect(ch.presetId).toBe('warrior')
+  })
+
+  it('seeds an innate skill without consuming the 2-point skill budget (R2)', () => {
+    const ch = rc([sel('warrior'), addS('A'), addS('B')])
+    expect(ch.taken.has('AB')).toBe(true) // innate, bypassed its A+B prereq
+    expect(ch.taken.has('A')).toBe(true)
+    expect(ch.taken.has('B')).toBe(true)
+    expect(ch.skillBudget).toBe(2)
+    expect(ch.skillsSpent).toBe(2) // only the user's two; the innate is free
+  })
+
+  it('lets user allocations layer on top of the seeded attributes (R3)', () => {
+    const ch = rc([sel('warrior'), up, addA('STR')])
+    expect(ch.attributes.STR).toBe(12) // 11 seed + 1 user
+    expect(ch.attributesSpent).toBe(1)
+  })
+
+  it('resolves a seeded skill that would normally be locked (innate bypass)', () => {
+    const ch = rc([sel('gated')]) // L3 needs level 3; seeded at level 1
+    expect(ch.level).toBe(1)
+    expect(ch.taken.has('L3')).toBe(true)
+    expect(ch.skillsSpent).toBe(0)
+  })
+
+  it('seeded above-base attributes can unlock an attribute-gated user skill', () => {
+    // STRgate needs 2 STR invested; the 'strong' preset seeds STR 12 (2 invested).
+    const ch = rc([sel('strong'), addS('STRgate')])
+    expect(ch.invested.STR).toBe(2)
+    expect(ch.taken.has('STRgate')).toBe(true)
+    expect(ch.skillsSpent).toBe(1)
+  })
+
+  it('lets the later selectCharacter win (no attribute double-seed)', () => {
+    const ch = rc([sel('warrior'), sel('neutral')])
+    expect(ch.presetId).toBe('neutral')
+    expect(ch.attributes).toMatchObject({ STR: 10, AGI: 10, PER: 10, VIT: 10, WIL: 10 })
+    expect(ch.taken.has('AB')).toBe(false) // warrior's innate did not persist
+  })
+
+  it('notes an unknown preset id and preserves the rest of the build', () => {
+    const ch = rc([sel('ghost_char'), up, addS('A')])
+    expect(ch.presetId).toBeNull()
+    expect(ch.notes.some((n) => n.kind === 'unknown-preset-ref' && n.ref === 'ghost_char')).toBe(
+      true,
+    )
+    expect(ch.taken.has('A')).toBe(true) // user build intact
+    expect(ch.attributes).toMatchObject({ STR: 10, AGI: 10, PER: 10, VIT: 10, WIL: 10 })
+  })
+
+  it('notes a seeded skill absent from the dataset (defensive drift), build intact', () => {
+    const ch = rc([sel('drifted')])
+    expect(ch.presetId).toBe('drifted')
+    expect(ch.taken.has('ghost_skill')).toBe(false)
+    expect(ch.notes.some((n) => n.kind === 'unknown-skill-ref' && n.ref === 'ghost_skill')).toBe(
+      true,
+    )
+  })
+
+  it('yields the unseeded base for no selection or the neutral preset', () => {
+    expect(rc([]).presetId).toBeNull()
+    const neutral = rc([sel('neutral')])
+    expect(neutral.presetId).toBe('neutral')
+    expect(neutral.attributes).toMatchObject({ STR: 10, AGI: 10, PER: 10, VIT: 10, WIL: 10 })
+    expect(neutral.taken.size).toBe(0)
   })
 })
 

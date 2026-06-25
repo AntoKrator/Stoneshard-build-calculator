@@ -26,6 +26,7 @@ const baseAttrs: Attributes = { STR: 10, AGI: 10, PER: 10, VIT: 10, WIL: 10 }
 function char(p: Partial<Character> = {}): Character {
   return {
     level: 1,
+    presetId: null,
     attributes: baseAttrs,
     invested: { STR: 0, AGI: 0, PER: 0, VIT: 0, WIL: 0 },
     derived: {},

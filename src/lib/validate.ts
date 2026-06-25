@@ -23,6 +23,9 @@ export interface IntegrityIssue {
     | 'weapon-missing-damage'
     | 'unknown-stat-key'
     | 'slot-category-mismatch'
+    | 'duplicate-preset-id'
+    | 'unknown-preset-skill'
+    | 'unknown-preset-tree'
   message: string
 }
 
@@ -138,6 +141,48 @@ export function checkIntegrity(ds: Dataset): IntegrityIssue[] {
   issues.push(...findRequiresCycles(ds.skills, skillByKey))
 
   issues.push(...checkItems(ds))
+  issues.push(...checkPresets(ds))
+
+  return issues
+}
+
+/**
+ * Referential integrity for character presets: unique ids, and innate
+ * `startingSkills` / `affinities` that resolve to real skill keys / tree ids.
+ * These cross-section refs (presets × skills × trees) live here, not in the
+ * per-preset Zod schema, mirroring the item damage-type check. A drifted preset
+ * (a typo'd or patch-dropped skill/tree id) fails the gate loudly rather than
+ * silently seeding nothing.
+ */
+export function checkPresets(ds: Pick<Dataset, 'presets' | 'skills' | 'trees'>): IntegrityIssue[] {
+  const issues: IntegrityIssue[] = []
+  const skillKeys = new Set(ds.skills.map((s) => s.key))
+  const treeIds = new Set(ds.trees.map((t) => t.id))
+
+  const seen = new Set<string>()
+  for (const p of ds.presets) {
+    if (seen.has(p.id)) {
+      issues.push({ kind: 'duplicate-preset-id', message: `Duplicate preset id "${p.id}"` })
+    }
+    seen.add(p.id)
+
+    for (const key of p.startingSkills) {
+      if (!skillKeys.has(key)) {
+        issues.push({
+          kind: 'unknown-preset-skill',
+          message: `Preset "${p.id}" starting skill "${key}" is not a known skill`,
+        })
+      }
+    }
+    for (const tree of p.affinities) {
+      if (!treeIds.has(tree)) {
+        issues.push({
+          kind: 'unknown-preset-tree',
+          message: `Preset "${p.id}" affinity "${tree}" is not a known tree`,
+        })
+      }
+    }
+  }
 
   return issues
 }

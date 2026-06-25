@@ -78,6 +78,25 @@ describe('share codec (R8 — codec)', () => {
     expect(await decode(legacy)).toEqual({ ok: true, ledger: sample })
   })
 
+  it('round-trips a build with a selected character (U3, R3)', async () => {
+    // selectCharacter rides the same LedgerEntry union — no FORMAT_VERSION bump.
+    const seeded: Ledger = [
+      { op: 'selectCharacter', id: 'velmir' },
+      { op: 'levelUp' },
+      { op: 'addAttribute', attr: 'STR' },
+      { op: 'addSkill', skill: 'Cleave' },
+    ]
+    expect(await decode(await encode(seeded))).toEqual({ ok: true, ledger: seeded })
+  })
+
+  it('rejects a structurally invalid selectCharacter entry', async () => {
+    const missingId = await rawCode({
+      formatVersion: FORMAT_VERSION,
+      ledger: [{ op: 'selectCharacter' }],
+    })
+    expect(await decode(missingId)).toEqual({ ok: false, reason: 'schema' })
+  })
+
   it('rejects a structurally invalid equip entry', async () => {
     const missingItem = await rawCode({
       formatVersion: FORMAT_VERSION,

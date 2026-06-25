@@ -311,6 +311,45 @@ export const Enchantment = z.object({
 export type Enchantment = z.infer<typeof Enchantment>
 
 /* ------------------------------------------------------------------ */
+/* Character presets                                                   */
+/* ------------------------------------------------------------------ */
+
+/**
+ * A curated playable-character preset: the character's starting attributes (the
+ * innate above-base points), innate starting abilities, a display trait label,
+ * and affinity trees (display-only metadata, KTD6). Seeded *outside* the point
+ * budget by `recompute` via the `selectCharacter` ledger op. Verren is the
+ * neutral 10/10/10/10/10 default — identical to a blank build.
+ *
+ * `startingSkills` and `affinities` reference skill keys / tree ids that live in
+ * other dataset sections, so their referential integrity is cross-checked in the
+ * data gate (`checkPresets`), not here — mirroring the item damage-type check.
+ */
+export const Preset = z.object({
+  id: z.string().min(1),
+  name: z.string().min(1),
+  /** Starting value for every attribute (absolute, not a delta). All five keys
+   *  required so a preset can't silently omit one; shape matches `Attributes`. */
+  attributes: z.object({
+    STR: z.number().int().positive(),
+    AGI: z.number().int().positive(),
+    PER: z.number().int().positive(),
+    VIT: z.number().int().positive(),
+    WIL: z.number().int().positive(),
+  }),
+  /** Innate abilities the character starts with (skill keys), seeded outside the
+   *  skill-point budget. Conservative — only documented innate skills. */
+  startingSkills: z.array(SkillKey).default([]),
+  /** The character's unique trait, shown as a label (effects not modeled, KTD6). */
+  trait: z.string().min(1),
+  /** Affinity skill trees (tree ids), display-only metadata (KTD6). */
+  affinities: z.array(z.string()).default([]),
+  /** True for Character Pack DLC characters (a display hint). */
+  dlc: z.boolean().default(false),
+})
+export type Preset = z.infer<typeof Preset>
+
+/* ------------------------------------------------------------------ */
 /* Dataset bundle                                                      */
 /* ------------------------------------------------------------------ */
 
@@ -337,6 +376,10 @@ export const Dataset = z.object({
   constants: Constants,
   items: z.array(Item).default([]),
   enchantments: z.array(Enchantment).default([]),
+  /** Curated playable-character presets (character-select feature). Optional at
+   *  the schema level so the bootstrap transform still validates; both loaders
+   *  always read the committed `presets.json`. */
+  presets: z.array(Preset).default([]),
 })
 export type Dataset = z.infer<typeof Dataset>
 

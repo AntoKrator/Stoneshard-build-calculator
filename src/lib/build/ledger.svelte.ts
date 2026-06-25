@@ -16,6 +16,7 @@ import {
   type Dataset,
   type EquipmentSlot,
   type Item,
+  type Preset,
   type Skill,
 } from '../types'
 import { recompute, type Character, type Ledger, type LedgerEntry } from './character'
@@ -42,11 +43,14 @@ export class BuildLedger {
   readonly #skillByKey: Record<string, Skill>
   /** Immutable key→item lookup, same posture as #skillByKey. */
   readonly #itemByKey: Record<string, Item>
+  /** Immutable id→preset lookup, same posture as #skillByKey. */
+  readonly #presetById: Record<string, Preset>
 
   constructor(dataset: Dataset, entries: LedgerEntry[] = []) {
     this.#dataset = dataset
     this.#skillByKey = Object.fromEntries(dataset.skills.map((s) => [s.key, s]))
     this.#itemByKey = Object.fromEntries(dataset.items.map((i) => [i.key, i]))
+    this.#presetById = Object.fromEntries(dataset.presets.map((p) => [p.id, p]))
     this.entries = entries
   }
 
@@ -172,5 +176,41 @@ export class BuildLedger {
       }
     }
     return false
+  }
+
+  /**
+   * Select a character preset. recompute seeds its starting attributes and innate
+   * skills outside the budget (U2); this only records the choice. Replaces any
+   * prior selection so the log holds at most one `selectCharacter` entry —
+   * last-wins, kept clean and the share code bounded, exactly like `equip`.
+   */
+  selectCharacter(id: string): LedgerResult {
+    if (!this.#presetById[id]) return { ok: false, reason: 'unknown' }
+    this.#removeSelectCharacter()
+    this.entries.push({ op: 'selectCharacter', id })
+    return { ok: true }
+  }
+
+  /** Clear the character selection, returning to the neutral/unseeded base. */
+  clearCharacter(): LedgerResult {
+    return this.#removeSelectCharacter() ? { ok: true } : { ok: false, reason: 'not-found' }
+  }
+
+  /**
+   * Remove every `selectCharacter` entry; returns whether any was removed. Normally
+   * there is at most one (this method runs before each push), but a hand-crafted or
+   * older share code could carry several — collapsing them keeps the "at most one"
+   * invariant recompute assumes, so a clear truly clears and a re-select doesn't
+   * leave a stale earlier seed behind.
+   */
+  #removeSelectCharacter(): boolean {
+    let removed = false
+    for (let i = this.entries.length - 1; i >= 0; i--) {
+      if (this.entries[i].op === 'selectCharacter') {
+        this.entries.splice(i, 1)
+        removed = true
+      }
+    }
+    return removed
   }
 }

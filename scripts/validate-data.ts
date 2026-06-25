@@ -24,6 +24,10 @@ function loadComposed(): unknown {
       constants: readJson(resolve(dataDir, 'constants.json')),
       statModel: readJson(resolve(dataDir, 'stat-model.json')),
       items: readJson(resolve(dataDir, 'items.json')),
+      // Explicitly read presets.json: the Dataset schema defaults `presets` to
+      // `[]`, so an unread file would validate as empty and silently skip the
+      // checkPresets cross-check (dual-loader parity, KTD10).
+      presets: readJson(resolve(dataDir, 'presets.json')),
     }
   } catch (e) {
     console.error(
@@ -62,7 +66,7 @@ const counts = new Map<string, number>()
 for (const s of skills) counts.set(s.treeId, (counts.get(s.treeId) ?? 0) + 1)
 
 console.log(
-  `✓ ${result.skillCount} skills across ${result.treeCount} trees + ${result.itemCount} items — schema + integrity clean, 0 blocking warnings.`,
+  `✓ ${result.skillCount} skills across ${result.treeCount} trees + ${result.itemCount} items + ${result.presetCount} presets — schema + integrity clean, 0 blocking warnings.`,
 )
 for (const t of trees) console.log(`  ${t.id} (${t.category}): ${counts.get(t.id) ?? 0}`)
 

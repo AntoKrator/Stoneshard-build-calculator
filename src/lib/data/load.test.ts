@@ -8,6 +8,7 @@ import skillsJson from '../../data/skills.json'
 import constantsJson from '../../data/constants.json'
 import statModelJson from '../../data/stat-model.json'
 import itemsJson from '../../data/items.json'
+import presetsJson from '../../data/presets.json'
 
 describe('dataset loader', () => {
   it('loads the committed dataset with the expected counts', () => {
@@ -159,8 +160,44 @@ describe('dual-loader parity (KTD10)', () => {
       constants: constantsJson,
       statModel: statModelJson,
       items: itemsJson,
+      presets: presetsJson,
     })
     expect(composedLikeGate).toEqual(parseDataset(dataset))
+  })
+})
+
+describe('character presets (U1, R1/R2/R4)', () => {
+  it('loads the 9 curated presets', () => {
+    expect(dataset.presets.length).toBe(9)
+  })
+
+  it('Verren is the neutral 10/10/10/10/10 default', () => {
+    const verren = dataset.presets.find((p) => p.id === 'verren')
+    expect(verren?.attributes).toEqual({ STR: 10, AGI: 10, PER: 10, VIT: 10, WIL: 10 })
+    expect(verren?.startingSkills).toEqual([])
+  })
+
+  it('Velmir raises STR/AGI/PER to 11', () => {
+    const velmir = dataset.presets.find((p) => p.id === 'velmir')
+    expect(velmir?.attributes).toEqual({ STR: 11, AGI: 11, PER: 11, VIT: 10, WIL: 10 })
+  })
+
+  it('seeds the two documented innate abilities against real skill keys', () => {
+    const skillKeys = new Set(dataset.skills.map((s) => s.key))
+    const dirwin = dataset.presets.find((p) => p.id === 'dirwin')
+    const hilda = dataset.presets.find((p) => p.id === 'hilda')
+    expect(dirwin?.startingSkills).toEqual(['halt'])
+    expect(hilda?.startingSkills).toEqual(['resourcefulness'])
+    for (const p of dataset.presets) {
+      for (const key of p.startingSkills) expect(skillKeys.has(key)).toBe(true)
+    }
+  })
+
+  it('every affinity references a real tree id', () => {
+    const treeIds = new Set(dataset.trees.map((t) => t.id))
+    for (const p of dataset.presets) {
+      for (const tree of p.affinities) expect(treeIds.has(tree)).toBe(true)
+    }
   })
 })
 

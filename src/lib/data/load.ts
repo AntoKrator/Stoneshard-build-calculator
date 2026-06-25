@@ -14,6 +14,7 @@ import skillsJson from '../../data/skills.json'
 import constantsJson from '../../data/constants.json'
 import statModelJson from '../../data/stat-model.json'
 import itemsJson from '../../data/items.json'
+import presetsJson from '../../data/presets.json'
 import { parseDataset, type Dataset, type StatModel } from '../types'
 
 const composed = {
@@ -26,6 +27,7 @@ const composed = {
   statFormulas: [],
   items: itemsJson,
   enchantments: [],
+  presets: presetsJson,
 }
 
 export const dataset: Dataset = import.meta.env.DEV
