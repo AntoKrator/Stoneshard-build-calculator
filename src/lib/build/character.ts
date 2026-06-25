@@ -47,6 +47,7 @@ export const LedgerEntry = z.discriminatedUnion('op', [
   z.object({ op: z.literal('addAttribute'), attr: AttributeKey }),
   z.object({ op: z.literal('addSkill'), skill: z.string().min(1) }),
   z.object({ op: z.literal('equip'), slot: EquipmentSlot, item: z.string().min(1) }),
+  z.object({ op: z.literal('selectCharacter'), id: z.string().min(1) }),
 ])
 export type LedgerEntry = z.infer<typeof LedgerEntry>
 
@@ -59,13 +60,20 @@ export type Ledger = z.infer<typeof Ledger>
 /* ------------------------------------------------------------------ */
 
 export interface RecomputeNote {
-  kind: 'unknown-skill-ref' | 'unknown-tree-ref' | 'unknown-item-ref' | 'item-slot-mismatch'
+  kind:
+    | 'unknown-skill-ref'
+    | 'unknown-tree-ref'
+    | 'unknown-item-ref'
+    | 'item-slot-mismatch'
+    | 'unknown-preset-ref'
   ref: string
   message: string
 }
 
 export interface Character {
   level: number
+  /** The selected character preset id, or null for the neutral/unseeded base. */
+  presetId: string | null
   attributes: Attributes
   /** Per-attribute points invested above the base (for unlock display). */
   invested: Attributes
@@ -132,37 +140,17 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
   const attributeBudget = earnedAttributePoints(level, c)
   const skillBudget = earnedSkillPoints(level, c)
 
-  // 3. Attributes — keep the earliest `attributeBudget` allocations, sacrificing
-  //    the most recent ones over budget (LIFO).
-  const attributes = baseAttributes(base)
-  let attributesSpent = 0
-  for (const e of entries) {
-    if (e.op !== 'addAttribute') continue
-    if (attributesSpent >= attributeBudget) continue // LIFO sacrifice over budget
-    attributes[e.attr]++
-    attributesSpent++
-  }
-  const invested = baseAttributes(0)
-  for (const k of ATTR_KEYS) invested[k] = Math.max(attributes[k] - base, 0)
-
-  // 4. Derived sheet from the surviving attributes.
-  const derived = computeDerivedStats(attributes, statModel)
-
-  // 5. Skills — forward replay enforcing budget, prerequisites, and unlock against
-  //    the final level/attributes. Illegal skills drop and cascade naturally:
-  //    a dependent processed after a dropped prerequisite fails its requires-check.
+  // Shared skill lookups + the patch-drift note channel, declared up front so
+  // both preset seeding and the user-op replay can resolve refs and skip-and-note.
   const skillByKey = new Map(dataset.skills.map((s) => [s.key, s]))
   const treeIds = new Set(dataset.trees.map((t) => t.id))
-  const taken = new Set<string>()
-  const takenOrder: string[] = []
   const notes: RecomputeNote[] = []
   const flagged = new Set<string>()
 
-  for (const e of entries) {
-    if (e.op !== 'addSkill') continue
-    const key = e.skill
-    if (taken.has(key)) continue // de-dupe
-
+  /** Resolve a skill key against the dataset, recording a one-time patch-drift
+   *  note (unknown skill, or a known skill whose tree is gone) and returning null
+   *  when it can't be used. Shared by preset seeding and the user-skill replay. */
+  const resolveSkill = (key: string) => {
     const skill = skillByKey.get(key)
     if (!skill) {
       if (!flagged.has(`skill:${key}`)) {
@@ -173,7 +161,7 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
           message: `Skill "${key}" is no longer in the dataset and was skipped`,
         })
       }
-      continue
+      return null
     }
     if (!treeIds.has(skill.treeId)) {
       if (!flagged.has(`tree:${skill.treeId}`)) {
@@ -184,15 +172,87 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
           message: `Tree "${skill.treeId}" is no longer in the dataset; skill "${key}" was skipped`,
         })
       }
-      continue
+      return null
     }
+    return skill
+  }
 
-    if (taken.size >= skillBudget) continue // LIFO sacrifice over budget
+  // 3. Character preset (KTD2/KTD3) — the LAST `selectCharacter` wins. It seeds
+  //    the build OUTSIDE the point budget: a level-1 character's three innate
+  //    attribute points and starting abilities exceed the level-1 budgets and
+  //    would otherwise be LIFO-sacrificed/relocked. An unknown preset id is
+  //    skipped-and-noted, like other patch-drift; the build is preserved.
+  let presetId: string | null = null
+  let preset: Dataset['presets'][number] | undefined
+  for (let i = entries.length - 1; i >= 0; i--) {
+    const e = entries[i]
+    if (e.op !== 'selectCharacter') continue
+    preset = dataset.presets.find((p) => p.id === e.id)
+    if (preset) {
+      presetId = preset.id
+    } else {
+      notes.push({
+        kind: 'unknown-preset-ref',
+        ref: e.id,
+        message: `Character preset "${e.id}" is no longer in the dataset and was skipped`,
+      })
+    }
+    break
+  }
+
+  // 4. Attributes — seed the preset's starting values (innate, above base), then
+  //    keep the earliest `attributeBudget` USER allocations, sacrificing the most
+  //    recent ones over budget (LIFO). Seeded points don't consume the budget but
+  //    do count as invested, so they gate user skills exactly as in game.
+  const attributes = baseAttributes(base)
+  if (preset) for (const k of ATTR_KEYS) attributes[k] = preset.attributes[k]
+  let attributesSpent = 0
+  for (const e of entries) {
+    if (e.op !== 'addAttribute') continue
+    if (attributesSpent >= attributeBudget) continue // LIFO sacrifice over budget
+    attributes[e.attr]++
+    attributesSpent++
+  }
+  const invested = baseAttributes(0)
+  for (const k of ATTR_KEYS) invested[k] = Math.max(attributes[k] - base, 0)
+
+  // 5. Derived sheet from the surviving attributes.
+  const derived = computeDerivedStats(attributes, statModel)
+
+  // 6. Skills — seed the preset's innate abilities first, outside the budget and
+  //    bypassing prereq/unlock (a starting ability may be innate regardless of
+  //    tier), but still resolved against the dataset so a drifted id is
+  //    skipped-and-noted rather than silently taken. Then forward-replay the USER
+  //    skill ops against the budget, prerequisites, and unlock. `userSkillsSpent`
+  //    is the real budget counter — NOT `taken.size`, which now includes innate
+  //    seeds; counting those would wrongly eat the user's free skill points.
+  const taken = new Set<string>()
+  const takenOrder: string[] = []
+  if (preset) {
+    for (const key of preset.startingSkills) {
+      if (taken.has(key)) continue // de-dupe within the seed
+      if (!resolveSkill(key)) continue
+      taken.add(key)
+      takenOrder.push(key)
+    }
+  }
+
+  let userSkillsSpent = 0
+  for (const e of entries) {
+    if (e.op !== 'addSkill') continue
+    const key = e.skill
+    if (taken.has(key)) continue // de-dupe (incl. an innate the user re-buys)
+
+    const skill = resolveSkill(key)
+    if (!skill) continue
+
+    if (userSkillsSpent >= skillBudget) continue // LIFO sacrifice over budget
     if (!skill.requires.every((r) => taken.has(r))) continue // cascade: prereq missing
     if (!isUnlocked(skill.unlock, level, attributes, base)) continue // relock
 
     taken.add(key)
     takenOrder.push(key)
+    userSkillsSpent++
   }
 
   // 6. Equipment — replay equip entries; last-equip-wins per slot. An equip whose
@@ -258,6 +318,7 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
 
   return {
     level,
+    presetId,
     attributes,
     invested,
     derived,
@@ -269,7 +330,7 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
     attributeBudget,
     skillBudget,
     attributesSpent,
-    skillsSpent: taken.size,
+    skillsSpent: userSkillsSpent,
     notes,
   }
 }
