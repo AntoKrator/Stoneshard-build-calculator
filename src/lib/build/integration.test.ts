@@ -10,6 +10,7 @@ import { describe, it, expect } from 'vitest'
 import { dataset, statModel } from '../data/load'
 import { BuildLedger } from './ledger.svelte'
 import { buildScope } from '../formula/scope'
+import { evaluate } from '../formula/eval'
 import { renderTooltip } from '../tooltip/render'
 import { encode, decode } from '../share/codec'
 
@@ -74,5 +75,79 @@ describe('real-data build flow', () => {
     expect(values.length).toBeGreaterThanOrEqual(3)
     // Bodypart_Damage = 15 + 2*AGI(10) = 35 at base attributes.
     expect(values.some((s) => (s as { text: string }).text === '35')).toBe(true)
+  })
+})
+
+describe('real-data combat (M4)', () => {
+  it('computes self damage and mitigation from a real equipped loadout (R1–R4)', () => {
+    const l = freshLedger()
+    l.equip('main_hand', 'footman-sword') // slashing_damage 21
+    l.equip('body', 'arcanist-mantle') // protection 4, physical_res 7, arcane_res 20
+    l.equip('boots', 'aldwynn-sabatons') // protection 26, physical_res 40
+    const { combat } = l.character
+
+    // Deal: at level-1 base modifiers (Weapon_Damage 100, Mainhand 100) → modified = base.
+    const slash = combat.damage.find((d) => d.type === 'slashing')!
+    expect(slash.base).toBe(21)
+    expect(slash.modified).toBe(21)
+    expect(slash.expected).toBeCloseTo(21.05, 2) // crit 1% × Crit_Efficiency 25 (×1.25)
+
+    // Take: per-bodypart protection read from the equipped slots.
+    expect(combat.protection).toMatchObject({ head: 0, chest: 4, arms: 0, legs: 26 })
+    // Physical resistance = mantle 7 + sabatons 40 = 47%; effective HP off max_hp 100.
+    const phys = combat.defense.find((d) => d.type === 'slashing')!
+    expect(phys.resistance).toBeCloseTo(0.47, 5)
+    expect(phys.effectiveHp).toBeCloseTo(100 / 0.53, 1)
+  })
+
+  it('lights up the Body_DEF / Legs_DEF melee tooltips only with the armor (R5)', () => {
+    const l = freshLedger()
+    l.equip('body', 'arcanist-mantle') // protection 4 → Body_DEF
+    l.equip('boots', 'aldwynn-sabatons') // protection 26 → Legs_DEF
+    const ch = l.character
+    const scope = buildScope(ch.attributes, ch.derived, statModel)
+
+    const ram = dataset.skills.find((s) => s.key === 'Battering_Ram')!
+    // Blunt_Damage = round(0.5*Body_DEF(4) + 0.5*STR(10)) = 7
+    expect(evaluate(ram.formulas.Blunt_Damage, scope)).toEqual({ kind: 'value', value: 7 })
+
+    const sweep = dataset.skills.find((s) => s.key === 'Sweep')! // "Leg Sweep"
+    const sweepRes = evaluate(sweep.formulas.Damage, scope)
+    expect(sweepRes.kind).toBe('value')
+    // Damage = 4 + 0.2*Legs_DEF(26) + 0.3*STR(10) = 12.2
+    if (sweepRes.kind === 'value') expect(sweepRes.value).toBeCloseTo(12.2, 6)
+
+    // A gearless build: both identifiers are absent, so the same formulas degrade.
+    const bare = freshLedger().character
+    const bareScope = buildScope(bare.attributes, bare.derived, statModel)
+    expect(evaluate(ram.formulas.Blunt_Damage, bareScope)).toMatchObject({ kind: 'unknown-var' })
+    expect(evaluate(sweep.formulas.Damage, bareScope)).toMatchObject({ kind: 'unknown-var' })
+  })
+
+  it('keeps Body_DEF / Legs_DEF out of the From Gear view (no redundant display)', () => {
+    const l = freshLedger()
+    l.equip('body', 'arcanist-mantle')
+    l.equip('boots', 'aldwynn-sabatons')
+    const ch = l.character
+    expect(ch.derived.Body_DEF).toBe(4)
+    expect(ch.derived.Legs_DEF).toBe(26)
+    expect('Body_DEF' in ch.gearStats).toBe(false)
+    expect('Legs_DEF' in ch.gearStats).toBe(false)
+  })
+
+  it('round-trips a geared build through the codec; combat is re-derived', async () => {
+    const l = freshLedger()
+    l.equip('main_hand', 'footman-sword')
+    l.equip('body', 'arcanist-mantle')
+    l.equip('boots', 'aldwynn-sabatons')
+    const before = l.character
+
+    const restored = freshLedger()
+    const res = await decode(await encode(l.toLedger()))
+    expect(res.ok).toBe(true)
+    if (res.ok) restored.load(res.ledger)
+
+    // The combat view is derived, never serialized — it reconstructs identically.
+    expect(restored.character.combat).toEqual(before.combat)
   })
 })
