@@ -17,6 +17,7 @@
   import EquipmentPanel from './components/EquipmentPanel.svelte'
   import LevelControls from './components/LevelControls.svelte'
   import CharacterSheet from './components/CharacterSheet.svelte'
+  import CombatPanel from './components/CombatPanel.svelte'
   import ShareBar from './components/ShareBar.svelte'
   import Notice from './components/Notice.svelte'
 
@@ -109,6 +110,7 @@
       <EquipmentPanel {character} items={dataset.items} {onEquip} {onUnequip} />
       <ShareBar entries={ledger.entries} {onImport} />
       <CharacterSheet {character} {statModel} />
+      <CombatPanel {character} />
     </aside>
   </main>
 

@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { nodeState, computeTreeLayout } from './node-state'
 import type { Character } from './character'
+import { computeCombat } from './combat'
 import type { Attributes } from './economy'
 import type { Skill } from '../types'
 
@@ -32,6 +33,7 @@ function char(p: Partial<Character> = {}): Character {
     takenOrder: [],
     equipped: {},
     gearStats: {},
+    combat: computeCombat({ derived: {}, gearStats: {}, equipped: {} }),
     attributeBudget: 0,
     skillBudget: 2,
     attributesSpent: 0,
