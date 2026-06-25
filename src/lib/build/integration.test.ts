@@ -79,6 +79,73 @@ describe('real-data build flow', () => {
   })
 })
 
+describe('real-data character presets (U7, R1–R4)', () => {
+  it('seeds Velmir outside the budget and lets user edits layer on top (R1, R3)', () => {
+    const l = freshLedger()
+    expect(l.selectCharacter('velmir')).toEqual({ ok: true })
+    const ch = l.character
+    expect(ch.presetId).toBe('velmir')
+    expect(ch.attributes).toMatchObject({ STR: 11, AGI: 11, PER: 11, VIT: 10, WIL: 10 })
+    expect(ch.attributesSpent).toBe(0) // seeded points are free
+    expect(ch.attributeBudget).toBe(0) // level 1: no earned points yet
+
+    l.levelUp()
+    expect(l.addAttribute('STR')).toEqual({ ok: true })
+    expect(l.character.attributes.STR).toBe(12) // 11 seed + 1 user
+    expect(l.character.attributesSpent).toBe(1)
+  })
+
+  it("seeds Hilda's innate Resourcefulness — bypassing its prereq + level gate — for free (R2)", () => {
+    // resourcefulness is tier-2: requires Flaying AND level 6 (or 4 PER). As an
+    // innate seed it lands at level 1 regardless, and costs no skill points.
+    const l = freshLedger()
+    l.selectCharacter('hilda')
+    const ch = l.character
+    expect(ch.taken.has('resourcefulness')).toBe(true)
+    expect(ch.taken.has('Flaying')).toBe(false) // the prereq was bypassed, not auto-taken
+    expect(ch.skillsSpent).toBe(0)
+    expect(ch.skillBudget).toBe(2)
+
+    // both free points remain spendable on top of the innate.
+    expect(l.addSkill('Cleave')).toEqual({ ok: true })
+    expect(l.addSkill('disengage')).toEqual({ ok: true })
+    expect(l.character.skillsSpent).toBe(2)
+  })
+
+  it('round-trips a character-seeded build through the share codec (R3)', async () => {
+    const l = freshLedger()
+    l.selectCharacter('dirwin') // innate "Make a Halt" = halt
+    for (let i = 0; i < 3; i++) l.levelUp()
+    l.addAttribute('STR')
+    l.addSkill('Cleave')
+    const before = l.character
+
+    const restored = freshLedger()
+    const res = await decode(await encode(l.toLedger()))
+    expect(res.ok).toBe(true)
+    if (res.ok) restored.load(res.ledger)
+
+    expect(restored.character.presetId).toBe('dirwin')
+    expect(restored.character.attributes).toEqual(before.attributes)
+    expect(restored.character.taken.has('halt')).toBe(true) // innate survived
+    expect([...restored.character.taken].sort()).toEqual([...before.taken].sort())
+  })
+
+  it('lets the later selection win and clearing returns to the neutral base (R4)', () => {
+    const l = freshLedger()
+    l.selectCharacter('dirwin')
+    l.selectCharacter('jonna') // PER/VIT/WIL 11, no innate
+    expect(l.character.presetId).toBe('jonna')
+    expect(l.character.attributes).toMatchObject({ STR: 10, AGI: 10, PER: 11, VIT: 11, WIL: 11 })
+    expect(l.character.taken.has('halt')).toBe(false) // dirwin's innate did not persist
+
+    expect(l.clearCharacter()).toEqual({ ok: true })
+    expect(l.character.presetId).toBeNull()
+    expect(l.character.attributes).toMatchObject({ STR: 10, AGI: 10, PER: 10, VIT: 10, WIL: 10 })
+    expect(l.character.taken.size).toBe(0)
+  })
+})
+
 describe('real-data combat (M4)', () => {
   it('binds the combat damage-type vocabulary to the canonical constants (drift guard)', () => {
     // combat.ts hardcodes DAMAGE_TYPES (grouped for display); this fails CI if a
