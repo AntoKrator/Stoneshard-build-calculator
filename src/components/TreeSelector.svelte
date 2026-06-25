@@ -86,15 +86,17 @@
     border-color: var(--accent);
     background: var(--bg-panel-2);
   }
-  /* A subtle category accent on the left edge. */
+  /* A subtle category accent on the left edge: weaponry/utility ride the palette
+     tokens; sorcery uses a desaturated arcane blue (no blue token in the core
+     palette) tuned to sit in the grimdark theme. */
   .tab.weaponry {
-    border-left-color: #b4452e;
+    border-left-color: var(--danger);
   }
   .tab.utility {
-    border-left-color: #6a8f3c;
+    border-left-color: var(--ok);
   }
   .tab.sorcery {
-    border-left-color: #6aa3d8;
+    border-left-color: #5a87b0;
   }
   .count {
     min-width: 1.2em;

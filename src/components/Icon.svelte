@@ -50,6 +50,7 @@
     border: 1px solid var(--border);
     border-radius: 4px;
     color: var(--text-dim);
+    font-family: var(--font-display);
     font-weight: 700;
   }
 </style>

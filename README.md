@@ -1,5 +1,7 @@
 # Stoneshard Build Calculator
 
+Live version: https://antokrator.github.io/Stoneshard-build-calculator/
+
 A complete, up-to-date **build** calculator for [Stoneshard](https://stoneshard.com/) — going
 beyond skill-point allocation to model the whole character:
 

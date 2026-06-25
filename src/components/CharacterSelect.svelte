@@ -82,11 +82,9 @@
 </section>
 
 <style>
-  .panel {
-    background: var(--bg-panel);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 1rem;
+  /* Frame comes from the shared global .panel treatment (M1); only the spacing
+     below the picker is component-specific. */
+  .character-select {
     margin-bottom: 1rem;
   }
   .head {
