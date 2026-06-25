@@ -48,6 +48,22 @@ for (const group of Object.keys(DAMAGE_TYPE_GROUPS) as ResistanceGroup[]) {
 /** Game caps (KTD7), expressed in the same percentage-point units as the stats. */
 const WEAPON_DAMAGE_CAP = 200
 const CRIT_EFFICIENCY_CAP = 150
+const RESIST_CAP = 75
+
+/**
+ * Bodypart hit-location weights (KTD7), per pool — the two arms and two legs are
+ * combined. Datamined figures that sum to ~100.2%, so the weighted average
+ * divides by the actual sum rather than assuming 1.0.
+ */
+const HIT_WEIGHTS = { head: 16.7, chest: 36.7, arms: 23.4, legs: 23.4 } as const
+
+/** Which equipped slot supplies each bodypart pool's flat protection. */
+const PROTECTION_SLOT: Record<keyof typeof HIT_WEIGHTS, EquipmentSlot> = {
+  head: 'head',
+  chest: 'body',
+  arms: 'gloves',
+  legs: 'boots',
+}
 
 /* ------------------------------------------------------------------ */
 /* Shapes                                                              */
@@ -72,11 +88,38 @@ export interface DamageRow {
   expected: number
 }
 
+/** Flat protection per bodypart pool (head, chest, arms, legs). */
+export interface BodypartProtection {
+  head: number
+  chest: number
+  arms: number
+  legs: number
+}
+
+/** One mitigation/durability row, per damage type. */
+export interface DefenseRow {
+  type: string
+  /** Combined resistance as a fraction 0..0.75 (umbrella group + per-type, clamped). */
+  resistance: number
+  /** Resistance-based effective HP: `max_hp / (1 − resistance)`. */
+  effectiveHp: number
+}
+
 export interface CombatSheet {
   /** Whether a main-hand weapon is equipped (drives the panel's zero state). */
   hasWeapon: boolean
   /** One row per weapon damage type; empty when unarmed. */
   damage: DamageRow[]
+  /** Whether any bodypart-armor slot (head/body/gloves/boots) is equipped. */
+  hasArmor: boolean
+  /** Character max HP, the basis for effective-HP. */
+  maxHp: number
+  /** Flat protection per bodypart pool. */
+  protection: BodypartProtection
+  /** Hit-location-weighted average protection (normalized by the actual weight sum). */
+  avgProtection: number
+  /** One mitigation/durability row per damage type. */
+  defense: DefenseRow[]
 }
 
 /* ------------------------------------------------------------------ */
@@ -120,6 +163,44 @@ function computeDamage(c: CombatInput): DamageRow[] {
 }
 
 /* ------------------------------------------------------------------ */
+/* Take                                                                */
+/* ------------------------------------------------------------------ */
+
+type DefenseResult = Pick<
+  CombatSheet,
+  'hasArmor' | 'maxHp' | 'protection' | 'avgProtection' | 'defense'
+>
+
+function computeDefense(c: CombatInput): DefenseResult {
+  const maxHp = c.derived.max_hp ?? 0
+
+  const protection: BodypartProtection = { head: 0, chest: 0, arms: 0, legs: 0 }
+  let hasArmor = false
+  let weighted = 0
+  let weightSum = 0
+  for (const pool of Object.keys(HIT_WEIGHTS) as (keyof typeof HIT_WEIGHTS)[]) {
+    const it = c.equipped[PROTECTION_SLOT[pool]]
+    if (it) hasArmor = true
+    const p = it?.stats.protection ?? 0
+    protection[pool] = p
+    weighted += p * HIT_WEIGHTS[pool]
+    weightSum += HIT_WEIGHTS[pool]
+  }
+  const avgProtection = weightSum > 0 ? weighted / weightSum : 0
+
+  // A type's resistance is its umbrella-group stat plus any per-type stat, summed
+  // then clamped (KTD8). Both live in gearStats keyed snake_case.
+  const defense: DefenseRow[] = DAMAGE_TYPES.map((type) => {
+    const umbrella = c.gearStats[`${GROUP_OF[type]}_resistance`] ?? 0
+    const perType = c.gearStats[`${type}_resistance`] ?? 0
+    const resistance = Math.min(umbrella + perType, RESIST_CAP) / 100
+    return { type, resistance, effectiveHp: maxHp / (1 - resistance) }
+  })
+
+  return { hasArmor, maxHp, protection, avgProtection, defense }
+}
+
+/* ------------------------------------------------------------------ */
 /* Entry                                                               */
 /* ------------------------------------------------------------------ */
 
@@ -127,6 +208,7 @@ export function computeCombat(c: CombatInput): CombatSheet {
   return {
     hasWeapon: c.equipped.main_hand != null,
     damage: computeDamage(c),
+    ...computeDefense(c),
   }
 }
 

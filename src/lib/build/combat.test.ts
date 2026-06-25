@@ -164,3 +164,82 @@ describe('combat — damage output ("deal", U1/R1/R2)', () => {
     expect(sheet.damage).toEqual([])
   })
 })
+
+describe('combat — mitigation + durability ("take", U2/R3/R4)', () => {
+  const armor = (key: string, slot: Item['slot'], protection: number): Item =>
+    item(key, slot, { protection }, 'armor')
+
+  const def = (sheet: ReturnType<typeof computeCombat>, type: string) =>
+    sheet.defense.find((d) => d.type === type)!
+
+  it('reads per-bodypart protection from the four armor slots', () => {
+    const sheet = computeCombat(
+      input({
+        equipped: { body: armor('cuirass', 'body', 8), boots: armor('greaves', 'boots', 4) },
+      }),
+    )
+    expect(sheet.protection).toEqual({ head: 0, chest: 8, arms: 0, legs: 4 })
+    expect(sheet.hasArmor).toBe(true)
+  })
+
+  it('hit-weights the average protection, normalized by the actual weight sum', () => {
+    // Equal protection across all four pools → the average is that value regardless of weights.
+    const all10 = computeCombat(
+      input({
+        equipped: {
+          head: armor('helm', 'head', 10),
+          body: armor('cuirass', 'body', 10),
+          gloves: armor('gaunt', 'gloves', 10),
+          boots: armor('greaves', 'boots', 10),
+        },
+      }),
+    )
+    expect(all10.avgProtection).toBeCloseTo(10, 6)
+
+    // Chest 8 + legs 4 only: (8×36.7 + 4×23.4) / 100.2.
+    const mixed = computeCombat(
+      input({
+        equipped: { body: armor('cuirass', 'body', 8), boots: armor('greaves', 'boots', 4) },
+      }),
+    )
+    expect(mixed.avgProtection).toBeCloseTo((8 * 36.7 + 4 * 23.4) / 100.2, 6)
+  })
+
+  it('computes per-type resistance and resistance-based effective-HP', () => {
+    const sheet = computeCombat(input({ gearStats: { fire_resistance: 50 } }))
+    expect(def(sheet, 'fire').resistance).toBe(0.5)
+    expect(def(sheet, 'fire').effectiveHp).toBe(200) // max_hp 100 / 0.5
+  })
+
+  it('clamps resistance at 75% (effective-HP floor)', () => {
+    const sheet = computeCombat(input({ gearStats: { fire_resistance: 90 } }))
+    expect(def(sheet, 'fire').resistance).toBe(0.75)
+    expect(def(sheet, 'fire').effectiveHp).toBe(400) // 100 / 0.25
+  })
+
+  it('sums an umbrella-group resistance with a per-type resistance (KTD8)', () => {
+    const sheet = computeCombat(
+      input({ gearStats: { physical_resistance: 20, slashing_resistance: 10 } }),
+    )
+    expect(def(sheet, 'slashing').resistance).toBe(0.3) // 20 + 10
+    expect(def(sheet, 'piercing').resistance).toBe(0.2) // umbrella only
+    expect(def(sheet, 'crushing').resistance).toBe(0.2)
+    expect(def(sheet, 'rending').resistance).toBe(0.2)
+    // A nature type is untouched by physical_resistance.
+    expect(def(sheet, 'fire').resistance).toBe(0)
+  })
+
+  it('produces one defense row per damage type', () => {
+    const sheet = computeCombat(input({}))
+    expect(sheet.defense.length).toBe(13)
+    expect(sheet.defense.map((d) => d.type)).toEqual([...DAMAGE_TYPES])
+  })
+
+  it('reports neutral defense and no armor when unequipped', () => {
+    const sheet = computeCombat(input({ equipped: {}, gearStats: {} }))
+    expect(sheet.hasArmor).toBe(false)
+    expect(sheet.avgProtection).toBe(0)
+    expect(sheet.protection).toEqual({ head: 0, chest: 0, arms: 0, legs: 0 })
+    expect(sheet.defense.every((d) => d.resistance === 0 && d.effectiveHp === 100)).toBe(true)
+  })
+})
