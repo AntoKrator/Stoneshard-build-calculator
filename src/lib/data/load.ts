@@ -13,6 +13,7 @@ import treesJson from '../../data/trees.json'
 import skillsJson from '../../data/skills.json'
 import constantsJson from '../../data/constants.json'
 import statModelJson from '../../data/stat-model.json'
+import itemsJson from '../../data/items.json'
 import { parseDataset, type Dataset, type StatModel } from '../types'
 
 const composed = {
@@ -23,7 +24,7 @@ const composed = {
   constants: constantsJson,
   statModel: statModelJson,
   statFormulas: [],
-  items: [],
+  items: itemsJson,
   enchantments: [],
 }
 

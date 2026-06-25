@@ -8,7 +8,7 @@
  *
  * Run with: `npm run bootstrap`. Output is committed; CI does not run this.
  */
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -67,7 +67,16 @@ write('meta.json', parsed.meta)
 write('attributes.json', parsed.attributes)
 write('trees.json', parsed.trees)
 write('skills.json', parsed.skills)
-write('constants.json', parsed.constants)
+// Constants are curated beyond what this transform produces — the Phase-1 point
+// economy, the damage-type vocabulary, and M2's item-stat vocabulary all live in
+// the committed constants.json that the transform only stubs. Preserve the
+// committed file verbatim on a re-run rather than clobbering that curation; only
+// on a fresh clone (no committed file) is the stub written.
+const constantsPath = resolve(outDir, 'constants.json')
+const constants = existsSync(constantsPath)
+  ? JSON.parse(readFileSync(constantsPath, 'utf8'))
+  : parsed.constants
+write('constants.json', constants)
 write('bootstrap-report.json', report)
 
 console.log(

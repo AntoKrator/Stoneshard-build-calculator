@@ -60,3 +60,57 @@ describe('gateDataset', () => {
     expect(r.ok).toBe(true)
   })
 })
+
+// A dataset with an item section + the vocabularies the item checks cross-ref.
+function datasetWithItems(items: unknown[]) {
+  const d = baseDataset() as Record<string, unknown>
+  d.constants = {
+    damageTypes: ['slashing', 'crushing'],
+    itemStatKeys: ['slashing_damage', 'block_chance'],
+  }
+  d.items = items
+  return d
+}
+const weapon = {
+  key: 'sword01',
+  name: { english: 'Sword' },
+  category: 'weapon',
+  slot: 'main_hand',
+  damageType: 'slashing',
+  stats: { slashing_damage: 10 },
+}
+
+describe('gateDataset — item integrity (M2 U4)', () => {
+  it('passes a clean item dataset and reports the item count', () => {
+    const r = gateDataset(datasetWithItems([weapon]), [], [])
+    expect(r.ok).toBe(true)
+    expect(r.itemCount).toBe(1)
+  })
+
+  it('flags a duplicate item key', () => {
+    const r = gateDataset(datasetWithItems([weapon, { ...weapon }]), [], [])
+    expect(r.errors.join(' ')).toContain('duplicate-item-key')
+  })
+
+  it('flags a weapon with no damage type', () => {
+    const { damageType, ...noDamage } = weapon
+    void damageType
+    const r = gateDataset(datasetWithItems([noDamage]), [], [])
+    expect(r.errors.join(' ')).toContain('weapon-missing-damage')
+  })
+
+  it('flags a weapon damage type outside constants.damageTypes', () => {
+    const r = gateDataset(datasetWithItems([{ ...weapon, damageType: 'void' }]), [], [])
+    expect(r.errors.join(' ')).toContain('unknown-damage-type')
+  })
+
+  it('flags an item stat outside constants.itemStatKeys', () => {
+    const r = gateDataset(datasetWithItems([{ ...weapon, stats: { not_a_stat: 1 } }]), [], [])
+    expect(r.errors.join(' ')).toContain('unknown-stat-key')
+  })
+
+  it('flags a slot that does not fit the item category', () => {
+    const r = gateDataset(datasetWithItems([{ ...weapon, slot: 'head' }]), [], [])
+    expect(r.errors.join(' ')).toContain('slot-category-mismatch')
+  })
+})
