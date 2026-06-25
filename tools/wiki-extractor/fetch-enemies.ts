@@ -41,7 +41,9 @@ async function provenance(title: string): Promise<{ revisionId: number; timestam
 const url = `https://stoneshard.com/wiki/${encodeURI(ENEMY_PAGE.title)}?action=raw`
 const wikitext = await get(url)
 // Fail before writing if the blob no longer parses (e.g. column drift).
-const { header, rows } = parseDatastring(wikitext, { headerLinePrefix: ENEMY_PAGE.headerLinePrefix })
+const { header, rows } = parseDatastring(wikitext, {
+  headerLinePrefix: ENEMY_PAGE.headerLinePrefix,
+})
 const { revisionId, timestamp } = await provenance(ENEMY_PAGE.title)
 
 mkdirSync(outDir, { recursive: true })
