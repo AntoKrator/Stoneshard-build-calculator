@@ -158,6 +158,52 @@ describe('combat — damage output ("deal", U1/R1/R2)', () => {
     expect(row(sheet, 'fire')!.modified).toBe(25)
   })
 
+  it('exercises the Mainhand Efficiency leg of the multiplier (120 → ×1.2)', () => {
+    const sheet = computeCombat(
+      input({
+        derived: {
+          Weapon_Damage: 100,
+          Mainhand_Efficiency: 120,
+          Crit_Chance: 0,
+          Crit_Efficiency: 0,
+        },
+        equipped: { main_hand: item('sword', 'main_hand', { slashing_damage: 20 }) },
+      }),
+    )
+    expect(row(sheet, 'slashing')!.modified).toBe(24) // 20 × 1.0 × 1.2
+  })
+
+  it('floors negative offensive modifiers so damage never goes below 0', () => {
+    const sheet = computeCombat(
+      input({
+        derived: {
+          Weapon_Damage: -50,
+          Mainhand_Efficiency: -20,
+          Crit_Chance: -10,
+          Crit_Efficiency: -30,
+        },
+        equipped: { main_hand: item('sword', 'main_hand', { slashing_damage: 20 }) },
+      }),
+    )
+    const s = row(sheet, 'slashing')!
+    expect(s.modified).toBe(0)
+    expect(s.expected).toBe(0)
+  })
+
+  it('emits a damage row from a flat gear bonus even when the weapon lacks that type', () => {
+    const sheet = computeCombat(
+      input({
+        equipped: {
+          main_hand: item('sword', 'main_hand', { slashing_damage: 20 }), // no fire
+          ring: item('emberband', 'ring', { fire_damage: 5 }, 'accessory'),
+        },
+      }),
+    )
+    const fire = row(sheet, 'fire')!
+    expect(fire.base).toBe(0)
+    expect(fire.modified).toBe(5) // pure flat bonus, post-multiplier
+  })
+
   it('renders no damage rows when unarmed', () => {
     const sheet = computeCombat(input({ equipped: {} }))
     expect(sheet.hasWeapon).toBe(false)
@@ -241,5 +287,14 @@ describe('combat — mitigation + durability ("take", U2/R3/R4)', () => {
     expect(sheet.avgProtection).toBe(0)
     expect(sheet.protection).toEqual({ head: 0, chest: 0, arms: 0, legs: 0 })
     expect(sheet.defense.every((d) => d.resistance === 0 && d.effectiveHp === 100)).toBe(true)
+  })
+
+  it('yields 0 effective HP (not NaN) when max_hp is 0', () => {
+    const sheet = computeCombat(
+      input({ derived: { max_hp: 0 }, gearStats: { fire_resistance: 50 } }),
+    )
+    const fire = sheet.defense.find((d) => d.type === 'fire')!
+    expect(fire.effectiveHp).toBe(0)
+    expect(Number.isNaN(fire.effectiveHp)).toBe(false)
   })
 })

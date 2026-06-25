@@ -141,10 +141,13 @@ function flatGearDamage(equipped: CombatInput['equipped']): Record<string, numbe
 
 function computeDamage(c: CombatInput): DamageRow[] {
   const weapon = c.equipped.main_hand
-  const wd = Math.min(c.derived.Weapon_Damage ?? 100, WEAPON_DAMAGE_CAP) / 100
-  const mh = (c.derived.Mainhand_Efficiency ?? 100) / 100
+  // Clamp every percentage modifier on both bounds so a negative modifier (today
+  // only reachable once the deferred enchant/affix system lands) can't flip damage
+  // negative — mirroring the Crit_Chance guard rather than capping high-only.
+  const wd = clamp(c.derived.Weapon_Damage ?? 100, 0, WEAPON_DAMAGE_CAP) / 100
+  const mh = Math.max(c.derived.Mainhand_Efficiency ?? 100, 0) / 100
   const critChance = clamp(c.derived.Crit_Chance ?? 0, 0, 100) / 100
-  const critMult = 1 + Math.min(c.derived.Crit_Efficiency ?? 0, CRIT_EFFICIENCY_CAP) / 100
+  const critMult = 1 + clamp(c.derived.Crit_Efficiency ?? 0, 0, CRIT_EFFICIENCY_CAP) / 100
 
   const flat = flatGearDamage(c.equipped)
 

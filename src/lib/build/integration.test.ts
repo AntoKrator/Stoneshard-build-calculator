@@ -9,6 +9,7 @@
 import { describe, it, expect } from 'vitest'
 import { dataset, statModel } from '../data/load'
 import { BuildLedger } from './ledger.svelte'
+import { DAMAGE_TYPES } from './combat'
 import { buildScope } from '../formula/scope'
 import { evaluate } from '../formula/eval'
 import { renderTooltip } from '../tooltip/render'
@@ -79,6 +80,12 @@ describe('real-data build flow', () => {
 })
 
 describe('real-data combat (M4)', () => {
+  it('binds the combat damage-type vocabulary to the canonical constants (drift guard)', () => {
+    // combat.ts hardcodes DAMAGE_TYPES (grouped for display); this fails CI if a
+    // future patch adds/renames a type in constants.json without updating the groups.
+    expect([...DAMAGE_TYPES].sort()).toEqual([...dataset.constants.damageTypes].sort())
+  })
+
   it('computes self damage and mitigation from a real equipped loadout (R1–R4)', () => {
     const l = freshLedger()
     l.equip('main_hand', 'footman-sword') // slashing_damage 21
