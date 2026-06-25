@@ -7,11 +7,13 @@
   let {
     attributes,
     character,
+    maxAttributeValue,
     onAdd,
     onRemove,
   }: {
     attributes: AttributeDef[]
     character: Character
+    maxAttributeValue: number
     onAdd: (attr: AttributeKey) => void
     onRemove: (attr: AttributeKey) => void
   } = $props()
@@ -31,7 +33,11 @@
         <span class="label" title={a.description ?? ''}>{a.name}</span>
         <span class="value">
           {character.attributes[a.key]}
-          {#if character.invested[a.key] > 0}<span class="bonus">+{character.invested[a.key]}</span
+          {#if character.attributes[a.key] >= maxAttributeValue}<span
+              class="cap"
+              title={`Capped at ${maxAttributeValue}`}>max</span
+            >{:else if character.invested[a.key] > 0}<span class="bonus"
+              >+{character.invested[a.key]}</span
             >{/if}
         </span>
         <span class="controls">
@@ -42,7 +48,7 @@
           >
           <button
             aria-label={`Add ${a.name}`}
-            disabled={available === 0}
+            disabled={available === 0 || character.attributes[a.key] >= maxAttributeValue}
             onclick={() => onAdd(a.key)}>+</button
           >
         </span>
@@ -85,6 +91,12 @@
   .bonus {
     color: var(--ok);
     font-size: 0.8rem;
+    margin-left: 0.2rem;
+  }
+  .cap {
+    color: var(--text-dim);
+    font-size: 0.7rem;
+    font-variant: small-caps;
     margin-left: 0.2rem;
   }
   .controls button {

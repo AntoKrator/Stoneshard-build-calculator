@@ -24,6 +24,7 @@ import { isUnlocked } from './economy'
 
 type Reason =
   | 'no-points'
+  | 'at-cap'
   | 'locked'
   | 'duplicate'
   | 'unknown'
@@ -102,6 +103,9 @@ export class BuildLedger {
   addAttribute(attr: AttributeKey): LedgerResult {
     const ch = this.character
     if (ch.attributesSpent >= ch.attributeBudget) return { ok: false, reason: 'no-points' }
+    if (ch.attributes[attr] >= this.#dataset.constants.maxAttributeValue) {
+      return { ok: false, reason: 'at-cap' }
+    }
     this.entries.push({ op: 'addAttribute', attr })
     return { ok: true }
   }
