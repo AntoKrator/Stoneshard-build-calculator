@@ -91,11 +91,14 @@ const dataset: Dataset = {
     baseAttributeValue: 10,
     damageTypes: [],
     itemStatKeys: [],
+    enemyStatKeys: [],
     values: {},
   },
   items: ITEMS,
   enchantments: [],
   presets: PRESETS,
+  enemies: [],
+  enemyAbilities: [],
 }
 
 describe('BuildLedger — level + attribute economy', () => {

@@ -37,6 +37,51 @@ describe('parseDataset', () => {
     bad.attributes[0].key = 'LUCK'
     expect(() => parseDataset(bad)).toThrow()
   })
+
+  it('defaults enemies and enemyAbilities to [] (M5 backward-compat)', () => {
+    const ds = parseDataset(baseDataset())
+    expect(ds.enemies).toEqual([])
+    expect(ds.enemyAbilities).toEqual([])
+  })
+
+  it('accepts a minimal enemy + ability', () => {
+    const d = baseDataset() as Record<string, unknown>
+    d.enemies = [
+      {
+        key: 'restless',
+        name: { english: 'Restless' },
+        hp: 80,
+        protection: { head: 0, chest: 1, arms: 1, legs: 1 },
+        stats: { crushing_damage: 6, physical_resistance: 50 },
+        abilities: ['lunge'],
+      },
+    ]
+    d.enemyAbilities = [
+      {
+        key: 'lunge',
+        name: { english: 'Lunge' },
+        damage: { piercing: 12 },
+        properties: { source: 'https://stoneshard.com/wiki/X' },
+      },
+    ]
+    const ds = parseDataset(d)
+    expect(ds.enemies[0].protection.chest).toBe(1)
+    expect(ds.enemyAbilities[0].damage.piercing).toBe(12)
+  })
+
+  it('rejects an enemy with non-positive hp or a missing protection slot', () => {
+    const noHp = baseDataset() as Record<string, unknown>
+    noHp.enemies = [
+      { key: 'x', name: { english: 'X' }, hp: 0, protection: { head: 0, chest: 0, arms: 0, legs: 0 } },
+    ]
+    expect(() => parseDataset(noHp)).toThrow()
+
+    const noSlot = baseDataset() as Record<string, unknown>
+    noSlot.enemies = [
+      { key: 'x', name: { english: 'X' }, hp: 10, protection: { head: 0, chest: 0, arms: 0 } },
+    ]
+    expect(() => parseDataset(noSlot)).toThrow()
+  })
 })
 
 describe('checkIntegrity', () => {
