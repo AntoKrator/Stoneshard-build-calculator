@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { BuildLedger } from './ledger.svelte'
-import type { Dataset, Item, Skill, StatModel } from '../types'
+import type { Dataset, Item, Preset, Skill, StatModel } from '../types'
 
 function skill(key: string, tier: number, requires: string[]): Skill {
   return {
@@ -46,6 +46,27 @@ const ITEMS: Item[] = [
   },
 ]
 
+const PRESETS: Preset[] = [
+  {
+    id: 'hero',
+    name: 'Hero',
+    attributes: { STR: 11, AGI: 11, PER: 11, VIT: 10, WIL: 10 },
+    startingSkills: ['A'], // innate, free
+    trait: 'Bold',
+    affinities: ['t1'],
+    dlc: false,
+  },
+  {
+    id: 'mage',
+    name: 'Mage',
+    attributes: { STR: 10, AGI: 10, PER: 11, VIT: 11, WIL: 11 },
+    startingSkills: [],
+    trait: 'Wise',
+    affinities: [],
+    dlc: false,
+  },
+]
+
 const dataset: Dataset = {
   meta: { gameVersion: 'test', source: 'test' },
   attributes: [],
@@ -74,7 +95,7 @@ const dataset: Dataset = {
   },
   items: ITEMS,
   enchantments: [],
-  presets: [],
+  presets: PRESETS,
 }
 
 describe('BuildLedger — level + attribute economy', () => {
@@ -174,5 +195,50 @@ describe('BuildLedger — equip/unequip (M3 U4, R2)', () => {
     expect(l.unequip('head')).toEqual({ ok: true })
     expect(l.character.equipped.head).toBeUndefined()
     expect(l.unequip('head')).toEqual({ ok: false, reason: 'not-found' })
+  })
+})
+
+describe('BuildLedger — character select (U3, R3/R4)', () => {
+  it('selects a known preset and seeds its identity, attributes, and innate skill', () => {
+    const l = new BuildLedger(dataset)
+    expect(l.selectCharacter('hero')).toEqual({ ok: true })
+    expect(l.character.presetId).toBe('hero')
+    expect(l.character.attributes).toMatchObject({ STR: 11, AGI: 11, PER: 11 })
+    expect(l.character.taken.has('A')).toBe(true) // innate
+    expect(l.character.skillsSpent).toBe(0) // the innate is free
+  })
+
+  it('refuses an unknown preset id', () => {
+    const l = new BuildLedger(dataset)
+    expect(l.selectCharacter('nobody')).toEqual({ ok: false, reason: 'unknown' })
+    expect(l.character.presetId).toBeNull()
+  })
+
+  it('replaces a prior selection (last-wins, one entry in the log)', () => {
+    const l = new BuildLedger(dataset)
+    l.selectCharacter('hero')
+    l.selectCharacter('mage')
+    expect(l.character.presetId).toBe('mage')
+    expect(l.toLedger().filter((e) => e.op === 'selectCharacter')).toHaveLength(1)
+    expect(l.character.taken.has('A')).toBe(false) // hero's innate did not persist
+  })
+
+  it('clears back to the neutral base and refuses to clear when none is set', () => {
+    const l = new BuildLedger(dataset)
+    l.selectCharacter('hero')
+    expect(l.clearCharacter()).toEqual({ ok: true })
+    expect(l.character.presetId).toBeNull()
+    expect(l.character.attributes).toMatchObject({ STR: 10, AGI: 10, PER: 10, VIT: 10, WIL: 10 })
+    expect(l.clearCharacter()).toEqual({ ok: false, reason: 'not-found' })
+  })
+
+  it('keeps user attribute/skill edits layered on top of a selection', () => {
+    const l = new BuildLedger(dataset)
+    l.selectCharacter('hero')
+    l.levelUp() // attribute budget 1
+    expect(l.addAttribute('STR')).toEqual({ ok: true })
+    expect(l.character.attributes.STR).toBe(12) // 11 seed + 1 user
+    expect(l.addSkill('B')).toEqual({ ok: true }) // a user skill on top of innate A
+    expect(l.character.skillsSpent).toBe(1)
   })
 })
