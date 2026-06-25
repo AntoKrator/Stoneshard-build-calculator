@@ -11,6 +11,7 @@
   import { hydrateLedger } from './lib/share/hydrate'
   import type { AttributeKey, EquipmentSlot } from './lib/types'
 
+  import CharacterSelect from './components/CharacterSelect.svelte'
   import TreeSelector from './components/TreeSelector.svelte'
   import SkillTree from './components/SkillTree.svelte'
   import AttributePanel from './components/AttributePanel.svelte'
@@ -58,6 +59,8 @@
   const onImport = (entries: typeof ledger.entries) => ledger.load(entries)
   const onEquip = (slot: EquipmentSlot, key: string) => ledger.equip(slot, key)
   const onUnequip = (slot: EquipmentSlot) => ledger.unequip(slot)
+  const onSelectCharacter = (id: string) => ledger.selectCharacter(id)
+  const onClearCharacter = () => ledger.clearCharacter()
 </script>
 
 <div class="layout">
@@ -69,6 +72,14 @@
   </header>
 
   <Notice notes={character.notes} />
+
+  <CharacterSelect
+    presets={dataset.presets}
+    trees={dataset.trees}
+    {character}
+    onSelect={onSelectCharacter}
+    onClear={onClearCharacter}
+  />
 
   {#if isFresh}
     <p class="hint">
