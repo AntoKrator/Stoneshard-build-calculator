@@ -241,4 +241,26 @@ describe('BuildLedger — character select (U3, R3/R4)', () => {
     expect(l.addSkill('B')).toEqual({ ok: true }) // a user skill on top of innate A
     expect(l.character.skillsSpent).toBe(1)
   })
+
+  it('collapses multiple selectCharacter entries from a crafted code on clear/select', () => {
+    const l = new BuildLedger(dataset)
+    // A hand-crafted or older share code could carry two selectCharacter entries.
+    const crafted = [
+      { op: 'selectCharacter', id: 'hero' },
+      { op: 'selectCharacter', id: 'mage' },
+    ] as const
+    l.load([...crafted])
+    expect(l.character.presetId).toBe('mage') // recompute honors the last
+
+    // Clearing removes ALL of them, so the build truly returns to neutral.
+    expect(l.clearCharacter()).toEqual({ ok: true })
+    expect(l.character.presetId).toBeNull()
+    expect(l.toLedger().filter((e) => e.op === 'selectCharacter')).toHaveLength(0)
+
+    // Re-selecting after a crafted multi-entry load also collapses to one entry.
+    l.load([...crafted])
+    l.selectCharacter('hero')
+    expect(l.character.presetId).toBe('hero')
+    expect(l.toLedger().filter((e) => e.op === 'selectCharacter')).toHaveLength(1)
+  })
 })

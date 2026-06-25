@@ -196,14 +196,21 @@ export class BuildLedger {
     return this.#removeSelectCharacter() ? { ok: true } : { ok: false, reason: 'not-found' }
   }
 
-  /** Remove the `selectCharacter` entry if present; returns whether one was removed. */
+  /**
+   * Remove every `selectCharacter` entry; returns whether any was removed. Normally
+   * there is at most one (this method runs before each push), but a hand-crafted or
+   * older share code could carry several — collapsing them keeps the "at most one"
+   * invariant recompute assumes, so a clear truly clears and a re-select doesn't
+   * leave a stale earlier seed behind.
+   */
   #removeSelectCharacter(): boolean {
+    let removed = false
     for (let i = this.entries.length - 1; i >= 0; i--) {
       if (this.entries[i].op === 'selectCharacter') {
         this.entries.splice(i, 1)
-        return true
+        removed = true
       }
     }
-    return false
+    return removed
   }
 }

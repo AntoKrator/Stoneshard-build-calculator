@@ -125,7 +125,9 @@
         <p class="empty-trees">No trees open — pick one or more above to start planning.</p>
       {:else}
         <!-- Each tree scrolls within its own card; a shorter per-tree viewport when
-             several are open so they tile without one tree dominating the page. -->
+             several are open so they tile without one tree dominating the page.
+             --grid-max-height is read (via CSS inheritance) by SkillTree's
+             .grid-scroll two levels down. -->
         <div
           class="tree-grid"
           style="--grid-max-height: {openTreeIds.length > 1 ? '60vh' : 'calc(100vh - 230px)'}"
