@@ -203,6 +203,32 @@ describe('transformItems', () => {
     expect(keys).toEqual([...keys].sort())
   })
 
+  it('sets item.icon only for keys with a vendored icon (M3 U6)', () => {
+    const header = ['Tier', 'ID', 'Type', 'Rarity', 'Material', 'Crushing Damage', 'Description']
+    const parsed: ParsedDatastring = {
+      header,
+      rows: [
+        row(header, 'Footman Sword', [
+          '3',
+          'sword03',
+          'Sword',
+          'Common',
+          'metal',
+          '21',
+          'A sword.',
+        ]),
+        row(header, 'Broom', ['1', 'broom', '', 'Common', 'wood', '6', 'A broom.']),
+      ],
+    }
+    const { items } = transformItems({
+      pages: [{ page: WEAPON_PAGE, parsed }],
+      damageTypes: ['crushing'],
+      iconKeys: new Set(['footman-sword']), // broom has no vendored art
+    })
+    expect(items.find((i) => i.key === 'footman-sword')?.icon).toBe('img/items/footman-sword.png')
+    expect(items.find((i) => i.key === 'broom')?.icon).toBeUndefined()
+  })
+
   it('keeps future numbered fragment/wiki-art columns out of stats (KTD4)', () => {
     // A patch that adds fragment_metal05 or a 4th alt-image column must not have
     // it misread as a character stat — the denylist matches these by pattern.

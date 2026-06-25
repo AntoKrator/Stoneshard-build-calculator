@@ -26,7 +26,8 @@
       "markup": 1,
       "price": 575,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/academy-circlet.png"
   },
   {
     "key": "academy-cloak",
@@ -55,7 +56,8 @@
       "markup": 1.3,
       "price": 150,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/academy-cloak.png"
   },
   {
     "key": "albrecht-the-beastbanes-shield",
@@ -89,7 +91,8 @@
       "markup": 1,
       "price": 3950,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/albrecht-the-beastbanes-shield.png"
   },
   {
     "key": "ald-chieftain-shield",
@@ -123,7 +126,8 @@
       "markup": 1,
       "price": 3950,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/ald-chieftain-shield.png"
   },
   {
     "key": "aldorian-bow",
@@ -155,7 +159,8 @@
       "range": 9,
       "tags": "aldor",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/aldorian-bow.png"
   },
   {
     "key": "aldwynn-axe",
@@ -190,7 +195,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 31
-    }
+    },
+    "icon": "img/items/aldwynn-axe.png"
   },
   {
     "key": "aldwynn-crossbow",
@@ -224,7 +230,8 @@
       "range": 7,
       "tags": "aldor",
       "total_damage_of_all_types": 26
-    }
+    },
+    "icon": "img/items/aldwynn-crossbow.png"
   },
   {
     "key": "aldwynn-sabatons",
@@ -257,7 +264,8 @@
       "markup": 1.15,
       "price": 7050,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/aldwynn-sabatons.png"
   },
   {
     "key": "amber-amulet",
@@ -282,7 +290,8 @@
       "markup": 1,
       "price": 120,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/amber-amulet.png"
   },
   {
     "key": "ancestral-hatchet",
@@ -317,7 +326,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/ancestral-hatchet.png"
   },
   {
     "key": "ancient-copper-ring",
@@ -342,7 +352,8 @@
       "markup": 1,
       "price": 20,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/ancient-copper-ring.png"
   },
   {
     "key": "ancient-scimitar",
@@ -376,7 +387,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 25
-    }
+    },
+    "icon": "img/items/ancient-scimitar.png"
   },
   {
     "key": "ancient-wristbands",
@@ -411,7 +423,8 @@
       "markup": 1.1,
       "price": 7775,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/ancient-wristbands.png"
   },
   {
     "key": "arcanist-cowl",
@@ -447,7 +460,8 @@
       "markup": 1,
       "price": 2875,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/arcanist-cowl.png"
   },
   {
     "key": "arcanist-mantle",
@@ -479,7 +493,8 @@
       "markup": 1,
       "price": 4125,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/arcanist-mantle.png"
   },
   {
     "key": "arcanist-staff",
@@ -518,7 +533,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 20
-    }
+    },
+    "icon": "img/items/arcanist-staff.png"
   },
   {
     "key": "aristocrat-belt",
@@ -547,7 +563,8 @@
       "markup": 1,
       "price": 1225,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/aristocrat-belt.png"
   },
   {
     "key": "aristocrat-doublet",
@@ -581,7 +598,8 @@
       "markup": 1,
       "price": 4975,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/aristocrat-doublet.png"
   },
   {
     "key": "aristocrat-shield",
@@ -608,7 +626,8 @@
       "markup": 1,
       "price": 1575,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/aristocrat-shield.png"
   },
   {
     "key": "aristocrat-warstaff",
@@ -645,7 +664,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/aristocrat-warstaff.png"
   },
   {
     "key": "arming-cap",
@@ -676,7 +696,8 @@
       "markup": 1,
       "price": 225,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/arming-cap.png"
   },
   {
     "key": "arnas-sword",
@@ -707,7 +728,8 @@
       "range": 1,
       "tags": "special exc",
       "total_damage_of_all_types": 17
-    }
+    },
+    "icon": "img/items/arnas-sword.png"
   },
   {
     "key": "assassin-dagger",
@@ -739,7 +761,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/assassin-dagger.png"
   },
   {
     "key": "assault-shield",
@@ -770,7 +793,8 @@
       "markup": 1,
       "price": 2250,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/assault-shield.png"
   },
   {
     "key": "astromancer-staff",
@@ -807,7 +831,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 16
-    }
+    },
+    "icon": "img/items/astromancer-staff.png"
   },
   {
     "key": "awl-pike",
@@ -840,7 +865,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 26
-    }
+    },
+    "icon": "img/items/awl-pike.png"
   },
   {
     "key": "axonian-warstaff",
@@ -877,7 +903,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 23
-    }
+    },
+    "icon": "img/items/axonian-warstaff.png"
   },
   {
     "key": "azure-cape",
@@ -907,7 +934,8 @@
       "markup": 3,
       "price": 75,
       "tags": "special exc"
-    }
+    },
+    "icon": "img/items/azure-cape.png"
   },
   {
     "key": "barbute",
@@ -937,7 +965,8 @@
       "markup": 1,
       "price": 4850,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/barbute.png"
   },
   {
     "key": "baron-axe",
@@ -971,7 +1000,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 31
-    }
+    },
+    "icon": "img/items/baron-axe.png"
   },
   {
     "key": "baron-morgenstern",
@@ -1007,7 +1037,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/baron-morgenstern.png"
   },
   {
     "key": "baselard",
@@ -1039,7 +1070,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 17
-    }
+    },
+    "icon": "img/items/baselard.png"
   },
   {
     "key": "battle-cleaver",
@@ -1071,7 +1103,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 17
-    }
+    },
+    "icon": "img/items/battle-cleaver.png"
   },
   {
     "key": "battlemage-boots",
@@ -1105,7 +1138,8 @@
       "markup": 1,
       "price": 1675,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/battlemage-boots.png"
   },
   {
     "key": "battlemage-circlet",
@@ -1136,7 +1170,8 @@
       "markup": 1,
       "price": 3450,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/battlemage-circlet.png"
   },
   {
     "key": "battlemage-cloak",
@@ -1165,7 +1200,8 @@
       "markup": 1.3,
       "price": 800,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/battlemage-cloak.png"
   },
   {
     "key": "battlemage-cowl",
@@ -1200,7 +1236,8 @@
       "markup": 0.85,
       "price": 2450,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/battlemage-cowl.png"
   },
   {
     "key": "battlemage-gambeson",
@@ -1234,7 +1271,8 @@
       "markup": 1.15,
       "price": 2025,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/battlemage-gambeson.png"
   },
   {
     "key": "battlemage-gloves",
@@ -1268,7 +1306,8 @@
       "markup": 1.1,
       "price": 3075,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/battlemage-gloves.png"
   },
   {
     "key": "battlemage-mantle",
@@ -1300,7 +1339,8 @@
       "markup": 1,
       "price": 4125,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/battlemage-mantle.png"
   },
   {
     "key": "battlemage-warstaff",
@@ -1338,7 +1378,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 20
-    }
+    },
+    "icon": "img/items/battlemage-warstaff.png"
   },
   {
     "key": "bearded-hatchet",
@@ -1371,7 +1412,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 19
-    }
+    },
+    "icon": "img/items/bearded-hatchet.png"
   },
   {
     "key": "beastslayer-sling",
@@ -1405,7 +1447,8 @@
       "range": 7,
       "tags": "fjall",
       "total_damage_of_all_types": 17
-    }
+    },
+    "icon": "img/items/beastslayer-sling.png"
   },
   {
     "key": "bellows-visored-sallet",
@@ -1439,7 +1482,8 @@
       "markup": 1,
       "price": 3225,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/bellows-visored-sallet.png"
   },
   {
     "key": "bellows-visored-sallet-open",
@@ -1471,7 +1515,8 @@
       "markup": 1,
       "price": 3225,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/bellows-visored-sallet-open.png"
   },
   {
     "key": "belt-hook-crossbow",
@@ -1503,7 +1548,8 @@
       "range": 7,
       "tags": "aldor",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/belt-hook-crossbow.png"
   },
   {
     "key": "berserker-bear-cowl",
@@ -1540,7 +1586,8 @@
       "markup": 1.15,
       "price": 3900,
       "tags": "fjall"
-    }
+    },
+    "icon": "img/items/berserker-bear-cowl.png"
   },
   {
     "key": "berserker-ring",
@@ -1567,7 +1614,8 @@
       "markup": 1,
       "price": 120,
       "tags": "fjall"
-    }
+    },
+    "icon": "img/items/berserker-ring.png"
   },
   {
     "key": "blacksmith-hammer",
@@ -1597,7 +1645,8 @@
       "range": 1,
       "tags": "special",
       "total_damage_of_all_types": 17
-    }
+    },
+    "icon": "img/items/blacksmith-hammer.png"
   },
   {
     "key": "blacksmith-mittens",
@@ -1628,7 +1677,8 @@
       "markup": 1.5,
       "price": 75,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/blacksmith-mittens.png"
   },
   {
     "key": "blademaster-bonnet",
@@ -1663,7 +1713,8 @@
       "markup": 1,
       "price": 3400,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/blademaster-bonnet.png"
   },
   {
     "key": "blademaster-boots",
@@ -1694,7 +1745,8 @@
       "markup": 1,
       "price": 3525,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/blademaster-boots.png"
   },
   {
     "key": "blademaster-doublet",
@@ -1729,7 +1781,8 @@
       "markup": 1,
       "price": 4975,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/blademaster-doublet.png"
   },
   {
     "key": "blademaster-gloves",
@@ -1762,7 +1815,8 @@
       "markup": 1,
       "price": 3525,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/blademaster-gloves.png"
   },
   {
     "key": "blademaster-greatsword",
@@ -1795,7 +1849,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 32
-    }
+    },
+    "icon": "img/items/blademaster-greatsword.png"
   },
   {
     "key": "blessed-crossbow",
@@ -1831,7 +1886,8 @@
       "range": 7,
       "tags": "special",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/blessed-crossbow.png"
   },
   {
     "key": "board-shield",
@@ -1857,7 +1913,8 @@
       "markup": 0.5,
       "price": 25,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/board-shield.png"
   },
   {
     "key": "boarding-hatchet",
@@ -1890,7 +1947,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 26
-    }
+    },
+    "icon": "img/items/boarding-hatchet.png"
   },
   {
     "key": "bollock-dagger",
@@ -1921,7 +1979,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 15
-    }
+    },
+    "icon": "img/items/bollock-dagger.png"
   },
   {
     "key": "border-guard-brigandine",
@@ -1958,7 +2017,8 @@
       "markup": 1,
       "price": 6225,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/border-guard-brigandine.png"
   },
   {
     "key": "bounty-hunter-war-hat",
@@ -1991,7 +2051,8 @@
       "markup": 0.9,
       "price": 2075,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/bounty-hunter-war-hat.png"
   },
   {
     "key": "bow-pendant",
@@ -2016,7 +2077,8 @@
       "markup": 1,
       "price": 160,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/bow-pendant.png"
   },
   {
     "key": "bozdogan",
@@ -2050,7 +2112,8 @@
       "range": 1,
       "tags": "elven",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/bozdogan.png"
   },
   {
     "key": "braided-girdle",
@@ -2075,7 +2138,8 @@
       "markup": 1,
       "price": 25,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/braided-girdle.png"
   },
   {
     "key": "brandistock",
@@ -2108,7 +2172,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/brandistock.png"
   },
   {
     "key": "brass-agate-ring",
@@ -2133,7 +2198,8 @@
       "markup": 1,
       "price": 60,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/brass-agate-ring.png"
   },
   {
     "key": "brass-ring",
@@ -2158,7 +2224,8 @@
       "markup": 1,
       "price": 20,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/brass-ring.png"
   },
   {
     "key": "brass-signet",
@@ -2183,7 +2250,8 @@
       "markup": 1,
       "price": 60,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/brass-signet.png"
   },
   {
     "key": "brigand-blade",
@@ -2216,7 +2284,8 @@
       "range": 1,
       "tags": "special",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/brigand-blade.png"
   },
   {
     "key": "broad-brimmed-hat",
@@ -2248,7 +2317,8 @@
       "markup": 0.5,
       "price": 25,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/broad-brimmed-hat.png"
   },
   {
     "key": "broadaxe",
@@ -2280,7 +2350,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 23
-    }
+    },
+    "icon": "img/items/broadaxe.png"
   },
   {
     "key": "bronze-amethyst-ring",
@@ -2305,7 +2376,8 @@
       "markup": 1,
       "price": 60,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/bronze-amethyst-ring.png"
   },
   {
     "key": "broom",
@@ -2332,7 +2404,8 @@
       "range": 1,
       "tags": "special",
       "total_damage_of_all_types": 6
-    }
+    },
+    "icon": "img/items/broom.png"
   },
   {
     "key": "brotherhood-of-ouroboros-shield",
@@ -2366,7 +2439,8 @@
       "markup": 1,
       "price": 3950,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/brotherhood-of-ouroboros-shield.png"
   },
   {
     "key": "brotherhood-of-the-asps-belt",
@@ -2397,7 +2471,8 @@
       "markup": 1.3,
       "price": 2050,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/brotherhood-of-the-asps-belt.png"
   },
   {
     "key": "brynn-crossbow",
@@ -2429,7 +2504,8 @@
       "range": 7,
       "tags": "aldor",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/brynn-crossbow.png"
   },
   {
     "key": "brynn-hatchet",
@@ -2462,7 +2538,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 27
-    }
+    },
+    "icon": "img/items/brynn-hatchet.png"
   },
   {
     "key": "brynn-pavise",
@@ -2494,7 +2571,8 @@
       "markup": 1,
       "price": 5550,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/brynn-pavise.png"
   },
   {
     "key": "brynn-polehammer",
@@ -2529,7 +2607,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 31
-    }
+    },
+    "icon": "img/items/brynn-polehammer.png"
   },
   {
     "key": "brynn-warhammer",
@@ -2564,7 +2643,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 20
-    }
+    },
+    "icon": "img/items/brynn-warhammer.png"
   },
   {
     "key": "buckler",
@@ -2591,7 +2671,8 @@
       "markup": 1,
       "price": 325,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/buckler.png"
   },
   {
     "key": "cammock",
@@ -2624,7 +2705,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 10
-    }
+    },
+    "icon": "img/items/cammock.png"
   },
   {
     "key": "captain-barbute",
@@ -2656,7 +2738,8 @@
       "markup": 1,
       "price": 5350,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/captain-barbute.png"
   },
   {
     "key": "captain-boots",
@@ -2688,7 +2771,8 @@
       "markup": 1,
       "price": 4700,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/captain-boots.png"
   },
   {
     "key": "captain-brigandine",
@@ -2722,7 +2806,8 @@
       "markup": 1,
       "price": 6225,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/captain-brigandine.png"
   },
   {
     "key": "captain-cuirass",
@@ -2758,7 +2843,8 @@
       "markup": 1,
       "price": 6850,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/captain-cuirass.png"
   },
   {
     "key": "captain-gambeson",
@@ -2791,7 +2877,8 @@
       "markup": 1,
       "price": 3750,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/captain-gambeson.png"
   },
   {
     "key": "captain-gloves",
@@ -2822,7 +2909,8 @@
       "markup": 1,
       "price": 4700,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/captain-gloves.png"
   },
   {
     "key": "captain-greatsword",
@@ -2854,7 +2942,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 32
-    }
+    },
+    "icon": "img/items/captain-greatsword.png"
   },
   {
     "key": "captain-messer",
@@ -2886,7 +2975,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/captain-messer.png"
   },
   {
     "key": "captain-poleaxe",
@@ -2919,7 +3009,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 34
-    }
+    },
+    "icon": "img/items/captain-poleaxe.png"
   },
   {
     "key": "captain-waistband",
@@ -2948,7 +3039,8 @@
       "markup": 1,
       "price": 1225,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/captain-waistband.png"
   },
   {
     "key": "captain-warhammer",
@@ -2981,7 +3073,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 27
-    }
+    },
+    "icon": "img/items/captain-warhammer.png"
   },
   {
     "key": "carpenter-hammer",
@@ -3011,7 +3104,8 @@
       "range": 1,
       "tags": "special",
       "total_damage_of_all_types": 15
-    }
+    },
+    "icon": "img/items/carpenter-hammer.png"
   },
   {
     "key": "carved-crossbow",
@@ -3044,7 +3138,8 @@
       "range": 8,
       "tags": "unique",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/carved-crossbow.png"
   },
   {
     "key": "carved-gold-ring",
@@ -3069,7 +3164,8 @@
       "markup": 1,
       "price": 260,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/carved-gold-ring.png"
   },
   {
     "key": "carved-longbow",
@@ -3103,7 +3199,8 @@
       "range": 9,
       "tags": "unique",
       "total_damage_of_all_types": 32
-    }
+    },
+    "icon": "img/items/carved-longbow.png"
   },
   {
     "key": "carved-topaz-pendant",
@@ -3130,7 +3227,8 @@
       "markup": 1,
       "price": 920,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/carved-topaz-pendant.png"
   },
   {
     "key": "castellier-spear",
@@ -3167,7 +3265,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/castellier-spear.png"
   },
   {
     "key": "ceremonial-armor",
@@ -3203,7 +3302,8 @@
       "markup": 1.25,
       "price": 12450,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/ceremonial-armor.png"
   },
   {
     "key": "ceremonial-dagger",
@@ -3237,7 +3337,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/ceremonial-dagger.png"
   },
   {
     "key": "ceremonial-halberd",
@@ -3272,7 +3373,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 31
-    }
+    },
+    "icon": "img/items/ceremonial-halberd.png"
   },
   {
     "key": "ceremonial-sentinet",
@@ -3308,7 +3410,8 @@
       "markup": 1,
       "price": 6800,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/ceremonial-sentinet.png"
   },
   {
     "key": "ceremonial-sentinet-open",
@@ -3341,7 +3444,8 @@
       "markup": 1,
       "price": 6800,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/ceremonial-sentinet-open.png"
   },
   {
     "key": "cervelliere",
@@ -3371,7 +3475,8 @@
       "markup": 1,
       "price": 375,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/cervelliere.png"
   },
   {
     "key": "cervelliere-with-ear-guards",
@@ -3406,7 +3511,8 @@
       "markup": 1.2,
       "price": 1225,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/cervelliere-with-ear-guards.png"
   },
   {
     "key": "chain",
@@ -3437,7 +3543,8 @@
       "range": 1,
       "tags": "special",
       "total_damage_of_all_types": 10
-    }
+    },
+    "icon": "img/items/chain.png"
   },
   {
     "key": "chain-belt",
@@ -3463,7 +3570,8 @@
       "markup": 1,
       "price": 100,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/chain-belt.png"
   },
   {
     "key": "chekan",
@@ -3497,7 +3605,8 @@
       "range": 1,
       "tags": "skadia",
       "total_damage_of_all_types": 20
-    }
+    },
+    "icon": "img/items/chekan.png"
   },
   {
     "key": "chervenian-mace",
@@ -3530,7 +3639,8 @@
       "range": 1,
       "tags": "nistra",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/chervenian-mace.png"
   },
   {
     "key": "citadel-defender-crossbow",
@@ -3562,7 +3672,8 @@
       "range": 9,
       "tags": "aldor",
       "total_damage_of_all_types": 35
-    }
+    },
+    "icon": "img/items/citadel-defender-crossbow.png"
   },
   {
     "key": "claymore",
@@ -3593,7 +3704,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/claymore.png"
   },
   {
     "key": "closed-coif",
@@ -3624,7 +3736,8 @@
       "markup": 1,
       "price": 1375,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/closed-coif.png"
   },
   {
     "key": "coin-talisman",
@@ -3650,7 +3763,8 @@
       "markup": 1,
       "price": 200,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/coin-talisman.png"
   },
   {
     "key": "commoner-dagger",
@@ -3681,7 +3795,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 13
-    }
+    },
+    "icon": "img/items/commoner-dagger.png"
   },
   {
     "key": "cone-helmet",
@@ -3711,7 +3826,8 @@
       "markup": 0.75,
       "price": 275,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/cone-helmet.png"
   },
   {
     "key": "copper-chain",
@@ -3736,7 +3852,8 @@
       "markup": 1,
       "price": 20,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/copper-chain.png"
   },
   {
     "key": "copper-ring",
@@ -3761,7 +3878,8 @@
       "markup": 1,
       "price": 15,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/copper-ring.png"
   },
   {
     "key": "council-heater-shield",
@@ -3790,7 +3908,8 @@
       "markup": 1,
       "price": 325,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/council-heater-shield.png"
   },
   {
     "key": "court-mage-belt",
@@ -3819,7 +3938,8 @@
       "markup": 1.2,
       "price": 1900,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/court-mage-belt.png"
   },
   {
     "key": "court-mage-boots",
@@ -3853,7 +3973,8 @@
       "markup": 1.2,
       "price": 3400,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/court-mage-boots.png"
   },
   {
     "key": "court-mage-cloak",
@@ -3882,7 +4003,8 @@
       "markup": 1.3,
       "price": 1700,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/court-mage-cloak.png"
   },
   {
     "key": "court-mage-diadem",
@@ -3912,7 +4034,8 @@
       "markup": 1.15,
       "price": 8375,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/court-mage-diadem.png"
   },
   {
     "key": "court-mage-gloves",
@@ -3948,7 +4071,8 @@
       "markup": 1,
       "price": 5900,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/court-mage-gloves.png"
   },
   {
     "key": "court-mage-mantle",
@@ -3981,7 +4105,8 @@
       "markup": 1,
       "price": 8725,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/court-mage-mantle.png"
   },
   {
     "key": "court-mage-staff",
@@ -4015,7 +4140,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/court-mage-staff.png"
   },
   {
     "key": "cranequin-crossbow",
@@ -4047,7 +4173,8 @@
       "range": 8,
       "tags": "aldor",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/cranequin-crossbow.png"
   },
   {
     "key": "crescent-amulet",
@@ -4074,7 +4201,8 @@
       "markup": 1,
       "price": 1460,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/crescent-amulet.png"
   },
   {
     "key": "crimson-headband",
@@ -4102,7 +4230,8 @@
       "isopen": 1,
       "price": 20,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/crimson-headband.png"
   },
   {
     "key": "crude-amulet",
@@ -4128,7 +4257,8 @@
       "markup": 1,
       "price": 20,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/crude-amulet.png"
   },
   {
     "key": "crude-longsword",
@@ -4159,7 +4289,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/crude-longsword.png"
   },
   {
     "key": "cryomancer-cowl",
@@ -4195,7 +4326,8 @@
       "markup": 1,
       "price": 2875,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/cryomancer-cowl.png"
   },
   {
     "key": "cryomancer-mantle",
@@ -4229,7 +4361,8 @@
       "markup": 1,
       "price": 4125,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/cryomancer-mantle.png"
   },
   {
     "key": "cryomancer-staff",
@@ -4265,7 +4398,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 20
-    }
+    },
+    "icon": "img/items/cryomancer-staff.png"
   },
   {
     "key": "cudgel",
@@ -4298,7 +4432,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 14
-    }
+    },
+    "icon": "img/items/cudgel.png"
   },
   {
     "key": "curved-shortbow",
@@ -4330,7 +4465,8 @@
       "range": 8,
       "tags": "aldor",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/curved-shortbow.png"
   },
   {
     "key": "der-vyrne-heirloom-cuirass",
@@ -4366,7 +4502,8 @@
       "markup": 1,
       "price": 550,
       "tags": "special exc"
-    }
+    },
+    "icon": "img/items/der-vyrne-heirloom-cuirass.png"
   },
   {
     "key": "dirk",
@@ -4398,7 +4535,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 15
-    }
+    },
+    "icon": "img/items/dirk.png"
   },
   {
     "key": "dirwins-shortbow",
@@ -4430,7 +4568,8 @@
       "range": 8,
       "tags": "special exc",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/dirwins-shortbow.png"
   },
   {
     "key": "dirwins-vest",
@@ -4464,7 +4603,8 @@
       "markup": 0.8,
       "price": 100,
       "tags": "special exc"
-    }
+    },
+    "icon": "img/items/dirwins-vest.png"
   },
   {
     "key": "doloire",
@@ -4498,7 +4638,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/doloire.png"
   },
   {
     "key": "double-headed-longaxe",
@@ -4532,7 +4673,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 38
-    }
+    },
+    "icon": "img/items/double-headed-longaxe.png"
   },
   {
     "key": "drifter-sword",
@@ -4564,7 +4706,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/drifter-sword.png"
   },
   {
     "key": "druzhyna-bludgeon",
@@ -4597,7 +4740,8 @@
       "range": 1,
       "tags": "skadia",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/druzhyna-bludgeon.png"
   },
   {
     "key": "ducal-dagger",
@@ -4631,7 +4775,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/ducal-dagger.png"
   },
   {
     "key": "dueling-two-hander",
@@ -4662,7 +4807,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/dueling-two-hander.png"
   },
   {
     "key": "duelist-belt",
@@ -4691,7 +4837,8 @@
       "markup": 1,
       "price": 575,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/duelist-belt.png"
   },
   {
     "key": "duelist-boots",
@@ -4721,7 +4868,8 @@
       "markup": 1,
       "price": 1675,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/duelist-boots.png"
   },
   {
     "key": "duelist-brigandine",
@@ -4756,7 +4904,8 @@
       "markup": 1,
       "price": 2950,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/duelist-brigandine.png"
   },
   {
     "key": "duelist-dagger",
@@ -4788,7 +4937,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/duelist-dagger.png"
   },
   {
     "key": "duelist-doublet",
@@ -4820,7 +4970,8 @@
       "markup": 1,
       "price": 2350,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/duelist-doublet.png"
   },
   {
     "key": "duelist-gloves",
@@ -4851,7 +5002,8 @@
       "markup": 1.05,
       "price": 1750,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/duelist-gloves.png"
   },
   {
     "key": "dwarven-axe",
@@ -4884,7 +5036,8 @@
       "range": 1,
       "tags": "fjall",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/dwarven-axe.png"
   },
   {
     "key": "dwarven-circlet",
@@ -4917,7 +5070,8 @@
       "markup": 1.2,
       "price": 4150,
       "tags": "fjall"
-    }
+    },
+    "icon": "img/items/dwarven-circlet.png"
   },
   {
     "key": "dwarven-shield",
@@ -4983,7 +5137,8 @@
       "range": 1,
       "tags": "fjall",
       "total_damage_of_all_types": 14
-    }
+    },
+    "icon": "img/items/dwarven-staff.png"
   },
   {
     "key": "eederax",
@@ -5016,7 +5171,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/eederax.png"
   },
   {
     "key": "eeders-longbow",
@@ -5048,7 +5204,8 @@
       "range": 10,
       "tags": "aldor",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/eeders-longbow.png"
   },
   {
     "key": "electromancer-cowl",
@@ -5083,7 +5240,8 @@
       "markup": 1,
       "price": 2875,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/electromancer-cowl.png"
   },
   {
     "key": "electromancer-mantle",
@@ -5115,7 +5273,8 @@
       "markup": 1,
       "price": 4125,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/electromancer-mantle.png"
   },
   {
     "key": "electromancer-staff",
@@ -5150,7 +5309,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 16
-    }
+    },
+    "icon": "img/items/electromancer-staff.png"
   },
   {
     "key": "elven-boots",
@@ -5182,7 +5342,8 @@
       "markup": 1.1,
       "price": 1850,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/elven-boots.png"
   },
   {
     "key": "elven-flail",
@@ -5217,7 +5378,8 @@
       "range": 1,
       "tags": "elven",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/elven-flail.png"
   },
   {
     "key": "elven-garment",
@@ -5249,7 +5411,8 @@
       "markup": 1.35,
       "price": 1000,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/elven-garment.png"
   },
   {
     "key": "elven-girdle",
@@ -5280,7 +5443,8 @@
       "markup": 1.1,
       "price": 375,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/elven-girdle.png"
   },
   {
     "key": "elven-heavy-brigandine",
@@ -5316,7 +5480,8 @@
       "markup": 1.1,
       "price": 9600,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/elven-heavy-brigandine.png"
   },
   {
     "key": "elven-longaxe",
@@ -5349,7 +5514,8 @@
       "range": 1,
       "tags": "elven",
       "total_damage_of_all_types": 38
-    }
+    },
+    "icon": "img/items/elven-longaxe.png"
   },
   {
     "key": "elven-saber",
@@ -5381,7 +5547,8 @@
       "range": 1,
       "tags": "elven",
       "total_damage_of_all_types": 25
-    }
+    },
+    "icon": "img/items/elven-saber.png"
   },
   {
     "key": "elven-war-maul",
@@ -5415,7 +5582,8 @@
       "range": 1,
       "tags": "elven",
       "total_damage_of_all_types": 34
-    }
+    },
+    "icon": "img/items/elven-war-maul.png"
   },
   {
     "key": "embroidered-belt",
@@ -5441,7 +5609,8 @@
       "markup": 1,
       "price": 100,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/embroidered-belt.png"
   },
   {
     "key": "emir-flail",
@@ -5477,7 +5646,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 31
-    }
+    },
+    "icon": "img/items/emir-flail.png"
   },
   {
     "key": "engraved-greaves",
@@ -5515,7 +5685,8 @@
       "markup": 1,
       "price": 4700,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/engraved-greaves.png"
   },
   {
     "key": "espadon",
@@ -5548,7 +5719,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 32
-    }
+    },
+    "icon": "img/items/espadon.png"
   },
   {
     "key": "everflaming-pendant",
@@ -5576,7 +5748,8 @@
       "markup": 1,
       "price": 1960,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/everflaming-pendant.png"
   },
   {
     "key": "exquisite-longaxe",
@@ -5611,7 +5784,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 38
-    }
+    },
+    "icon": "img/items/exquisite-longaxe.png"
   },
   {
     "key": "exquisite-polemace",
@@ -5647,7 +5821,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 32
-    }
+    },
+    "icon": "img/items/exquisite-polemace.png"
   },
   {
     "key": "exquisite-ruby-ring",
@@ -5673,7 +5848,8 @@
       "markup": 1,
       "price": 1220,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/exquisite-ruby-ring.png"
   },
   {
     "key": "exquisite-tabar",
@@ -5707,7 +5883,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 31
-    }
+    },
+    "icon": "img/items/exquisite-tabar.png"
   },
   {
     "key": "exquisite-two-hander",
@@ -5740,7 +5917,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 34
-    }
+    },
+    "icon": "img/items/exquisite-two-hander.png"
   },
   {
     "key": "falconeer-gloves",
@@ -5770,7 +5948,8 @@
       "markup": 1,
       "price": 750,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/falconeer-gloves.png"
   },
   {
     "key": "fancy-boots",
@@ -5800,7 +5979,8 @@
       "markup": 1,
       "price": 1350,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/fancy-boots.png"
   },
   {
     "key": "fang-pendant",
@@ -5824,7 +6004,8 @@
       "markup": 1,
       "price": 40,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/fang-pendant.png"
   },
   {
     "key": "farseer-staff",
@@ -5863,7 +6044,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 19
-    }
+    },
+    "icon": "img/items/farseer-staff.png"
   },
   {
     "key": "fauchard-fork",
@@ -5895,7 +6077,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/fauchard-fork.png"
   },
   {
     "key": "felling-axe",
@@ -5926,7 +6109,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/felling-axe.png"
   },
   {
     "key": "fencer-doublet",
@@ -5957,7 +6141,8 @@
       "markup": 1,
       "price": 4975,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/fencer-doublet.png"
   },
   {
     "key": "fine-shirt",
@@ -5987,7 +6172,8 @@
       "markup": 1,
       "price": 125,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/fine-shirt.png"
   },
   {
     "key": "firn-bow",
@@ -6020,7 +6206,8 @@
       "range": 9,
       "tags": "aldor",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/firn-bow.png"
   },
   {
     "key": "fish-warhammer",
@@ -6055,7 +6242,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 27
-    }
+    },
+    "icon": "img/items/fish-warhammer.png"
   },
   {
     "key": "fist-shield",
@@ -6082,7 +6270,8 @@
       "markup": 2,
       "price": 50,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/fist-shield.png"
   },
   {
     "key": "fisted-warhammer",
@@ -6115,7 +6304,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 23
-    }
+    },
+    "icon": "img/items/fisted-warhammer.png"
   },
   {
     "key": "fjall-armor",
@@ -6153,7 +6343,8 @@
       "markup": 0.8,
       "price": 3775,
       "tags": "fjall"
-    }
+    },
+    "icon": "img/items/fjall-armor.png"
   },
   {
     "key": "fjall-hunter-helmet",
@@ -6189,7 +6380,8 @@
       "markup": 1,
       "price": 600,
       "tags": "fjall"
-    }
+    },
+    "icon": "img/items/fjall-hunter-helmet.png"
   },
   {
     "key": "flagbearer-armor",
@@ -6221,7 +6413,8 @@
       "markup": 1,
       "price": 4725,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/flagbearer-armor.png"
   },
   {
     "key": "flamberge",
@@ -6253,7 +6446,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 34
-    }
+    },
+    "icon": "img/items/flamberge.png"
   },
   {
     "key": "flanged-mace",
@@ -6286,7 +6480,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 19
-    }
+    },
+    "icon": "img/items/flanged-mace.png"
   },
   {
     "key": "fledgling-mage-cowl",
@@ -6318,7 +6513,8 @@
       "markup": 1,
       "price": 475,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/fledgling-mage-cowl.png"
   },
   {
     "key": "fledgling-mage-gloves",
@@ -6351,7 +6547,8 @@
       "markup": 1,
       "price": 550,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/fledgling-mage-gloves.png"
   },
   {
     "key": "fledgling-mage-mantle",
@@ -6382,7 +6579,8 @@
       "markup": 1,
       "price": 675,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/fledgling-mage-mantle.png"
   },
   {
     "key": "footman-axe",
@@ -6415,7 +6613,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 23
-    }
+    },
+    "icon": "img/items/footman-axe.png"
   },
   {
     "key": "footman-bastard-sword",
@@ -6446,7 +6645,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/footman-bastard-sword.png"
   },
   {
     "key": "footman-belt",
@@ -6473,7 +6673,8 @@
       "markup": 1,
       "price": 250,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/footman-belt.png"
   },
   {
     "key": "footman-brigandine",
@@ -6505,7 +6706,8 @@
       "markup": 1,
       "price": 1300,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/footman-brigandine.png"
   },
   {
     "key": "footman-flail",
@@ -6541,7 +6743,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 23
-    }
+    },
+    "icon": "img/items/footman-flail.png"
   },
   {
     "key": "footman-halberd",
@@ -6574,7 +6777,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 23
-    }
+    },
+    "icon": "img/items/footman-halberd.png"
   },
   {
     "key": "footman-longaxe",
@@ -6606,7 +6810,8 @@
       "range": 1,
       "tags": "fjall",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/footman-longaxe.png"
   },
   {
     "key": "footman-longsword",
@@ -6637,7 +6842,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/footman-longsword.png"
   },
   {
     "key": "footman-mail",
@@ -6667,7 +6873,8 @@
       "markup": 1,
       "price": 1300,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/footman-mail.png"
   },
   {
     "key": "footman-shield",
@@ -6698,7 +6905,8 @@
       "markup": 1,
       "price": 1000,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/footman-shield.png"
   },
   {
     "key": "footman-spear",
@@ -6732,7 +6940,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/footman-spear.png"
   },
   {
     "key": "footman-sword",
@@ -6764,7 +6973,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/footman-sword.png"
   },
   {
     "key": "footman-warhammer",
@@ -6798,7 +7008,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 20
-    }
+    },
+    "icon": "img/items/footman-warhammer.png"
   },
   {
     "key": "forholt-staff",
@@ -6830,7 +7041,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 32
-    }
+    },
+    "icon": "img/items/forholt-staff.png"
   },
   {
     "key": "freeholder-coif",
@@ -6863,7 +7075,8 @@
       "markup": 1,
       "price": 1375,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/freeholder-coif.png"
   },
   {
     "key": "fur-belt",
@@ -6892,7 +7105,8 @@
       "markup": 1,
       "price": 250,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/fur-belt.png"
   },
   {
     "key": "fur-vest",
@@ -6925,7 +7139,8 @@
       "markup": 1,
       "price": 75,
       "tags": "fjall"
-    }
+    },
+    "icon": "img/items/fur-vest.png"
   },
   {
     "key": "gambeson",
@@ -6954,7 +7169,8 @@
       "markup": 1,
       "price": 300,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/gambeson.png"
   },
   {
     "key": "gamekeeper-bicocket",
@@ -6986,7 +7202,8 @@
       "markup": 1,
       "price": 725,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/gamekeeper-bicocket.png"
   },
   {
     "key": "garrison-crossbow",
@@ -7018,7 +7235,8 @@
       "range": 8,
       "tags": "aldor",
       "total_damage_of_all_types": 32
-    }
+    },
+    "icon": "img/items/garrison-crossbow.png"
   },
   {
     "key": "garrison-eederax",
@@ -7051,7 +7269,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 34
-    }
+    },
+    "icon": "img/items/garrison-eederax.png"
   },
   {
     "key": "geomancer-cowl",
@@ -7087,7 +7306,8 @@
       "markup": 1,
       "price": 2875,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/geomancer-cowl.png"
   },
   {
     "key": "geomancer-mantle",
@@ -7120,7 +7340,8 @@
       "markup": 1,
       "price": 4125,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/geomancer-mantle.png"
   },
   {
     "key": "geomancer-staff",
@@ -7158,7 +7379,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/geomancer-staff.png"
   },
   {
     "key": "ghazi-flanged-mace",
@@ -7194,7 +7416,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 25
-    }
+    },
+    "icon": "img/items/ghazi-flanged-mace.png"
   },
   {
     "key": "gilded-axe",
@@ -7228,7 +7451,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 31
-    }
+    },
+    "icon": "img/items/gilded-axe.png"
   },
   {
     "key": "gilded-belt",
@@ -7257,7 +7481,8 @@
       "markup": 1.2,
       "price": 300,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/gilded-belt.png"
   },
   {
     "key": "gilded-circlet",
@@ -7287,7 +7512,8 @@
       "markup": 1.2,
       "price": 1825,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/gilded-circlet.png"
   },
   {
     "key": "gilded-dagger",
@@ -7322,7 +7548,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/gilded-dagger.png"
   },
   {
     "key": "gilded-plate-gauntlets",
@@ -7358,7 +7585,8 @@
       "markup": 1.25,
       "price": 7650,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/gilded-plate-gauntlets.png"
   },
   {
     "key": "gilded-warstaff",
@@ -7395,7 +7623,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/gilded-warstaff.png"
   },
   {
     "key": "glaive",
@@ -7428,7 +7657,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/glaive.png"
   },
   {
     "key": "goedendag",
@@ -7461,7 +7691,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 17
-    }
+    },
+    "icon": "img/items/goedendag.png"
   },
   {
     "key": "gold-aquamarine-ring",
@@ -7487,7 +7718,8 @@
       "markup": 1,
       "price": 580,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/gold-aquamarine-ring.png"
   },
   {
     "key": "gold-diamond-ring",
@@ -7514,7 +7746,8 @@
       "markup": 1,
       "price": 1220,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/gold-diamond-ring.png"
   },
   {
     "key": "gold-diamond-talisman",
@@ -7541,7 +7774,8 @@
       "markup": 1,
       "price": 2440,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/gold-diamond-talisman.png"
   },
   {
     "key": "gold-ring",
@@ -7566,7 +7800,8 @@
       "markup": 1,
       "price": 100,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/gold-ring.png"
   },
   {
     "key": "gold-ruby-ring",
@@ -7592,7 +7827,8 @@
       "markup": 1,
       "price": 580,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/gold-ruby-ring.png"
   },
   {
     "key": "gold-sapphire-ring",
@@ -7618,7 +7854,8 @@
       "markup": 1,
       "price": 1220,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/gold-sapphire-ring.png"
   },
   {
     "key": "gold-sapphire-talisman",
@@ -7644,7 +7881,8 @@
       "markup": 1,
       "price": 2440,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/gold-sapphire-talisman.png"
   },
   {
     "key": "gold-talisman",
@@ -7669,7 +7907,8 @@
       "markup": 1,
       "price": 520,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/gold-talisman.png"
   },
   {
     "key": "grandmaster-flail",
@@ -7706,7 +7945,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 31
-    }
+    },
+    "icon": "img/items/grandmaster-flail.png"
   },
   {
     "key": "gray-army-heater-shield",
@@ -7735,7 +7975,8 @@
       "markup": 1,
       "price": 325,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/gray-army-heater-shield.png"
   },
   {
     "key": "grossmesser",
@@ -7768,7 +8009,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 32
-    }
+    },
+    "icon": "img/items/grossmesser.png"
   },
   {
     "key": "gryphon-sallet",
@@ -7802,7 +8044,8 @@
       "markup": 1,
       "price": 6800,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/gryphon-sallet.png"
   },
   {
     "key": "gryphon-sallet-open",
@@ -7833,7 +8076,8 @@
       "markup": 1,
       "price": 6800,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/gryphon-sallet-open.png"
   },
   {
     "key": "guard-blade",
@@ -7866,7 +8110,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/guard-blade.png"
   },
   {
     "key": "guard-bow",
@@ -7898,7 +8143,8 @@
       "range": 8,
       "tags": "aldor",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/guard-bow.png"
   },
   {
     "key": "guard-crossbow",
@@ -7930,7 +8176,8 @@
       "range": 8,
       "tags": "aldor",
       "total_damage_of_all_types": 23
-    }
+    },
+    "icon": "img/items/guard-crossbow.png"
   },
   {
     "key": "guard-halberd",
@@ -7963,7 +8210,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 20
-    }
+    },
+    "icon": "img/items/guard-halberd.png"
   },
   {
     "key": "guard-helmet",
@@ -7995,7 +8243,8 @@
       "markup": 1.15,
       "price": 475,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/guard-helmet.png"
   },
   {
     "key": "guardsman-broadsword",
@@ -8032,7 +8281,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/guardsman-broadsword.png"
   },
   {
     "key": "guardsman-crossbow",
@@ -8066,7 +8316,8 @@
       "range": 8,
       "tags": "unique",
       "total_damage_of_all_types": 35
-    }
+    },
+    "icon": "img/items/guardsman-crossbow.png"
   },
   {
     "key": "guardsman-gloves",
@@ -8100,7 +8351,8 @@
       "markup": 1.15,
       "price": 5425,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/guardsman-gloves.png"
   },
   {
     "key": "guardsman-shield",
@@ -8134,7 +8386,8 @@
       "markup": 1,
       "price": 4750,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/guardsman-shield.png"
   },
   {
     "key": "guild-blade",
@@ -8166,7 +8419,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/guild-blade.png"
   },
   {
     "key": "guisarme",
@@ -8199,7 +8453,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 23
-    }
+    },
+    "icon": "img/items/guisarme.png"
   },
   {
     "key": "haakons-axe",
@@ -8235,7 +8490,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/haakons-axe.png"
   },
   {
     "key": "hawks-beak",
@@ -8270,7 +8526,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/hawks-beak.png"
   },
   {
     "key": "healer-staff",
@@ -8305,7 +8562,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 12
-    }
+    },
+    "icon": "img/items/healer-staff.png"
   },
   {
     "key": "heater-shield-d",
@@ -8334,7 +8592,8 @@
       "markup": 1,
       "price": 325,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/heater-shield-d.png"
   },
   {
     "key": "heater-shield-e",
@@ -8363,7 +8622,8 @@
       "markup": 1,
       "price": 325,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/heater-shield-e.png"
   },
   {
     "key": "heater-shield-f",
@@ -8392,7 +8652,8 @@
       "markup": 1,
       "price": 325,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/heater-shield-f.png"
   },
   {
     "key": "heavy-broadaxe",
@@ -8424,7 +8685,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 27
-    }
+    },
+    "icon": "img/items/heavy-broadaxe.png"
   },
   {
     "key": "heavy-warclub",
@@ -8457,7 +8719,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 19
-    }
+    },
+    "icon": "img/items/heavy-warclub.png"
   },
   {
     "key": "heirloom-sword",
@@ -8492,7 +8755,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/heirloom-sword.png"
   },
   {
     "key": "hermit-garment",
@@ -8530,7 +8794,8 @@
       "markup": 1.2,
       "price": 10475,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/hermit-garment.png"
   },
   {
     "key": "hermit-ring",
@@ -8560,7 +8825,8 @@
       "markup": 1,
       "price": 920,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/hermit-ring.png"
   },
   {
     "key": "hermit-staff",
@@ -8601,7 +8867,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/hermit-staff.png"
   },
   {
     "key": "hermit-wreath",
@@ -8635,7 +8902,8 @@
       "markup": 1,
       "price": 7300,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/hermit-wreath.png"
   },
   {
     "key": "hexer-staff",
@@ -8668,7 +8936,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 12
-    }
+    },
+    "icon": "img/items/hexer-staff.png"
   },
   {
     "key": "hexer-talisman",
@@ -8697,7 +8966,8 @@
       "markup": 1,
       "price": 200,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/hexer-talisman.png"
   },
   {
     "key": "hide-boots",
@@ -8727,7 +8997,8 @@
       "markup": 1,
       "price": 275,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/hide-boots.png"
   },
   {
     "key": "hierophant-staff",
@@ -8764,7 +9035,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 15
-    }
+    },
+    "icon": "img/items/hierophant-staff.png"
   },
   {
     "key": "highlander-staff-sling",
@@ -8797,7 +9069,8 @@
       "range": 8,
       "tags": "aldor",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/highlander-staff-sling.png"
   },
   {
     "key": "hildas-amulet",
@@ -8823,7 +9096,8 @@
       "markup": 1,
       "price": 120,
       "tags": "special exc"
-    }
+    },
+    "icon": "img/items/hildas-amulet.png"
   },
   {
     "key": "hildas-spear",
@@ -8857,7 +9131,8 @@
       "range": 1,
       "tags": "special exc",
       "total_damage_of_all_types": 17
-    }
+    },
+    "icon": "img/items/hildas-spear.png"
   },
   {
     "key": "hired-blade-cowl",
@@ -8888,7 +9163,8 @@
       "markup": 1.15,
       "price": 250,
       "tags": "special exc"
-    }
+    },
+    "icon": "img/items/hired-blade-cowl.png"
   },
   {
     "key": "hired-mage-mantle",
@@ -8920,7 +9196,8 @@
       "markup": 1,
       "price": 1825,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/hired-mage-mantle.png"
   },
   {
     "key": "homemade-sword",
@@ -8952,7 +9229,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 16
-    }
+    },
+    "icon": "img/items/homemade-sword.png"
   },
   {
     "key": "honorary-hatchet",
@@ -8987,7 +9265,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/honorary-hatchet.png"
   },
   {
     "key": "honorary-polehammer",
@@ -9023,7 +9302,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 31
-    }
+    },
+    "icon": "img/items/honorary-polehammer.png"
   },
   {
     "key": "hood",
@@ -9055,7 +9335,8 @@
       "markup": 1,
       "price": 225,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/hood.png"
   },
   {
     "key": "hounskull-bascinet",
@@ -9090,7 +9371,8 @@
       "markup": 1,
       "price": 3675,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/hounskull-bascinet.png"
   },
   {
     "key": "hounskull-bascinet-open",
@@ -9123,7 +9405,8 @@
       "markup": 1,
       "price": 3675,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/hounskull-bascinet-open.png"
   },
   {
     "key": "hunter-hatchet",
@@ -9156,7 +9439,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 19
-    }
+    },
+    "icon": "img/items/hunter-hatchet.png"
   },
   {
     "key": "hunting-crossbow",
@@ -9189,7 +9473,8 @@
       "range": 6,
       "tags": "aldor",
       "total_damage_of_all_types": 19
-    }
+    },
+    "icon": "img/items/hunting-crossbow.png"
   },
   {
     "key": "hunting-shortbow",
@@ -9221,7 +9506,8 @@
       "range": 7,
       "tags": "aldor",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/hunting-shortbow.png"
   },
   {
     "key": "hunting-sling",
@@ -9253,7 +9539,8 @@
       "range": 6,
       "tags": "aldor",
       "total_damage_of_all_types": 10
-    }
+    },
+    "icon": "img/items/hunting-sling.png"
   },
   {
     "key": "hunting-spear",
@@ -9286,7 +9573,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 19
-    }
+    },
+    "icon": "img/items/hunting-spear.png"
   },
   {
     "key": "huscarl-shield",
@@ -9316,7 +9604,8 @@
       "markup": 1,
       "price": 1875,
       "tags": "fjall"
-    }
+    },
+    "icon": "img/items/huscarl-shield.png"
   },
   {
     "key": "initiate-robe",
@@ -9346,7 +9635,8 @@
       "markup": 1,
       "price": 100,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/initiate-robe.png"
   },
   {
     "key": "iron-bar",
@@ -9375,7 +9665,8 @@
       "range": 1,
       "tags": "special",
       "total_damage_of_all_types": 14
-    }
+    },
+    "icon": "img/items/iron-bar.png"
   },
   {
     "key": "jade-talisman",
@@ -9402,7 +9693,8 @@
       "markup": 1,
       "price": 520,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/jade-talisman.png"
   },
   {
     "key": "jagged-falchion",
@@ -9434,7 +9726,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/jagged-falchion.png"
   },
   {
     "key": "jagged-voulge",
@@ -9468,7 +9761,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/jagged-voulge.png"
   },
   {
     "key": "jambiya",
@@ -9500,7 +9794,8 @@
       "range": 1,
       "tags": "elven",
       "total_damage_of_all_types": 19
-    }
+    },
+    "icon": "img/items/jambiya.png"
   },
   {
     "key": "jarl-blade",
@@ -9535,7 +9830,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/jarl-blade.png"
   },
   {
     "key": "jarl-garment",
@@ -9570,7 +9866,8 @@
       "markup": 1.25,
       "price": 4675,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/jarl-garment.png"
   },
   {
     "key": "jibean-cape",
@@ -9600,7 +9897,8 @@
       "markup": 1.15,
       "price": 725,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/jibean-cape.png"
   },
   {
     "key": "jibean-scimitar",
@@ -9632,7 +9930,8 @@
       "range": 1,
       "tags": "elven",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/jibean-scimitar.png"
   },
   {
     "key": "jibean-talisman",
@@ -9658,7 +9957,8 @@
       "markup": 1,
       "price": 1160,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/jibean-talisman.png"
   },
   {
     "key": "jonnas-casting-bracers",
@@ -9689,7 +9989,8 @@
       "markup": 1.1,
       "price": 600,
       "tags": "special exc magic"
-    }
+    },
+    "icon": "img/items/jonnas-casting-bracers.png"
   },
   {
     "key": "jonnas-mantle",
@@ -9718,7 +10019,8 @@
       "markup": 1,
       "price": 675,
       "tags": "special exc magic"
-    }
+    },
+    "icon": "img/items/jonnas-mantle.png"
   },
   {
     "key": "jorgrims-belt",
@@ -9745,7 +10047,8 @@
       "markup": 1.15,
       "price": 125,
       "tags": "special exc"
-    }
+    },
+    "icon": "img/items/jorgrims-belt.png"
   },
   {
     "key": "jorgrims-pendant",
@@ -9771,7 +10074,8 @@
       "markup": 1,
       "price": 160,
       "tags": "special exc"
-    }
+    },
+    "icon": "img/items/jorgrims-pendant.png"
   },
   {
     "key": "jousting-armor",
@@ -9807,7 +10111,8 @@
       "markup": 1,
       "price": 4725,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/jousting-armor.png"
   },
   {
     "key": "jousting-bascinet",
@@ -9844,7 +10149,8 @@
       "markup": 1,
       "price": 1625,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/jousting-bascinet.png"
   },
   {
     "key": "jousting-bascinet-open",
@@ -9878,7 +10184,8 @@
       "markup": 1,
       "price": 1625,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/jousting-bascinet-open.png"
   },
   {
     "key": "jousting-cloak",
@@ -9908,7 +10215,8 @@
       "markup": 1.25,
       "price": 350,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/jousting-cloak.png"
   },
   {
     "key": "jousting-shield",
@@ -9938,7 +10246,8 @@
       "markup": 1,
       "price": 3950,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/jousting-shield.png"
   },
   {
     "key": "jousting-topfhelm",
@@ -9975,7 +10284,8 @@
       "markup": 1,
       "price": 2750,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/jousting-topfhelm.png"
   },
   {
     "key": "kalkan",
@@ -10001,7 +10311,8 @@
       "markup": 1,
       "price": 1400,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/kalkan.png"
   },
   {
     "key": "katzbalger",
@@ -10033,7 +10344,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/katzbalger.png"
   },
   {
     "key": "kettle-helmet",
@@ -10064,7 +10376,8 @@
       "markup": 1.15,
       "price": 425,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/kettle-helmet.png"
   },
   {
     "key": "kitchen-knife",
@@ -10093,7 +10406,8 @@
       "range": 1,
       "tags": "special",
       "total_damage_of_all_types": 9
-    }
+    },
+    "icon": "img/items/kitchen-knife.png"
   },
   {
     "key": "kite-shield",
@@ -10122,7 +10436,8 @@
       "markup": 1,
       "price": 1875,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/kite-shield.png"
   },
   {
     "key": "klappvisor-bascinet",
@@ -10157,7 +10472,8 @@
       "markup": 1,
       "price": 1625,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/klappvisor-bascinet.png"
   },
   {
     "key": "klappvisor-bascinet-open",
@@ -10190,7 +10506,8 @@
       "markup": 1,
       "price": 1625,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/klappvisor-bascinet-open.png"
   },
   {
     "key": "knight-armor",
@@ -10225,7 +10542,8 @@
       "markup": 1,
       "price": 9975,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/knight-armor.png"
   },
   {
     "key": "knight-axe",
@@ -10258,7 +10576,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 31
-    }
+    },
+    "icon": "img/items/knight-axe.png"
   },
   {
     "key": "knight-belt",
@@ -10288,7 +10607,8 @@
       "markup": 1,
       "price": 1225,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/knight-belt.png"
   },
   {
     "key": "knight-blade",
@@ -10320,7 +10640,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/knight-blade.png"
   },
   {
     "key": "knight-coif",
@@ -10353,7 +10674,8 @@
       "markup": 0.95,
       "price": 2775,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/knight-coif.png"
   },
   {
     "key": "knight-flail",
@@ -10387,7 +10709,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 31
-    }
+    },
+    "icon": "img/items/knight-flail.png"
   },
   {
     "key": "knight-flanged-mace",
@@ -10420,7 +10743,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 25
-    }
+    },
+    "icon": "img/items/knight-flanged-mace.png"
   },
   {
     "key": "knight-gauntlets",
@@ -10453,7 +10777,8 @@
       "markup": 1,
       "price": 6125,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/knight-gauntlets.png"
   },
   {
     "key": "knight-hatchet",
@@ -10486,7 +10811,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/knight-hatchet.png"
   },
   {
     "key": "knight-heavy-brigandine",
@@ -10521,7 +10847,8 @@
       "markup": 1,
       "price": 8725,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/knight-heavy-brigandine.png"
   },
   {
     "key": "knight-longflail",
@@ -10556,7 +10883,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 36
-    }
+    },
+    "icon": "img/items/knight-longflail.png"
   },
   {
     "key": "knight-morgenstern",
@@ -10590,7 +10918,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/knight-morgenstern.png"
   },
   {
     "key": "knight-poleaxe",
@@ -10622,7 +10951,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 34
-    }
+    },
+    "icon": "img/items/knight-poleaxe.png"
   },
   {
     "key": "knight-polehammer",
@@ -10655,7 +10985,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 31
-    }
+    },
+    "icon": "img/items/knight-polehammer.png"
   },
   {
     "key": "knight-polemace",
@@ -10688,7 +11019,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 32
-    }
+    },
+    "icon": "img/items/knight-polemace.png"
   },
   {
     "key": "knight-shield",
@@ -10717,7 +11049,8 @@
       "markup": 1,
       "price": 3950,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/knight-shield.png"
   },
   {
     "key": "knight-two-hander",
@@ -10749,7 +11082,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 32
-    }
+    },
+    "icon": "img/items/knight-two-hander.png"
   },
   {
     "key": "knight-war-maul",
@@ -10782,7 +11116,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 34
-    }
+    },
+    "icon": "img/items/knight-war-maul.png"
   },
   {
     "key": "knight-warhammer",
@@ -10816,7 +11151,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 27
-    }
+    },
+    "icon": "img/items/knight-warhammer.png"
   },
   {
     "key": "kriegshammer",
@@ -10850,7 +11186,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 23
-    }
+    },
+    "icon": "img/items/kriegshammer.png"
   },
   {
     "key": "labyrinth-warden-poleaxe",
@@ -10888,7 +11225,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 33
-    }
+    },
+    "icon": "img/items/labyrinth-warden-poleaxe.png"
   },
   {
     "key": "lamellar-gambeson",
@@ -10921,7 +11259,8 @@
       "markup": 1,
       "price": 1775,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/lamellar-gambeson.png"
   },
   {
     "key": "large-club",
@@ -10955,7 +11294,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 17
-    }
+    },
+    "icon": "img/items/large-club.png"
   },
   {
     "key": "lazurite-pendant",
@@ -10981,7 +11321,8 @@
       "markup": 1,
       "price": 420,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/lazurite-pendant.png"
   },
   {
     "key": "leather-belt",
@@ -11007,7 +11348,8 @@
       "markup": 2,
       "price": 50,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/leather-belt.png"
   },
   {
     "key": "leather-bracers",
@@ -11038,7 +11380,8 @@
       "markup": 1,
       "price": 275,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/leather-bracers.png"
   },
   {
     "key": "leather-gloves",
@@ -11068,7 +11411,8 @@
       "markup": 1,
       "price": 275,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/leather-gloves.png"
   },
   {
     "key": "leather-targe",
@@ -11095,7 +11439,8 @@
       "markup": 1,
       "price": 125,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/leather-targe.png"
   },
   {
     "key": "leather-vest",
@@ -11124,7 +11469,8 @@
       "markup": 1,
       "price": 75,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/leather-vest.png"
   },
   {
     "key": "leosthenes-bracers",
@@ -11154,7 +11500,8 @@
       "markup": 1.3,
       "price": 350,
       "tags": "special exc"
-    }
+    },
+    "icon": "img/items/leosthenes-bracers.png"
   },
   {
     "key": "leosthenes-doublet",
@@ -11186,7 +11533,8 @@
       "markup": 1.5,
       "price": 600,
       "tags": "special exc"
-    }
+    },
+    "icon": "img/items/leosthenes-doublet.png"
   },
   {
     "key": "linen-shirt",
@@ -11216,7 +11564,8 @@
       "markup": 1,
       "price": 25,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/linen-shirt.png"
   },
   {
     "key": "long-flail",
@@ -11251,7 +11600,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/long-flail.png"
   },
   {
     "key": "long-gambeson",
@@ -11280,7 +11630,8 @@
       "markup": 1,
       "price": 775,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/long-gambeson.png"
   },
   {
     "key": "long-shield",
@@ -11309,7 +11660,8 @@
       "markup": 1,
       "price": 3950,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/long-shield.png"
   },
   {
     "key": "lumberjack-axe",
@@ -11342,7 +11694,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 20
-    }
+    },
+    "icon": "img/items/lumberjack-axe.png"
   },
   {
     "key": "lute",
@@ -11371,7 +11724,8 @@
       "range": 1,
       "tags": "special",
       "total_damage_of_all_types": 8
-    }
+    },
+    "icon": "img/items/lute.png"
   },
   {
     "key": "luxurious-belt",
@@ -11399,7 +11753,8 @@
       "markup": 1.2,
       "price": 400,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/luxurious-belt.png"
   },
   {
     "key": "luxurious-sallet",
@@ -11437,7 +11792,8 @@
       "markup": 1,
       "price": 6800,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/luxurious-sallet.png"
   },
   {
     "key": "luxurious-sallet-open",
@@ -11473,7 +11829,8 @@
       "markup": 1,
       "price": 6800,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/luxurious-sallet-open.png"
   },
   {
     "key": "maaf-shield",
@@ -11503,7 +11860,8 @@
       "markup": 1.3,
       "price": 2050,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/maaf-shield.png"
   },
   {
     "key": "maen-crossbow",
@@ -11539,7 +11897,8 @@
       "range": 7,
       "tags": "aldor",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/maen-crossbow.png"
   },
   {
     "key": "maen-heavy-flail",
@@ -11576,7 +11935,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/maen-heavy-flail.png"
   },
   {
     "key": "maen-mantle",
@@ -11610,7 +11970,8 @@
       "markup": 1,
       "price": 4125,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/maen-mantle.png"
   },
   {
     "key": "maen-warstaff",
@@ -11648,7 +12009,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 19
-    }
+    },
+    "icon": "img/items/maen-warstaff.png"
   },
   {
     "key": "mage-general-warstaff",
@@ -11688,7 +12050,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/mage-general-warstaff.png"
   },
   {
     "key": "magehunter-boots",
@@ -11722,7 +12085,8 @@
       "markup": 1,
       "price": 3525,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/magehunter-boots.png"
   },
   {
     "key": "magehunter-gambeson",
@@ -11757,7 +12121,8 @@
       "markup": 1.15,
       "price": 4300,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/magehunter-gambeson.png"
   },
   {
     "key": "magistrate-gambeson",
@@ -11786,7 +12151,8 @@
       "markup": 1,
       "price": 300,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/magistrate-gambeson.png"
   },
   {
     "key": "magistrate-heater-shield",
@@ -11815,7 +12181,8 @@
       "markup": 1,
       "price": 325,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/magistrate-heater-shield.png"
   },
   {
     "key": "magistrate-mail",
@@ -11845,7 +12212,8 @@
       "markup": 1,
       "price": 1300,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/magistrate-mail.png"
   },
   {
     "key": "mahirs-boots",
@@ -11877,7 +12245,8 @@
       "markup": 1,
       "price": 225,
       "tags": "special exc"
-    }
+    },
+    "icon": "img/items/mahirs-boots.png"
   },
   {
     "key": "mahirs-garment",
@@ -11909,7 +12278,8 @@
       "markup": 1,
       "price": 675,
       "tags": "special exc"
-    }
+    },
+    "icon": "img/items/mahirs-garment.png"
   },
   {
     "key": "mail-boots",
@@ -11941,7 +12311,8 @@
       "markup": 1,
       "price": 1000,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/mail-boots.png"
   },
   {
     "key": "mail-cervelliere",
@@ -11975,7 +12346,8 @@
       "markup": 1.15,
       "price": 1175,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/mail-cervelliere.png"
   },
   {
     "key": "mail-coif",
@@ -12007,7 +12379,8 @@
       "markup": 2,
       "price": 1225,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/mail-coif.png"
   },
   {
     "key": "mail-gloves",
@@ -12037,7 +12410,8 @@
       "markup": 1,
       "price": 1000,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/mail-gloves.png"
   },
   {
     "key": "mail-mantle",
@@ -12073,7 +12447,8 @@
       "markup": 1.05,
       "price": 3100,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/mail-mantle.png"
   },
   {
     "key": "makeshift-axe",
@@ -12106,7 +12481,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 16
-    }
+    },
+    "icon": "img/items/makeshift-axe.png"
   },
   {
     "key": "makeshift-sling",
@@ -12139,7 +12515,8 @@
       "range": 6,
       "tags": "aldor",
       "total_damage_of_all_types": 9
-    }
+    },
+    "icon": "img/items/makeshift-sling.png"
   },
   {
     "key": "mancatcher",
@@ -12173,7 +12550,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 17
-    }
+    },
+    "icon": "img/items/mancatcher.png"
   },
   {
     "key": "mastercrafted-gold-ring",
@@ -12198,7 +12576,8 @@
       "markup": 1,
       "price": 580,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/mastercrafted-gold-ring.png"
   },
   {
     "key": "mastercrafted-silver-ring",
@@ -12223,7 +12602,8 @@
       "markup": 1,
       "price": 120,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/mastercrafted-silver-ring.png"
   },
   {
     "key": "mercenary-axe",
@@ -12256,7 +12636,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 27
-    }
+    },
+    "icon": "img/items/mercenary-axe.png"
   },
   {
     "key": "mercenary-belt",
@@ -12286,7 +12667,8 @@
       "markup": 1,
       "price": 575,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/mercenary-belt.png"
   },
   {
     "key": "mercenary-crossbow",
@@ -12318,7 +12700,8 @@
       "range": 8,
       "tags": "aldor",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/mercenary-crossbow.png"
   },
   {
     "key": "mercenary-cuirass",
@@ -12352,7 +12735,8 @@
       "markup": 1,
       "price": 3250,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/mercenary-cuirass.png"
   },
   {
     "key": "mercenary-falchion",
@@ -12384,7 +12768,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 26
-    }
+    },
+    "icon": "img/items/mercenary-falchion.png"
   },
   {
     "key": "mercenary-halberd",
@@ -12417,7 +12802,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 27
-    }
+    },
+    "icon": "img/items/mercenary-halberd.png"
   },
   {
     "key": "mercenary-hat",
@@ -12451,7 +12837,8 @@
       "markup": 1,
       "price": 1600,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/mercenary-hat.png"
   },
   {
     "key": "mercenary-heavy-brigandine",
@@ -12487,7 +12874,8 @@
       "markup": 1,
       "price": 4125,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/mercenary-heavy-brigandine.png"
   },
   {
     "key": "mercenary-longsword",
@@ -12518,7 +12906,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/mercenary-longsword.png"
   },
   {
     "key": "mercenary-polehammer",
@@ -12551,7 +12940,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 27
-    }
+    },
+    "icon": "img/items/mercenary-polehammer.png"
   },
   {
     "key": "mercenary-sling",
@@ -12584,7 +12974,8 @@
       "range": 7,
       "tags": "aldor",
       "total_damage_of_all_types": 13
-    }
+    },
+    "icon": "img/items/mercenary-sling.png"
   },
   {
     "key": "mercenary-tower-shield",
@@ -12616,7 +13007,8 @@
       "markup": 1,
       "price": 2625,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/mercenary-tower-shield.png"
   },
   {
     "key": "mercenary-warhammer",
@@ -12650,7 +13042,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 23
-    }
+    },
+    "icon": "img/items/mercenary-warhammer.png"
   },
   {
     "key": "merchant-dagger",
@@ -12683,7 +13076,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 16
-    }
+    },
+    "icon": "img/items/merchant-dagger.png"
   },
   {
     "key": "merchant-vest",
@@ -12713,7 +13107,8 @@
       "markup": 1,
       "price": 325,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/merchant-vest.png"
   },
   {
     "key": "militia-bill",
@@ -12748,7 +13143,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/militia-bill.png"
   },
   {
     "key": "militia-club",
@@ -12782,7 +13178,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 17
-    }
+    },
+    "icon": "img/items/militia-club.png"
   },
   {
     "key": "militia-falchion",
@@ -12814,7 +13211,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 19
-    }
+    },
+    "icon": "img/items/militia-falchion.png"
   },
   {
     "key": "militia-flail",
@@ -12848,7 +13246,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 20
-    }
+    },
+    "icon": "img/items/militia-flail.png"
   },
   {
     "key": "militia-longaxe",
@@ -12880,7 +13279,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 25
-    }
+    },
+    "icon": "img/items/militia-longaxe.png"
   },
   {
     "key": "militia-morgenstern",
@@ -12914,7 +13314,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 19
-    }
+    },
+    "icon": "img/items/militia-morgenstern.png"
   },
   {
     "key": "militia-poleaxe",
@@ -12946,7 +13347,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/militia-poleaxe.png"
   },
   {
     "key": "militia-polehammer",
@@ -12979,7 +13381,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 20
-    }
+    },
+    "icon": "img/items/militia-polehammer.png"
   },
   {
     "key": "militia-sling",
@@ -13012,7 +13415,8 @@
       "range": 6,
       "tags": "aldor",
       "total_damage_of_all_types": 11
-    }
+    },
+    "icon": "img/items/militia-sling.png"
   },
   {
     "key": "militia-spear",
@@ -13046,7 +13450,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 19
-    }
+    },
+    "icon": "img/items/militia-spear.png"
   },
   {
     "key": "militia-staff-sling",
@@ -13079,7 +13484,8 @@
       "range": 7,
       "tags": "aldor",
       "total_damage_of_all_types": 12
-    }
+    },
+    "icon": "img/items/militia-staff-sling.png"
   },
   {
     "key": "mirror-plate-gambeson",
@@ -13113,7 +13519,8 @@
       "markup": 1.15,
       "price": 4300,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/mirror-plate-gambeson.png"
   },
   {
     "key": "misericorde",
@@ -13144,7 +13551,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 19
-    }
+    },
+    "icon": "img/items/misericorde.png"
   },
   {
     "key": "monk-staff",
@@ -13180,7 +13588,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 14
-    }
+    },
+    "icon": "img/items/monk-staff.png"
   },
   {
     "key": "morgenstern",
@@ -13214,7 +13623,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/morgenstern.png"
   },
   {
     "key": "morion-ring",
@@ -13240,7 +13650,8 @@
       "markup": 1,
       "price": 440,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/morion-ring.png"
   },
   {
     "key": "mystic-belt",
@@ -13269,7 +13680,8 @@
       "markup": 1,
       "price": 750,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/mystic-belt.png"
   },
   {
     "key": "mystic-gloves",
@@ -13306,7 +13718,8 @@
       "markup": 0.9,
       "price": 2500,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/mystic-gloves.png"
   },
   {
     "key": "naval-hatchet",
@@ -13339,7 +13752,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/naval-hatchet.png"
   },
   {
     "key": "necromancer-staff",
@@ -13376,7 +13790,8 @@
       "range": 1,
       "tags": "special",
       "total_damage_of_all_types": 15
-    }
+    },
+    "icon": "img/items/necromancer-staff.png"
   },
   {
     "key": "nistrian-bardiche",
@@ -13409,7 +13824,8 @@
       "range": 1,
       "tags": "nistra",
       "total_damage_of_all_types": 25
-    }
+    },
+    "icon": "img/items/nistrian-bardiche.png"
   },
   {
     "key": "nistrian-bow",
@@ -13442,7 +13858,8 @@
       "range": 8,
       "tags": "aldor",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/nistrian-bow.png"
   },
   {
     "key": "nistrian-flail",
@@ -13476,7 +13893,8 @@
       "range": 1,
       "tags": "nistra",
       "total_damage_of_all_types": 27
-    }
+    },
+    "icon": "img/items/nistrian-flail.png"
   },
   {
     "key": "nistrian-noble-cloak",
@@ -13505,7 +13923,8 @@
       "markup": 1.15,
       "price": 1500,
       "tags": "nistra"
-    }
+    },
+    "icon": "img/items/nistrian-noble-cloak.png"
   },
   {
     "key": "nistrian-polemace",
@@ -13541,7 +13960,8 @@
       "range": 1,
       "tags": "nistra",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/nistrian-polemace.png"
   },
   {
     "key": "nistrian-rhomphaia",
@@ -13574,7 +13994,8 @@
       "range": 1,
       "tags": "nistra",
       "total_damage_of_all_types": 25
-    }
+    },
+    "icon": "img/items/nistrian-rhomphaia.png"
   },
   {
     "key": "nistrian-shield",
@@ -13606,7 +14027,8 @@
       "markup": 1,
       "price": 1175,
       "tags": "nistra"
-    }
+    },
+    "icon": "img/items/nistrian-shield.png"
   },
   {
     "key": "noble-armor",
@@ -13640,7 +14062,8 @@
       "markup": 1.1,
       "price": 10975,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/noble-armor.png"
   },
   {
     "key": "noble-axe",
@@ -13672,7 +14095,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 31
-    }
+    },
+    "icon": "img/items/noble-axe.png"
   },
   {
     "key": "noble-beret",
@@ -13707,7 +14131,8 @@
       "markup": 1,
       "price": 3400,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/noble-beret.png"
   },
   {
     "key": "noble-flanged-mace",
@@ -13742,7 +14167,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 25
-    }
+    },
+    "icon": "img/items/noble-flanged-mace.png"
   },
   {
     "key": "noble-hatchet",
@@ -13775,7 +14201,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/noble-hatchet.png"
   },
   {
     "key": "noble-longflail",
@@ -13813,7 +14240,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 37
-    }
+    },
+    "icon": "img/items/noble-longflail.png"
   },
   {
     "key": "noble-longsword",
@@ -13844,7 +14272,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 32
-    }
+    },
+    "icon": "img/items/noble-longsword.png"
   },
   {
     "key": "noble-sabatons",
@@ -13877,7 +14306,8 @@
       "markup": 1,
       "price": 6125,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/noble-sabatons.png"
   },
   {
     "key": "nomad-adarga",
@@ -13907,7 +14337,8 @@
       "markup": 1.15,
       "price": 975,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/nomad-adarga.png"
   },
   {
     "key": "nomad-girdle",
@@ -13934,7 +14365,8 @@
       "markup": 1.1,
       "price": 275,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/nomad-girdle.png"
   },
   {
     "key": "nomad-saber",
@@ -13966,7 +14398,8 @@
       "range": 1,
       "tags": "elven",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/nomad-saber.png"
   },
   {
     "key": "nomad-sagaris",
@@ -13999,7 +14432,8 @@
       "range": 1,
       "tags": "elven",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/nomad-sagaris.png"
   },
   {
     "key": "nomad-shortbow",
@@ -14032,7 +14466,8 @@
       "range": 7,
       "tags": "elven",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/nomad-shortbow.png"
   },
   {
     "key": "nomad-sling",
@@ -14065,7 +14500,8 @@
       "range": 7,
       "tags": "elven",
       "total_damage_of_all_types": 12
-    }
+    },
+    "icon": "img/items/nomad-sling.png"
   },
   {
     "key": "norrheim-garment",
@@ -14099,7 +14535,8 @@
       "markup": 1.15,
       "price": 2025,
       "tags": "fjall"
-    }
+    },
+    "icon": "img/items/norrheim-garment.png"
   },
   {
     "key": "norrheim-helmet",
@@ -14134,7 +14571,8 @@
       "markup": 1.15,
       "price": 1575,
       "tags": "fjall"
-    }
+    },
+    "icon": "img/items/norrheim-helmet.png"
   },
   {
     "key": "norse-axe",
@@ -14166,7 +14604,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 20
-    }
+    },
+    "icon": "img/items/norse-axe.png"
   },
   {
     "key": "norse-belt",
@@ -14192,7 +14631,8 @@
       "markup": 1.1,
       "price": 100,
       "tags": "fjall"
-    }
+    },
+    "icon": "img/items/norse-belt.png"
   },
   {
     "key": "norse-blade",
@@ -14226,7 +14666,8 @@
       "range": 1,
       "tags": "fjall",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/norse-blade.png"
   },
   {
     "key": "norse-boots",
@@ -14259,7 +14700,8 @@
       "markup": 1.1,
       "price": 825,
       "tags": "fjall"
-    }
+    },
+    "icon": "img/items/norse-boots.png"
   },
   {
     "key": "norse-bow",
@@ -14293,7 +14735,8 @@
       "range": 8,
       "tags": "fjall",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/norse-bow.png"
   },
   {
     "key": "norse-spear",
@@ -14329,7 +14772,8 @@
       "range": 1,
       "tags": "fjall",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/norse-spear.png"
   },
   {
     "key": "novice-hand-wraps",
@@ -14359,7 +14803,8 @@
       "markup": 0.5,
       "price": 50,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/novice-hand-wraps.png"
   },
   {
     "key": "oaken-shield",
@@ -14385,7 +14830,8 @@
       "markup": 1,
       "price": 250,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/oaken-shield.png"
   },
   {
     "key": "occult-cloak",
@@ -14415,7 +14861,8 @@
       "markup": 1.55,
       "price": 2025,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/occult-cloak.png"
   },
   {
     "key": "old-fashioned-armor",
@@ -14447,7 +14894,8 @@
       "markup": 1,
       "price": 2100,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/old-fashioned-armor.png"
   },
   {
     "key": "old-fashioned-greaves",
@@ -14481,7 +14929,8 @@
       "markup": 1,
       "price": 1275,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/old-fashioned-greaves.png"
   },
   {
     "key": "old-shirt",
@@ -14510,7 +14959,8 @@
       "id": "chest02",
       "price": 10,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/old-shirt.png"
   },
   {
     "key": "open-bascinet",
@@ -14543,7 +14993,8 @@
       "markup": 1,
       "price": 1125,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/open-bascinet.png"
   },
   {
     "key": "open-sentinet",
@@ -14574,7 +15025,8 @@
       "markup": 0.9,
       "price": 925,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/open-sentinet.png"
   },
   {
     "key": "oracle-star",
@@ -14599,7 +15051,8 @@
       "markup": 1,
       "price": 2440,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/oracle-star.png"
   },
   {
     "key": "ordermarshal-longflail",
@@ -14637,7 +15090,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 37
-    }
+    },
+    "icon": "img/items/ordermarshal-longflail.png"
   },
   {
     "key": "orient-bracers",
@@ -14669,7 +15123,8 @@
       "markup": 1,
       "price": 3350,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/orient-bracers.png"
   },
   {
     "key": "orient-crossbow",
@@ -14703,7 +15158,8 @@
       "range": 8,
       "tags": "elven",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/orient-crossbow.png"
   },
   {
     "key": "orient-longaxe",
@@ -14736,7 +15192,8 @@
       "range": 1,
       "tags": "elven",
       "total_damage_of_all_types": 33
-    }
+    },
+    "icon": "img/items/orient-longaxe.png"
   },
   {
     "key": "orient-shield",
@@ -14763,7 +15220,8 @@
       "markup": 1.1,
       "price": 3275,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/orient-shield.png"
   },
   {
     "key": "orient-staff",
@@ -14800,7 +15258,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 19
-    }
+    },
+    "icon": "img/items/orient-staff.png"
   },
   {
     "key": "orient-tower-shield",
@@ -14833,7 +15292,8 @@
       "markup": 1,
       "price": 5550,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/orient-tower-shield.png"
   },
   {
     "key": "ornate-barbute",
@@ -14868,7 +15328,8 @@
       "markup": 1,
       "price": 5350,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/ornate-barbute.png"
   },
   {
     "key": "ornate-bow",
@@ -14901,7 +15362,8 @@
       "range": 9,
       "tags": "unique",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/ornate-bow.png"
   },
   {
     "key": "ornate-dagger",
@@ -14932,7 +15394,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 19
-    }
+    },
+    "icon": "img/items/ornate-dagger.png"
   },
   {
     "key": "ornate-flanged-mace",
@@ -14967,7 +15430,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 25
-    }
+    },
+    "icon": "img/items/ornate-flanged-mace.png"
   },
   {
     "key": "ornate-fork",
@@ -15003,7 +15467,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/ornate-fork.png"
   },
   {
     "key": "ornate-girdle",
@@ -15030,7 +15495,8 @@
       "markup": 1,
       "price": 125,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/ornate-girdle.png"
   },
   {
     "key": "ornate-longsword",
@@ -15063,7 +15529,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 32
-    }
+    },
+    "icon": "img/items/ornate-longsword.png"
   },
   {
     "key": "ornate-polehammer",
@@ -15098,7 +15565,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 31
-    }
+    },
+    "icon": "img/items/ornate-polehammer.png"
   },
   {
     "key": "ornate-saber",
@@ -15133,7 +15601,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/ornate-saber.png"
   },
   {
     "key": "ornate-sallet",
@@ -15169,7 +15638,8 @@
       "markup": 1,
       "price": 6800,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/ornate-sallet.png"
   },
   {
     "key": "ornate-sling",
@@ -15205,7 +15675,8 @@
       "range": 8,
       "tags": "unique",
       "total_damage_of_all_types": 15
-    }
+    },
+    "icon": "img/items/ornate-sling.png"
   },
   {
     "key": "ornate-voulge",
@@ -15241,7 +15712,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 32
-    }
+    },
+    "icon": "img/items/ornate-voulge.png"
   },
   {
     "key": "ornate-warhammer",
@@ -15276,7 +15748,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 27
-    }
+    },
+    "icon": "img/items/ornate-warhammer.png"
   },
   {
     "key": "ox-tongue-spear",
@@ -15309,7 +15782,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/ox-tongue-spear.png"
   },
   {
     "key": "padded-coif",
@@ -15340,7 +15814,8 @@
       "markup": 1,
       "price": 600,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/padded-coif.png"
   },
   {
     "key": "padded-doublet",
@@ -15371,7 +15846,8 @@
       "markup": 1,
       "price": 1050,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/padded-doublet.png"
   },
   {
     "key": "padded-leather-vest",
@@ -15401,7 +15877,8 @@
       "markup": 1,
       "price": 400,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/padded-leather-vest.png"
   },
   {
     "key": "pagan-pendant",
@@ -15428,7 +15905,8 @@
       "markup": 1,
       "price": 1313,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/pagan-pendant.png"
   },
   {
     "key": "parrying-dagger",
@@ -15460,7 +15938,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/parrying-dagger.png"
   },
   {
     "key": "partizan",
@@ -15494,7 +15973,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/partizan.png"
   },
   {
     "key": "pearl-necklace",
@@ -15520,7 +16000,8 @@
       "markup": 1,
       "price": 420,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/pearl-necklace.png"
   },
   {
     "key": "peasant-bow",
@@ -15552,7 +16033,8 @@
       "range": 8,
       "tags": "aldor",
       "total_damage_of_all_types": 16
-    }
+    },
+    "icon": "img/items/peasant-bow.png"
   },
   {
     "key": "peasant-cap",
@@ -15584,7 +16066,8 @@
       "markup": 1,
       "price": 25,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/peasant-cap.png"
   },
   {
     "key": "peasant-flail",
@@ -15618,7 +16101,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/peasant-flail.png"
   },
   {
     "key": "peasant-hat",
@@ -15651,7 +16135,8 @@
       "markup": 0.5,
       "price": 25,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/peasant-hat.png"
   },
   {
     "key": "peasant-hatchet",
@@ -15684,7 +16169,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 17
-    }
+    },
+    "icon": "img/items/peasant-hatchet.png"
   },
   {
     "key": "peasant-longflail",
@@ -15719,7 +16205,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/peasant-longflail.png"
   },
   {
     "key": "peasant-pitchfork",
@@ -15750,7 +16237,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 16
-    }
+    },
+    "icon": "img/items/peasant-pitchfork.png"
   },
   {
     "key": "peasant-sash",
@@ -15775,7 +16263,8 @@
       "markup": 1,
       "price": 25,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/peasant-sash.png"
   },
   {
     "key": "peasant-scythe",
@@ -15803,7 +16292,8 @@
       "range": 1,
       "tags": "special",
       "total_damage_of_all_types": 11
-    }
+    },
+    "icon": "img/items/peasant-scythe.png"
   },
   {
     "key": "peasant-shoes",
@@ -15833,7 +16323,8 @@
       "markup": 1,
       "price": 50,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/peasant-shoes.png"
   },
   {
     "key": "peasant-spear",
@@ -15866,7 +16357,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 17
-    }
+    },
+    "icon": "img/items/peasant-spear.png"
   },
   {
     "key": "peasant-staff-sling",
@@ -15899,7 +16391,8 @@
       "range": 6,
       "tags": "aldor",
       "total_damage_of_all_types": 10
-    }
+    },
+    "icon": "img/items/peasant-staff-sling.png"
   },
   {
     "key": "phylactery-talisman",
@@ -15929,7 +16422,8 @@
       "markup": 1,
       "price": 666,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/phylactery-talisman.png"
   },
   {
     "key": "pickaxe",
@@ -15961,7 +16455,8 @@
       "range": 1,
       "tags": "special",
       "total_damage_of_all_types": 15
-    }
+    },
+    "icon": "img/items/pickaxe.png"
   },
   {
     "key": "pig-faced-bascinet",
@@ -15996,7 +16491,8 @@
       "markup": 1,
       "price": 7775,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/pig-faced-bascinet.png"
   },
   {
     "key": "pig-faced-bascinet-open",
@@ -16029,7 +16525,8 @@
       "markup": 1,
       "price": 7775,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/pig-faced-bascinet-open.png"
   },
   {
     "key": "pilgrim-staff",
@@ -16066,7 +16563,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 14
-    }
+    },
+    "icon": "img/items/pilgrim-staff.png"
   },
   {
     "key": "plague-doctor-mask",
@@ -16099,7 +16597,8 @@
       "markup": 1,
       "price": 225,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/plague-doctor-mask.png"
   },
   {
     "key": "plate-gauntlets",
@@ -16132,7 +16631,8 @@
       "markup": 1,
       "price": 2900,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/plate-gauntlets.png"
   },
   {
     "key": "plate-mittens",
@@ -16164,7 +16664,8 @@
       "markup": 1,
       "price": 1275,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/plate-mittens.png"
   },
   {
     "key": "pointy-shoes",
@@ -16194,7 +16695,8 @@
       "markup": 1,
       "price": 25,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/pointy-shoes.png"
   },
   {
     "key": "pot-helmet",
@@ -16225,7 +16727,8 @@
       "markup": 0.85,
       "price": 350,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/pot-helmet.png"
   },
   {
     "key": "pourpoint",
@@ -16258,7 +16761,8 @@
       "markup": 1,
       "price": 2350,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/pourpoint.png"
   },
   {
     "key": "psimancer-staff",
@@ -16293,7 +16797,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 16
-    }
+    },
+    "icon": "img/items/psimancer-staff.png"
   },
   {
     "key": "pull-lever-crossbow",
@@ -16326,7 +16831,8 @@
       "range": 9,
       "tags": "aldor",
       "total_damage_of_all_types": 26
-    }
+    },
+    "icon": "img/items/pull-lever-crossbow.png"
   },
   {
     "key": "pyromancer-cowl",
@@ -16362,7 +16868,8 @@
       "markup": 1,
       "price": 2875,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/pyromancer-cowl.png"
   },
   {
     "key": "pyromancer-mantle",
@@ -16395,7 +16902,8 @@
       "markup": 1,
       "price": 4125,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/pyromancer-mantle.png"
   },
   {
     "key": "pyromancer-staff",
@@ -16429,7 +16937,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 16
-    }
+    },
+    "icon": "img/items/pyromancer-staff.png"
   },
   {
     "key": "quarterstaff",
@@ -16464,7 +16973,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 15
-    }
+    },
+    "icon": "img/items/quarterstaff.png"
   },
   {
     "key": "quillon-dagger",
@@ -16496,7 +17006,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/quillon-dagger.png"
   },
   {
     "key": "radiant-spear",
@@ -16533,7 +17044,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/radiant-spear.png"
   },
   {
     "key": "radiant-sword",
@@ -16569,7 +17081,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 27
-    }
+    },
+    "icon": "img/items/radiant-sword.png"
   },
   {
     "key": "radiant-topfhelm",
@@ -16606,7 +17119,8 @@
       "markup": 1,
       "price": 5825,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/radiant-topfhelm.png"
   },
   {
     "key": "raider-axe",
@@ -16639,7 +17153,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/raider-axe.png"
   },
   {
     "key": "raider-helmet",
@@ -16676,7 +17191,8 @@
       "markup": 0.9,
       "price": 1000,
       "tags": "fjall"
-    }
+    },
+    "icon": "img/items/raider-helmet.png"
   },
   {
     "key": "raider-sling",
@@ -16709,7 +17225,8 @@
       "range": 7,
       "tags": "aldor",
       "total_damage_of_all_types": 12
-    }
+    },
+    "icon": "img/items/raider-sling.png"
   },
   {
     "key": "raven-heater-shield",
@@ -16739,7 +17256,8 @@
       "markup": 1.2,
       "price": 2250,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/raven-heater-shield.png"
   },
   {
     "key": "rebel-flail",
@@ -16773,7 +17291,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/rebel-flail.png"
   },
   {
     "key": "recruit-bastard-sword",
@@ -16804,7 +17323,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/recruit-bastard-sword.png"
   },
   {
     "key": "recruit-billhook",
@@ -16837,7 +17357,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 20
-    }
+    },
+    "icon": "img/items/recruit-billhook.png"
   },
   {
     "key": "recruit-blade",
@@ -16869,7 +17390,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/recruit-blade.png"
   },
   {
     "key": "recruit-boots",
@@ -16900,7 +17422,8 @@
       "markup": 1,
       "price": 375,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/recruit-boots.png"
   },
   {
     "key": "recruit-buckler",
@@ -16929,7 +17452,8 @@
       "markup": 1,
       "price": 125,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/recruit-buckler.png"
   },
   {
     "key": "recruit-club",
@@ -16962,7 +17486,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 17
-    }
+    },
+    "icon": "img/items/recruit-club.png"
   },
   {
     "key": "recruit-dagger",
@@ -16994,7 +17519,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 14
-    }
+    },
+    "icon": "img/items/recruit-dagger.png"
   },
   {
     "key": "recruit-flail",
@@ -17029,7 +17555,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 20
-    }
+    },
+    "icon": "img/items/recruit-flail.png"
   },
   {
     "key": "recruit-heavy-broadaxe",
@@ -17061,7 +17588,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/recruit-heavy-broadaxe.png"
   },
   {
     "key": "recruit-mail",
@@ -17092,7 +17620,8 @@
       "markup": 0.95,
       "price": 475,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/recruit-mail.png"
   },
   {
     "key": "recruit-polemace",
@@ -17125,7 +17654,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/recruit-polemace.png"
   },
   {
     "key": "red-silk-mantle",
@@ -17159,7 +17689,8 @@
       "markup": 1,
       "price": 8725,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/red-silk-mantle.png"
   },
   {
     "key": "reinforced-club",
@@ -17192,7 +17723,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 15
-    }
+    },
+    "icon": "img/items/reinforced-club.png"
   },
   {
     "key": "reinforced-flanged-mace",
@@ -17225,7 +17757,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/reinforced-flanged-mace.png"
   },
   {
     "key": "reinforced-kalkan",
@@ -17252,7 +17785,8 @@
       "markup": 1,
       "price": 2975,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/reinforced-kalkan.png"
   },
   {
     "key": "reinforced-sentinet",
@@ -17284,7 +17818,8 @@
       "markup": 0.9,
       "price": 1000,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/reinforced-sentinet.png"
   },
   {
     "key": "reinforced-staff",
@@ -17319,7 +17854,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 17
-    }
+    },
+    "icon": "img/items/reinforced-staff.png"
   },
   {
     "key": "reinforced-warclub",
@@ -17352,7 +17888,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/reinforced-warclub.png"
   },
   {
     "key": "relict-bow",
@@ -17388,7 +17925,8 @@
       "range": 8,
       "tags": "unique",
       "total_damage_of_all_types": 30
-    }
+    },
+    "icon": "img/items/relict-bow.png"
   },
   {
     "key": "rider-shield",
@@ -17417,7 +17955,8 @@
       "markup": 1,
       "price": 850,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/rider-shield.png"
   },
   {
     "key": "riding-boots",
@@ -17448,7 +17987,8 @@
       "markup": 1.2,
       "price": 725,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/riding-boots.png"
   },
   {
     "key": "riveted-gloves",
@@ -17480,7 +18020,8 @@
       "markup": 1,
       "price": 2225,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/riveted-gloves.png"
   },
   {
     "key": "road-guard-armor",
@@ -17513,7 +18054,8 @@
       "markup": 1.15,
       "price": 575,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/road-guard-armor.png"
   },
   {
     "key": "rondache",
@@ -17540,7 +18082,8 @@
       "markup": 1,
       "price": 750,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/rondache.png"
   },
   {
     "key": "rondel",
@@ -17571,7 +18114,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 17
-    }
+    },
+    "icon": "img/items/rondel.png"
   },
   {
     "key": "rope-belt",
@@ -17595,7 +18139,8 @@
       "markup": 1,
       "price": 25,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/rope-belt.png"
   },
   {
     "key": "round-shield",
@@ -17621,7 +18166,8 @@
       "markup": 1,
       "price": 625,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/round-shield.png"
   },
   {
     "key": "royal-blade",
@@ -17654,7 +18200,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/royal-blade.png"
   },
   {
     "key": "royal-champion-belt",
@@ -17686,7 +18233,8 @@
       "markup": 1,
       "price": 1225,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/royal-champion-belt.png"
   },
   {
     "key": "royal-huntmaster-crossbow",
@@ -17721,7 +18269,8 @@
       "range": 8,
       "tags": "unique",
       "total_damage_of_all_types": 32
-    }
+    },
+    "icon": "img/items/royal-huntmaster-crossbow.png"
   },
   {
     "key": "royal-ranger-bicocket",
@@ -17758,7 +18307,8 @@
       "markup": 1.15,
       "price": 3900,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/royal-ranger-bicocket.png"
   },
   {
     "key": "royal-ranger-gambeson",
@@ -17792,7 +18342,8 @@
       "markup": 1.25,
       "price": 4675,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/royal-ranger-gambeson.png"
   },
   {
     "key": "ruby-circlet",
@@ -17822,7 +18373,8 @@
       "markup": 1,
       "price": 7300,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/ruby-circlet.png"
   },
   {
     "key": "ruby-mage-bracers",
@@ -17855,7 +18407,8 @@
       "markup": 1,
       "price": 7075,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/ruby-mage-bracers.png"
   },
   {
     "key": "ruby-pendant",
@@ -17883,7 +18436,8 @@
       "markup": 1,
       "price": 1960,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/ruby-pendant.png"
   },
   {
     "key": "ruby-sash",
@@ -17909,7 +18463,8 @@
       "markup": 1.2,
       "price": 900,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/ruby-sash.png"
   },
   {
     "key": "runic-amulet",
@@ -17935,7 +18490,8 @@
       "markup": 0.7,
       "price": 220,
       "tags": "fjall"
-    }
+    },
+    "icon": "img/items/runic-amulet.png"
   },
   {
     "key": "rusted-shackles",
@@ -17957,7 +18513,8 @@
       "durability": 10,
       "id": "boots01",
       "tags": "special"
-    }
+    },
+    "icon": "img/items/rusted-shackles.png"
   },
   {
     "key": "rusty-sword",
@@ -17990,7 +18547,8 @@
       "range": 1,
       "tags": "special",
       "total_damage_of_all_types": 12
-    }
+    },
+    "icon": "img/items/rusty-sword.png"
   },
   {
     "key": "sabre-halberd",
@@ -18023,7 +18581,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 31
-    }
+    },
+    "icon": "img/items/sabre-halberd.png"
   },
   {
     "key": "sallet",
@@ -18053,7 +18612,8 @@
       "markup": 1,
       "price": 2300,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/sallet.png"
   },
   {
     "key": "sand-guard-bow",
@@ -18087,7 +18647,8 @@
       "range": 11,
       "tags": "unique",
       "total_damage_of_all_types": 32
-    }
+    },
+    "icon": "img/items/sand-guard-bow.png"
   },
   {
     "key": "sapphire-mage-bracers",
@@ -18121,7 +18682,8 @@
       "markup": 1,
       "price": 7075,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/sapphire-mage-bracers.png"
   },
   {
     "key": "sapphire-talisman",
@@ -18147,7 +18709,8 @@
       "markup": 1,
       "price": 1160,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/sapphire-talisman.png"
   },
   {
     "key": "sardar-boots",
@@ -18182,7 +18745,8 @@
       "markup": 1,
       "price": 4700,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/sardar-boots.png"
   },
   {
     "key": "scaled-armor",
@@ -18214,7 +18778,8 @@
       "markup": 0.8,
       "price": 3775,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/scaled-armor.png"
   },
   {
     "key": "scaled-boots",
@@ -18248,7 +18813,8 @@
       "markup": 0.8,
       "price": 2325,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/scaled-boots.png"
   },
   {
     "key": "scorpion-halberd",
@@ -18281,7 +18847,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 31
-    }
+    },
+    "icon": "img/items/scorpion-halberd.png"
   },
   {
     "key": "scout-sling",
@@ -18313,7 +18880,8 @@
       "range": 8,
       "tags": "aldor",
       "total_damage_of_all_types": 11
-    }
+    },
+    "icon": "img/items/scout-sling.png"
   },
   {
     "key": "sentian-gambeson",
@@ -18342,7 +18910,8 @@
       "markup": 1,
       "price": 775,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/sentian-gambeson.png"
   },
   {
     "key": "sentian-sling",
@@ -18375,7 +18944,8 @@
       "range": 7,
       "tags": "aldor",
       "total_damage_of_all_types": 15
-    }
+    },
+    "icon": "img/items/sentian-sling.png"
   },
   {
     "key": "sergeant-billhook",
@@ -18408,7 +18978,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 27
-    }
+    },
+    "icon": "img/items/sergeant-billhook.png"
   },
   {
     "key": "sergeant-hatchet",
@@ -18441,7 +19012,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 26
-    }
+    },
+    "icon": "img/items/sergeant-hatchet.png"
   },
   {
     "key": "sergeant-heavy-brigandine",
@@ -18477,7 +19049,8 @@
       "markup": 1.1,
       "price": 4550,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/sergeant-heavy-brigandine.png"
   },
   {
     "key": "sergeant-longsword",
@@ -18509,7 +19082,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/sergeant-longsword.png"
   },
   {
     "key": "sergeant-poleaxe",
@@ -18542,7 +19116,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/sergeant-poleaxe.png"
   },
   {
     "key": "sergeant-sabatons",
@@ -18575,7 +19150,8 @@
       "markup": 1,
       "price": 2900,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/sergeant-sabatons.png"
   },
   {
     "key": "sergeant-two-hander",
@@ -18607,7 +19183,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/sergeant-two-hander.png"
   },
   {
     "key": "sharpshooter-bow",
@@ -18639,7 +19216,8 @@
       "range": 10,
       "tags": "aldor",
       "total_damage_of_all_types": 32
-    }
+    },
+    "icon": "img/items/sharpshooter-bow.png"
   },
   {
     "key": "shield-of-truths-eternal-sun",
@@ -18673,7 +19251,8 @@
       "markup": 1,
       "price": 4750,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/shield-of-truths-eternal-sun.png"
   },
   {
     "key": "shishpar",
@@ -18707,7 +19286,8 @@
       "range": 1,
       "tags": "elven",
       "total_damage_of_all_types": 19
-    }
+    },
+    "icon": "img/items/shishpar.png"
   },
   {
     "key": "shiv",
@@ -18737,7 +19317,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 13
-    }
+    },
+    "icon": "img/items/shiv.png"
   },
   {
     "key": "sickle",
@@ -18765,7 +19346,8 @@
       "range": 1,
       "tags": "special",
       "total_damage_of_all_types": 10
-    }
+    },
+    "icon": "img/items/sickle.png"
   },
   {
     "key": "siege-crossbow",
@@ -18797,7 +19379,8 @@
       "range": 9,
       "tags": "aldor",
       "total_damage_of_all_types": 35
-    }
+    },
+    "icon": "img/items/siege-crossbow.png"
   },
   {
     "key": "siege-engineer-hatchet",
@@ -18831,7 +19414,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 26
-    }
+    },
+    "icon": "img/items/siege-engineer-hatchet.png"
   },
   {
     "key": "silver-amethyst-amulet",
@@ -18858,7 +19442,8 @@
       "markup": 1,
       "price": 700,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/silver-amethyst-amulet.png"
   },
   {
     "key": "silver-amethyst-ring",
@@ -18885,7 +19470,8 @@
       "markup": 1,
       "price": 280,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/silver-amethyst-ring.png"
   },
   {
     "key": "silver-aquamarine-amulet",
@@ -18910,7 +19496,8 @@
       "markup": 1,
       "price": 320,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/silver-aquamarine-amulet.png"
   },
   {
     "key": "silver-aquamarine-ring",
@@ -18937,7 +19524,8 @@
       "markup": 1,
       "price": 280,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/silver-aquamarine-ring.png"
   },
   {
     "key": "silver-emerald-amulet",
@@ -18964,7 +19552,8 @@
       "markup": 1,
       "price": 1460,
       "tags": "elven"
-    }
+    },
+    "icon": "img/items/silver-emerald-amulet.png"
   },
   {
     "key": "silver-emerald-ring",
@@ -18992,7 +19581,8 @@
       "markup": 1,
       "price": 600,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/silver-emerald-ring.png"
   },
   {
     "key": "silver-insert-gold-ring",
@@ -19018,7 +19608,8 @@
       "markup": 1,
       "price": 80,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/silver-insert-gold-ring.png"
   },
   {
     "key": "silver-jade-ring",
@@ -19043,7 +19634,8 @@
       "markup": 1,
       "price": 120,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/silver-jade-ring.png"
   },
   {
     "key": "silver-ring",
@@ -19068,7 +19660,8 @@
       "markup": 1,
       "price": 40,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/silver-ring.png"
   },
   {
     "key": "silver-ruby-ring",
@@ -19095,7 +19688,8 @@
       "markup": 1,
       "price": 600,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/silver-ruby-ring.png"
   },
   {
     "key": "silver-sapphire-ring",
@@ -19122,7 +19716,8 @@
       "markup": 1,
       "price": 600,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/silver-sapphire-ring.png"
   },
   {
     "key": "silver-topaz-ring",
@@ -19148,7 +19743,8 @@
       "markup": 1,
       "price": 280,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/silver-topaz-ring.png"
   },
   {
     "key": "skadian-bardiche",
@@ -19181,7 +19777,8 @@
       "range": 1,
       "tags": "skadia",
       "total_damage_of_all_types": 34
-    }
+    },
+    "icon": "img/items/skadian-bardiche.png"
   },
   {
     "key": "skadian-bludgeon",
@@ -19214,7 +19811,8 @@
       "range": 1,
       "tags": "skadia",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/skadian-bludgeon.png"
   },
   {
     "key": "skadian-hatchet",
@@ -19248,7 +19846,8 @@
       "range": 1,
       "tags": "skadia",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/skadian-hatchet.png"
   },
   {
     "key": "skadian-helmet",
@@ -19278,7 +19877,8 @@
       "markup": 1,
       "price": 375,
       "tags": "special exc"
-    }
+    },
+    "icon": "img/items/skadian-helmet.png"
   },
   {
     "key": "skadian-shield",
@@ -19307,7 +19907,8 @@
       "markup": 1,
       "price": 850,
       "tags": "skadia"
-    }
+    },
+    "icon": "img/items/skadian-shield.png"
   },
   {
     "key": "skadian-sovnya",
@@ -19341,7 +19942,8 @@
       "range": 1,
       "tags": "skadia",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/skadian-sovnya.png"
   },
   {
     "key": "skadian-staff",
@@ -19378,7 +19980,8 @@
       "range": 1,
       "tags": "skadia",
       "total_damage_of_all_types": 16
-    }
+    },
+    "icon": "img/items/skadian-staff.png"
   },
   {
     "key": "skadian-yushman",
@@ -19410,7 +20013,8 @@
       "markup": 1.15,
       "price": 3400,
       "tags": "skadia"
-    }
+    },
+    "icon": "img/items/skadian-yushman.png"
   },
   {
     "key": "skarhogg-garment",
@@ -19444,7 +20048,8 @@
       "markup": 1.1,
       "price": 2600,
       "tags": "fjall"
-    }
+    },
+    "icon": "img/items/skarhogg-garment.png"
   },
   {
     "key": "skirmisher-belt",
@@ -19471,7 +20076,8 @@
       "markup": 1,
       "price": 575,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/skirmisher-belt.png"
   },
   {
     "key": "skirmisher-shield",
@@ -19499,7 +20105,8 @@
       "markup": 1,
       "price": 1875,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/skirmisher-shield.png"
   },
   {
     "key": "skirmisher-shortbow",
@@ -19531,7 +20138,8 @@
       "range": 8,
       "tags": "aldor",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/skirmisher-shortbow.png"
   },
   {
     "key": "skirmisher-sling",
@@ -19564,7 +20172,8 @@
       "range": 6,
       "tags": "aldor",
       "total_damage_of_all_types": 14
-    }
+    },
+    "icon": "img/items/skirmisher-sling.png"
   },
   {
     "key": "skonfert-sword",
@@ -19597,7 +20206,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/skonfert-sword.png"
   },
   {
     "key": "sky-reader-warstaff",
@@ -19637,7 +20247,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/sky-reader-warstaff.png"
   },
   {
     "key": "soldier-bow",
@@ -19669,7 +20280,8 @@
       "range": 8,
       "tags": "aldor",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/soldier-bow.png"
   },
   {
     "key": "soldier-crossbow",
@@ -19701,7 +20313,8 @@
       "range": 7,
       "tags": "aldor",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/soldier-crossbow.png"
   },
   {
     "key": "soldier-cuirass",
@@ -19735,7 +20348,8 @@
       "markup": 1,
       "price": 1450,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/soldier-cuirass.png"
   },
   {
     "key": "soldier-dagger",
@@ -19767,7 +20381,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 16
-    }
+    },
+    "icon": "img/items/soldier-dagger.png"
   },
   {
     "key": "soldier-gloves",
@@ -19797,7 +20412,8 @@
       "markup": 1,
       "price": 1000,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/soldier-gloves.png"
   },
   {
     "key": "soldier-heavy-broadaxe",
@@ -19829,7 +20445,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 25
-    }
+    },
+    "icon": "img/items/soldier-heavy-broadaxe.png"
   },
   {
     "key": "soldier-longbow",
@@ -19861,7 +20478,8 @@
       "range": 9,
       "tags": "aldor",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/soldier-longbow.png"
   },
   {
     "key": "soldier-longflail",
@@ -19896,7 +20514,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/soldier-longflail.png"
   },
   {
     "key": "soldier-mantle",
@@ -19929,7 +20548,8 @@
       "markup": 1,
       "price": 1825,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/soldier-mantle.png"
   },
   {
     "key": "soldier-poleaxe",
@@ -19961,7 +20581,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 25
-    }
+    },
+    "icon": "img/items/soldier-poleaxe.png"
   },
   {
     "key": "soldier-polemace",
@@ -19994,7 +20615,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/soldier-polemace.png"
   },
   {
     "key": "soldier-staff-sling",
@@ -20029,7 +20651,8 @@
       "range": 7,
       "tags": "aldor",
       "total_damage_of_all_types": 15
-    }
+    },
+    "icon": "img/items/soldier-staff-sling.png"
   },
   {
     "key": "sorcerer-bracers",
@@ -20063,7 +20686,8 @@
       "markup": 1,
       "price": 1475,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/sorcerer-bracers.png"
   },
   {
     "key": "sorcerer-staff",
@@ -20098,7 +20722,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 13
-    }
+    },
+    "icon": "img/items/sorcerer-staff.png"
   },
   {
     "key": "spear-of-the-faceless",
@@ -20135,7 +20760,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/spear-of-the-faceless.png"
   },
   {
     "key": "spellweaver-cowl",
@@ -20170,7 +20796,8 @@
       "markup": 1,
       "price": 6075,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/spellweaver-cowl.png"
   },
   {
     "key": "spellweaver-girdle",
@@ -20198,7 +20825,8 @@
       "markup": 1.2,
       "price": 1900,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/spellweaver-girdle.png"
   },
   {
     "key": "spellweaver-mantle",
@@ -20230,7 +20858,8 @@
       "markup": 1,
       "price": 8725,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/spellweaver-mantle.png"
   },
   {
     "key": "spellweaver-staff",
@@ -20265,7 +20894,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/spellweaver-staff.png"
   },
   {
     "key": "spetum",
@@ -20298,7 +20928,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/spetum.png"
   },
   {
     "key": "spiked-club",
@@ -20332,7 +20963,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 16
-    }
+    },
+    "icon": "img/items/spiked-club.png"
   },
   {
     "key": "spiked-warclub",
@@ -20368,7 +21000,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 25
-    }
+    },
+    "icon": "img/items/spiked-warclub.png"
   },
   {
     "key": "splint-boots",
@@ -20401,7 +21034,8 @@
       "markup": 1,
       "price": 375,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/splint-boots.png"
   },
   {
     "key": "splint-bracers",
@@ -20432,7 +21066,8 @@
       "markup": 1,
       "price": 375,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/splint-bracers.png"
   },
   {
     "key": "spontoon",
@@ -20465,7 +21100,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/spontoon.png"
   },
   {
     "key": "squire-mail-coif",
@@ -20497,7 +21133,8 @@
       "markup": 2,
       "price": 2750,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/squire-mail-coif.png"
   },
   {
     "key": "squire-shield",
@@ -20526,7 +21163,8 @@
       "markup": 1,
       "price": 1875,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/squire-shield.png"
   },
   {
     "key": "steel-bracers",
@@ -20557,7 +21195,8 @@
       "markup": 1,
       "price": 1000,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/steel-bracers.png"
   },
   {
     "key": "steel-signet",
@@ -20583,7 +21222,8 @@
       "markup": 1,
       "price": 60,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/steel-signet.png"
   },
   {
     "key": "stiletto",
@@ -20615,7 +21255,8 @@
       "range": 1,
       "tags": "elven",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/stiletto.png"
   },
   {
     "key": "tanned-boots",
@@ -20645,7 +21286,8 @@
       "markup": 1,
       "price": 750,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/tanned-boots.png"
   },
   {
     "key": "tattered-rags",
@@ -20670,7 +21312,8 @@
       "id": "chest01",
       "price": 1,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/tattered-rags.png"
   },
   {
     "key": "templar-sword",
@@ -20704,7 +21347,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 26
-    }
+    },
+    "icon": "img/items/templar-sword.png"
   },
   {
     "key": "templar-warstaff",
@@ -20743,7 +21387,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/templar-warstaff.png"
   },
   {
     "key": "theobrands-staff-sling",
@@ -20779,7 +21424,8 @@
       "range": 7,
       "tags": "unique",
       "total_damage_of_all_types": 17
-    }
+    },
+    "icon": "img/items/theobrands-staff-sling.png"
   },
   {
     "key": "theurgist-blade",
@@ -20815,7 +21461,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/theurgist-blade.png"
   },
   {
     "key": "three-headed-flail",
@@ -20852,7 +21499,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 31
-    }
+    },
+    "icon": "img/items/three-headed-flail.png"
   },
   {
     "key": "tied-gloves",
@@ -20884,7 +21532,8 @@
       "markup": 0.9,
       "price": 1500,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/tied-gloves.png"
   },
   {
     "key": "topaz-circlet",
@@ -20912,7 +21561,8 @@
       "markup": 0.9,
       "price": 1375,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/topaz-circlet.png"
   },
   {
     "key": "topfhelm",
@@ -20946,7 +21596,8 @@
       "markup": 1,
       "price": 2750,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/topfhelm.png"
   },
   {
     "key": "tower-shield",
@@ -20978,7 +21629,8 @@
       "markup": 1,
       "price": 2625,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/tower-shield.png"
   },
   {
     "key": "town-shoes",
@@ -21008,7 +21660,8 @@
       "markup": 1,
       "price": 600,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/town-shoes.png"
   },
   {
     "key": "training-crossbow",
@@ -21041,7 +21694,8 @@
       "range": 6,
       "tags": "aldor",
       "total_damage_of_all_types": 17
-    }
+    },
+    "icon": "img/items/training-crossbow.png"
   },
   {
     "key": "training-shortbow",
@@ -21073,7 +21727,8 @@
       "range": 7,
       "tags": "aldor",
       "total_damage_of_all_types": 16
-    }
+    },
+    "icon": "img/items/training-shortbow.png"
   },
   {
     "key": "traveling-cape",
@@ -21102,7 +21757,8 @@
       "markup": 0.75,
       "price": 75,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/traveling-cape.png"
   },
   {
     "key": "traveling-shoes",
@@ -21132,7 +21788,8 @@
       "markup": 1,
       "price": 225,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/traveling-shoes.png"
   },
   {
     "key": "traveling-staff",
@@ -21166,7 +21823,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 13
-    }
+    },
+    "icon": "img/items/traveling-staff.png"
   },
   {
     "key": "trophy-necklace",
@@ -21192,7 +21850,8 @@
       "markup": 1,
       "price": 160,
       "tags": "fjall"
-    }
+    },
+    "icon": "img/items/trophy-necklace.png"
   },
   {
     "key": "vagabond-knights-armor",
@@ -21230,7 +21889,8 @@
       "markup": 1.25,
       "price": 12450,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/vagabond-knights-armor.png"
   },
   {
     "key": "vagabond-knights-sentinet",
@@ -21271,7 +21931,8 @@
       "markup": 1,
       "price": 6800,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/vagabond-knights-sentinet.png"
   },
   {
     "key": "vagabond-knights-sentinet-open",
@@ -21307,7 +21968,8 @@
       "markup": 1,
       "price": 6800,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/vagabond-knights-sentinet-open.png"
   },
   {
     "key": "vagrant-cowl",
@@ -21337,7 +21999,8 @@
       "markup": 1,
       "price": 75,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/vagrant-cowl.png"
   },
   {
     "key": "vampiric-staff",
@@ -21376,7 +22039,8 @@
       "range": 1,
       "tags": "special",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/vampiric-staff.png"
   },
   {
     "key": "vanguard-staff",
@@ -21412,7 +22076,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 16
-    }
+    },
+    "icon": "img/items/vanguard-staff.png"
   },
   {
     "key": "vanguard-two-hander",
@@ -21443,7 +22108,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/vanguard-two-hander.png"
   },
   {
     "key": "vault-raider-hatchet",
@@ -21477,7 +22143,8 @@
       "range": 1,
       "tags": "fjall",
       "total_damage_of_all_types": 22
-    }
+    },
+    "icon": "img/items/vault-raider-hatchet.png"
   },
   {
     "key": "vehement-flail",
@@ -21514,7 +22181,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 23
-    }
+    },
+    "icon": "img/items/vehement-flail.png"
   },
   {
     "key": "vehement-gambeson",
@@ -21549,7 +22217,8 @@
       "markup": 1.15,
       "price": 900,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/vehement-gambeson.png"
   },
   {
     "key": "vehement-heavy-brigandine",
@@ -21587,7 +22256,8 @@
       "markup": 1.2,
       "price": 2200,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/vehement-heavy-brigandine.png"
   },
   {
     "key": "vehement-mail",
@@ -21622,7 +22292,8 @@
       "markup": 0.9,
       "price": 1175,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/vehement-mail.png"
   },
   {
     "key": "vehement-warstaff",
@@ -21658,7 +22329,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 17
-    }
+    },
+    "icon": "img/items/vehement-warstaff.png"
   },
   {
     "key": "velmirs-embroidered-caftan",
@@ -21691,7 +22363,8 @@
       "markup": 0.8,
       "price": 100,
       "tags": "special exc"
-    }
+    },
+    "icon": "img/items/velmirs-embroidered-caftan.png"
   },
   {
     "key": "velmirs-ring",
@@ -21716,7 +22389,8 @@
       "markup": 1,
       "price": 35,
       "tags": "special exc"
-    }
+    },
+    "icon": "img/items/velmirs-ring.png"
   },
   {
     "key": "velvet-cloak",
@@ -21745,7 +22419,8 @@
       "markup": 1.3,
       "price": 800,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/velvet-cloak.png"
   },
   {
     "key": "venemists-talisman",
@@ -21773,7 +22448,8 @@
       "markup": 1,
       "price": 1160,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/venemists-talisman.png"
   },
   {
     "key": "venomancer-staff",
@@ -21809,7 +22485,8 @@
       "range": 1,
       "tags": "magic",
       "total_damage_of_all_types": 16
-    }
+    },
+    "icon": "img/items/venomancer-staff.png"
   },
   {
     "key": "verrens-ring",
@@ -21834,7 +22511,8 @@
       "markup": 1,
       "price": 40,
       "tags": "special exc"
-    }
+    },
+    "icon": "img/items/verrens-ring.png"
   },
   {
     "key": "veteran-belt",
@@ -21864,7 +22542,8 @@
       "markup": 1,
       "price": 575,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/veteran-belt.png"
   },
   {
     "key": "veteran-bow",
@@ -21896,7 +22575,8 @@
       "range": 9,
       "tags": "aldor",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/veteran-bow.png"
   },
   {
     "key": "veteran-brigandine",
@@ -21928,7 +22608,8 @@
       "markup": 1,
       "price": 2950,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/veteran-brigandine.png"
   },
   {
     "key": "veteran-dagger",
@@ -21960,7 +22641,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/veteran-dagger.png"
   },
   {
     "key": "veteran-flail",
@@ -21996,7 +22678,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 27
-    }
+    },
+    "icon": "img/items/veteran-flail.png"
   },
   {
     "key": "veteran-gloves",
@@ -22028,7 +22711,8 @@
       "markup": 1,
       "price": 2225,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/veteran-gloves.png"
   },
   {
     "key": "veteran-greaves",
@@ -22060,7 +22744,8 @@
       "markup": 1,
       "price": 2225,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/veteran-greaves.png"
   },
   {
     "key": "veteran-longaxe",
@@ -22091,7 +22776,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 33
-    }
+    },
+    "icon": "img/items/veteran-longaxe.png"
   },
   {
     "key": "veteran-longflail",
@@ -22126,7 +22812,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 32
-    }
+    },
+    "icon": "img/items/veteran-longflail.png"
   },
   {
     "key": "veteran-morgenstern",
@@ -22160,7 +22847,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/veteran-morgenstern.png"
   },
   {
     "key": "veteran-poleaxe",
@@ -22192,7 +22880,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/veteran-poleaxe.png"
   },
   {
     "key": "veteran-polehammer",
@@ -22225,7 +22914,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 27
-    }
+    },
+    "icon": "img/items/veteran-polehammer.png"
   },
   {
     "key": "veteran-polemace",
@@ -22258,7 +22948,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/veteran-polemace.png"
   },
   {
     "key": "veteran-spear",
@@ -22292,7 +22983,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 26
-    }
+    },
+    "icon": "img/items/veteran-spear.png"
   },
   {
     "key": "veteran-staff-sling",
@@ -22325,7 +23017,8 @@
       "range": 8,
       "tags": "aldor",
       "total_damage_of_all_types": 16
-    }
+    },
+    "icon": "img/items/veteran-staff-sling.png"
   },
   {
     "key": "veteran-sword",
@@ -22357,7 +23050,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/veteran-sword.png"
   },
   {
     "key": "veteran-war-maul",
@@ -22390,7 +23084,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 29
-    }
+    },
+    "icon": "img/items/veteran-war-maul.png"
   },
   {
     "key": "vigilante-cape",
@@ -22420,7 +23115,8 @@
       "markup": 1,
       "price": 275,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/vigilante-cape.png"
   },
   {
     "key": "visored-barbute",
@@ -22454,7 +23150,8 @@
       "markup": 1,
       "price": 3225,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/visored-barbute.png"
   },
   {
     "key": "visored-barbute-open",
@@ -22486,7 +23183,8 @@
       "markup": 1,
       "price": 3225,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/visored-barbute-open.png"
   },
   {
     "key": "visored-cervelliere",
@@ -22520,7 +23218,8 @@
       "markup": 1,
       "price": 1425,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/visored-cervelliere.png"
   },
   {
     "key": "visored-cervelliere-open",
@@ -22552,7 +23251,8 @@
       "markup": 1,
       "price": 1425,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/visored-cervelliere-open.png"
   },
   {
     "key": "visored-grand-bascinet",
@@ -22586,7 +23286,8 @@
       "markup": 1,
       "price": 7775,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/visored-grand-bascinet.png"
   },
   {
     "key": "visored-grand-bascinet-open",
@@ -22617,7 +23318,8 @@
       "markup": 1,
       "price": 7775,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/visored-grand-bascinet-open.png"
   },
   {
     "key": "visored-pot-helmet",
@@ -22651,7 +23353,8 @@
       "markup": 1,
       "price": 1225,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/visored-pot-helmet.png"
   },
   {
     "key": "visored-sallet",
@@ -22686,7 +23389,8 @@
       "markup": 1,
       "price": 3225,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/visored-sallet.png"
   },
   {
     "key": "visored-sallet-open",
@@ -22718,7 +23422,8 @@
       "markup": 1,
       "price": 3225,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/visored-sallet-open.png"
   },
   {
     "key": "visored-sentinet",
@@ -22752,7 +23457,8 @@
       "markup": 1,
       "price": 6800,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/visored-sentinet.png"
   },
   {
     "key": "visored-sentinet-open",
@@ -22783,7 +23489,8 @@
       "markup": 1,
       "price": 6800,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/visored-sentinet-open.png"
   },
   {
     "key": "voivod-belt",
@@ -22813,7 +23520,8 @@
       "markup": 1.15,
       "price": 1400,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/voivod-belt.png"
   },
   {
     "key": "voivod-mace",
@@ -22849,7 +23557,8 @@
       "range": 1,
       "tags": "unique",
       "total_damage_of_all_types": 28
-    }
+    },
+    "icon": "img/items/voivod-mace.png"
   },
   {
     "key": "voulge",
@@ -22882,7 +23591,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/voulge.png"
   },
   {
     "key": "wanderer-cloak",
@@ -22912,7 +23622,8 @@
       "markup": 1,
       "price": 275,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/wanderer-cloak.png"
   },
   {
     "key": "wanderer-cowl",
@@ -22944,7 +23655,8 @@
       "markup": 1,
       "price": 1275,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/wanderer-cowl.png"
   },
   {
     "key": "wanderer-mantle",
@@ -22976,7 +23688,8 @@
       "markup": 1,
       "price": 1825,
       "tags": "magic"
-    }
+    },
+    "icon": "img/items/wanderer-mantle.png"
   },
   {
     "key": "war-hat",
@@ -23007,7 +23720,8 @@
       "markup": 1,
       "price": 1025,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/war-hat.png"
   },
   {
     "key": "war-pitchfork",
@@ -23040,7 +23754,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/war-pitchfork.png"
   },
   {
     "key": "war-scythe",
@@ -23071,7 +23786,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/war-scythe.png"
   },
   {
     "key": "warbrand",
@@ -23102,7 +23818,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 18
-    }
+    },
+    "icon": "img/items/warbrand.png"
   },
   {
     "key": "warding-hand-amulet",
@@ -23130,7 +23847,8 @@
       "markup": 1,
       "price": 700,
       "tags": "unique"
-    }
+    },
+    "icon": "img/items/warding-hand-amulet.png"
   },
   {
     "key": "wilder-sling",
@@ -23163,7 +23881,8 @@
       "range": 6,
       "tags": "fjall",
       "total_damage_of_all_types": 9
-    }
+    },
+    "icon": "img/items/wilder-sling.png"
   },
   {
     "key": "windlass-crossbow",
@@ -23195,7 +23914,8 @@
       "range": 9,
       "tags": "aldor",
       "total_damage_of_all_types": 30
-    }
+    },
+    "icon": "img/items/windlass-crossbow.png"
   },
   {
     "key": "witch-hat",
@@ -23226,7 +23946,8 @@
       "markup": 1.2,
       "price": 575,
       "tags": "special"
-    }
+    },
+    "icon": "img/items/witch-hat.png"
   },
   {
     "key": "witch-staff",
@@ -23261,7 +23982,8 @@
       "range": 1,
       "tags": "special",
       "total_damage_of_all_types": 12
-    }
+    },
+    "icon": "img/items/witch-staff.png"
   },
   {
     "key": "wolf-ribs-bascinet",
@@ -23293,7 +24015,8 @@
       "markup": 1,
       "price": 2525,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/wolf-ribs-bascinet.png"
   },
   {
     "key": "wolfbrother-belt",
@@ -23323,7 +24046,8 @@
       "markup": 1,
       "price": 575,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/wolfbrother-belt.png"
   },
   {
     "key": "wooden-sword",
@@ -23353,7 +24077,8 @@
       "range": 1,
       "tags": "special",
       "total_damage_of_all_types": 9
-    }
+    },
+    "icon": "img/items/wooden-sword.png"
   },
   {
     "key": "woodwight-longflail",
@@ -23388,7 +24113,8 @@
       "range": 1,
       "tags": "aldor",
       "total_damage_of_all_types": 24
-    }
+    },
+    "icon": "img/items/woodwight-longflail.png"
   },
   {
     "key": "woodwight-staff-sling",
@@ -23421,7 +24147,8 @@
       "range": 7,
       "tags": "aldor",
       "total_damage_of_all_types": 14
-    }
+    },
+    "icon": "img/items/woodwight-staff-sling.png"
   },
   {
     "key": "work-gloves",
@@ -23451,7 +24178,8 @@
       "markup": 1,
       "price": 50,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/work-gloves.png"
   },
   {
     "key": "worn-cloak",
@@ -23479,7 +24207,8 @@
       "markup": 1,
       "price": 25,
       "tags": "aldor"
-    }
+    },
+    "icon": "img/items/worn-cloak.png"
   },
   {
     "key": "yew-shortbow",
@@ -23511,6 +24240,7 @@
       "range": 7,
       "tags": "aldor",
       "total_damage_of_all_types": 21
-    }
+    },
+    "icon": "img/items/yew-shortbow.png"
   }
 ]

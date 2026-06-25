@@ -37,6 +37,16 @@ describe('scope builder', () => {
     expect(evaluate('Arcanistic_Power / 100', scope)).toMatchObject({ kind: 'unknown-var' })
   })
 
+  it('lets a gear-contributed identifier resolve a formerly-deferred formula (M3 U3, R6)', () => {
+    // Recompute (U3) merges gear contributions into `derived`; a deferred
+    // identifier that gear now supplies is in scope, so the same formula that
+    // degraded to "—" above evaluates to a number.
+    const geared = { ...derived, Arcanistic_Power: 40 }
+    const scope = buildScope(attributes, geared, statModel)
+    expect(scope.Arcanistic_Power).toBe(40)
+    expect(evaluate('Arcanistic_Power / 100', scope)).toEqual({ kind: 'value', value: 0.4 })
+  })
+
   it('merges optional numeric constants at lowest precedence', () => {
     const scope = buildScope(attributes, derived, statModel, { BASE_FACTOR: 2 })
     expect(scope.BASE_FACTOR).toBe(2)

@@ -9,11 +9,12 @@
   import { BuildLedger } from './lib/build/ledger.svelte'
   import { buildScope } from './lib/formula/scope'
   import { hydrateLedger } from './lib/share/hydrate'
-  import type { AttributeKey } from './lib/types'
+  import type { AttributeKey, EquipmentSlot } from './lib/types'
 
   import TreeSelector from './components/TreeSelector.svelte'
   import SkillTree from './components/SkillTree.svelte'
   import AttributePanel from './components/AttributePanel.svelte'
+  import EquipmentPanel from './components/EquipmentPanel.svelte'
   import LevelControls from './components/LevelControls.svelte'
   import CharacterSheet from './components/CharacterSheet.svelte'
   import ShareBar from './components/ShareBar.svelte'
@@ -54,6 +55,8 @@
   const onLevelUp = () => ledger.levelUp()
   const onLevelDown = () => ledger.levelDown()
   const onImport = (entries: typeof ledger.entries) => ledger.load(entries)
+  const onEquip = (slot: EquipmentSlot, key: string) => ledger.equip(slot, key)
+  const onUnequip = (slot: EquipmentSlot) => ledger.unequip(slot)
 </script>
 
 <div class="layout">
@@ -103,6 +106,7 @@
         {onLevelDown}
       />
       <AttributePanel attributes={dataset.attributes} {character} {onAdd} onRemove={onRemoveAttr} />
+      <EquipmentPanel {character} items={dataset.items} {onEquip} {onUnequip} />
       <ShareBar entries={ledger.entries} {onImport} />
       <CharacterSheet {character} {statModel} />
     </aside>

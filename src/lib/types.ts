@@ -255,6 +255,26 @@ export type EquipmentSlot = z.infer<typeof EquipmentSlot>
 export const ItemCategory = z.enum(['weapon', 'armor', 'accessory'])
 export type ItemCategory = z.infer<typeof ItemCategory>
 
+/**
+ * Which equipment slots each item family may occupy — a weapon belongs in a hand
+ * slot, a ring/amulet/belt in a jewelry slot, armor in a protective slot. The
+ * single source of truth for the data gate's `slot-category-mismatch` check, the
+ * recompute equip-resolution pass, and the equip UI's per-slot filtering.
+ */
+export const SLOTS_BY_CATEGORY: Record<ItemCategory, readonly EquipmentSlot[]> = {
+  // M3 models every weapon as main_hand (the source has no off-hand flag) and the
+  // off-hand as shields only; dual-wield / off-hand weapons need 1H-vs-2H weapon
+  // classification and are deferred to a later milestone.
+  weapon: ['main_hand'],
+  armor: ['off_hand', 'head', 'body', 'gloves', 'boots', 'cloak'],
+  accessory: ['amulet', 'ring', 'belt'],
+}
+
+/** Whether an item of `category` may occupy `slot`. */
+export function slotFitsCategory(category: ItemCategory, slot: EquipmentSlot): boolean {
+  return SLOTS_BY_CATEGORY[category].includes(slot)
+}
+
 export const Item = z.object({
   key: z.string().min(1),
   name: Localized,

@@ -16,9 +16,17 @@ Windows/Steam/UndertaleModTool and is runnable here.
 
 ```bash
 npm run vendor:wiki        # fetch + vendor the raw datastrings + manifest
-npm run transform-items    # vendored snapshot → src/data/items.json (U3)
-npm run validate-data      # gate the result (U4)
+npm run vendor:item-icons  # fetch + vendor item icons → public/img/items/ (M3 U6)
+npm run transform-items    # vendored snapshot → src/data/items.json (sets item.icon)
+npm run validate-data      # gate the result
 ```
+
+`fetch-icons.ts` resolves each item's sprite by display name via the MediaWiki
+`Special:FilePath/<Item Name>.png` endpoint (name-keyed; item names are unique),
+vendors the present ones under `public/img/items/<key>.png`, and writes a
+provenance manifest. Items with no wiki art are omitted and fall back to the
+`Icon.svelte` glyph — the same posture as the ability icons. `transform-items`
+then sets `item.icon` for every key whose file landed in `public/img/items/`.
 
 `fetch.ts` pulls each [Data page](https://stoneshard.com/wiki/Data) via the
 MediaWiki `?action=raw` endpoint (the REST `api.php` is disabled on this wiki),

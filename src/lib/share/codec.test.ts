@@ -62,6 +62,36 @@ describe('share codec (R8 — codec)', () => {
     expect(await decode(bomb)).toEqual({ ok: false, reason: 'too-large' }) // ...caught while inflating
   })
 
+  it('round-trips a build with equipped gear (M3 U5, R16)', async () => {
+    const geared: Ledger = [
+      { op: 'levelUp' },
+      { op: 'addSkill', skill: 'Cleave' },
+      { op: 'equip', slot: 'main_hand', item: 'sword03' },
+      { op: 'equip', slot: 'body', item: 'chest01' },
+    ]
+    expect(await decode(await encode(geared))).toEqual({ ok: true, ledger: geared })
+  })
+
+  it('still decodes a pre-M3 (gearless) code (R16 — backward compatibility)', async () => {
+    // A v1 code minted before the equip op existed: only the original three ops.
+    const legacy = await rawCode({ formatVersion: FORMAT_VERSION, ledger: sample })
+    expect(await decode(legacy)).toEqual({ ok: true, ledger: sample })
+  })
+
+  it('rejects a structurally invalid equip entry', async () => {
+    const missingItem = await rawCode({
+      formatVersion: FORMAT_VERSION,
+      ledger: [{ op: 'equip', slot: 'main_hand' }],
+    })
+    expect(await decode(missingItem)).toEqual({ ok: false, reason: 'schema' })
+
+    const badSlot = await rawCode({
+      formatVersion: FORMAT_VERSION,
+      ledger: [{ op: 'equip', slot: 'pocket', item: 'x' }],
+    })
+    expect(await decode(badSlot)).toEqual({ ok: false, reason: 'schema' })
+  })
+
   it('fails closed on a structurally invalid ledger', async () => {
     const badEntry = await rawCode({ formatVersion: FORMAT_VERSION, ledger: [{ op: 'nope' }] })
     expect(await decode(badEntry)).toEqual({ ok: false, reason: 'schema' })

@@ -22,7 +22,9 @@ import { LedgerEntry, type Ledger } from '../build/character'
 
 export const FORMAT_VERSION = 1
 
-/** A max-level build is ~90 entries; the ceiling leaves generous slack. */
+/** A max-level build is ~90 entries plus ~10 equipped gear slots; the ceiling
+ *  leaves generous slack. The `equip` op (M3) rides the same `LedgerEntry` union,
+ *  so it serializes here with no format change — old gearless codes still decode. */
 export const MAX_LEDGER_ENTRIES = 512
 /** Reject codes longer than this before doing any work. */
 export const MAX_CODE_LENGTH = 8192
