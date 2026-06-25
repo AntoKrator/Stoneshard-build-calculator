@@ -3,14 +3,29 @@
   "counts": {
     "trees": 21,
     "skills": 228,
-    "warnings": 0,
-    "items": 731
+    "warnings": 3,
+    "items": 731,
+    "enemies": 327
   },
   "notes": [
     "Key-less node \"maces-6\" resolved to \"Hammer_and_Anvil\" by label \"Hammer and Anvil\"",
     "Key-less node \"two-handed_maces-10\" resolved to \"heavy_concussion\" by label \"Severe Concussion\"",
     "Constants are placeholders (point economy is sourced in a later phase, not nstratos)",
-    "[items] Skipped non-damage weapon \"Shackles\" (shackles)"
+    "[items] Skipped non-damage weapon \"Shackles\" (shackles)",
+    "[enemies] Dropped exact-duplicate enemy row \"Mallard\""
   ],
-  "warnings": []
+  "warnings": [
+    {
+      "category": "enemy-all-zero-stat-column",
+      "message": "Enemy stat \"damage_reflected\" is zero/absent across the whole bestiary"
+    },
+    {
+      "category": "enemy-all-zero-stat-column",
+      "message": "Enemy stat \"psionic_damage\" is zero/absent across the whole bestiary"
+    },
+    {
+      "category": "enemy-all-zero-stat-column",
+      "message": "Enemy stat \"rending_resistance\" is zero/absent across the whole bestiary"
+    }
+  ]
 }

@@ -48,14 +48,29 @@ for (const group of Object.keys(DAMAGE_TYPE_GROUPS) as ResistanceGroup[]) {
 /** Game caps (KTD7), expressed in the same percentage-point units as the stats. */
 const WEAPON_DAMAGE_CAP = 200
 const CRIT_EFFICIENCY_CAP = 150
-const RESIST_CAP = 75
+export const RESIST_CAP = 75
+
+/**
+ * The shared per-type resistance primitive (M5 KTD3): a damage type's resistance
+ * is its umbrella-group stat plus its per-type stat, summed then clamped to the
+ * 75% cap, returned as a fraction `0..0.75`. Both `computeDefense`'s display rows
+ * and the matchup's `mitigate` resolve resistance through here, so the
+ * umbrella/cap logic lives in exactly one place. `stats` is a snake_case bag
+ * (`physical_resistance`, `fire_resistance`, …) — the build's `gearStats` or an
+ * enemy's `stats`.
+ */
+export function resistanceFor(type: string, stats: Record<string, number>): number {
+  const umbrella = stats[`${GROUP_OF[type]}_resistance`] ?? 0
+  const perType = stats[`${type}_resistance`] ?? 0
+  return Math.min(umbrella + perType, RESIST_CAP) / 100
+}
 
 /**
  * Bodypart hit-location weights (KTD7), per pool — the two arms and two legs are
  * combined. Datamined figures that sum to ~100.2%, so the weighted average
  * divides by the actual sum rather than assuming 1.0.
  */
-const HIT_WEIGHTS = { head: 16.7, chest: 36.7, arms: 23.4, legs: 23.4 } as const
+export const HIT_WEIGHTS = { head: 16.7, chest: 36.7, arms: 23.4, legs: 23.4 } as const
 
 /** Which equipped slot supplies each bodypart pool's flat protection. */
 const PROTECTION_SLOT: Record<keyof typeof HIT_WEIGHTS, EquipmentSlot> = {

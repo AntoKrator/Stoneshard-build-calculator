@@ -91,11 +91,40 @@ const dataset: Dataset = {
     baseAttributeValue: 10,
     damageTypes: [],
     itemStatKeys: [],
+    enemyStatKeys: [],
     values: {},
   },
   items: ITEMS,
   enchantments: [],
   presets: PRESETS,
+  enemies: [
+    {
+      key: 'goblin',
+      name: { english: 'Goblin' },
+      hp: 40,
+      protection: { head: 0, chest: 0, arms: 0, legs: 0 },
+      stats: { crushing_damage: 8 },
+      abilities: ['smash'],
+      properties: {},
+    },
+    {
+      key: 'wolf',
+      name: { english: 'Wolf' },
+      hp: 30,
+      protection: { head: 0, chest: 0, arms: 0, legs: 0 },
+      stats: { piercing_damage: 6 },
+      abilities: [],
+      properties: {},
+    },
+  ],
+  enemyAbilities: [
+    {
+      key: 'smash',
+      name: { english: 'Smash' },
+      damage: { crushing: 12 },
+      properties: { source: 'https://stoneshard.com/wiki/Goblin' },
+    },
+  ],
 }
 
 describe('BuildLedger — level + attribute economy', () => {
@@ -262,5 +291,72 @@ describe('BuildLedger — character select (U3, R3/R4)', () => {
     l.selectCharacter('hero')
     expect(l.character.presetId).toBe('hero')
     expect(l.toLedger().filter((e) => e.op === 'selectCharacter')).toHaveLength(1)
+  })
+})
+
+describe('BuildLedger — enemy selection (M5 U7)', () => {
+  it('selects, re-selects (last-wins), and clears an enemy', () => {
+    const l = new BuildLedger(dataset)
+    expect(l.selectEnemy('nope')).toEqual({ ok: false, reason: 'not-found' })
+    expect(l.selectEnemy('goblin')).toEqual({ ok: true })
+    expect(l.character.enemy?.key).toBe('goblin')
+    expect(l.selectEnemy('wolf')).toEqual({ ok: true })
+    // collapses to a single selectEnemy entry (last-wins)
+    expect(l.entries.filter((e) => e.op === 'selectEnemy')).toHaveLength(1)
+    expect(l.character.enemy?.key).toBe('wolf')
+    expect(l.clearEnemy()).toEqual({ ok: true })
+    expect(l.character.enemy).toBeUndefined()
+    expect(l.clearEnemy()).toEqual({ ok: false, reason: 'not-found' })
+  })
+
+  it('toggles an ability the enemy has, keeping the array sorted + deduped', () => {
+    const l = new BuildLedger(dataset)
+    expect(l.toggleEnemyAbility('smash')).toEqual({ ok: false, reason: 'not-found' }) // no enemy yet
+    l.selectEnemy('goblin')
+    expect(l.toggleEnemyAbility('ghost')).toEqual({ ok: false, reason: 'unknown' }) // not goblin's
+    expect(l.toggleEnemyAbility('smash')).toEqual({ ok: true })
+    expect(l.character.matchup?.enabledAbilities).toEqual(['smash'])
+    expect(l.toggleEnemyAbility('smash')).toEqual({ ok: true }) // off again
+    expect(l.character.matchup?.enabledAbilities).toEqual([])
+  })
+
+  it('keeps abilities when re-selecting the same enemy, resets on a different one', () => {
+    const l = new BuildLedger(dataset)
+    l.selectEnemy('goblin')
+    l.toggleEnemyAbility('smash')
+    l.selectEnemy('goblin') // same → keep
+    const sel = l.entries.find((e) => e.op === 'selectEnemy')
+    expect(sel && 'abilities' in sel ? sel.abilities : null).toEqual(['smash'])
+    l.selectEnemy('wolf') // different → reset
+    const sel2 = l.entries.find((e) => e.op === 'selectEnemy')
+    expect(sel2 && 'abilities' in sel2 ? sel2.abilities : null).toEqual([])
+  })
+
+  it('derives a matchup with a weapon equipped and degrades gracefully without one', () => {
+    const l = new BuildLedger(dataset)
+    l.selectEnemy('goblin')
+    // No weapon yet → deal side shows the neutral marker (AE1).
+    expect(l.character.matchup?.hasWeapon).toBe(false)
+    expect(l.character.matchup?.deal.hits).toBeNull()
+    // Incoming basic attack still computes.
+    expect(l.character.matchup?.take.total).toBe(8)
+  })
+})
+
+describe('BuildLedger — enemy patch-drift (M5 U7)', () => {
+  it('skip-and-notes a stale enemy id from a loaded code', () => {
+    const l = new BuildLedger(dataset)
+    l.load([{ op: 'selectEnemy', id: 'ghost', abilities: [] }])
+    expect(l.character.enemy).toBeUndefined()
+    expect(l.character.matchup).toBeUndefined()
+    expect(l.character.notes.some((n) => n.kind === 'unknown-enemy-ref')).toBe(true)
+  })
+
+  it('skip-and-notes a stale ability key, keeping the matchup', () => {
+    const l = new BuildLedger(dataset)
+    l.load([{ op: 'selectEnemy', id: 'goblin', abilities: ['ghost-ability'] }])
+    expect(l.character.enemy?.key).toBe('goblin')
+    expect(l.character.matchup?.enabledAbilities).toEqual([]) // stale ability dropped
+    expect(l.character.notes.some((n) => n.kind === 'unknown-enemy-ability-ref')).toBe(true)
   })
 })

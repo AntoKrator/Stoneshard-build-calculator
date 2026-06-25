@@ -1,0 +1,5 @@
+[
+  "enemy-all-zero-stat-column: Enemy stat \"damage_reflected\" is zero/absent across the whole bestiary",
+  "enemy-all-zero-stat-column: Enemy stat \"psionic_damage\" is zero/absent across the whole bestiary",
+  "enemy-all-zero-stat-column: Enemy stat \"rending_resistance\" is zero/absent across the whole bestiary"
+]

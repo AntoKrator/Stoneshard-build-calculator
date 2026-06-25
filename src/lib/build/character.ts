@@ -26,9 +26,11 @@ import {
   type Item,
   type StatModel,
 } from '../types'
+import type { Enemy } from '../types'
 import { computeDerivedStats } from './stats'
 import { aggregateGear } from './gear'
 import { computeCombat, type CombatSheet } from './combat'
+import { computeMatchup, type MatchupSheet } from './matchup'
 import { KNOWN_STAT_IDENTIFIERS } from '../formula/identifiers'
 import { earnedAttributePoints, earnedSkillPoints, isUnlocked, type Attributes } from './economy'
 
@@ -42,12 +44,22 @@ import { earnedAttributePoints, earnedSkillPoints, isUnlocked, type Attributes }
  * — every skill is `maxRank: 1`. A future multi-rank dataset can add a `rank`
  * field to `addSkill` without changing the log's shape.)
  */
+/** Upper bound on a `selectEnemy` ability list — the codec treats decoded input as
+ *  untrusted, so the array is bounded at the schema layer (not just the ledger
+ *  method) to close the per-entry size hole the entry-count ceiling leaves (F15). */
+const MAX_ENEMY_ABILITIES = 32
+
 export const LedgerEntry = z.discriminatedUnion('op', [
   z.object({ op: z.literal('levelUp') }),
   z.object({ op: z.literal('addAttribute'), attr: AttributeKey }),
   z.object({ op: z.literal('addSkill'), skill: z.string().min(1) }),
   z.object({ op: z.literal('equip'), slot: EquipmentSlot, item: z.string().min(1) }),
   z.object({ op: z.literal('selectCharacter'), id: z.string().min(1) }),
+  z.object({
+    op: z.literal('selectEnemy'),
+    id: z.string().min(1),
+    abilities: z.array(z.string().min(1)).max(MAX_ENEMY_ABILITIES).default([]),
+  }),
 ])
 export type LedgerEntry = z.infer<typeof LedgerEntry>
 
@@ -66,6 +78,8 @@ export interface RecomputeNote {
     | 'unknown-item-ref'
     | 'item-slot-mismatch'
     | 'unknown-preset-ref'
+    | 'unknown-enemy-ref'
+    | 'unknown-enemy-ability-ref'
   ref: string
   message: string
 }
@@ -88,6 +102,11 @@ export interface Character {
   gearStats: Record<string, number>
   /** Derived combat view (self damage output + mitigation), read-only for UI (M4). */
   combat: CombatSheet
+  /** The selected enemy (M5), or undefined when none is chosen. */
+  enemy?: Enemy
+  /** The derived two-way matchup against `enemy`, read-only for UI (M5). Undefined
+   *  when no enemy is selected. Never serialized — re-derives on every recompute. */
+  matchup?: MatchupSheet
   attributeBudget: number
   skillBudget: number
   attributesSpent: number
@@ -316,6 +335,54 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
   //    sheet, gear bag, and equipped items. Read-only — consumed by UI, not scope.
   const combat = computeCombat({ derived, gearStats, equipped })
 
+  // 9. Enemy matchup (M5): the LAST `selectEnemy` wins. Resolve the enemy and its
+  //    enabled abilities against the dataset (stale id/ability → skip-and-note, like
+  //    other patch-drift), then derive the two-way exchange from the just-computed
+  //    combat sheet. Never serialized — re-derives here on every recompute.
+  let enemy: Enemy | undefined
+  let matchup: MatchupSheet | undefined
+  for (let i = entries.length - 1; i >= 0; i--) {
+    const e = entries[i]
+    if (e.op !== 'selectEnemy') continue
+    enemy = dataset.enemies.find((en) => en.key === e.id)
+    if (!enemy) {
+      notes.push({
+        kind: 'unknown-enemy-ref',
+        ref: e.id,
+        message: `Enemy "${e.id}" is no longer in the dataset and was skipped`,
+      })
+      break
+    }
+    const abilityByKey = new Map(dataset.enemyAbilities.map((a) => [a.key, a]))
+    const ownAbilities = new Set(enemy.abilities)
+    const abilities = []
+    for (const key of e.abilities) {
+      const ability = abilityByKey.get(key)
+      if (ability && ownAbilities.has(key)) {
+        abilities.push(ability)
+      } else if (!flagged.has(`enemy-ability:${key}`)) {
+        flagged.add(`enemy-ability:${key}`)
+        notes.push({
+          kind: 'unknown-enemy-ability-ref',
+          ref: key,
+          message: `Enemy ability "${key}" is not available on "${enemy.key}" and was skipped`,
+        })
+      }
+    }
+    matchup = computeMatchup(
+      {
+        damage: combat.damage.map((d) => ({ type: d.type, amount: d.expected })),
+        protection: combat.protection,
+        stats: gearStats,
+        maxHp: combat.maxHp,
+        hasWeapon: combat.hasWeapon,
+      },
+      enemy,
+      abilities,
+    )
+    break
+  }
+
   return {
     level,
     presetId,
@@ -327,6 +394,8 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
     equipped,
     gearStats,
     combat,
+    ...(enemy ? { enemy } : {}),
+    ...(matchup ? { matchup } : {}),
     attributeBudget,
     skillBudget,
     attributesSpent,
