@@ -28,6 +28,7 @@ import {
 } from '../types'
 import { computeDerivedStats } from './stats'
 import { aggregateGear } from './gear'
+import { computeCombat, type CombatSheet } from './combat'
 import { KNOWN_STAT_IDENTIFIERS } from '../formula/identifiers'
 import { earnedAttributePoints, earnedSkillPoints, isUnlocked, type Attributes } from './economy'
 
@@ -77,6 +78,8 @@ export interface Character {
   /** Gear stats with no formula identifier (resistances, raw weapon damage, …),
    *  keyed by their snake_case item key — for the equipped-stats view. */
   gearStats: Record<string, number>
+  /** Derived combat view (self damage output + mitigation), read-only for UI (M4). */
+  combat: CombatSheet
   attributeBudget: number
   skillBudget: number
   attributesSpent: number
@@ -240,6 +243,10 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
     if (!enumerated.has(id)) gearStats[id] = (gearStats[id] ?? 0) + v
   }
 
+  // 8. Combat view (M4): self damage output + mitigation, derived purely from the
+  //    sheet, gear bag, and equipped items. Read-only — consumed by UI, not scope.
+  const combat = computeCombat({ derived, gearStats, equipped })
+
   return {
     level,
     attributes,
@@ -249,6 +256,7 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
     takenOrder,
     equipped,
     gearStats,
+    combat,
     attributeBudget,
     skillBudget,
     attributesSpent,
