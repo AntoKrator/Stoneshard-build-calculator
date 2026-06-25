@@ -208,6 +208,21 @@ export function transformEnemies(input: EnemyTransformInput): {
   // Deterministic output: sort by key.
   const enemies = [...byKey.values()].sort((a, b) => (a.key < b.key ? -1 : a.key > b.key ? 1 : 0))
 
+  // A stat column zero/absent across the WHOLE bestiary is the offset class the
+  // cell-count parser can't see (plan F3). Emit it as an allowlistable warning,
+  // not a hard error — a few columns (rare stats) are legitimately empty, while a
+  // NEW all-zero on a should-have-data column surfaces as an un-allowlisted warning.
+  if (enemies.length > 5) {
+    for (const key of statKeys) {
+      if (!enemies.some((e) => (e.stats[key] ?? 0) !== 0)) {
+        warnings.push({
+          category: 'enemy-all-zero-stat-column',
+          message: `Enemy stat "${key}" is zero/absent across the whole bestiary`,
+        })
+      }
+    }
+  }
+
   const damageKeys = [...statKeys].filter((k) => /_damage$/.test(k)).length
   const resistanceKeys = [...statKeys].filter((k) => /_resistance$/.test(k)).length
 

@@ -20,6 +20,8 @@ export interface GateResult {
   treeCount: number
   itemCount: number
   presetCount: number
+  enemyCount: number
+  enemyAbilityCount: number
 }
 
 /** A stable signature for allowlisting an individual warning. */
@@ -37,6 +39,8 @@ export function gateDataset(
   let treeCount = 0
   let itemCount = 0
   let presetCount = 0
+  let enemyCount = 0
+  let enemyAbilityCount = 0
 
   try {
     const { dataset, issues } = validateDataset(composed)
@@ -44,6 +48,8 @@ export function gateDataset(
     treeCount = dataset.trees.length
     itemCount = dataset.items.length
     presetCount = dataset.presets.length
+    enemyCount = dataset.enemies.length
+    enemyAbilityCount = dataset.enemyAbilities.length
     for (const i of issues) errors.push(`[${i.kind}] ${i.message}`)
   } catch (e) {
     errors.push(`schema: ${(e as Error).message}`)
@@ -55,5 +61,14 @@ export function gateDataset(
     }
   }
 
-  return { ok: errors.length === 0, errors, skillCount, treeCount, itemCount, presetCount }
+  return {
+    ok: errors.length === 0,
+    errors,
+    skillCount,
+    treeCount,
+    itemCount,
+    presetCount,
+    enemyCount,
+    enemyAbilityCount,
+  }
 }

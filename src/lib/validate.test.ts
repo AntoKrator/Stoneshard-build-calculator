@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
-import { checkIntegrity, validateDataset } from './validate'
-import { parseDataset } from './types'
+import { checkIntegrity, validateDataset, checkEnemies } from './validate'
+import { parseDataset, type Dataset } from './types'
 
 /** A minimal, valid dataset; Zod fills in the rest of the defaults. */
 function baseDataset() {
@@ -72,7 +72,12 @@ describe('parseDataset', () => {
   it('rejects an enemy with non-positive hp or a missing protection slot', () => {
     const noHp = baseDataset() as Record<string, unknown>
     noHp.enemies = [
-      { key: 'x', name: { english: 'X' }, hp: 0, protection: { head: 0, chest: 0, arms: 0, legs: 0 } },
+      {
+        key: 'x',
+        name: { english: 'X' },
+        hp: 0,
+        protection: { head: 0, chest: 0, arms: 0, legs: 0 },
+      },
     ]
     expect(() => parseDataset(noHp)).toThrow()
 
@@ -172,5 +177,81 @@ describe('validateDataset', () => {
     const { dataset, issues } = validateDataset(baseDataset())
     expect(dataset.skills).toHaveLength(2)
     expect(issues).toEqual([])
+  })
+})
+
+describe('checkEnemies (M5 U5)', () => {
+  const enemy = (over: Record<string, unknown> = {}) => ({
+    key: 'restless',
+    name: { english: 'Restless' },
+    hp: 80,
+    protection: { head: 0, chest: 1, arms: 1, legs: 1 },
+    stats: { crushing_damage: 6, physical_resistance: 50 },
+    abilities: [],
+    properties: {},
+    ...over,
+  })
+  const ability = (over: Record<string, unknown> = {}) => ({
+    key: 'lunge',
+    name: { english: 'Lunge' },
+    damage: { piercing: 12 },
+    properties: { source: 'https://stoneshard.com/wiki/X' },
+    ...over,
+  })
+  const run = (
+    enemies: unknown[],
+    enemyAbilities: unknown[] = [],
+    statKeys = ['crushing_damage', 'physical_resistance'],
+  ) =>
+    checkEnemies({
+      enemies,
+      enemyAbilities,
+      constants: { damageTypes: ['crushing', 'piercing', 'physical'], enemyStatKeys: statKeys },
+    } as unknown as Pick<Dataset, 'enemies' | 'enemyAbilities' | 'constants'>)
+  const kinds = (issues: { kind: string }[]) => issues.map((i) => i.kind)
+
+  it('passes a well-formed enemy + linked ability', () => {
+    expect(run([enemy({ abilities: ['lunge'] })], [ability()])).toEqual([])
+  })
+
+  it('flags a duplicate enemy key', () => {
+    expect(kinds(run([enemy(), enemy()]))).toContain('duplicate-enemy-key')
+  })
+
+  it('flags an enemy stat outside the vocabulary', () => {
+    expect(kinds(run([enemy({ stats: { bogus_stat: 1 } })]))).toContain('unknown-enemy-stat-key')
+  })
+
+  it('requires a non-empty stat vocabulary once enemies exist', () => {
+    expect(kinds(run([enemy()], [], []))).toContain('missing-enemy-stat-vocabulary')
+  })
+
+  it('flags an enemy referencing an unknown ability', () => {
+    expect(kinds(run([enemy({ abilities: ['ghost'] })]))).toContain('unknown-enemy-ability-ref')
+  })
+
+  it('flags an ability referenced by no enemy (orphan)', () => {
+    expect(kinds(run([enemy()], [ability()]))).toContain('orphan-enemy-ability')
+  })
+
+  it('requires ability provenance and non-empty known-type damage', () => {
+    const k = kinds(
+      run(
+        [enemy({ abilities: ['lunge'] })],
+        [ability({ properties: {}, damage: { piercing: 12 } })],
+      ),
+    )
+    expect(k).toContain('missing-ability-provenance')
+
+    const k2 = kinds(run([enemy({ abilities: ['lunge'] })], [ability({ damage: {} })]))
+    expect(k2).toContain('empty-ability-damage')
+
+    const k3 = kinds(run([enemy({ abilities: ['lunge'] })], [ability({ damage: { bogus: 5 } })]))
+    expect(k3).toContain('unknown-ability-damage-type')
+  })
+
+  it('flags a duplicate ability key', () => {
+    const k = kinds(run([enemy({ abilities: ['lunge'] })], [ability(), ability()]))
+    expect(k).toContain('duplicate-ability-key')
   })
 })

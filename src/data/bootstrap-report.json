@@ -3,7 +3,7 @@
   "counts": {
     "trees": 21,
     "skills": 228,
-    "warnings": 0,
+    "warnings": 3,
     "items": 731,
     "enemies": 327
   },
@@ -14,5 +14,18 @@
     "[items] Skipped non-damage weapon \"Shackles\" (shackles)",
     "[enemies] Dropped exact-duplicate enemy row \"Mallard\""
   ],
-  "warnings": []
+  "warnings": [
+    {
+      "category": "enemy-all-zero-stat-column",
+      "message": "Enemy stat \"damage_reflected\" is zero/absent across the whole bestiary"
+    },
+    {
+      "category": "enemy-all-zero-stat-column",
+      "message": "Enemy stat \"psionic_damage\" is zero/absent across the whole bestiary"
+    },
+    {
+      "category": "enemy-all-zero-stat-column",
+      "message": "Enemy stat \"rending_resistance\" is zero/absent across the whole bestiary"
+    }
+  ]
 }
