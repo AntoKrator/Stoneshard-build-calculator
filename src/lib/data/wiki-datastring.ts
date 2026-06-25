@@ -40,6 +40,13 @@ export interface ParseOptions {
    * fails loudly rather than shifting every column by one.
    */
   leadingColumns?: string[]
+  /**
+   * Some Data pages (e.g. Enemy data) document their columns as a single named
+   * legend line inside `<noinclude>` with NO preceding numeric-index row. Pass the
+   * trimmed prefix that uniquely identifies that line (e.g. `'Tier;ID;'`); the
+   * parser uses that line as the named header instead of looking for a numeric row.
+   */
+  headerLinePrefix?: string
 }
 
 /** Thrown on any structural problem that would misalign fields. */
@@ -89,17 +96,31 @@ function dedupeHeader(header: string[]): string[] {
 export function parseDatastring(wikitext: string, opts: ParseOptions = {}): ParsedDatastring {
   const lines = wikitext.split('\n')
 
-  // The named header is the line immediately after the numeric-index row
-  // (`0;1;2;…` for weapons, `1;2;3;…` for armor), inside <noinclude>.
+  // The named header is either a legend line identified by an explicit prefix
+  // (Enemy data) or the line immediately after the numeric-index row (`0;1;2;…`
+  // for weapons, `1;2;3;…` for armor), inside <noinclude>.
   let namedHeader: string[] | null = null
-  for (let i = 0; i < lines.length - 1; i++) {
-    if (/^\s*\d+(;\d+)+;?\s*$/.test(lines[i])) {
-      namedHeader = lines[i + 1].trim().replace(/;$/, '').split(';')
-      break
+  if (opts.headerLinePrefix) {
+    const prefix = opts.headerLinePrefix
+    for (const line of lines) {
+      if (line.trim().startsWith(prefix)) {
+        namedHeader = line.trim().replace(/;$/, '').split(';')
+        break
+      }
     }
-  }
-  if (!namedHeader) {
-    throw new DatastringError('No numeric-index/header row found in the <noinclude> block')
+    if (!namedHeader) {
+      throw new DatastringError(`No header legend line starting with "${prefix}" found`)
+    }
+  } else {
+    for (let i = 0; i < lines.length - 1; i++) {
+      if (/^\s*\d+(;\d+)+;?\s*$/.test(lines[i])) {
+        namedHeader = lines[i + 1].trim().replace(/;$/, '').split(';')
+        break
+      }
+    }
+    if (!namedHeader) {
+      throw new DatastringError('No numeric-index/header row found in the <noinclude> block')
+    }
   }
 
   const header = dedupeHeader([...(opts.leadingColumns ?? []), ...namedHeader])

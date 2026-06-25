@@ -118,3 +118,60 @@ describe('parseDatastring', () => {
     expect(() => parseDatastring(empty)).toThrow(/item rows/)
   })
 })
+
+// The Enemy data page documents its columns as a single named legend line inside
+// <noinclude> (no numeric-index row), so the caller passes `headerLinePrefix`. Each
+// column value is distinct so an offset/swap would be caught (value-anchored, F1).
+const ENEMY_FIXTURE = `<noinclude>Page for all Stoneshard enemy data.
+
+This data is edited with the parser.
+
+ Tier;ID;Health;Protection (Head);Protection (Body);Crushing Damage;Physical Resistance;Description
+
+==Usage==
+</noinclude><includeonly>{{#switch: {{{1}}}
+<!--
+
+----- ENEMIES -----
+
+-->
+
+|Restless = 1;o_zombie;80;3;7;6;50;Raised by novices; easy prey.
+|#default = }}</includeonly>`
+
+describe('parseDatastring — Enemy data (headerLinePrefix)', () => {
+  it('finds the legend line by prefix and maps each value to its named field', () => {
+    const { header, rows } = parseDatastring(ENEMY_FIXTURE, { headerLinePrefix: 'Tier;ID;' })
+    expect(header[0]).toBe('Tier')
+    expect(header[header.length - 1]).toBe('Description')
+    expect(rows).toHaveLength(1)
+    const f = rows[0].fields
+    // Value-anchored: each distinct value lands on the right label — a swapped
+    // header column would fail one of these.
+    expect(rows[0].name).toBe('Restless')
+    expect(f['Health']).toBe('80')
+    expect(f['Protection (Head)']).toBe('3')
+    expect(f['Protection (Body)']).toBe('7')
+    expect(f['Crushing Damage']).toBe('6')
+    expect(f['Physical Resistance']).toBe('50')
+    // A `;` inside the free-text final Description column is absorbed, not split.
+    expect(f['Description']).toBe('Raised by novices; easy prey.')
+  })
+
+  it('throws when no legend line matches the prefix', () => {
+    const noLegend = `<noinclude>\n Foo;Bar\n</noinclude><includeonly>{{#switch: {{{1}}}\n|X = 1;2}}</includeonly>`
+    expect(() => parseDatastring(noLegend, { headerLinePrefix: 'Tier;ID;' })).toThrow(
+      /header legend line/,
+    )
+  })
+
+  it('fails loud on a dropped cell (column drift)', () => {
+    // A row with 7 cells against the 8-column header — a genuinely dropped value
+    // (no semicolon in the tail to pad the count), so the parser must fail loud.
+    const short = ENEMY_FIXTURE.replace(
+      '|Restless = 1;o_zombie;80;3;7;6;50;Raised by novices; easy prey.',
+      '|Restless = 1;o_zombie;80;3;7;6;50',
+    )
+    expect(() => parseDatastring(short, { headerLinePrefix: 'Tier;ID;' })).toThrow(DatastringError)
+  })
+})
