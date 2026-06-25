@@ -1,44 +1,34 @@
 <script lang="ts">
   // One tree's grid: connection lines behind absolutely-positioned nodes. All the
   // placement + state logic comes from the tested node-state seam; this component
-  // just lays it out and forwards rank gestures.
+  // just lays it out and forwards rank + hover gestures.
   //
-  // The hovered skill is tracked here (not in the node) so the tooltip can render
-  // as a single panel pinned to the right of the viewport — in front of, and
-  // outside, the scrolling grid, so it is never clipped or stacked behind nodes.
+  // Hover is emitted upward (not drawn here): with several trees open, App renders
+  // ONE shared tooltip panel pinned to the viewport so it is never clipped by a
+  // tree card's scroll nor crowded into a narrow column (U6).
   import { computeTreeLayout, nodeState } from '../lib/build/node-state'
   import AbilityNode from './AbilityNode.svelte'
   import ConnectionLines from './ConnectionLines.svelte'
-  import Tooltip from './Tooltip.svelte'
   import type { Skill } from '../lib/types'
   import type { Character } from '../lib/build/character'
-  import type { Scope } from '../lib/formula/eval'
 
   let {
     skills,
     character,
-    scope,
     baseAttributeValue,
     onPick,
     onRefund,
+    onHover,
   }: {
     skills: Skill[]
     character: Character
-    scope: Scope
     baseAttributeValue: number
     onPick: (key: string) => void
     onRefund: (key: string) => void
+    onHover: (skill: Skill, entering: boolean) => void
   } = $props()
 
   const layout = $derived(computeTreeLayout(skills))
-
-  let hovered = $state<Skill | null>(null)
-  // Clear only if the leaving node is still the hovered one, so moving between two
-  // adjacent nodes doesn't blank the tooltip on the wrong event order.
-  function setHover(skill: Skill, entering: boolean) {
-    if (entering) hovered = skill
-    else if (hovered?.key === skill.key) hovered = null
-  }
 </script>
 
 <div class="tree-area">
@@ -57,23 +47,12 @@
             status={nodeState(n.skill, character, baseAttributeValue)}
             {onPick}
             {onRefund}
-            onHover={setHover}
+            {onHover}
           />
         </div>
       {/each}
     </div>
   </div>
-
-  {#if hovered}
-    <aside class="tooltip-panel">
-      <strong class="tt-name">{hovered.name.english}</strong>
-      {#if hovered.tooltip?.english}
-        <Tooltip tooltip={hovered.tooltip.english} formulas={hovered.formulas} {scope} bare />
-      {:else}
-        <p class="tt-empty">No description.</p>
-      {/if}
-    </aside>
-  {/if}
 </div>
 
 <style>
@@ -94,31 +73,5 @@
   .node-pos {
     position: absolute;
     transform: translate(-50%, -50%);
-  }
-
-  .tooltip-panel {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    z-index: 50;
-    width: min(20rem, 80%);
-    max-height: calc(100% - 1rem);
-    overflow-y: auto;
-    padding: 0.7rem 0.85rem;
-    background: var(--bg-panel-2);
-    border: 1px solid var(--accent-dim);
-    border-radius: 6px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
-    pointer-events: none;
-  }
-  .tt-name {
-    display: block;
-    margin-bottom: 0.35rem;
-    color: var(--accent);
-  }
-  .tt-empty {
-    margin: 0;
-    color: var(--text-dim);
-    font-size: 0.85rem;
   }
 </style>

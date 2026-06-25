@@ -9,11 +9,12 @@
   import { BuildLedger } from './lib/build/ledger.svelte'
   import { buildScope } from './lib/formula/scope'
   import { hydrateLedger } from './lib/share/hydrate'
-  import type { AttributeKey, EquipmentSlot } from './lib/types'
+  import type { AttributeKey, EquipmentSlot, Skill } from './lib/types'
 
   import CharacterSelect from './components/CharacterSelect.svelte'
   import TreeSelector from './components/TreeSelector.svelte'
   import SkillTree from './components/SkillTree.svelte'
+  import Tooltip from './components/Tooltip.svelte'
   import AttributePanel from './components/AttributePanel.svelte'
   import EquipmentPanel from './components/EquipmentPanel.svelte'
   import LevelControls from './components/LevelControls.svelte'
@@ -57,6 +58,16 @@
       })),
   )
   const isFresh = $derived(ledger.entries.length === 0)
+
+  // One shared, viewport-pinned tooltip across all open trees (U6). The race-guard
+  // clears only when the leaving node is still the hovered one, so moving between
+  // nodes — even across trees — never blanks it on the wrong event order; last
+  // hover wins because skill keys are globally unique.
+  let hovered = $state<Skill | null>(null)
+  function setHover(skill: Skill, entering: boolean) {
+    if (entering) hovered = skill
+    else if (hovered?.key === skill.key) hovered = null
+  }
 
   onMount(async () => {
     const res = await hydrateLedger(window.location.search)
@@ -132,10 +143,10 @@
               <SkillTree
                 skills={o.skills}
                 {character}
-                {scope}
                 baseAttributeValue={base}
                 {onPick}
                 {onRefund}
+                onHover={setHover}
               />
             </section>
           {/each}
@@ -166,6 +177,22 @@
       property of their respective owners. App v{APP_VERSION} · targeting Stoneshard {TARGET_GAME_VERSION}.
     </p>
   </footer>
+
+  <!-- One shared tooltip for every open tree, pinned to the viewport (position:
+       fixed) so it is never clipped by a tree card's scroll and never crowds a
+       narrow column. pointer-events:none so it never traps interaction; the body
+       still renders via escaped segments (no {@html}), preserving the M1 security
+       posture. -->
+  {#if hovered}
+    <aside class="tooltip-panel" role="tooltip">
+      <strong class="tt-name">{hovered.name.english}</strong>
+      {#if hovered.tooltip?.english}
+        <Tooltip tooltip={hovered.tooltip.english} formulas={hovered.formulas} {scope} bare />
+      {:else}
+        <p class="tt-empty">No description.</p>
+      {/if}
+    </aside>
+  {/if}
 </div>
 
 <style>
@@ -244,6 +271,35 @@
     border-radius: 6px;
     color: var(--text-dim);
     text-align: center;
+  }
+
+  /* The single shared tooltip: viewport-fixed so it sits outside every tree card's
+     scroll/overflow and is always fully visible. width:min(...) keeps it within the
+     viewport (no horizontal overflow at 375px); it scrolls internally if very tall. */
+  .tooltip-panel {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 100;
+    width: min(20rem, calc(100vw - 2rem));
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    padding: 0.7rem 0.85rem;
+    background: var(--bg-panel-2);
+    border: 1px solid var(--accent-dim);
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+    pointer-events: none;
+  }
+  .tt-name {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--accent);
+  }
+  .tt-empty {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.85rem;
   }
   .side {
     display: grid;
