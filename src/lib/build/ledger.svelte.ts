@@ -249,10 +249,13 @@ export class BuildLedger {
     const enemy = this.#enemyByKey[current.id]
     if (!enemy || !enemy.abilities.includes(key)) return { ok: false, reason: 'unknown' }
 
-    const set = new Set(current.abilities)
-    if (set.has(key)) set.delete(key)
-    else set.add(key)
-    const abilities = [...set].sort()
+    // Plain-array toggle (no Set) to match the ledger's non-reactive collection
+    // posture; `current.abilities` is already de-duped, so add-if-absent keeps it so.
+    const abilities = (
+      current.abilities.includes(key)
+        ? current.abilities.filter((k) => k !== key)
+        : [...current.abilities, key]
+    ).sort()
 
     this.#removeSelectEnemy()
     this.entries.push({ op: 'selectEnemy', id: current.id, abilities })
