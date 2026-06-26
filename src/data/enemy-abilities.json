@@ -1,1 +1,128 @@
-[]
+[
+  {
+    "key": "baleful-scream",
+    "name": { "english": "Baleful Scream" },
+    "damage": { "psionic": 6 },
+    "properties": { "source": "https://stoneshard.com/wiki/Harpy", "usedBy": "harpy" }
+  },
+  {
+    "key": "bestial-charge",
+    "name": { "english": "Bestial Charge" },
+    "damage": { "rending": 13, "unholy": 3 },
+    "properties": { "source": "https://stoneshard.com/wiki/Archon", "usedBy": "ascended-archon" }
+  },
+  {
+    "key": "blood-clot",
+    "name": { "english": "Blood Clot" },
+    "damage": { "unholy": 4, "caustic": 4 },
+    "properties": { "source": "https://stoneshard.com/wiki/Archon", "usedBy": "archon" }
+  },
+  {
+    "key": "bone-pyres",
+    "name": { "english": "Bone Pyres" },
+    "damage": { "piercing": 12, "unholy": 10 },
+    "properties": { "source": "https://stoneshard.com/wiki/Manticore", "usedBy": "manticore" }
+  },
+  {
+    "key": "boulder-toss",
+    "name": { "english": "Boulder Toss" },
+    "damage": { "crushing": 12, "arcane": 6 },
+    "properties": { "source": "https://stoneshard.com/wiki/Brigand_Geomancer", "usedBy": "brigand-geomancer" }
+  },
+  {
+    "key": "chain-lightning",
+    "name": { "english": "Chain Lightning" },
+    "damage": { "shock": 9 },
+    "properties": { "source": "https://stoneshard.com/wiki/Brigand_Electromancer", "usedBy": "brigand-electromancer" }
+  },
+  {
+    "key": "desecration",
+    "name": { "english": "Desecration" },
+    "damage": { "unholy": 9 },
+    "properties": { "source": "https://stoneshard.com/wiki/Occultist", "usedBy": "occultist" }
+  },
+  {
+    "key": "flame-wave",
+    "name": { "english": "Flame Wave" },
+    "damage": { "fire": 13 },
+    "properties": { "source": "https://stoneshard.com/wiki/Brigand_Pyromancer", "usedBy": "brigand-pyromancer" }
+  },
+  {
+    "key": "impulse",
+    "name": { "english": "Impulse" },
+    "damage": { "shock": 10 },
+    "properties": { "source": "https://stoneshard.com/wiki/Brigand_Electromancer", "usedBy": "brigand-electromancer" }
+  },
+  {
+    "key": "jolt",
+    "name": { "english": "Jolt" },
+    "damage": { "shock": 7 },
+    "properties": { "source": "https://stoneshard.com/wiki/Brigand_Electromancer", "usedBy": "brigand-electromancer" }
+  },
+  {
+    "key": "phantom-bats",
+    "name": { "english": "Phantom Bats" },
+    "damage": { "unholy": 26 },
+    "properties": { "source": "https://stoneshard.com/wiki/Archon", "usedBy": "ascended-archon" }
+  },
+  {
+    "key": "primal-aether",
+    "name": { "english": "Primal Aether" },
+    "damage": { "arcane": 12, "sacred": 12, "unholy": 12 },
+    "properties": { "source": "https://stoneshard.com/wiki/Manticore", "usedBy": "manticore" }
+  },
+  {
+    "key": "protect-the-hive",
+    "name": { "english": "Protect the Hive" },
+    "damage": { "piercing": 12, "rending": 16 },
+    "properties": { "source": "https://stoneshard.com/wiki/Rockeater_Soldier", "usedBy": "rockeater-soldier" }
+  },
+  {
+    "key": "rend-flesh",
+    "name": { "english": "Rend Flesh" },
+    "damage": { "rending": 43 },
+    "properties": { "source": "https://stoneshard.com/wiki/Bear", "usedBy": "bear" }
+  },
+  {
+    "key": "ring-of-fire",
+    "name": { "english": "Ring of Fire" },
+    "damage": { "fire": 12 },
+    "properties": { "source": "https://stoneshard.com/wiki/Brigand_Pyromancer", "usedBy": "brigand-pyromancer" }
+  },
+  {
+    "key": "rock-toss",
+    "name": { "english": "Rock Toss" },
+    "damage": { "crushing": 60 },
+    "properties": { "source": "https://stoneshard.com/wiki/Ancient_Troll", "usedBy": "ancient-troll" }
+  },
+  {
+    "key": "shockwave",
+    "name": { "english": "Shockwave" },
+    "damage": { "crushing": 30 },
+    "properties": { "source": "https://stoneshard.com/wiki/Ancient_Troll", "usedBy": "ancient-troll" }
+  },
+  {
+    "key": "stone-spikes",
+    "name": { "english": "Stone Spikes" },
+    "damage": { "piercing": 12, "crushing": 3 },
+    "properties": { "source": "https://stoneshard.com/wiki/Brigand_Geomancer", "usedBy": "brigand-geomancer" }
+  },
+  {
+    "key": "toxic-salvo",
+    "name": { "english": "Toxic Salvo" },
+    "damage": { "poison": 16 },
+    "properties": { "source": "https://stoneshard.com/wiki/Rockeater_Soldier", "usedBy": "rockeater-soldier" }
+  },
+  {
+    "key": "vengeance-of-the-dead",
+    "name": { "english": "Vengeance of the Dead" },
+    "damage": { "piercing": 28, "unholy": 12 },
+    "properties": { "source": "https://stoneshard.com/wiki/Manticore", "usedBy": "manticore" }
+  },
+  {
+    "key": "web-spit",
+    "name": { "english": "Web Spit" },
+    "damage": { "caustic": 8, "poison": 4 },
+    "properties": { "source": "https://stoneshard.com/wiki/Crawler_Broodmother", "usedBy": "crawler-broodmother" }
+  }
+]

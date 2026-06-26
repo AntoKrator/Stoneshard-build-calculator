@@ -729,7 +729,10 @@
       "vit": 90,
       "wil": 6
     },
-    "abilities": [],
+    "abilities": [
+      "rock-toss",
+      "shockwave"
+    ],
     "properties": {
       "ai_pattern": "Melee",
       "amount_of_heads": 1,
@@ -1115,7 +1118,9 @@
       "vit": 8,
       "wil": 23
     },
-    "abilities": [],
+    "abilities": [
+      "blood-clot"
+    ],
     "properties": {
       "ai_pattern": "Melee",
       "amount_of_heads": 1,
@@ -1172,7 +1177,10 @@
       "vit": 19,
       "wil": 15
     },
-    "abilities": [],
+    "abilities": [
+      "bestial-charge",
+      "phantom-bats"
+    ],
     "properties": {
       "ai_pattern": "Melee",
       "amount_of_heads": 1,
@@ -1364,7 +1372,9 @@
       "vit": 20,
       "wil": 4
     },
-    "abilities": [],
+    "abilities": [
+      "rend-flesh"
+    ],
     "properties": {
       "ai_pattern": "Melee",
       "amount_of_heads": 1,
@@ -2183,7 +2193,11 @@
       "vit": 11,
       "wil": 21
     },
-    "abilities": [],
+    "abilities": [
+      "chain-lightning",
+      "impulse",
+      "jolt"
+    ],
     "properties": {
       "ai_pattern": "Mage",
       "amount_of_heads": 1,
@@ -2256,7 +2270,10 @@
       "vit": 14,
       "wil": 18
     },
-    "abilities": [],
+    "abilities": [
+      "boulder-toss",
+      "stone-spikes"
+    ],
     "properties": {
       "ai_pattern": "Mage",
       "amount_of_heads": 1,
@@ -2325,7 +2342,10 @@
       "vit": 11,
       "wil": 23
     },
-    "abilities": [],
+    "abilities": [
+      "flame-wave",
+      "ring-of-fire"
+    ],
     "properties": {
       "ai_pattern": "Mage",
       "amount_of_heads": 1,
@@ -3088,7 +3108,9 @@
       "vit": 10,
       "wil": 6
     },
-    "abilities": [],
+    "abilities": [
+      "web-spit"
+    ],
     "properties": {
       "ai_pattern": "Melee",
       "amount_of_heads": 1,
@@ -6473,7 +6495,9 @@
       "vit": 10,
       "wil": 6
     },
-    "abilities": [],
+    "abilities": [
+      "baleful-scream"
+    ],
     "properties": {
       "ai_pattern": "Melee",
       "amount_of_heads": 1,
@@ -8728,7 +8752,11 @@
       "vit": 70,
       "wil": 60
     },
-    "abilities": [],
+    "abilities": [
+      "bone-pyres",
+      "primal-aether",
+      "vengeance-of-the-dead"
+    ],
     "properties": {
       "ai_pattern": "Melee",
       "amount_of_heads": 1,
@@ -10032,7 +10060,9 @@
       "vit": 8,
       "wil": 14
     },
-    "abilities": [],
+    "abilities": [
+      "desecration"
+    ],
     "properties": {
       "ai_pattern": "Mage",
       "amount_of_heads": 1,
@@ -16155,7 +16185,10 @@
       "vit": 10,
       "wil": 4
     },
-    "abilities": [],
+    "abilities": [
+      "protect-the-hive",
+      "toxic-salvo"
+    ],
     "properties": {
       "ai_pattern": "Melee",
       "amount_of_torsos": 1,
