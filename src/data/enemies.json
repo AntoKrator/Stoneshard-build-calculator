@@ -69,7 +69,8 @@
       "vision": 9,
       "weapon": "claws",
       "xp": 180
-    }
+    },
+    "icon": "img/enemies/abomination.png"
   },
   {
     "key": "accursed-ghast",
@@ -135,7 +136,8 @@
       "vision": 9,
       "weapon": "claws",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/accursed-ghast.png"
   },
   {
     "key": "adept-dagger",
@@ -205,7 +207,8 @@
       "vision": 10,
       "weapon": "dagger",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/adept-dagger.png"
   },
   {
     "key": "adept-torch",
@@ -276,7 +279,8 @@
       "vision": 10,
       "weapon": "mace",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/adept-torch.png"
   },
   {
     "key": "admonisher",
@@ -349,7 +353,8 @@
       "vision": 12,
       "weapon": "2hStaff",
       "xp": 180
-    }
+    },
+    "icon": "img/enemies/admonisher.png"
   },
   {
     "key": "amalgam-tongue",
@@ -419,7 +424,8 @@
       "vision": 8,
       "weapon": "claws",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/amalgam-tongue.png"
   },
   {
     "key": "amalgam-winged",
@@ -489,7 +495,8 @@
       "vision": 8,
       "weapon": "claws",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/amalgam-winged.png"
   },
   {
     "key": "ambusher",
@@ -555,7 +562,8 @@
       "vision": 11,
       "weapon": "crossbow",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/ambusher.png"
   },
   {
     "key": "ambusher-melee",
@@ -620,7 +628,8 @@
       "vision": 11,
       "weapon": "sword",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/ambusher-melee.png"
   },
   {
     "key": "ancient-ghast",
@@ -685,7 +694,8 @@
       "vision": 9,
       "weapon": "claws",
       "xp": 125
-    }
+    },
+    "icon": "img/enemies/ancient-ghast.png"
   },
   {
     "key": "ancient-troll",
@@ -751,7 +761,8 @@
       "vision": 20,
       "weapon": "claws",
       "xp": 1000
-    }
+    },
+    "icon": "img/enemies/ancient-troll.png"
   },
   {
     "key": "anmarrak",
@@ -821,7 +832,8 @@
       "vision": 10,
       "weapon": "claws",
       "xp": 240
-    }
+    },
+    "icon": "img/enemies/anmarrak.png"
   },
   {
     "key": "anointed",
@@ -896,7 +908,8 @@
       "vision": 8,
       "weapon": "2hStaff",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/anointed.png"
   },
   {
     "key": "apostate",
@@ -955,7 +968,8 @@
       "vision": 10,
       "weapon": "claws",
       "xp": 75
-    }
+    },
+    "icon": "img/enemies/apostate.png"
   },
   {
     "key": "apostle",
@@ -1027,7 +1041,8 @@
       "vision": 10,
       "weapon": "claws",
       "xp": 300
-    }
+    },
+    "icon": "img/enemies/apostle.png"
   },
   {
     "key": "archivist",
@@ -1091,7 +1106,8 @@
       "vision": 12,
       "weapon": "claws",
       "xp": 120
-    }
+    },
+    "icon": "img/enemies/archivist.png"
   },
   {
     "key": "archon",
@@ -1138,7 +1154,8 @@
       "vision": 20,
       "weapon": "claws",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/archon.png"
   },
   {
     "key": "ascended-archon",
@@ -1197,7 +1214,8 @@
       "vision": 20,
       "weapon": "claws",
       "xp": 333
-    }
+    },
+    "icon": "img/enemies/ascended-archon.png"
   },
   {
     "key": "banneret",
@@ -1266,7 +1284,8 @@
       "vision": 14,
       "weapon": "spear",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/banneret.png"
   },
   {
     "key": "bat-swarm",
@@ -1323,7 +1342,8 @@
       "vision": 9,
       "weapon": "fangs",
       "xp": 10
-    }
+    },
+    "icon": "img/enemies/bat-swarm.png"
   },
   {
     "key": "bear",
@@ -1394,7 +1414,8 @@
       "vision": 7,
       "weapon": "fangs",
       "xp": 150
-    }
+    },
+    "icon": "img/enemies/bear.png"
   },
   {
     "key": "beast-trapper",
@@ -1461,7 +1482,8 @@
       "vision": 15,
       "weapon": "bow",
       "xp": 240
-    }
+    },
+    "icon": "img/enemies/beast-trapper.png"
   },
   {
     "key": "beast-trapper-melee",
@@ -1528,7 +1550,8 @@
       "vision": 15,
       "weapon": "axe",
       "xp": 240
-    }
+    },
+    "icon": "img/enemies/beast-trapper-melee.png"
   },
   {
     "key": "bison",
@@ -1595,7 +1618,8 @@
       "vision": 8,
       "weapon": "antlers",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/bison.png"
   },
   {
     "key": "blood-golem",
@@ -1659,7 +1683,8 @@
       "vision": 7,
       "weapon": "claws",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/blood-golem.png"
   },
   {
     "key": "bloodgorger-worm",
@@ -1722,7 +1747,8 @@
       "vision": 8,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/bloodgorger-worm.png"
   },
   {
     "key": "bloodhunter",
@@ -1795,7 +1821,8 @@
       "vision": 11,
       "weapon": "claws",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/bloodhunter.png"
   },
   {
     "key": "boar",
@@ -1861,7 +1888,8 @@
       "vision": 10,
       "weapon": "fangs",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/boar.png"
   },
   {
     "key": "bonebreaker-two-handed-axe",
@@ -1927,7 +1955,8 @@
       "vision": 11,
       "weapon": "2haxe",
       "xp": 180
-    }
+    },
+    "icon": "img/enemies/bonebreaker-two-handed-axe.png"
   },
   {
     "key": "bonebreaker-two-handed-mace",
@@ -1994,7 +2023,8 @@
       "vision": 11,
       "weapon": "2hmace",
       "xp": 180
-    }
+    },
+    "icon": "img/enemies/bonebreaker-two-handed-mace.png"
   },
   {
     "key": "brander",
@@ -2068,7 +2098,8 @@
       "vision": 10,
       "weapon": "spear",
       "xp": 180
-    }
+    },
+    "icon": "img/enemies/brander.png"
   },
   {
     "key": "brigand-arcanist",
@@ -2145,7 +2176,8 @@
       "vision": 15,
       "weapon": "2hStaff",
       "xp": 300
-    }
+    },
+    "icon": "img/enemies/brigand-arcanist.png"
   },
   {
     "key": "brigand-electromancer",
@@ -2217,7 +2249,8 @@
       "vision": 13,
       "weapon": "2hStaff",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/brigand-electromancer.png"
   },
   {
     "key": "brigand-geomancer",
@@ -2293,7 +2326,8 @@
       "vision": 13,
       "weapon": "2hStaff",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/brigand-geomancer.png"
   },
   {
     "key": "brigand-pyromancer",
@@ -2365,7 +2399,8 @@
       "vision": 14,
       "weapon": "2hStaff",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/brigand-pyromancer.png"
   },
   {
     "key": "brigand-warlock",
@@ -2442,7 +2477,8 @@
       "vision": 11,
       "weapon": "2hStaff",
       "xp": 180
-    }
+    },
+    "icon": "img/enemies/brigand-warlock.png"
   },
   {
     "key": "brute",
@@ -2502,7 +2538,8 @@
       "vision": 9,
       "weapon": "mace",
       "xp": 225
-    }
+    },
+    "icon": "img/enemies/brute.png"
   },
   {
     "key": "bunting",
@@ -2549,7 +2586,8 @@
       "vision": 14,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/bunting.png"
   },
   {
     "key": "cat",
@@ -2596,7 +2634,8 @@
       "vision": 14,
       "weapon": "claws",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/cat.png"
   },
   {
     "key": "chainbound",
@@ -2667,7 +2706,8 @@
       "vision": 8,
       "weapon": "claws",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/chainbound.png"
   },
   {
     "key": "cherub-spear",
@@ -2744,7 +2784,8 @@
       "vision": 9,
       "weapon": "spear",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/cherub-spear.png"
   },
   {
     "key": "cherub-two-handed-axe",
@@ -2821,7 +2862,8 @@
       "vision": 9,
       "weapon": "axe",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/cherub-two-handed-axe.png"
   },
   {
     "key": "chicken",
@@ -2867,7 +2909,8 @@
       "vision": 14,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/chicken.png"
   },
   {
     "key": "chosen",
@@ -2937,7 +2980,8 @@
       "vision": 9,
       "weapon": "claws",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/chosen.png"
   },
   {
     "key": "cow",
@@ -2985,7 +3029,8 @@
       "vision": 14,
       "weapon": "antlers",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/cow.png"
   },
   {
     "key": "crawler",
@@ -3054,7 +3099,8 @@
       "vision": 9,
       "weapon": "fangs",
       "xp": 120
-    }
+    },
+    "icon": "img/enemies/crawler.png"
   },
   {
     "key": "crawler-broodmother",
@@ -3129,7 +3175,8 @@
       "vision": 11,
       "weapon": "fangs",
       "xp": 400
-    }
+    },
+    "icon": "img/enemies/crawler-broodmother.png"
   },
   {
     "key": "crawler-burrow",
@@ -3179,7 +3226,8 @@
       "morale": 0,
       "swimming_cost": 1,
       "xp": 400
-    }
+    },
+    "icon": "img/enemies/crawler-burrow.png"
   },
   {
     "key": "crook",
@@ -3243,7 +3291,8 @@
       "vision": 10,
       "weapon": "dagger",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/crook.png"
   },
   {
     "key": "crook-torch",
@@ -3308,7 +3357,8 @@
       "vision": 10,
       "weapon": "dagger",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/crook-torch.png"
   },
   {
     "key": "crypt-keeper",
@@ -3383,7 +3433,8 @@
       "vision": 8,
       "weapon": "spear",
       "xp": 240
-    }
+    },
+    "icon": "img/enemies/crypt-keeper.png"
   },
   {
     "key": "cultist",
@@ -3431,7 +3482,8 @@
       "vision": 9,
       "weapon": "dagger",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/cultist.png"
   },
   {
     "key": "cursed-bell",
@@ -3481,7 +3533,8 @@
       "vision": 10,
       "weapon": "magic",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/cursed-bell.png"
   },
   {
     "key": "cutthroat",
@@ -3549,7 +3602,8 @@
       "vision": 12,
       "weapon": "dagger",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/cutthroat.png"
   },
   {
     "key": "cutthroat-torch",
@@ -3618,7 +3672,8 @@
       "vision": 12,
       "weapon": "dagger",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/cutthroat-torch.png"
   },
   {
     "key": "dead-martyr",
@@ -3668,7 +3723,8 @@
       "vision": 0,
       "weapon": "claws",
       "xp": 5
-    }
+    },
+    "icon": "img/enemies/dead-martyr.png"
   },
   {
     "key": "deathstinger-hive",
@@ -3718,7 +3774,8 @@
       "morale": 0,
       "swimming_cost": 1,
       "xp": 150
-    }
+    },
+    "icon": "img/enemies/deathstinger-hive.png"
   },
   {
     "key": "deathstinger-swarm",
@@ -3777,7 +3834,8 @@
       "vision": 6,
       "weapon": "sting",
       "xp": 20
-    }
+    },
+    "icon": "img/enemies/deathstinger-swarm.png"
   },
   {
     "key": "deer",
@@ -3828,7 +3886,8 @@
       "vision": 10,
       "weapon": "antlers",
       "xp": 10
-    }
+    },
+    "icon": "img/enemies/deer.png"
   },
   {
     "key": "desecrator",
@@ -3898,7 +3957,8 @@
       "vision": 8,
       "weapon": "2hStaff",
       "xp": 180
-    }
+    },
+    "icon": "img/enemies/desecrator.png"
   },
   {
     "key": "deserter-axe",
@@ -3968,7 +4028,8 @@
       "vision": 12,
       "weapon": "axe",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/deserter-axe.png"
   },
   {
     "key": "deserter-axe-torch",
@@ -4105,7 +4166,8 @@
       "vision": 12,
       "weapon": "mace",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/deserter-flail.png"
   },
   {
     "key": "deserter-flail-torch",
@@ -4242,7 +4304,8 @@
       "vision": 12,
       "weapon": "sword",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/deserter-sword.png"
   },
   {
     "key": "deserter-sword-torch",
@@ -4375,7 +4438,8 @@
       "vision": 12,
       "weapon": "mace",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/deserter-two-handed-flail.png"
   },
   {
     "key": "disciple-staff",
@@ -4435,7 +4499,8 @@
       "vision": 10,
       "weapon": "2hStaff",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/disciple-staff.png"
   },
   {
     "key": "disciple-two-handed-axe",
@@ -4495,7 +4560,8 @@
       "vision": 10,
       "weapon": "2haxe",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/disciple-two-handed-axe.png"
   },
   {
     "key": "disciple-two-handed-flail",
@@ -4555,7 +4621,8 @@
       "vision": 10,
       "weapon": "2hmace",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/disciple-two-handed-flail.png"
   },
   {
     "key": "dog",
@@ -4603,7 +4670,8 @@
       "vision": 14,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/dog.png"
   },
   {
     "key": "drummer",
@@ -4667,7 +4735,8 @@
       "vision": 11,
       "weapon": "mace",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/drummer.png"
   },
   {
     "key": "duck",
@@ -4715,7 +4784,8 @@
       "vision": 14,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/duck.png"
   },
   {
     "key": "duelist",
@@ -4785,7 +4855,8 @@
       "vision": 13,
       "weapon": "sword",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/duelist.png"
   },
   {
     "key": "ecclesiarch",
@@ -4854,7 +4925,8 @@
       "vision": 9,
       "weapon": "claws",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/ecclesiarch.png"
   },
   {
     "key": "enforcer-two-handed-axe",
@@ -4912,7 +4984,8 @@
       "vision": 9,
       "weapon": "2haxe",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/enforcer-two-handed-axe.png"
   },
   {
     "key": "enforcer-two-handed-mace",
@@ -4970,7 +5043,8 @@
       "vision": 9,
       "weapon": "2hmace",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/enforcer-two-handed-mace.png"
   },
   {
     "key": "enforcer-two-handed-sword",
@@ -5027,7 +5101,8 @@
       "vision": 9,
       "weapon": "2hsword",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/enforcer-two-handed-sword.png"
   },
   {
     "key": "executioner-chain",
@@ -5099,7 +5174,8 @@
       "vision": 11,
       "weapon": "mace",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/executioner-chain.png"
   },
   {
     "key": "executioner-two-handed-sword",
@@ -5175,7 +5251,8 @@
       "vision": 11,
       "weapon": "2hsword",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/executioner-two-handed-sword.png"
   },
   {
     "key": "feral-dog",
@@ -5234,7 +5311,8 @@
       "vision": 10,
       "weapon": "fangs",
       "xp": 15
-    }
+    },
+    "icon": "img/enemies/feral-dog.png"
   },
   {
     "key": "fiend-two-handed-axe",
@@ -5310,7 +5388,8 @@
       "vision": 9,
       "weapon": "2haxe",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/fiend-two-handed-axe.png"
   },
   {
     "key": "fiend-two-handed-mace",
@@ -5386,7 +5465,8 @@
       "vision": 9,
       "weapon": "2hmace",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/fiend-two-handed-mace.png"
   },
   {
     "key": "firestarter",
@@ -5449,7 +5529,8 @@
       "vision": 10,
       "weapon": "axe",
       "xp": 120
-    }
+    },
+    "icon": "img/enemies/firestarter.png"
   },
   {
     "key": "flagellant",
@@ -5510,7 +5591,8 @@
       "vision": 10,
       "weapon": "mace",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/flagellant.png"
   },
   {
     "key": "flesh-chunk",
@@ -5557,7 +5639,8 @@
       "morale": 0,
       "vision": 0,
       "weapon": "claws"
-    }
+    },
+    "icon": "img/enemies/flesh-chunk.png"
   },
   {
     "key": "flesh-mound",
@@ -5603,7 +5686,8 @@
       "morale": 0,
       "vision": 0,
       "weapon": "fangs"
-    }
+    },
+    "icon": "img/enemies/flesh-mound.png"
   },
   {
     "key": "fox",
@@ -5653,7 +5737,8 @@
       "vision": 10,
       "weapon": "claws",
       "xp": 5
-    }
+    },
+    "icon": "img/enemies/fox.png"
   },
   {
     "key": "fury",
@@ -5724,7 +5809,8 @@
       "vision": 11,
       "weapon": "dagger",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/fury.png"
   },
   {
     "key": "ghast",
@@ -5790,7 +5876,8 @@
       "vision": 8,
       "weapon": "claws",
       "xp": 75
-    }
+    },
+    "icon": "img/enemies/ghast.png"
   },
   {
     "key": "ghoul",
@@ -5860,7 +5947,8 @@
       "vision": 8,
       "weapon": "claws",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/ghoul.png"
   },
   {
     "key": "girrud",
@@ -5926,7 +6014,8 @@
       "vision": 9,
       "weapon": "claws",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/girrud.png"
   },
   {
     "key": "goon-cleaver",
@@ -5983,7 +6072,8 @@
       "vision": 9,
       "weapon": "sword",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/goon-cleaver.png"
   },
   {
     "key": "goon-cleaver-torch",
@@ -6097,7 +6187,8 @@
       "vision": 9,
       "weapon": "mace",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/goon-club.png"
   },
   {
     "key": "goon-club-torch",
@@ -6211,7 +6302,8 @@
       "vision": 9,
       "weapon": "mace",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/goon-flail.png"
   },
   {
     "key": "goon-flail-torch",
@@ -6338,7 +6430,8 @@
       "vision": 10,
       "weapon": "fangs",
       "xp": 150
-    }
+    },
+    "icon": "img/enemies/gulon.png"
   },
   {
     "key": "harbinger",
@@ -6395,7 +6488,8 @@
       "vision": 10,
       "weapon": "claws",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/harbinger.png"
   },
   {
     "key": "harpies-nest",
@@ -6445,7 +6539,8 @@
       "morale": 0,
       "swimming_cost": 1,
       "xp": 300
-    }
+    },
+    "icon": "img/enemies/harpies-nest.png"
   },
   {
     "key": "harpy",
@@ -6517,7 +6612,8 @@
       "vision": 9,
       "weapon": "claws",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/harpy.png"
   },
   {
     "key": "heavy-crossbowman",
@@ -6583,7 +6679,8 @@
       "vision": 14,
       "weapon": "crossbow",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/heavy-crossbowman.png"
   },
   {
     "key": "heavy-crossbowman-melee",
@@ -6653,7 +6750,8 @@
       "vision": 14,
       "weapon": "sword",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/heavy-crossbowman-melee.png"
   },
   {
     "key": "heavy-slinger-axe",
@@ -6721,7 +6819,8 @@
       "vision": 14,
       "weapon": "sling",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/heavy-slinger-axe.png"
   },
   {
     "key": "heavy-slinger-axe-melee",
@@ -6787,7 +6886,8 @@
       "vision": 14,
       "weapon": "axe",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/heavy-slinger-axe-melee.png"
   },
   {
     "key": "heavy-slinger-mace",
@@ -6855,7 +6955,8 @@
       "vision": 14,
       "weapon": "sling",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/heavy-slinger-mace.png"
   },
   {
     "key": "heavy-slinger-mace-melee",
@@ -6921,7 +7022,8 @@
       "vision": 14,
       "weapon": "mace",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/heavy-slinger-mace-melee.png"
   },
   {
     "key": "hedgehog",
@@ -6974,7 +7076,8 @@
       "vision": 6,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/hedgehog.png"
   },
   {
     "key": "henchman-axe",
@@ -7040,7 +7143,8 @@
       "vision": 10,
       "weapon": "axe",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/henchman-axe.png"
   },
   {
     "key": "henchman-axe-torch",
@@ -7169,7 +7273,8 @@
       "vision": 10,
       "weapon": "mace",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/henchman-flail.png"
   },
   {
     "key": "henchman-flail-torch",
@@ -7297,7 +7402,8 @@
       "vision": 10,
       "weapon": "mace",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/henchman-mace.png"
   },
   {
     "key": "henchman-mace-torch",
@@ -7421,7 +7527,8 @@
       "vision": 11,
       "weapon": "2hStaff",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/hired-sorcerer-electromancer.png"
   },
   {
     "key": "hired-sorcerer-pyromancer",
@@ -7485,7 +7592,8 @@
       "vision": 11,
       "weapon": "2hStaff",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/hired-sorcerer-pyromancer.png"
   },
   {
     "key": "horse",
@@ -7532,7 +7640,8 @@
       "vision": 14,
       "weapon": "antlers",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/horse.png"
   },
   {
     "key": "husk",
@@ -7599,7 +7708,8 @@
       "vision": 7,
       "weapon": "2hmace",
       "xp": 180
-    }
+    },
+    "icon": "img/enemies/husk.png"
   },
   {
     "key": "immolated",
@@ -7653,7 +7763,8 @@
       "vision": 10,
       "weapon": "claws",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/immolated.png"
   },
   {
     "key": "impaler",
@@ -7728,7 +7839,8 @@
       "vision": 10,
       "weapon": "spear",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/impaler.png"
   },
   {
     "key": "jay",
@@ -7775,7 +7887,8 @@
       "vision": 14,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/jay.png"
   },
   {
     "key": "juggernaut",
@@ -7846,7 +7959,8 @@
       "vision": 9,
       "weapon": "2hmace",
       "xp": 240
-    }
+    },
+    "icon": "img/enemies/juggernaut.png"
   },
   {
     "key": "large-ghoul",
@@ -7918,7 +8032,8 @@
       "vision": 9,
       "weapon": "claws",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/large-ghoul.png"
   },
   {
     "key": "leech-worm",
@@ -7981,7 +8096,8 @@
       "vision": 8,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/leech-worm.png"
   },
   {
     "key": "leechlord",
@@ -8055,7 +8171,8 @@
       "vision": 9,
       "weapon": "claws",
       "xp": 300
-    }
+    },
+    "icon": "img/enemies/leechlord.png"
   },
   {
     "key": "liturgist",
@@ -8124,7 +8241,8 @@
       "vision": 11,
       "weapon": "2hmace",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/liturgist.png"
   },
   {
     "key": "madman",
@@ -8186,7 +8304,8 @@
       "vision": 8,
       "weapon": "dagger",
       "xp": 225
-    }
+    },
+    "icon": "img/enemies/madman.png"
   },
   {
     "key": "magehunter",
@@ -8257,7 +8376,8 @@
       "vision": 13,
       "weapon": "sword",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/magehunter.png"
   },
   {
     "key": "magehunter-torch",
@@ -8329,7 +8449,8 @@
       "vision": 13,
       "weapon": "sword",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/magehunter-torch.png"
   },
   {
     "key": "magistrate-deserter-halberd",
@@ -8399,7 +8520,8 @@
       "vision": 13,
       "weapon": "spear",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/magistrate-deserter-halberd.png"
   },
   {
     "key": "magistrate-deserter-two-handed-axe",
@@ -8469,7 +8591,8 @@
       "vision": 13,
       "weapon": "2haxe",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/magistrate-deserter-two-handed-axe.png"
   },
   {
     "key": "magistrate-deserter-two-handed-mace",
@@ -8540,7 +8663,8 @@
       "vision": 13,
       "weapon": "2hmace",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/magistrate-deserter-two-handed-mace.png"
   },
   {
     "key": "mallard",
@@ -8588,7 +8712,8 @@
       "vision": 14,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/mallard.png"
   },
   {
     "key": "mana-crystal",
@@ -8638,7 +8763,8 @@
       "vision": 9,
       "weapon": "magic",
       "xp": 0
-    }
+    },
+    "icon": "img/enemies/mana-crystal.png"
   },
   {
     "key": "mancatcher-enemy",
@@ -8699,7 +8825,8 @@
       "vision": 10,
       "weapon": "spear",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/mancatcher-enemy.png"
   },
   {
     "key": "manticore",
@@ -8775,7 +8902,8 @@
       "vision": 30,
       "weapon": "claws",
       "xp": 2000
-    }
+    },
+    "icon": "img/enemies/manticore.png"
   },
   {
     "key": "marauder-halberd",
@@ -8845,7 +8973,8 @@
       "vision": 11,
       "weapon": "spear",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/marauder-halberd.png"
   },
   {
     "key": "marauder-spear",
@@ -8914,7 +9043,8 @@
       "vision": 11,
       "weapon": "spear",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/marauder-spear.png"
   },
   {
     "key": "marauder-two-handed-axe",
@@ -8981,7 +9111,8 @@
       "vision": 11,
       "weapon": "2haxe",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/marauder-two-handed-axe.png"
   },
   {
     "key": "marauder-two-handed-flail",
@@ -9048,7 +9179,8 @@
       "vision": 11,
       "weapon": "2hmace",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/marauder-two-handed-flail.png"
   },
   {
     "key": "marauder-two-handed-mace",
@@ -9116,7 +9248,8 @@
       "vision": 11,
       "weapon": "2hmace",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/marauder-two-handed-mace.png"
   },
   {
     "key": "marauder-two-handed-sword",
@@ -9186,7 +9319,8 @@
       "vision": 11,
       "weapon": "2hsword",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/marauder-two-handed-sword.png"
   },
   {
     "key": "marksman",
@@ -9252,7 +9386,8 @@
       "vision": 14,
       "weapon": "bow",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/marksman.png"
   },
   {
     "key": "marksman-melee",
@@ -9319,7 +9454,8 @@
       "vision": 14,
       "weapon": "sword",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/marksman-melee.png"
   },
   {
     "key": "martyr",
@@ -9372,7 +9508,8 @@
       "vision": 12,
       "weapon": "claws",
       "xp": 10
-    }
+    },
+    "icon": "img/enemies/martyr.png"
   },
   {
     "key": "matriarch",
@@ -9443,7 +9580,8 @@
       "vision": 7,
       "weapon": "dagger",
       "xp": 120
-    }
+    },
+    "icon": "img/enemies/matriarch.png"
   },
   {
     "key": "miner",
@@ -9498,7 +9636,8 @@
       "vision": 9,
       "weapon": "mace",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/miner.png"
   },
   {
     "key": "moose",
@@ -9566,7 +9705,8 @@
       "vision": 8,
       "weapon": "antlers",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/moose.png"
   },
   {
     "key": "mortician",
@@ -9631,7 +9771,8 @@
       "vision": 13,
       "weapon": "claws",
       "xp": 240
-    }
+    },
+    "icon": "img/enemies/mortician.png"
   },
   {
     "key": "murkstalker",
@@ -9702,7 +9843,8 @@
       "vision": 10,
       "weapon": "claws",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/murkstalker.png"
   },
   {
     "key": "nakkatar",
@@ -9777,7 +9919,8 @@
       "vision": 11,
       "weapon": "claws",
       "xp": 300
-    }
+    },
+    "icon": "img/enemies/nakkatar.png"
   },
   {
     "key": "necromancer-staff",
@@ -9844,7 +9987,8 @@
       "vision": 12,
       "weapon": "2hStaff",
       "xp": 120
-    }
+    },
+    "icon": "img/enemies/necromancer-staff.png"
   },
   {
     "key": "neophyte-club",
@@ -9902,7 +10046,8 @@
       "vision": 10,
       "weapon": "mace",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/neophyte-club.png"
   },
   {
     "key": "neophyte-dagger",
@@ -9960,7 +10105,8 @@
       "vision": 10,
       "weapon": "dagger",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/neophyte-dagger.png"
   },
   {
     "key": "neophyte-plank",
@@ -10018,7 +10164,8 @@
       "vision": 10,
       "weapon": "2hmace",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/neophyte-plank.png"
   },
   {
     "key": "occultist",
@@ -10082,7 +10229,8 @@
       "vision": 12,
       "weapon": "dagger",
       "xp": 75
-    }
+    },
+    "icon": "img/enemies/occultist.png"
   },
   {
     "key": "outcast",
@@ -10144,7 +10292,8 @@
       "vision": 11,
       "weapon": "claws",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/outcast.png"
   },
   {
     "key": "outlaw",
@@ -10204,7 +10353,8 @@
       "vision": 11,
       "weapon": "bow",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/outlaw.png"
   },
   {
     "key": "outlaw-melee",
@@ -10262,7 +10412,8 @@
       "vision": 11,
       "weapon": "dagger",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/outlaw-melee.png"
   },
   {
     "key": "overseer",
@@ -10322,7 +10473,8 @@
       "vision": 9,
       "weapon": "mace",
       "xp": 225
-    }
+    },
+    "icon": "img/enemies/overseer.png"
   },
   {
     "key": "owl",
@@ -10368,7 +10520,8 @@
       "vision": 14,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/owl.png"
   },
   {
     "key": "paymaster",
@@ -10439,7 +10592,8 @@
       "vision": 13,
       "weapon": "2hsword",
       "xp": 240
-    }
+    },
+    "icon": "img/enemies/paymaster.png"
   },
   {
     "key": "phantasm-enemy",
@@ -10505,7 +10659,8 @@
       "vision": 8,
       "weapon": "magic",
       "xp": 0
-    }
+    },
+    "icon": "img/enemies/phantasm-enemy.png"
   },
   {
     "key": "pig",
@@ -10552,7 +10707,8 @@
       "vision": 14,
       "weapon": "antlers",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/pig.png"
   },
   {
     "key": "pigeon",
@@ -10599,7 +10755,8 @@
       "vision": 14,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/pigeon.png"
   },
   {
     "key": "poacher",
@@ -10654,7 +10811,8 @@
       "vision": 9,
       "weapon": "bow",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/poacher.png"
   },
   {
     "key": "poacher-melee",
@@ -10708,7 +10866,8 @@
       "vision": 9,
       "weapon": "mace",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/poacher-melee.png"
   },
   {
     "key": "prospector",
@@ -10765,7 +10924,8 @@
       "vision": 11,
       "weapon": "mace",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/prospector.png"
   },
   {
     "key": "putrid-restless-soldier-halberd",
@@ -10836,7 +10996,8 @@
       "vision": 8,
       "weapon": "spear",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/putrid-restless-soldier-halberd.png"
   },
   {
     "key": "putrid-restless-soldier-halberd-unarmed",
@@ -10968,7 +11129,8 @@
       "vision": 8,
       "weapon": "2haxe",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/putrid-restless-soldier-two-handed-axe.png"
   },
   {
     "key": "putrid-restless-soldier-two-handed-axe-unarmed",
@@ -11101,7 +11263,8 @@
       "vision": 8,
       "weapon": "2hmace",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/putrid-restless-soldier-two-handed-mace.png"
   },
   {
     "key": "putrid-restless-soldier-two-handed-mace-unarmed",
@@ -11214,7 +11377,8 @@
       "vision": 8,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/rabbit.png"
   },
   {
     "key": "rabble-rouser",
@@ -11280,7 +11444,8 @@
       "vision": 10,
       "weapon": "2hStaff",
       "xp": 120
-    }
+    },
+    "icon": "img/enemies/rabble-rouser.png"
   },
   {
     "key": "raider",
@@ -11348,7 +11513,8 @@
       "vision": 10,
       "weapon": "axe",
       "xp": 120
-    }
+    },
+    "icon": "img/enemies/raider.png"
   },
   {
     "key": "rat-swarm",
@@ -11403,7 +11569,8 @@
       "vision": 8,
       "weapon": "fangs",
       "xp": 10
-    }
+    },
+    "icon": "img/enemies/rat-swarm.png"
   },
   {
     "key": "raven",
@@ -11450,7 +11617,8 @@
       "vision": 14,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/raven.png"
   },
   {
     "key": "rebel",
@@ -11506,7 +11674,8 @@
       "vision": 9,
       "weapon": "spear",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/rebel.png"
   },
   {
     "key": "reject",
@@ -11571,7 +11740,8 @@
       "vision": 8,
       "weapon": "claws",
       "xp": 75
-    }
+    },
+    "icon": "img/enemies/reject.png"
   },
   {
     "key": "renegade-halberd",
@@ -11640,7 +11810,8 @@
       "vision": 13,
       "weapon": "spear",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/renegade-halberd.png"
   },
   {
     "key": "renegade-two-handed-axe",
@@ -11707,7 +11878,8 @@
       "vision": 13,
       "weapon": "2haxe",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/renegade-two-handed-axe.png"
   },
   {
     "key": "renegade-two-handed-flail",
@@ -11775,7 +11947,8 @@
       "vision": 13,
       "weapon": "2hmace",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/renegade-two-handed-flail.png"
   },
   {
     "key": "renegade-two-handed-mace",
@@ -11845,7 +12018,8 @@
       "vision": 13,
       "weapon": "2hmace",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/renegade-two-handed-mace.png"
   },
   {
     "key": "renegade-two-handed-sword",
@@ -11916,7 +12090,8 @@
       "vision": 13,
       "weapon": "2hsword",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/renegade-two-handed-sword.png"
   },
   {
     "key": "restless",
@@ -11974,7 +12149,8 @@
       "vision": 6,
       "weapon": "claws",
       "xp": 15
-    }
+    },
+    "icon": "img/enemies/restless.png"
   },
   {
     "key": "restless-brigand",
@@ -12042,7 +12218,8 @@
       "vision": 6,
       "weapon": "sword",
       "xp": 30
-    }
+    },
+    "icon": "img/enemies/restless-brigand.png"
   },
   {
     "key": "restless-brigand-unarmed",
@@ -12104,7 +12281,8 @@
       "vision": 6,
       "weapon": "claws",
       "xp": 30
-    }
+    },
+    "icon": "img/enemies/restless-brigand-unarmed.png"
   },
   {
     "key": "restless-guard-halberd",
@@ -12173,7 +12351,8 @@
       "vision": 6,
       "weapon": "spear",
       "xp": 30
-    }
+    },
+    "icon": "img/enemies/restless-guard-halberd.png"
   },
   {
     "key": "restless-guard-halberd-unarmed",
@@ -12303,7 +12482,8 @@
       "vision": 6,
       "weapon": "spear",
       "xp": 30
-    }
+    },
+    "icon": "img/enemies/restless-guard-spear.png"
   },
   {
     "key": "restless-guard-spear-unarmed",
@@ -12433,7 +12613,8 @@
       "vision": 6,
       "weapon": "sword",
       "xp": 30
-    }
+    },
+    "icon": "img/enemies/restless-guard-sword.png"
   },
   {
     "key": "restless-guard-sword-unarmed",
@@ -12565,7 +12746,8 @@
       "vision": 9,
       "weapon": "2haxe",
       "xp": 240
-    }
+    },
+    "icon": "img/enemies/restless-hero.png"
   },
   {
     "key": "restless-hero-unarmed",
@@ -12630,7 +12812,8 @@
       "vision": 9,
       "weapon": "claws",
       "xp": 240
-    }
+    },
+    "icon": "img/enemies/restless-hero-unarmed.png"
   },
   {
     "key": "restless-peasant-axe",
@@ -12692,7 +12875,8 @@
       "vision": 6,
       "weapon": "axe",
       "xp": 20
-    }
+    },
+    "icon": "img/enemies/restless-peasant-axe.png"
   },
   {
     "key": "restless-peasant-axe-unarmed",
@@ -12811,7 +12995,8 @@
       "vision": 6,
       "weapon": "dagger",
       "xp": 20
-    }
+    },
+    "icon": "img/enemies/restless-peasant-dagger.png"
   },
   {
     "key": "restless-peasant-dagger-unarmed",
@@ -12931,7 +13116,8 @@
       "vision": 6,
       "weapon": "spear",
       "xp": 20
-    }
+    },
+    "icon": "img/enemies/restless-peasant-pitchfork.png"
   },
   {
     "key": "restless-peasant-pitchfork-unarmed",
@@ -13059,7 +13245,8 @@
       "vision": 7,
       "weapon": "axe",
       "xp": 45
-    }
+    },
+    "icon": "img/enemies/restless-soldier-axe.png"
   },
   {
     "key": "restless-soldier-axe-unarmed",
@@ -13191,7 +13378,8 @@
       "vision": 7,
       "weapon": "spear",
       "xp": 45
-    }
+    },
+    "icon": "img/enemies/restless-soldier-halberd.png"
   },
   {
     "key": "restless-soldier-halberd-unarmed",
@@ -13321,7 +13509,8 @@
       "vision": 7,
       "weapon": "mace",
       "xp": 45
-    }
+    },
+    "icon": "img/enemies/restless-soldier-mace.png"
   },
   {
     "key": "restless-soldier-mace-unarmed",
@@ -13454,7 +13643,8 @@
       "vision": 13,
       "weapon": "axe",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/ringleader-axe.png"
   },
   {
     "key": "ringleader-axe-torch",
@@ -13592,7 +13782,8 @@
       "vision": 13,
       "weapon": "sword",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/ringleader-sword.png"
   },
   {
     "key": "ringleader-sword-torch",
@@ -13720,7 +13911,8 @@
       "vision": 7,
       "weapon": "bow",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/risen-archer.png"
   },
   {
     "key": "risen-archer-melee",
@@ -13780,7 +13972,8 @@
       "vision": 7,
       "weapon": "sword",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/risen-archer-melee.png"
   },
   {
     "key": "risen-axonian",
@@ -13836,7 +14029,8 @@
       "vision": 30,
       "weapon": "spear",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/risen-axonian.png"
   },
   {
     "key": "risen-bowman",
@@ -13901,7 +14095,8 @@
       "vision": 7,
       "weapon": "bow",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/risen-bowman.png"
   },
   {
     "key": "risen-bowman-melee",
@@ -13965,7 +14160,8 @@
       "vision": 7,
       "weapon": "bow",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/risen-bowman-melee.png"
   },
   {
     "key": "risen-chaplain",
@@ -14025,7 +14221,8 @@
       "vision": 8,
       "weapon": "claws",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/risen-chaplain.png"
   },
   {
     "key": "risen-companion-axe",
@@ -14095,7 +14292,8 @@
       "vision": 8,
       "weapon": "axe",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/risen-companion-axe.png"
   },
   {
     "key": "risen-companion-mace",
@@ -14165,7 +14363,8 @@
       "vision": 8,
       "weapon": "mace",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/risen-companion-mace.png"
   },
   {
     "key": "risen-companion-sword",
@@ -14235,7 +14434,8 @@
       "vision": 8,
       "weapon": "sword",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/risen-companion-sword.png"
   },
   {
     "key": "risen-crossbowman",
@@ -14300,7 +14500,8 @@
       "vision": 8,
       "weapon": "crossbow",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/risen-crossbowman.png"
   },
   {
     "key": "risen-crossbowman-melee",
@@ -14364,7 +14565,8 @@
       "vision": 8,
       "weapon": "sword",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/risen-crossbowman-melee.png"
   },
   {
     "key": "risen-guardsman-mace",
@@ -14435,7 +14637,8 @@
       "vision": 9,
       "weapon": "mace",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/risen-guardsman-mace.png"
   },
   {
     "key": "risen-guardsman-spear",
@@ -14504,7 +14707,8 @@
       "vision": 9,
       "weapon": "spear",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/risen-guardsman-spear.png"
   },
   {
     "key": "risen-guardsman-sword",
@@ -14574,7 +14778,8 @@
       "vision": 9,
       "weapon": "sword",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/risen-guardsman-sword.png"
   },
   {
     "key": "risen-guardsman-two-handed-axe",
@@ -14643,7 +14848,8 @@
       "vision": 9,
       "weapon": "2haxe",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/risen-guardsman-two-handed-axe.png"
   },
   {
     "key": "risen-knight-brother-two-handed-axe",
@@ -14712,7 +14918,8 @@
       "vision": 9,
       "weapon": "2haxe",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/risen-knight-brother-two-handed-axe.png"
   },
   {
     "key": "risen-knight-brother-two-handed-mace",
@@ -14781,7 +14988,8 @@
       "vision": 9,
       "weapon": "2hmace",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/risen-knight-brother-two-handed-mace.png"
   },
   {
     "key": "risen-knight-brother-two-handed-sword",
@@ -14850,7 +15058,8 @@
       "vision": 9,
       "weapon": "2hsword",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/risen-knight-brother-two-handed-sword.png"
   },
   {
     "key": "risen-marshal",
@@ -14929,7 +15138,8 @@
       "vision": 9,
       "weapon": "2hsword",
       "xp": 300
-    }
+    },
+    "icon": "img/enemies/risen-marshal.png"
   },
   {
     "key": "risen-monk",
@@ -14989,7 +15199,8 @@
       "vision": 7,
       "weapon": "claws",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/risen-monk.png"
   },
   {
     "key": "risen-priest",
@@ -15049,7 +15260,8 @@
       "vision": 7,
       "weapon": "claws",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/risen-priest.png"
   },
   {
     "key": "risen-recruit-axe",
@@ -15118,7 +15330,8 @@
       "vision": 7,
       "weapon": "axe",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/risen-recruit-axe.png"
   },
   {
     "key": "risen-recruit-mace",
@@ -15186,7 +15399,8 @@
       "vision": 7,
       "weapon": "mace",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/risen-recruit-mace.png"
   },
   {
     "key": "risen-recruit-sword",
@@ -15254,7 +15468,8 @@
       "vision": 7,
       "weapon": "sword",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/risen-recruit-sword.png"
   },
   {
     "key": "risen-sariant",
@@ -15322,7 +15537,8 @@
       "vision": 7,
       "weapon": "spear",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/risen-sariant.png"
   },
   {
     "key": "risen-sergeant",
@@ -15391,7 +15607,8 @@
       "vision": 8,
       "weapon": "spear",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/risen-sergeant.png"
   },
   {
     "key": "risen-squire-axe",
@@ -15461,7 +15678,8 @@
       "vision": 7,
       "weapon": "axe",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/risen-squire-axe.png"
   },
   {
     "key": "risen-squire-mace",
@@ -15531,7 +15749,8 @@
       "vision": 7,
       "weapon": "mace",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/risen-squire-mace.png"
   },
   {
     "key": "risen-squire-sword",
@@ -15601,7 +15820,8 @@
       "vision": 7,
       "weapon": "sword",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/risen-squire-sword.png"
   },
   {
     "key": "risen-watchman",
@@ -15668,7 +15888,8 @@
       "vision": 7,
       "weapon": "spear",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/risen-watchman.png"
   },
   {
     "key": "ritual-restless",
@@ -15722,7 +15943,8 @@
       "vision": 30,
       "weapon": "claws",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/ritual-restless.png"
   },
   {
     "key": "ritualist",
@@ -15788,7 +16010,8 @@
       "vision": 13,
       "weapon": "2hStaff",
       "xp": 180
-    }
+    },
+    "icon": "img/enemies/ritualist.png"
   },
   {
     "key": "robber-baron-mace",
@@ -15864,7 +16087,8 @@
       "vision": 10,
       "weapon": "mace",
       "xp": 300
-    }
+    },
+    "icon": "img/enemies/robber-baron-mace.png"
   },
   {
     "key": "robber-baron-two-handed-mace",
@@ -15937,7 +16161,8 @@
       "vision": 10,
       "weapon": "2hmace",
       "xp": 300
-    }
+    },
+    "icon": "img/enemies/robber-baron-two-handed-mace.png"
   },
   {
     "key": "robber-baron-two-handed-sword",
@@ -16011,7 +16236,8 @@
       "vision": 10,
       "weapon": "2hsword",
       "xp": 300
-    }
+    },
+    "icon": "img/enemies/robber-baron-two-handed-sword.png"
   },
   {
     "key": "rockeater-hunter",
@@ -16074,7 +16300,8 @@
       "vision": 8,
       "weapon": "fangs",
       "xp": 135
-    }
+    },
+    "icon": "img/enemies/rockeater-hunter.png"
   },
   {
     "key": "rockeater-queen",
@@ -16131,7 +16358,8 @@
       "vision": 15,
       "weapon": "fangs",
       "xp": 600
-    }
+    },
+    "icon": "img/enemies/rockeater-queen.png"
   },
   {
     "key": "rockeater-soldier",
@@ -16203,7 +16431,8 @@
       "vision": 7,
       "weapon": "fangs",
       "xp": 180
-    }
+    },
+    "icon": "img/enemies/rockeater-soldier.png"
   },
   {
     "key": "rockeater-worker",
@@ -16263,7 +16492,8 @@
       "vision": 6,
       "weapon": "fangs",
       "xp": 90
-    }
+    },
+    "icon": "img/enemies/rockeater-worker.png"
   },
   {
     "key": "rogue-knight",
@@ -16336,7 +16566,8 @@
       "vision": 12,
       "weapon": "sword",
       "xp": 240
-    }
+    },
+    "icon": "img/enemies/rogue-knight.png"
   },
   {
     "key": "rogue-witchfinder",
@@ -16411,7 +16642,8 @@
       "vision": 15,
       "weapon": "dagger",
       "xp": 300
-    }
+    },
+    "icon": "img/enemies/rogue-witchfinder.png"
   },
   {
     "key": "rooster",
@@ -16457,7 +16689,8 @@
       "vision": 14,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/rooster.png"
   },
   {
     "key": "saggul",
@@ -16518,7 +16751,8 @@
       "vision": 9,
       "weapon": "claws",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/saggul.png"
   },
   {
     "key": "saiga",
@@ -16569,7 +16803,8 @@
       "vision": 10,
       "weapon": "antlers",
       "xp": 5
-    }
+    },
+    "icon": "img/enemies/saiga.png"
   },
   {
     "key": "sanguimage",
@@ -16641,7 +16876,8 @@
       "vision": 12,
       "weapon": "2hStaff",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/sanguimage.png"
   },
   {
     "key": "scout",
@@ -16697,7 +16933,8 @@
       "vision": 9,
       "weapon": "mace",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/scout.png"
   },
   {
     "key": "seagull",
@@ -16743,7 +16980,8 @@
       "vision": 14,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/seagull.png"
   },
   {
     "key": "seer",
@@ -16811,7 +17049,8 @@
       "vision": 12,
       "weapon": "fists",
       "xp": 120
-    }
+    },
+    "icon": "img/enemies/seer.png"
   },
   {
     "key": "sheep",
@@ -16858,7 +17097,8 @@
       "vision": 14,
       "weapon": "antlers",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/sheep.png"
   },
   {
     "key": "slinger-axe",
@@ -16919,7 +17159,8 @@
       "vision": 11,
       "weapon": "sling",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/slinger-axe.png"
   },
   {
     "key": "slinger-axe-melee",
@@ -16979,7 +17220,8 @@
       "vision": 11,
       "weapon": "axe",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/slinger-axe-melee.png"
   },
   {
     "key": "slinger-mace",
@@ -17040,7 +17282,8 @@
       "vision": 11,
       "weapon": "sling",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/slinger-mace.png"
   },
   {
     "key": "slinger-mace-melee",
@@ -17099,7 +17342,8 @@
       "vision": 11,
       "weapon": "sword",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/slinger-mace-melee.png"
   },
   {
     "key": "small-ghoul",
@@ -17163,7 +17407,8 @@
       "vision": 7,
       "weapon": "claws",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/small-ghoul.png"
   },
   {
     "key": "sparrow",
@@ -17210,7 +17455,8 @@
       "vision": 14,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/sparrow.png"
   },
   {
     "key": "spectral-herald",
@@ -17280,7 +17526,8 @@
       "vision": 10,
       "weapon": "claws",
       "xp": 300
-    }
+    },
+    "icon": "img/enemies/spectral-herald.png"
   },
   {
     "key": "spelunker",
@@ -17339,7 +17586,8 @@
       "vision": 11,
       "weapon": "mace",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/spelunker.png"
   },
   {
     "key": "spiderling",
@@ -17400,7 +17648,8 @@
       "vision": 8,
       "weapon": "fangs",
       "xp": 25
-    }
+    },
+    "icon": "img/enemies/spiderling.png"
   },
   {
     "key": "spitter-worm",
@@ -17460,7 +17709,8 @@
       "vision": 9,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/spitter-worm.png"
   },
   {
     "key": "squirrel",
@@ -17511,7 +17761,8 @@
       "vision": 8,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/squirrel.png"
   },
   {
     "key": "stone-thrower",
@@ -17579,7 +17830,8 @@
       "vision": 12,
       "weapon": "sling",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/stone-thrower.png"
   },
   {
     "key": "stone-thrower-melee",
@@ -17648,7 +17900,8 @@
       "vision": 10,
       "weapon": "dagger",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/stone-thrower-melee.png"
   },
   {
     "key": "straw-dummy",
@@ -17696,7 +17949,8 @@
       "vision": 0,
       "weapon": "claws",
       "xp": 0
-    }
+    },
+    "icon": "img/enemies/straw-dummy.png"
   },
   {
     "key": "straw-dummy-armored",
@@ -17747,7 +18001,8 @@
       "vision": 0,
       "weapon": "claws",
       "xp": 0
-    }
+    },
+    "icon": "img/enemies/straw-dummy-armored.png"
   },
   {
     "key": "straw-dummy-medium",
@@ -17798,7 +18053,8 @@
       "vision": 0,
       "weapon": "claws",
       "xp": 0
-    }
+    },
+    "icon": "img/enemies/straw-dummy-medium.png"
   },
   {
     "key": "supplicant",
@@ -17853,7 +18109,8 @@
       "vision": 12,
       "weapon": "fists",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/supplicant.png"
   },
   {
     "key": "swallow",
@@ -17900,7 +18157,8 @@
       "vision": 14,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/swallow.png"
   },
   {
     "key": "templar-mace",
@@ -17979,7 +18237,8 @@
       "vision": 9,
       "weapon": "mace",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/templar-mace.png"
   },
   {
     "key": "templar-sword",
@@ -18057,7 +18316,8 @@
       "vision": 9,
       "weapon": "sword",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/templar-sword.png"
   },
   {
     "key": "tentacle-arm",
@@ -18119,7 +18379,8 @@
       "vision": 10,
       "weapon": "claws",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/tentacle-arm.png"
   },
   {
     "key": "thrall",
@@ -18186,7 +18447,8 @@
       "vision": 8,
       "weapon": "claws",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/thrall.png"
   },
   {
     "key": "thrush",
@@ -18233,7 +18495,8 @@
       "vision": 14,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/thrush.png"
   },
   {
     "key": "thug-spear",
@@ -18296,7 +18559,8 @@
       "vision": 10,
       "weapon": "spear",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/thug-spear.png"
   },
   {
     "key": "thug-two-handed-axe",
@@ -18357,7 +18621,8 @@
       "vision": 10,
       "weapon": "2haxe",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/thug-two-handed-axe.png"
   },
   {
     "key": "thug-two-handed-flail",
@@ -18419,7 +18684,8 @@
       "vision": 10,
       "weapon": "2hmace",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/thug-two-handed-flail.png"
   },
   {
     "key": "thug-two-handed-mace",
@@ -18482,7 +18748,8 @@
       "vision": 10,
       "weapon": "2hmace",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/thug-two-handed-mace.png"
   },
   {
     "key": "thug-two-handed-sword",
@@ -18545,7 +18812,8 @@
       "vision": 10,
       "weapon": "2hsword",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/thug-two-handed-sword.png"
   },
   {
     "key": "tit",
@@ -18592,7 +18860,8 @@
       "vision": 14,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/tit.png"
   },
   {
     "key": "toller",
@@ -18662,7 +18931,8 @@
       "vision": 10,
       "weapon": "2hStaff",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/toller.png"
   },
   {
     "key": "tormentor-chain",
@@ -18734,7 +19004,8 @@
       "vision": 9,
       "weapon": "mace",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/tormentor-chain.png"
   },
   {
     "key": "tormentor-cleaver",
@@ -18805,7 +19076,8 @@
       "vision": 9,
       "weapon": "sword",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/tormentor-cleaver.png"
   },
   {
     "key": "torturer",
@@ -18874,7 +19146,8 @@
       "vision": 10,
       "weapon": "2hmace",
       "xp": 180
-    }
+    },
+    "icon": "img/enemies/torturer.png"
   },
   {
     "key": "turncoat-axe",
@@ -18944,7 +19217,8 @@
       "vision": 11,
       "weapon": "axe",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/turncoat-axe.png"
   },
   {
     "key": "turncoat-axe-torch",
@@ -19081,7 +19355,8 @@
       "vision": 11,
       "weapon": "mace",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/turncoat-flail.png"
   },
   {
     "key": "turncoat-flail-torch",
@@ -19219,7 +19494,8 @@
       "vision": 11,
       "weapon": "mace",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/turncoat-mace.png"
   },
   {
     "key": "turncoat-mace-torch",
@@ -19356,7 +19632,8 @@
       "vision": 11,
       "weapon": "sword",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/turncoat-sword.png"
   },
   {
     "key": "turncoat-sword-torch",
@@ -19495,7 +19772,8 @@
       "vision": 9,
       "weapon": "claws",
       "xp": 80
-    }
+    },
+    "icon": "img/enemies/unchained.png"
   },
   {
     "key": "undertaker",
@@ -19560,7 +19838,8 @@
       "vision": 13,
       "weapon": "2hStaff",
       "xp": 180
-    }
+    },
+    "icon": "img/enemies/undertaker.png"
   },
   {
     "key": "viper",
@@ -19664,7 +19943,8 @@
       "vision": 11,
       "weapon": "fangs",
       "xp": 20
-    }
+    },
+    "icon": "img/enemies/war-dog.png"
   },
   {
     "key": "well-of-souls",
@@ -19773,7 +20053,8 @@
       "vision": 10,
       "weapon": "fangs",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/wolf.png"
   },
   {
     "key": "wolfhound",
@@ -19837,7 +20118,8 @@
       "vision": 14,
       "weapon": "fangs",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/wolfhound.png"
   },
   {
     "key": "wormbearer",
@@ -19908,7 +20190,8 @@
       "vision": 9,
       "weapon": "claws",
       "xp": 240
-    }
+    },
+    "icon": "img/enemies/wormbearer.png"
   },
   {
     "key": "wraith",
@@ -19969,7 +20252,8 @@
       "vision": 9,
       "weapon": "claws",
       "xp": 30
-    }
+    },
+    "icon": "img/enemies/wraith.png"
   },
   {
     "key": "wraith-cleric",
@@ -20035,7 +20319,8 @@
       "vision": 9,
       "weapon": "2hStaff",
       "xp": 90
-    }
+    },
+    "icon": "img/enemies/wraith-cleric.png"
   },
   {
     "key": "wraith-commander",
@@ -20100,7 +20385,8 @@
       "vision": 9,
       "weapon": "2haxe",
       "xp": 150
-    }
+    },
+    "icon": "img/enemies/wraith-commander.png"
   },
   {
     "key": "wraith-monk",
@@ -20161,7 +20447,8 @@
       "vision": 9,
       "weapon": "claws",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/wraith-monk.png"
   },
   {
     "key": "wraith-seer",
@@ -20227,7 +20514,8 @@
       "vision": 9,
       "weapon": "claws",
       "xp": 120
-    }
+    },
+    "icon": "img/enemies/wraith-seer.png"
   },
   {
     "key": "wraith-sergeant",
@@ -20292,7 +20580,8 @@
       "vision": 9,
       "weapon": "2hsword",
       "xp": 90
-    }
+    },
+    "icon": "img/enemies/wraith-sergeant.png"
   },
   {
     "key": "wraith-squire",
@@ -20352,7 +20641,8 @@
       "vision": 9,
       "weapon": "spear",
       "xp": 60
-    }
+    },
+    "icon": "img/enemies/wraith-squire.png"
   },
   {
     "key": "wraith-templar",
@@ -20422,7 +20712,8 @@
       "vision": 9,
       "weapon": "mace",
       "xp": 120
-    }
+    },
+    "icon": "img/enemies/wraith-templar.png"
   },
   {
     "key": "wraith-warrior",
@@ -20491,7 +20782,8 @@
       "vision": 9,
       "weapon": "sword",
       "xp": 90
-    }
+    },
+    "icon": "img/enemies/wraith-warrior.png"
   },
   {
     "key": "wraithbinder",
@@ -20558,7 +20850,8 @@
       "vision": 10,
       "weapon": "claws",
       "xp": 300
-    }
+    },
+    "icon": "img/enemies/wraithbinder.png"
   },
   {
     "key": "wren",
@@ -20605,7 +20898,8 @@
       "vision": 14,
       "weapon": "fangs",
       "xp": 1
-    }
+    },
+    "icon": "img/enemies/wren.png"
   },
   {
     "key": "yagram",
@@ -20676,7 +20970,8 @@
       "vision": 9,
       "weapon": "claws",
       "xp": 100
-    }
+    },
+    "icon": "img/enemies/yagram.png"
   },
   {
     "key": "young-troll",
@@ -20744,7 +21039,8 @@
       "vision": 8,
       "weapon": "claws",
       "xp": 175
-    }
+    },
+    "icon": "img/enemies/young-troll.png"
   },
   {
     "key": "zealot-flail",
@@ -20815,7 +21111,8 @@
       "vision": 10,
       "weapon": "mace",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/zealot-flail.png"
   },
   {
     "key": "zealot-spear",
@@ -20886,6 +21183,7 @@
       "vision": 10,
       "weapon": "spear",
       "xp": 40
-    }
+    },
+    "icon": "img/enemies/zealot-spear.png"
   }
 ]

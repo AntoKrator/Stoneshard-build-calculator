@@ -4,6 +4,7 @@
   // shown separately and labelled approximate, never folded into the numbers.
   import type { Character } from '../lib/build/character'
   import type { EnemyAbility } from '../lib/types'
+  import Icon from './Icon.svelte'
 
   let {
     character,
@@ -27,6 +28,7 @@
     <p class="hint">Select an enemy above to see the two-way damage exchange.</p>
   {:else}
     <p class="vs">
+      <Icon icon={character.enemy?.icon} alt={matchup.enemyName} size={32} />
       You vs <strong>{matchup.enemyName}</strong> <span class="dim">({matchup.enemyHp} HP)</span>
     </p>
 
@@ -113,6 +115,9 @@
     color: var(--text-dim);
   }
   .vs {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     margin: 0.3rem 0 0.6rem;
   }
   .dir {

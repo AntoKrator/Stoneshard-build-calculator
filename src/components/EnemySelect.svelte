@@ -3,6 +3,7 @@
   // ItemPicker's name-search; ~300 enemies, so a simple filter + faction grouping.
   import type { Enemy } from '../lib/types'
   import type { Character } from '../lib/build/character'
+  import Icon from './Icon.svelte'
 
   let {
     enemies,
@@ -41,6 +42,7 @@
 
   {#if character.enemy}
     <p class="selected">
+      <Icon icon={character.enemy.icon} alt={character.enemy.name.english} size={28} />
       Fighting <strong>{character.enemy.name.english}</strong>
       <span class="dim"
         >· {character.enemy.hp} HP{character.enemy.faction
@@ -61,6 +63,7 @@
     {#each matches as e (e.key)}
       <li>
         <button class="row" class:active={e.key === selectedKey} onclick={() => onSelect(e.key)}>
+          <Icon icon={e.icon} alt={e.name.english} size={28} />
           <span class="name">{e.name.english}</span>
           <span class="meta dim">{e.hp} HP{e.tier != null ? ` · T${e.tier}` : ''}</span>
         </button>
@@ -82,6 +85,9 @@
     font-size: 0.8rem;
   }
   .selected {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     margin: 0.3rem 0;
     font-size: 0.9rem;
   }
@@ -107,10 +113,13 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     gap: 0.5rem;
     text-align: left;
     padding: 0.3rem 0.5rem;
+  }
+  .name {
+    flex: 1;
   }
   .row.active {
     outline: 2px solid var(--accent);
