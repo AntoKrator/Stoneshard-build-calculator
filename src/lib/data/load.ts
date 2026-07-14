@@ -15,6 +15,8 @@ import constantsJson from '../../data/constants.json'
 import statModelJson from '../../data/stat-model.json'
 import itemsJson from '../../data/items.json'
 import presetsJson from '../../data/presets.json'
+import enemiesJson from '../../data/enemies.json'
+import enemyAbilitiesJson from '../../data/enemy-abilities.json'
 import { parseDataset, type Dataset, type StatModel } from '../types'
 
 const composed = {
@@ -28,6 +30,8 @@ const composed = {
   items: itemsJson,
   enchantments: [],
   presets: presetsJson,
+  enemies: enemiesJson,
+  enemyAbilities: enemyAbilitiesJson,
 }
 
 export const dataset: Dataset = import.meta.env.DEV

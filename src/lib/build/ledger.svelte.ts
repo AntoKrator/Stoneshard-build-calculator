@@ -14,6 +14,7 @@ import {
   slotFitsCategory,
   type AttributeKey,
   type Dataset,
+  type Enemy,
   type EquipmentSlot,
   type Item,
   type Preset,
@@ -46,12 +47,15 @@ export class BuildLedger {
   readonly #itemByKey: Record<string, Item>
   /** Immutable id→preset lookup, same posture as #skillByKey. */
   readonly #presetById: Record<string, Preset>
+  /** Immutable key→enemy lookup, same posture as #skillByKey (M5). */
+  readonly #enemyByKey: Record<string, Enemy>
 
   constructor(dataset: Dataset, entries: LedgerEntry[] = []) {
     this.#dataset = dataset
     this.#skillByKey = Object.fromEntries(dataset.skills.map((s) => [s.key, s]))
     this.#itemByKey = Object.fromEntries(dataset.items.map((i) => [i.key, i]))
     this.#presetById = Object.fromEntries(dataset.presets.map((p) => [p.id, p]))
+    this.#enemyByKey = Object.fromEntries(dataset.enemies.map((e) => [e.key, e]))
     this.entries = entries
   }
 
@@ -211,6 +215,73 @@ export class BuildLedger {
     let removed = false
     for (let i = this.entries.length - 1; i >= 0; i--) {
       if (this.entries[i].op === 'selectCharacter') {
+        this.entries.splice(i, 1)
+        removed = true
+      }
+    }
+    return removed
+  }
+
+  /**
+   * Select an enemy for the matchup (M5). Last-wins, collapsing any prior
+   * `selectEnemy` entry like `selectCharacter`. Re-selecting the same enemy keeps
+   * its enabled abilities; selecting a different one starts with none.
+   */
+  selectEnemy(id: string): LedgerResult {
+    if (!this.#enemyByKey[id]) return { ok: false, reason: 'not-found' }
+    const current = this.#currentSelectEnemy()
+    const abilities = current && current.id === id ? current.abilities : []
+    this.#removeSelectEnemy()
+    this.entries.push({ op: 'selectEnemy', id, abilities })
+    return { ok: true }
+  }
+
+  /** Clear the enemy selection (and its matchup). */
+  clearEnemy(): LedgerResult {
+    return this.#removeSelectEnemy() ? { ok: true } : { ok: false, reason: 'not-found' }
+  }
+
+  /**
+   * Toggle one of the selected enemy's abilities on/off. The `abilities` array is
+   * kept sorted + de-duplicated so the same enemy+ability *set* always encodes to
+   * the same share code regardless of toggle order (F16). The key must be one the
+   * enemy actually has.
+   */
+  toggleEnemyAbility(key: string): LedgerResult {
+    const current = this.#currentSelectEnemy()
+    if (!current) return { ok: false, reason: 'not-found' }
+    const enemy = this.#enemyByKey[current.id]
+    if (!enemy || !enemy.abilities.includes(key)) return { ok: false, reason: 'unknown' }
+
+    // Plain-array toggle (no Set) to match the ledger's non-reactive collection
+    // posture; `current.abilities` is already de-duped, so add-if-absent keeps it so.
+    const abilities = (
+      current.abilities.includes(key)
+        ? current.abilities.filter((k) => k !== key)
+        : [...current.abilities, key]
+    ).sort()
+
+    this.#removeSelectEnemy()
+    this.entries.push({ op: 'selectEnemy', id: current.id, abilities })
+    return { ok: true }
+  }
+
+  /** The current (last) `selectEnemy` entry, or undefined. */
+  #currentSelectEnemy(): { id: string; abilities: string[] } | undefined {
+    for (let i = this.entries.length - 1; i >= 0; i--) {
+      const e = this.entries[i]
+      if (e.op === 'selectEnemy') return { id: e.id, abilities: e.abilities }
+    }
+    return undefined
+  }
+
+  /** Remove every `selectEnemy` entry; returns whether any was removed (collapse-all,
+   *  mirroring #removeSelectCharacter so a hand-crafted/older code can't leave a
+   *  stale selection behind). */
+  #removeSelectEnemy(): boolean {
+    let removed = false
+    for (let i = this.entries.length - 1; i >= 0; i--) {
+      if (this.entries[i].op === 'selectEnemy') {
         this.entries.splice(i, 1)
         removed = true
       }

@@ -36,3 +36,15 @@ export const WIKI_PAGES: WikiPage[] = [
     defaultCategory: null,
   },
 ]
+
+/**
+ * The Enemy data page (M5). Unlike the item pages it documents its columns as a
+ * single named legend line inside `<noinclude>` (no numeric-index row), so the
+ * parser is pointed at that line by its `headerLinePrefix`. ~101 columns, the
+ * last of which is the free-text Description (safe `;`-overflow target).
+ */
+export const ENEMY_PAGE = {
+  title: 'Enemy data',
+  file: 'enemy-data.wikitext',
+  headerLinePrefix: 'Tier;ID;',
+} as const

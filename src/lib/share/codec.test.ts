@@ -124,3 +124,35 @@ describe('share codec (R8 — codec)', () => {
     expect(await decode(overLong)).toEqual({ ok: false, reason: 'schema' })
   })
 })
+
+describe('share codec — M5 selectEnemy (rides FORMAT_VERSION 1)', () => {
+  it('round-trips a selectEnemy entry with abilities', async () => {
+    const led: Ledger = [
+      { op: 'levelUp' },
+      { op: 'selectEnemy', id: 'goblin', abilities: ['smash', 'wail'] },
+    ]
+    expect(await decode(await encode(led))).toEqual({ ok: true, ledger: led })
+  })
+
+  it('decodes a pre-M5 code with no selectEnemy (backward-compat)', async () => {
+    expect(await decode(await encode(sample))).toEqual({ ok: true, ledger: sample })
+  })
+
+  it('fails closed on an oversized abilities array (schema bound, F15)', async () => {
+    const huge = Array.from({ length: 100 }, (_, i) => `a${i}`)
+    const code = await rawCode({
+      formatVersion: FORMAT_VERSION,
+      ledger: [{ op: 'selectEnemy', id: 'goblin', abilities: huge }],
+    })
+    expect(await decode(code)).toMatchObject({ ok: false, reason: 'schema' })
+  })
+
+  it('is byte-stable across encode/decode/encode', async () => {
+    const led: Ledger = [{ op: 'selectEnemy', id: 'goblin', abilities: ['a', 'b'] }]
+    const code1 = await encode(led)
+    const decoded = await decode(code1)
+    expect(decoded.ok).toBe(true)
+    const code2 = await encode((decoded as { ledger: Ledger }).ledger)
+    expect(code2).toBe(code1)
+  })
+})

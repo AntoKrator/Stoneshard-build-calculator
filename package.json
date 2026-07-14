@@ -18,8 +18,11 @@
     "validate-data": "tsx scripts/validate-data.ts",
     "bootstrap": "tsx scripts/bootstrap-from-nstratos.ts",
     "vendor:wiki": "tsx tools/wiki-extractor/fetch.ts",
+    "vendor:enemies": "tsx tools/wiki-extractor/fetch-enemies.ts",
     "vendor:item-icons": "tsx tools/wiki-extractor/fetch-icons.ts",
-    "transform-items": "tsx scripts/transform-items.ts"
+    "vendor:enemy-icons": "tsx tools/wiki-extractor/fetch-enemy-icons.ts",
+    "transform-items": "tsx scripts/transform-items.ts",
+    "transform-enemies": "tsx scripts/transform-enemies.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

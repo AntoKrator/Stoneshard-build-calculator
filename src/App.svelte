@@ -20,6 +20,8 @@
   import LevelControls from './components/LevelControls.svelte'
   import CharacterSheet from './components/CharacterSheet.svelte'
   import CombatPanel from './components/CombatPanel.svelte'
+  import EnemySelect from './components/EnemySelect.svelte'
+  import MatchupPanel from './components/MatchupPanel.svelte'
   import ShareBar from './components/ShareBar.svelte'
   import Notice from './components/Notice.svelte'
 
@@ -85,6 +87,9 @@
   const onUnequip = (slot: EquipmentSlot) => ledger.unequip(slot)
   const onSelectCharacter = (id: string) => ledger.selectCharacter(id)
   const onClearCharacter = () => ledger.clearCharacter()
+  const onSelectEnemy = (id: string) => ledger.selectEnemy(id)
+  const onClearEnemy = () => ledger.clearEnemy()
+  const onToggleEnemyAbility = (key: string) => ledger.toggleEnemyAbility(key)
 </script>
 
 <div class="layout">
@@ -176,6 +181,17 @@
       <ShareBar entries={ledger.entries} {onImport} />
       <CharacterSheet {character} {statModel} />
       <CombatPanel {character} />
+      <EnemySelect
+        enemies={dataset.enemies}
+        {character}
+        onSelect={onSelectEnemy}
+        onClear={onClearEnemy}
+      />
+      <MatchupPanel
+        {character}
+        enemyAbilities={dataset.enemyAbilities}
+        onToggleAbility={onToggleEnemyAbility}
+      />
     </aside>
   </main>
 

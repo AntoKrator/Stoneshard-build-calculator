@@ -111,11 +111,14 @@ const dataset: Dataset = {
     maxAttributeValue: 30,
     damageTypes: [],
     itemStatKeys: [],
+    enemyStatKeys: [],
     values: {},
   },
   items: ITEMS,
   enchantments: [],
   presets: PRESETS,
+  enemies: [],
+  enemyAbilities: [],
 }
 
 const up = { op: 'levelUp' } as const

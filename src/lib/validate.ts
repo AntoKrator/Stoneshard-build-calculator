@@ -26,6 +26,18 @@ export interface IntegrityIssue {
     | 'duplicate-preset-id'
     | 'unknown-preset-skill'
     | 'unknown-preset-tree'
+    | 'duplicate-enemy-key'
+    | 'unknown-enemy-stat-key'
+    | 'unknown-enemy-damage-type'
+    | 'missing-enemy-stat-vocabulary'
+    | 'implausible-enemy-stat'
+    | 'duplicate-ability-key'
+    | 'missing-ability-provenance'
+    | 'empty-ability-damage'
+    | 'unknown-ability-damage-type'
+    | 'implausible-ability-damage'
+    | 'unknown-enemy-ability-ref'
+    | 'orphan-enemy-ability'
   message: string
 }
 
@@ -142,6 +154,140 @@ export function checkIntegrity(ds: Dataset): IntegrityIssue[] {
 
   issues.push(...checkItems(ds))
   issues.push(...checkPresets(ds))
+  issues.push(...checkEnemies(ds))
+
+  return issues
+}
+
+/**
+ * Referential integrity for the enemy bestiary + curated abilities (M5 U5).
+ * Spans three dataset sections (enemies × enemyAbilities × constants), so it lives
+ * here rather than in the per-record Zod schema. Hardened beyond the item checks
+ * because the enemy datastring's offset class can't be caught by the cell-count
+ * parser alone (see plan F1/F3/F11): the vocabulary is required once enemies exist,
+ * a stat column zero across the whole bestiary is flagged as a likely mapping bug,
+ * and every curated ability number must carry provenance. Narrow input so the
+ * transform script can run it pre-write.
+ */
+export function checkEnemies(
+  ds: Pick<Dataset, 'enemies' | 'enemyAbilities' | 'constants'>,
+): IntegrityIssue[] {
+  const issues: IntegrityIssue[] = []
+  const damageTypes = new Set(ds.constants.damageTypes)
+  const statKeys = new Set(ds.constants.enemyStatKeys)
+  const isDamageStat = (key: string) => {
+    const m = /^(.+)_damage$/.exec(key)
+    return m && m[1] !== 'armor' && m[1] !== 'bodypart' ? m[1] : null
+  }
+
+  // The stat vocabulary must be declared once enemies exist — otherwise the
+  // unknown-stat-key check below silently no-ops and the offset class escapes (F11).
+  if (ds.enemies.length > 0 && statKeys.size === 0) {
+    issues.push({
+      kind: 'missing-enemy-stat-vocabulary',
+      message: 'enemies present but constants.enemyStatKeys is empty',
+    })
+  }
+
+  const seen = new Set<string>()
+  for (const e of ds.enemies) {
+    if (seen.has(e.key)) {
+      issues.push({ kind: 'duplicate-enemy-key', message: `Duplicate enemy key "${e.key}"` })
+    }
+    seen.add(e.key)
+
+    for (const key of Object.keys(e.stats)) {
+      if (statKeys.size && !statKeys.has(key)) {
+        issues.push({
+          kind: 'unknown-enemy-stat-key',
+          message: `Enemy "${e.key}" stat "${key}" is not in constants.enemyStatKeys`,
+        })
+      }
+      const dmgType = isDamageStat(key)
+      if (dmgType && damageTypes.size && !damageTypes.has(dmgType)) {
+        issues.push({
+          kind: 'unknown-enemy-damage-type',
+          message: `Enemy "${e.key}" basic-attack damage "${key}" is not a known damage type`,
+        })
+      }
+    }
+    if (!Number.isFinite(e.hp) || e.hp > 100000) {
+      issues.push({
+        kind: 'implausible-enemy-stat',
+        message: `Enemy "${e.key}" hp ${e.hp} is implausible`,
+      })
+    }
+  }
+
+  // (The "all-zero column across the whole bestiary" offset signal — plan F3 — is
+  // emitted by the transform as an allowlistable warning, not a hard gate error,
+  // since a few columns are legitimately empty across the dataset.)
+
+  // Abilities: unique keys, required provenance, non-empty known-type plausible damage.
+  const abilityKeys = new Set<string>()
+  const seenAbility = new Set<string>()
+  for (const a of ds.enemyAbilities) {
+    if (seenAbility.has(a.key)) {
+      issues.push({
+        kind: 'duplicate-ability-key',
+        message: `Duplicate enemy ability key "${a.key}"`,
+      })
+    }
+    seenAbility.add(a.key)
+    abilityKeys.add(a.key)
+
+    const source = a.properties?.source
+    if (typeof source !== 'string' || source.trim() === '') {
+      issues.push({
+        kind: 'missing-ability-provenance',
+        message: `Enemy ability "${a.key}" lacks a non-empty properties.source URL`,
+      })
+    }
+    const entries = Object.entries(a.damage)
+    if (entries.length === 0) {
+      issues.push({
+        kind: 'empty-ability-damage',
+        message: `Enemy ability "${a.key}" deals no damage`,
+      })
+    }
+    for (const [type, v] of entries) {
+      if (damageTypes.size && !damageTypes.has(type)) {
+        issues.push({
+          kind: 'unknown-ability-damage-type',
+          message: `Enemy ability "${a.key}" damage type "${type}" is not a known damage type`,
+        })
+      }
+      if (!(v > 0) || !Number.isFinite(v) || v > 10000) {
+        issues.push({
+          kind: 'implausible-ability-damage',
+          message: `Enemy ability "${a.key}" damage ${type}=${v} is implausible`,
+        })
+      }
+    }
+  }
+
+  // Enemy → ability cross-refs, and abilities referenced by no enemy (a typo'd
+  // link often leaves the intended ability orphaned — F9).
+  const referenced = new Set<string>()
+  for (const e of ds.enemies) {
+    for (const key of e.abilities) {
+      referenced.add(key)
+      if (!abilityKeys.has(key)) {
+        issues.push({
+          kind: 'unknown-enemy-ability-ref',
+          message: `Enemy "${e.key}" references unknown ability "${key}"`,
+        })
+      }
+    }
+  }
+  for (const a of ds.enemyAbilities) {
+    if (!referenced.has(a.key)) {
+      issues.push({
+        kind: 'orphan-enemy-ability',
+        message: `Enemy ability "${a.key}" is referenced by no enemy`,
+      })
+    }
+  }
 
   return issues
 }

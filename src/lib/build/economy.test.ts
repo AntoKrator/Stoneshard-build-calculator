@@ -19,6 +19,7 @@ const constants: Constants = {
   maxAttributeValue: 30,
   damageTypes: [],
   itemStatKeys: [],
+  enemyStatKeys: [],
   values: {},
 }
 

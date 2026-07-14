@@ -9,6 +9,8 @@ import constantsJson from '../../data/constants.json'
 import statModelJson from '../../data/stat-model.json'
 import itemsJson from '../../data/items.json'
 import presetsJson from '../../data/presets.json'
+import enemiesJson from '../../data/enemies.json'
+import enemyAbilitiesJson from '../../data/enemy-abilities.json'
 
 describe('dataset loader', () => {
   it('loads the committed dataset with the expected counts', () => {
@@ -161,8 +163,14 @@ describe('dual-loader parity (KTD10)', () => {
       statModel: statModelJson,
       items: itemsJson,
       presets: presetsJson,
+      enemies: enemiesJson,
+      enemyAbilities: enemyAbilitiesJson,
     })
     expect(composedLikeGate).toEqual(parseDataset(dataset))
+    // Per-array, non-empty assertions so a both-loaders-forgot-the-same-file
+    // mistake also fails (plan F12).
+    expect(composedLikeGate.enemies).toEqual(parseDataset(dataset).enemies)
+    expect(composedLikeGate.enemies.length).toBeGreaterThan(0)
   })
 })
 

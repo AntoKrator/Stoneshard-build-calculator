@@ -225,3 +225,54 @@ describe('real-data combat (M4)', () => {
     expect(restored.character.combat).toEqual(before.combat)
   })
 })
+
+describe('real-data enemy matchup (M5 U4/U6/U7)', () => {
+  it('resolves a curated enemy with its linked abilities and deals into it (R10, R11)', () => {
+    const l = freshLedger()
+    l.equip('main_hand', 'footman-sword') // slashing_damage 21
+    expect(l.selectEnemy('manticore')).toEqual({ ok: true })
+    const ch = l.character
+    expect(ch.enemy?.key).toBe('manticore')
+    // U4 linked the curated abilities onto the bestiary entry (transform via usedBy).
+    expect(ch.enemy?.abilities).toEqual(
+      expect.arrayContaining(['bone-pyres', 'primal-aether', 'vengeance-of-the-dead']),
+    )
+    const m = ch.matchup!
+    expect(m.hasWeapon).toBe(true)
+    expect(m.deal.total).toBeGreaterThan(0)
+    expect(Number.isInteger(m.deal.hits) && m.deal.hits! > 0).toBe(true) // hits-to-kill
+  })
+
+  it('folds a toggled ability into the incoming side and rejects a foreign one (AE2, F17)', () => {
+    const l = freshLedger() // gearless: no resistances/protection, so net == raw
+    l.selectEnemy('manticore')
+    const base = l.character.matchup!.take.total
+
+    // Primal Aether = 12 Arcane + 12 Sacred + 12 Unholy = 36 raw; gearless ⇒ 36 net.
+    expect(l.toggleEnemyAbility('primal-aether')).toEqual({ ok: true })
+    const withAbility = l.character.matchup!
+    expect(withAbility.enabledAbilities).toContain('primal-aether')
+    expect(withAbility.take.total).toBe(base + 36)
+
+    // An ability the enemy does not own is rejected, leaving the selection intact.
+    expect(l.toggleEnemyAbility('rock-toss')).toEqual({ ok: false, reason: 'unknown' })
+    expect(l.character.matchup!.enabledAbilities).toEqual(['primal-aether'])
+  })
+
+  it('persists only the enemy selection in the codec; the matchup re-derives (R16, F18)', async () => {
+    const l = freshLedger()
+    l.equip('main_hand', 'footman-sword')
+    l.selectEnemy('manticore')
+    l.toggleEnemyAbility('primal-aether')
+    const before = l.character
+
+    const restored = freshLedger()
+    const res = await decode(await encode(l.toLedger()))
+    expect(res.ok).toBe(true)
+    if (res.ok) restored.load(res.ledger)
+
+    expect(restored.character.enemy?.key).toBe('manticore')
+    // The matchup view is derived, never serialized — it reconstructs identically.
+    expect(restored.character.matchup).toEqual(before.matchup)
+  })
+})

@@ -28,6 +28,11 @@ function loadComposed(): unknown {
       // `[]`, so an unread file would validate as empty and silently skip the
       // checkPresets cross-check (dual-loader parity, KTD10).
       presets: readJson(resolve(dataDir, 'presets.json')),
+      // Same gotcha, doubled for M5: enemies + enemyAbilities both default to `[]`,
+      // so each must be read explicitly or its checkEnemies cross-checks no-op
+      // here while load.ts loads the real data (silent divergence — plan F12).
+      enemies: readJson(resolve(dataDir, 'enemies.json')),
+      enemyAbilities: readJson(resolve(dataDir, 'enemy-abilities.json')),
     }
   } catch (e) {
     console.error(
@@ -66,7 +71,7 @@ const counts = new Map<string, number>()
 for (const s of skills) counts.set(s.treeId, (counts.get(s.treeId) ?? 0) + 1)
 
 console.log(
-  `✓ ${result.skillCount} skills across ${result.treeCount} trees + ${result.itemCount} items + ${result.presetCount} presets — schema + integrity clean, 0 blocking warnings.`,
+  `✓ ${result.skillCount} skills across ${result.treeCount} trees + ${result.itemCount} items + ${result.presetCount} presets + ${result.enemyCount} enemies / ${result.enemyAbilityCount} abilities — schema + integrity clean, 0 blocking warnings.`,
 )
 for (const t of trees) console.log(`  ${t.id} (${t.category}): ${counts.get(t.id) ?? 0}`)
 

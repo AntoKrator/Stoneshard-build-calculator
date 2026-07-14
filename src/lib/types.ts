@@ -149,6 +149,12 @@ export const Constants = z.object({
    * stat outside the known set (`unknown-stat-key`) without hardcoding the list.
    */
   itemStatKeys: z.array(z.string()).default([]),
+  /**
+   * The recognized `enemy.stats` vocabulary (snake_case), derived from the enemy
+   * datastring columns. Required to be non-empty once enemies exist so the gate's
+   * `unknown-enemy-stat-key` check can't silently no-op (M5 KTD2).
+   */
+  enemyStatKeys: z.array(z.string()).default([]),
   /** Misc numeric constants referenced by formulas. */
   values: z.record(z.string(), z.number()).default({}),
 })
@@ -353,6 +359,73 @@ export const Preset = z.object({
 export type Preset = z.infer<typeof Preset>
 
 /* ------------------------------------------------------------------ */
+/* Enemies (M5 — enemy-vs-build combat)                                */
+/* ------------------------------------------------------------------ */
+
+/**
+ * Flat per-bodypart protection, reusing the combat layer's four-slot vocabulary
+ * `{head, chest, arms, legs}`. The enemy datastring labels these Head/Body/Hands/
+ * Legs; the transform maps Body→chest and Hands→arms so one canonical slot set
+ * flows through `HIT_WEIGHTS` and `mitigate` in both matchup directions (KTD2/KTD3).
+ */
+export const BodypartProtection = z.object({
+  head: z.number(),
+  chest: z.number(),
+  arms: z.number(),
+  legs: z.number(),
+})
+export type BodypartProtection = z.infer<typeof BodypartProtection>
+
+/**
+ * One enemy, extracted from the wiki `Enemy data` datastring (KTD1/KTD2). Mirrors
+ * `Item`'s typed-identity + snake_case-`stats`-bag split: identity fields are typed,
+ * the 13 per-type basic-attack damages + 3 umbrella/13 specific resistances +
+ * accuracy/dodge/block/crit/etc. live in `stats` (snake_case), per-bodypart flat
+ * armor is the typed `protection`, and everything else lands in `properties`.
+ *
+ * `abilities` lists curated `EnemyAbility` keys; referential integrity is checked
+ * in the data gate (`checkEnemies`), not here — like `Item.damageType` and
+ * `Preset.startingSkills`.
+ */
+export const Enemy = z.object({
+  key: z.string().min(1),
+  name: Localized,
+  tier: z.number().int().nonnegative().optional(),
+  /** In-game "Monster Type" (e.g. "Human", "Undead"). */
+  type: z.string().optional(),
+  faction: z.string().optional(),
+  size: z.string().optional(),
+  hp: z.number().int().positive(),
+  energy: z.number().int().nonnegative().optional(),
+  /** Flat protection per bodypart pool (head/chest/arms/legs). */
+  protection: BodypartProtection,
+  /** Snake_case numeric stats: per-type basic-attack damage, resistances,
+   *  accuracy, dodge_chance, block_chance/power, crit_chance/efficiency, … */
+  stats: z.record(z.string(), z.number()).default({}),
+  /** Curated special-ability keys (resolved against `enemyAbilities` by the gate). */
+  abilities: z.array(z.string()).default([]),
+  /** Verbatim non-numeric / unmapped columns (AI pattern, weapon, description, …). */
+  properties: PropertyBag.default({}),
+  icon: z.string().optional(),
+})
+export type Enemy = z.infer<typeof Enemy>
+
+/**
+ * A curated enemy special ability (KTD5). Enemy abilities carry no machine-readable
+ * formula in the source — they are prose with flat numbers — so each is a flat
+ * per-type `damage` map hand-transcribed from its wiki ability page. `properties`
+ * carries the required `source` provenance URL (gate-enforced).
+ */
+export const EnemyAbility = z.object({
+  key: z.string().min(1),
+  name: Localized,
+  /** Flat per-type damage this ability deals (damageType → amount). */
+  damage: z.record(z.string(), z.number()).default({}),
+  properties: PropertyBag.default({}),
+})
+export type EnemyAbility = z.infer<typeof EnemyAbility>
+
+/* ------------------------------------------------------------------ */
 /* Dataset bundle                                                      */
 /* ------------------------------------------------------------------ */
 
@@ -383,6 +456,10 @@ export const Dataset = z.object({
    *  the schema level so the bootstrap transform still validates; both loaders
    *  always read the committed `presets.json`. */
   presets: z.array(Preset).default([]),
+  /** Extracted enemy bestiary + curated enemy abilities (M5). Default `[]` so the
+   *  bootstrap transform still validates; both loaders read the committed files. */
+  enemies: z.array(Enemy).default([]),
+  enemyAbilities: z.array(EnemyAbility).default([]),
 })
 export type Dataset = z.infer<typeof Dataset>
 
