@@ -206,10 +206,15 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
   //    do count as invested, so they gate user skills exactly as in game.
   const attributes = baseAttributes(base)
   if (preset) for (const k of ATTR_KEYS) attributes[k] = preset.attributes[k]
+  const cap = c.maxAttributeValue
   let attributesSpent = 0
   for (const e of entries) {
     if (e.op !== 'addAttribute') continue
     if (attributesSpent >= attributeBudget) continue // LIFO sacrifice over budget
+    // Per-attribute cap (30): skip WITHOUT spending so the freed point rolls
+    // forward to a later un-capped allocation — a capped point is never wasted.
+    // Distinct from the over-budget sacrifice above, which drops the point.
+    if (attributes[e.attr] >= cap) continue
     attributes[e.attr]++
     attributesSpent++
   }

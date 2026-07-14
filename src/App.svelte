@@ -165,7 +165,13 @@
         {onLevelUp}
         {onLevelDown}
       />
-      <AttributePanel attributes={dataset.attributes} {character} {onAdd} onRemove={onRemoveAttr} />
+      <AttributePanel
+        attributes={dataset.attributes}
+        {character}
+        maxAttributeValue={dataset.constants.maxAttributeValue}
+        {onAdd}
+        onRemove={onRemoveAttr}
+      />
       <EquipmentPanel {character} items={dataset.items} {onEquip} {onUnequip} />
       <ShareBar entries={ledger.entries} {onImport} />
       <CharacterSheet {character} {statModel} />
