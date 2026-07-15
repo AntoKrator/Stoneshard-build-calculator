@@ -40,6 +40,10 @@
     display: inline-block;
     image-rendering: pixelated;
     vertical-align: middle;
+    /* Source icons aren't square (items are wide, enemies tall); the width/height
+       attrs give a fixed square slot, so contain preserves aspect ratio instead
+       of stretching. */
+    object-fit: contain;
   }
 
   .fallback {

@@ -25,7 +25,7 @@
     baseAttributeValue: number
     onPick: (key: string) => void
     onRefund: (key: string) => void
-    onHover: (skill: Skill, entering: boolean) => void
+    onHover: (skill: Skill, entering: boolean, el?: HTMLElement) => void
   } = $props()
 
   const layout = $derived(computeTreeLayout(skills))
