@@ -76,8 +76,9 @@ export const Skill = z.object({
   isPassive: z.boolean().default(false),
   /** Row in the tree, 1 = top tier (only tier-1 skills are initially investable). */
   tier: z.number().int().positive(),
-  /** Column position within the tier, for layout. */
-  position: z.number().int().nonnegative().default(0),
+  /** Column position within the tier, for layout. Quarter-column fractions
+   *  (wiki-measured) center skills between their prerequisites like the game. */
+  position: z.number().nonnegative().multipleOf(0.25).default(0),
   /** Prerequisite skills that must be taken first (drives unlock + refund cascade). */
   requires: z.array(SkillKey).default([]),
   /** Most Stoneshard skills are single-purchase; kept for flexibility. */

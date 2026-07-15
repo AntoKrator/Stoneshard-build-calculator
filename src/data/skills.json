@@ -60,7 +60,7 @@
     },
     "isPassive": false,
     "tier": 1,
-    "position": 1,
+    "position": 1.5,
     "requires": [],
     "maxRank": 1,
     "energy": 14,
@@ -99,7 +99,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 1,
-    "position": 2,
+    "position": 3,
     "requires": [],
     "maxRank": 1,
     "properties": {},
@@ -287,7 +287,7 @@
     },
     "isPassive": true,
     "tier": 3,
-    "position": 0,
+    "position": 0.5,
     "requires": [
       "Schism"
     ],
@@ -323,7 +323,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 1,
+    "position": 1.5,
     "requires": [
       "Schism",
       "spatial_anchors"
@@ -377,7 +377,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 2,
+    "position": 2.5,
     "requires": [
       "spatial_anchors",
       "Aether_Shield"
@@ -565,7 +565,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 1,
-    "position": 0,
+    "position": 0.25,
     "requires": [],
     "maxRank": 1,
     "properties": {},
@@ -587,7 +587,7 @@
     },
     "isPassive": false,
     "tier": 1,
-    "position": 1,
+    "position": 1.5,
     "requires": [],
     "maxRank": 1,
     "energy": 10,
@@ -625,7 +625,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 1,
-    "position": 2,
+    "position": 2.75,
     "requires": [],
     "maxRank": 1,
     "properties": {},
@@ -647,7 +647,7 @@
     },
     "isPassive": false,
     "tier": 2,
-    "position": 0,
+    "position": 0.25,
     "requires": [
       "Brace_For_Impact"
     ],
@@ -696,7 +696,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 2,
-    "position": 1,
+    "position": 1.5,
     "requires": [
       "Brace_For_Impact"
     ],
@@ -726,7 +726,7 @@
     "formulas": {},
     "isPassive": false,
     "tier": 2,
-    "position": 2,
+    "position": 2.75,
     "requires": [
       "Brace_For_Impact",
       "hard_target"
@@ -783,7 +783,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 0,
+    "position": 0.75,
     "requires": [
       "Active_Defence",
       "battle_hardiness",
@@ -836,7 +836,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 3,
-    "position": 1,
+    "position": 2.25,
     "requires": [
       "Active_Defence",
       "battle_hardiness",
@@ -1166,7 +1166,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 0,
+    "position": 1,
     "requires": [
       "Dash",
       "inner_reserves"
@@ -1216,7 +1216,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 3,
-    "position": 1,
+    "position": 2,
     "requires": [
       "Sudden_Strike",
       "vivifying_violence"
@@ -1245,7 +1245,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 4,
-    "position": 0,
+    "position": 0.5,
     "requires": [
       "Elusiveness",
       "no_time_to_linger"
@@ -1278,7 +1278,7 @@
     },
     "isPassive": false,
     "tier": 4,
-    "position": 1,
+    "position": 1.5,
     "requires": [
       "Elusiveness",
       "no_time_to_linger"
@@ -1327,7 +1327,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 4,
-    "position": 2,
+    "position": 2.5,
     "requires": [
       "Elusiveness",
       "no_time_to_linger"
@@ -1482,7 +1482,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 2,
-    "position": 0,
+    "position": 0.75,
     "requires": [
       "Crippling_Lunge",
       "ferocity",
@@ -1514,7 +1514,7 @@
     "formulas": {},
     "isPassive": false,
     "tier": 2,
-    "position": 1,
+    "position": 2.25,
     "requires": [
       "Crippling_Lunge",
       "ferocity",
@@ -1569,7 +1569,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 0,
+    "position": 0.75,
     "requires": [
       "reprisal"
     ],
@@ -1618,7 +1618,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 3,
-    "position": 1,
+    "position": 2.25,
     "requires": [
       "Massacre"
     ],
@@ -1769,7 +1769,7 @@
     },
     "isPassive": false,
     "tier": 2,
-    "position": 0,
+    "position": 0.5,
     "requires": [
       "quick_change",
       "Double_Jab"
@@ -1819,7 +1819,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 2,
-    "position": 1,
+    "position": 1.5,
     "requires": [
       "Double_Jab",
       "Gaping_Wound"
@@ -1848,7 +1848,7 @@
     "formulas": {},
     "isPassive": false,
     "tier": 2,
-    "position": 2,
+    "position": 2.5,
     "requires": [
       "Gaping_Wound",
       "from_the_shadow"
@@ -1959,7 +1959,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 2,
+    "position": 2.5,
     "requires": [
       "weakening_jabs",
       "Painful_Stabs"
@@ -2230,7 +2230,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 2,
-    "position": 2,
+    "position": 2.5,
     "requires": [
       "Deflect",
       "dying_fervor"
@@ -2298,7 +2298,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 1,
+    "position": 1.25,
     "requires": [
       "Honed_Moves",
       "berserk_traditions"
@@ -2351,7 +2351,7 @@
     },
     "isPassive": true,
     "tier": 3,
-    "position": 2,
+    "position": 2.25,
     "requires": [
       "Honed_Moves",
       "berserk_traditions"
@@ -2386,7 +2386,7 @@
     },
     "isPassive": false,
     "tier": 1,
-    "position": 0,
+    "position": 0.5,
     "requires": [],
     "maxRank": 1,
     "energy": 8,
@@ -2432,7 +2432,7 @@
     },
     "isPassive": false,
     "tier": 1,
-    "position": 1,
+    "position": 2.5,
     "requires": [],
     "maxRank": 1,
     "energy": 12,
@@ -2958,7 +2958,7 @@
     },
     "isPassive": false,
     "tier": 1,
-    "position": 0,
+    "position": 1,
     "requires": [],
     "maxRank": 1,
     "energy": 6,
@@ -3002,7 +3002,7 @@
     },
     "isPassive": false,
     "tier": 1,
-    "position": 1,
+    "position": 3,
     "requires": [],
     "maxRank": 1,
     "energy": 18,
@@ -3632,7 +3632,7 @@
     },
     "isPassive": true,
     "tier": 2,
-    "position": 0,
+    "position": 0.5,
     "requires": [
       "Onslaught",
       "dazing_strikes"
@@ -3662,7 +3662,7 @@
     "formulas": {},
     "isPassive": false,
     "tier": 2,
-    "position": 1,
+    "position": 2.5,
     "requires": [
       "Armor_Break",
       "moment_of_weakness"
@@ -3718,7 +3718,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 0,
+    "position": 0.5,
     "requires": [
       "respite"
     ],
@@ -3766,7 +3766,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 3,
-    "position": 1,
+    "position": 2.5,
     "requires": [
       "Hammer_and_Anvil"
     ],
@@ -4069,7 +4069,7 @@
     },
     "isPassive": true,
     "tier": 3,
-    "position": 0,
+    "position": 1,
     "requires": [
       "Seal_of_Insight",
       "lingering_incantations"
@@ -4097,7 +4097,7 @@
     "formulas": {},
     "isPassive": false,
     "tier": 3,
-    "position": 1,
+    "position": 2,
     "requires": [
       "Seal_of_Cleansing",
       "spirit_and_body"
@@ -4148,7 +4148,7 @@
     },
     "isPassive": false,
     "tier": 4,
-    "position": 0,
+    "position": 1,
     "requires": [
       "thaumaturgy",
       "Seal_of_Reflection"
@@ -4198,7 +4198,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 4,
-    "position": 1,
+    "position": 2,
     "requires": [
       "thaumaturgy",
       "Seal_of_Reflection"
@@ -4514,7 +4514,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 0,
+    "position": 0.5,
     "requires": [
       "feed_the_flames",
       "Flame_Wave"
@@ -4564,7 +4564,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 3,
-    "position": 1,
+    "position": 1.5,
     "requires": [
       "Flame_Wave",
       "Magma_Rain"
@@ -4597,7 +4597,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 2,
+    "position": 2.5,
     "requires": [
       "Magma_Rain",
       "scorch"
@@ -4647,7 +4647,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 4,
-    "position": 0,
+    "position": 0.5,
     "requires": [
       "Incineration"
     ],
@@ -4677,7 +4677,7 @@
     },
     "isPassive": false,
     "tier": 4,
-    "position": 1,
+    "position": 1.5,
     "requires": [
       "Incineration",
       "safe_distance",
@@ -4728,7 +4728,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 4,
-    "position": 2,
+    "position": 2.5,
     "requires": [
       "Melting_Ray"
     ],
@@ -5042,7 +5042,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 0,
+    "position": 0.5,
     "requires": [
       "weak_spots",
       "Pierce_Through_Missile"
@@ -5092,7 +5092,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 3,
-    "position": 1,
+    "position": 1.5,
     "requires": [
       "Pierce_Through_Missile",
       "Suppression"
@@ -5121,7 +5121,7 @@
     "formulas": {},
     "isPassive": false,
     "tier": 3,
-    "position": 2,
+    "position": 2.5,
     "requires": [
       "Suppression",
       "anticipation"
@@ -5171,7 +5171,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 4,
-    "position": 0,
+    "position": 0.5,
     "requires": [
       "Long_Range_Shot"
     ],
@@ -5203,7 +5203,7 @@
     },
     "isPassive": false,
     "tier": 4,
-    "position": 1,
+    "position": 1.5,
     "requires": [
       "precision"
     ],
@@ -5252,7 +5252,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 4,
-    "position": 2,
+    "position": 2.5,
     "requires": [
       "Hunters_Mark"
     ],
@@ -5406,7 +5406,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 2,
-    "position": 0,
+    "position": 0.5,
     "requires": [
       "Raise_Shield",
       "ultimate_resilience"
@@ -5442,7 +5442,7 @@
     },
     "isPassive": false,
     "tier": 2,
-    "position": 1,
+    "position": 2,
     "requires": [
       "Breakthrough",
       "moment_of_retribution"
@@ -5492,7 +5492,7 @@
     "formulas": {},
     "isPassive": false,
     "tier": 3,
-    "position": 0,
+    "position": 0.5,
     "requires": [
       "last_bastion"
     ],
@@ -5540,7 +5540,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 3,
-    "position": 1,
+    "position": 2,
     "requires": [
       "Ram"
     ],
@@ -5741,7 +5741,7 @@
     },
     "isPassive": true,
     "tier": 2,
-    "position": 1,
+    "position": 1.5,
     "requires": [
       "Nail_Down",
       "Piercing_Lunge"
@@ -5774,7 +5774,7 @@
     },
     "isPassive": false,
     "tier": 2,
-    "position": 2,
+    "position": 3,
     "requires": [
       "no_retreat"
     ],
@@ -5854,7 +5854,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 1,
+    "position": 1.5,
     "requires": [
       "Pikemans_Stance",
       "wounding_spearhead",
@@ -5904,7 +5904,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 3,
-    "position": 2,
+    "position": 3,
     "requires": [
       "Intransigence"
     ],
@@ -6084,7 +6084,7 @@
     "formulas": {},
     "isPassive": false,
     "tier": 2,
-    "position": 1,
+    "position": 1.5,
     "requires": [
       "Hail_of_Blows",
       "Step_Aside"
@@ -6135,7 +6135,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 2,
-    "position": 2,
+    "position": 3,
     "requires": [
       "Step_Aside",
       "battle_trance"
@@ -6168,7 +6168,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 0,
+    "position": 1.5,
     "requires": [
       "now_or_never",
       "Unwavering_Stance",
@@ -6254,7 +6254,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 1,
-    "position": 1,
+    "position": 1.5,
     "requires": [],
     "maxRank": 1,
     "properties": {},
@@ -6272,7 +6272,7 @@
     "formulas": {},
     "isPassive": false,
     "tier": 1,
-    "position": 2,
+    "position": 3,
     "requires": [],
     "maxRank": 1,
     "energy": 0,
@@ -6585,7 +6585,7 @@
     },
     "isPassive": false,
     "tier": 1,
-    "position": 0,
+    "position": 0.25,
     "requires": [],
     "maxRank": 1,
     "energy": 10,
@@ -6622,7 +6622,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 1,
-    "position": 1,
+    "position": 1.5,
     "requires": [],
     "maxRank": 1,
     "properties": {},
@@ -6643,7 +6643,7 @@
     },
     "isPassive": false,
     "tier": 1,
-    "position": 2,
+    "position": 2.75,
     "requires": [],
     "maxRank": 1,
     "energy": 14,
@@ -6681,7 +6681,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 2,
-    "position": 0,
+    "position": 0.25,
     "requires": [
       "Cleave"
     ],
@@ -6710,7 +6710,7 @@
     "formulas": {},
     "isPassive": false,
     "tier": 2,
-    "position": 1,
+    "position": 1.5,
     "requires": [
       "care_blade"
     ],
@@ -6759,7 +6759,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 2,
-    "position": 2,
+    "position": 2.75,
     "requires": [
       "Keeping_Distance"
     ],
@@ -6787,7 +6787,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 3,
-    "position": 0,
+    "position": 0.75,
     "requires": [
       "gloat",
       "Fencer_Stance"
@@ -6822,7 +6822,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 1,
+    "position": 2.25,
     "requires": [
       "Fencer_Stance",
       "stamina_training"
@@ -6877,7 +6877,7 @@
     },
     "isPassive": false,
     "tier": 1,
-    "position": 0,
+    "position": 0.5,
     "requires": [],
     "maxRank": 1,
     "energy": 12,
@@ -6914,7 +6914,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 1,
-    "position": 1,
+    "position": 1.5,
     "requires": [],
     "maxRank": 1,
     "properties": {},
@@ -6938,7 +6938,7 @@
     },
     "isPassive": false,
     "tier": 1,
-    "position": 2,
+    "position": 2.5,
     "requires": [],
     "maxRank": 1,
     "energy": 14,
@@ -7176,7 +7176,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 1,
+    "position": 1.5,
     "requires": [
       "fatal_hit",
       "finish_him"
@@ -7227,7 +7227,7 @@
     },
     "isPassive": true,
     "tier": 3,
-    "position": 2,
+    "position": 3,
     "requires": [
       "Reign_in_Blood"
     ],
@@ -7372,7 +7372,7 @@
     "formulas": {},
     "isPassive": false,
     "tier": 2,
-    "position": 0,
+    "position": 0.5,
     "requires": [
       "blow_after_blow",
       "Mighty_Swing",
@@ -7424,7 +7424,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 2,
-    "position": 1,
+    "position": 1.5,
     "requires": [
       "blow_after_blow",
       "Mighty_Swing",
@@ -7458,7 +7458,7 @@
     },
     "isPassive": false,
     "tier": 2,
-    "position": 2,
+    "position": 2.5,
     "requires": [
       "blow_after_blow",
       "Mighty_Swing",
@@ -7511,7 +7511,7 @@
     },
     "isPassive": true,
     "tier": 3,
-    "position": 0,
+    "position": 0.5,
     "requires": [
       "Mayhem"
     ],
@@ -7544,7 +7544,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 1,
+    "position": 1.5,
     "requires": [
       "bonebreaker"
     ],
@@ -7593,7 +7593,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 3,
-    "position": 2,
+    "position": 2.5,
     "requires": [
       "Forceful_Slam"
     ],
@@ -7627,7 +7627,7 @@
     },
     "isPassive": false,
     "tier": 1,
-    "position": 0,
+    "position": 0.5,
     "requires": [],
     "maxRank": 1,
     "energy": 10,
@@ -7666,7 +7666,7 @@
     },
     "isPassive": true,
     "tier": 1,
-    "position": 1,
+    "position": 1.5,
     "requires": [],
     "maxRank": 1,
     "properties": {},
@@ -7688,7 +7688,7 @@
     },
     "isPassive": false,
     "tier": 1,
-    "position": 2,
+    "position": 2.5,
     "requires": [],
     "maxRank": 1,
     "energy": 18,
@@ -7920,7 +7920,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 1,
+    "position": 1.5,
     "requires": [
       "recklessness",
       "Steel_Feast",
@@ -7972,7 +7972,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 3,
-    "position": 2,
+    "position": 3,
     "requires": [
       "fight_to_death"
     ],
@@ -8287,7 +8287,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 0,
+    "position": 0.5,
     "requires": [
       "right_on_target",
       "Offensive_Tactics"
@@ -8341,7 +8341,7 @@
     },
     "isPassive": true,
     "tier": 3,
-    "position": 1,
+    "position": 1.5,
     "requires": [
       "Offensive_Tactics",
       "Defensive_Tactics"
@@ -8375,7 +8375,7 @@
     },
     "isPassive": false,
     "tier": 3,
-    "position": 2,
+    "position": 2.5,
     "requires": [
       "Defensive_Tactics",
       "intimidation"
@@ -8423,7 +8423,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 4,
-    "position": 0,
+    "position": 0.5,
     "requires": [
       "Finisher"
     ],
@@ -8452,7 +8452,7 @@
     "formulas": {},
     "isPassive": false,
     "tier": 4,
-    "position": 1,
+    "position": 1.5,
     "requires": [
       "stance_training"
     ],
@@ -8502,7 +8502,7 @@
     "formulas": {},
     "isPassive": true,
     "tier": 4,
-    "position": 2,
+    "position": 2.5,
     "requires": [
       "Against_the_Odds"
     ],
