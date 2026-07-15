@@ -66,10 +66,35 @@
   // nodes — even across trees — never blanks it on the wrong event order; last
   // hover wins because skill keys are globally unique.
   let hovered = $state<Skill | null>(null)
-  function setHover(skill: Skill, entering: boolean) {
-    if (entering) hovered = skill
-    else if (hovered?.key === skill.key) hovered = null
+  let anchor = $state<DOMRect | null>(null)
+  // NOTE: default param, not `el?:` — the svelte TS transform leaves the
+  // optional-`?` marker in the emitted JS (SyntaxError in the browser).
+  function setHover(skill: Skill, entering: boolean, el: HTMLElement | undefined = undefined) {
+    if (entering) {
+      hovered = skill
+      anchor = el?.getBoundingClientRect() ?? null
+    } else if (hovered?.key === skill.key) {
+      hovered = null
+      anchor = null
+    }
   }
+
+  // Anchor the fixed panel beside the hovered node: right of it, flipping left
+  // when there's no room, clamped to the viewport. Fixed positioning keeps the
+  // no-clipping guarantee from the corner-pinned version.
+  // ponytail: rect goes stale if the page scrolls mid-hover without a mouse
+  // event; the next hover self-corrects.
+  const TT_W = 320 // matches the CSS width (20rem)
+  const GAP = 10
+  const panelStyle = $derived.by(() => {
+    if (!anchor) return 'top: 1rem; right: 1rem;' // keyboard-less fallback
+    const left =
+      anchor.right + GAP + TT_W <= window.innerWidth
+        ? anchor.right + GAP
+        : Math.max(8, anchor.left - GAP - TT_W)
+    const top = Math.max(8, Math.min(anchor.top, window.innerHeight - 380))
+    return `left: ${left}px; top: ${top}px; max-height: ${window.innerHeight - top - 16}px;`
+  })
 
   onMount(async () => {
     const res = await hydrateLedger(window.location.search)
@@ -90,6 +115,16 @@
   const onSelectEnemy = (id: string) => ledger.selectEnemy(id)
   const onClearEnemy = () => ledger.clearEnemy()
   const onToggleEnemyAbility = (key: string) => ledger.toggleEnemyAbility(key)
+  const onUseSkill = (key: string | null) => ledger.useSkill(key)
+
+  // Top-level view tabs. Ledger state lives above the tabs, so switching
+  // (which unmounts panels) loses nothing.
+  const TABS = [
+    { id: 'skills', label: 'Skills & Attributes' },
+    { id: 'equipment', label: 'Equipment' },
+    { id: 'damage', label: 'Damage Calculator' },
+  ] as const
+  let activeTab = $state<(typeof TABS)[number]['id']>('skills')
 </script>
 
 <div class="layout">
@@ -117,70 +152,93 @@
     </p>
   {/if}
 
-  <main>
-    <div class="trees">
-      <TreeSelector
-        trees={sortedTrees}
-        {character}
-        openIds={openTreeIds}
-        onToggle={toggleTree}
-        onCloseAll={closeAllTrees}
-      />
-      {#if openTrees.length === 0}
-        <p class="empty-trees">No trees open — pick one or more above to start planning.</p>
-      {:else}
-        <!-- Each tree scrolls within its own card; a shorter per-tree viewport when
-             several are open so they tile without one tree dominating the page.
-             --grid-max-height is read (via CSS inheritance) by SkillTree's
-             .grid-scroll two levels down. -->
-        <div
-          class="tree-grid"
-          style="--grid-max-height: {openTreeIds.length > 1 ? '60vh' : 'calc(100vh - 230px)'}"
-        >
-          {#each openTrees as o (o.tree.id)}
-            <section class="tree-card">
-              <header class="tree-card-head">
-                <h2>{o.tree.name}</h2>
-                <button
-                  class="close"
-                  aria-label={`Close ${o.tree.name}`}
-                  onclick={() => toggleTree(o.tree.id)}>×</button
-                >
-              </header>
-              <SkillTree
-                skills={o.skills}
-                {character}
-                baseAttributeValue={base}
-                {onPick}
-                {onRefund}
-                onHover={setHover}
-              />
-            </section>
-          {/each}
-        </div>
-      {/if}
-    </div>
+  <nav class="tabs" role="tablist" aria-label="Calculator sections">
+    {#each TABS as t (t.id)}
+      <button
+        role="tab"
+        aria-selected={activeTab === t.id}
+        class="tab"
+        class:active={activeTab === t.id}
+        onclick={() => (activeTab = t.id)}
+      >
+        {t.label}
+      </button>
+    {/each}
+  </nav>
 
-    <aside class="side">
-      <LevelControls
-        {character}
-        entries={ledger.entries}
-        startingLevel={dataset.constants.startingLevel}
-        {maxLevel}
-        {onLevelUp}
-        {onLevelDown}
-      />
-      <AttributePanel
-        attributes={dataset.attributes}
-        {character}
-        maxAttributeValue={dataset.constants.maxAttributeValue}
-        {onAdd}
-        onRemove={onRemoveAttr}
-      />
+  {#if activeTab === 'skills'}
+    <main>
+      <div class="trees">
+        <TreeSelector
+          trees={sortedTrees}
+          {character}
+          openIds={openTreeIds}
+          onToggle={toggleTree}
+          onCloseAll={closeAllTrees}
+        />
+        {#if openTrees.length === 0}
+          <p class="empty-trees">No trees open — pick one or more above to start planning.</p>
+        {:else}
+          <!-- Each tree scrolls within its own card; a shorter per-tree viewport when
+               several are open so they tile without one tree dominating the page.
+               --grid-max-height is read (via CSS inheritance) by SkillTree's
+               .grid-scroll two levels down. -->
+          <div
+            class="tree-grid"
+            style="--grid-max-height: {openTreeIds.length > 1 ? '60vh' : 'calc(100vh - 230px)'}"
+          >
+            {#each openTrees as o (o.tree.id)}
+              <section class="tree-card">
+                <header class="tree-card-head">
+                  <h2>{o.tree.name}</h2>
+                  <button
+                    class="close"
+                    aria-label={`Close ${o.tree.name}`}
+                    onclick={() => toggleTree(o.tree.id)}>×</button
+                  >
+                </header>
+                <SkillTree
+                  skills={o.skills}
+                  {character}
+                  baseAttributeValue={base}
+                  {onPick}
+                  {onRefund}
+                  onHover={setHover}
+                />
+              </section>
+            {/each}
+          </div>
+        {/if}
+      </div>
+
+      <aside class="side">
+        <LevelControls
+          {character}
+          entries={ledger.entries}
+          startingLevel={dataset.constants.startingLevel}
+          {maxLevel}
+          {onLevelUp}
+          {onLevelDown}
+        />
+        <AttributePanel
+          attributes={dataset.attributes}
+          {character}
+          maxAttributeValue={dataset.constants.maxAttributeValue}
+          {onAdd}
+          onRemove={onRemoveAttr}
+        />
+        <ShareBar entries={ledger.entries} {onImport} />
+        <CharacterSheet {character} {statModel} />
+      </aside>
+    </main>
+  {:else if activeTab === 'equipment'}
+    <main class="tab-grid">
       <EquipmentPanel {character} items={dataset.items} {onEquip} {onUnequip} />
-      <ShareBar entries={ledger.entries} {onImport} />
       <CharacterSheet {character} {statModel} />
-      <CombatPanel {character} />
+    </main>
+  {:else}
+    <main class="tab-grid">
+      <CombatPanel {character} skills={dataset.skills} {scope} {onUseSkill} />
       <EnemySelect
         enemies={dataset.enemies}
         {character}
@@ -192,8 +250,8 @@
         enemyAbilities={dataset.enemyAbilities}
         onToggleAbility={onToggleEnemyAbility}
       />
-    </aside>
-  </main>
+    </main>
+  {/if}
 
   <footer>
     <p class="dim">
@@ -202,13 +260,12 @@
     </p>
   </footer>
 
-  <!-- One shared tooltip for every open tree, pinned to the viewport (position:
-       fixed) so it is never clipped by a tree card's scroll and never crowds a
-       narrow column. pointer-events:none so it never traps interaction; the body
-       still renders via escaped segments (no {@html}), preserving the M1 security
-       posture. -->
+  <!-- One shared tooltip for every open tree, anchored beside the hovered node
+       but position:fixed so it is never clipped by a tree card's scroll.
+       pointer-events:none so it never traps interaction; the body still renders
+       via escaped segments (no {@html}), preserving the M1 security posture. -->
   {#if hovered}
-    <aside class="tooltip-panel" role="tooltip">
+    <aside class="tooltip-panel" role="tooltip" style={panelStyle}>
       <strong class="tt-name">{hovered.name.english}</strong>
       {#if hovered.tooltip?.english}
         <Tooltip tooltip={hovered.tooltip.english} formulas={hovered.formulas} {scope} bare />
@@ -254,12 +311,35 @@
     margin-bottom: 1rem;
     font-size: 0.9rem;
   }
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+  }
+  .tab {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+  }
+  .tab.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--bg-panel);
+  }
   main {
     flex: 1;
     display: grid;
     grid-template-columns: minmax(0, 1fr) 320px;
     gap: 1.5rem;
     align-items: start;
+  }
+  /* Equipment / damage tabs: panels tile in equal columns instead of the
+     trees+side split. */
+  main.tab-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 380px));
+    align-content: start;
   }
   /* Open trees tile in responsive columns (two-up on wide viewports, stacked on
      narrow); each card owns its own scroll. min-width:0 lets a track shrink below
@@ -309,11 +389,9 @@
      viewport (no horizontal overflow at 375px); it scrolls internally if very tall. */
   .tooltip-panel {
     position: fixed;
-    top: 1rem;
-    right: 1rem;
+    /* top/left/max-height come inline from panelStyle (anchored to the node) */
     z-index: 100;
     width: min(20rem, calc(100vw - 2rem));
-    max-height: calc(100vh - 2rem);
     overflow-y: auto;
     padding: 0.7rem 0.85rem;
     background: var(--bg-panel-2);

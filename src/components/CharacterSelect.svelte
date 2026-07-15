@@ -6,6 +6,7 @@
   // shared build that referenced an unknown preset surfaces via the Notice banner.
   import type { Preset, SkillTree } from '../lib/types'
   import type { Character } from '../lib/build/character'
+  import Icon from './Icon.svelte'
 
   let {
     presets,
@@ -44,8 +45,10 @@
       aria-pressed={character.presetId === null}
       onclick={() => onClear()}
     >
-      <span class="char-name">Custom</span>
-      <span class="char-sub">blank slate</span>
+      <span class="char-text">
+        <span class="char-name">Custom</span>
+        <span class="char-sub">blank slate</span>
+      </span>
     </button>
     {#each presets as p (p.id)}
       <button
@@ -57,10 +60,13 @@
           : p.trait}
         onclick={() => onSelect(p.id)}
       >
-        <span class="char-name">
-          {p.name}{#if p.dlc}<span class="dlc" title="Character Pack DLC">DLC</span>{/if}
+        <Icon icon={p.icon} alt={p.name} size={36} />
+        <span class="char-text">
+          <span class="char-name">
+            {p.name}{#if p.dlc}<span class="dlc" title="Character Pack DLC">DLC</span>{/if}
+          </span>
+          <span class="char-sub">{p.trait}</span>
         </span>
-        <span class="char-sub">{p.trait}</span>
       </button>
     {/each}
   </div>
@@ -109,12 +115,16 @@
   }
   .char {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.1rem;
+    align-items: center;
+    gap: 0.45rem;
     min-width: 7.5rem;
     padding: 0.4rem 0.6rem;
     text-align: left;
+  }
+  .char-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
     border-left-width: 3px;
     border-left-color: var(--border);
   }

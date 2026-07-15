@@ -19,7 +19,7 @@
     status: NodeState
     onPick: (key: string) => void
     onRefund: (key: string) => void
-    onHover: (skill: Skill, entering: boolean) => void
+    onHover: (skill: Skill, entering: boolean, el?: HTMLElement) => void
   } = $props()
 
   const canPick = $derived(status === 'affordable')
@@ -33,9 +33,9 @@
     aria-label={skill.name.english}
     aria-pressed={taken}
     onclick={() => canPick && onPick(skill.key)}
-    onmouseenter={() => onHover(skill, true)}
+    onmouseenter={(e) => onHover(skill, true, e.currentTarget)}
     onmouseleave={() => onHover(skill, false)}
-    onfocus={() => onHover(skill, true)}
+    onfocus={(e) => onHover(skill, true, e.currentTarget)}
     onblur={() => onHover(skill, false)}
   >
     <Icon icon={skill.icon} alt={skill.name.english} size={48} />

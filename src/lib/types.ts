@@ -355,6 +355,9 @@ export const Preset = z.object({
   affinities: z.array(z.string()).default([]),
   /** True for Character Pack DLC characters (a display hint). */
   dlc: z.boolean().default(false),
+  /** Repo-relative portrait path (img/characters/<id>.png), vendored from the
+   *  wiki by `npm run vendor:character-icons`; absent → glyph fallback. */
+  icon: z.string().optional(),
 })
 export type Preset = z.infer<typeof Preset>
 

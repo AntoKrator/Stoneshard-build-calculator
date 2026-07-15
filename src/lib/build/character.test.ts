@@ -28,6 +28,9 @@ const SKILLS: Skill[] = [
   skill('AB', 2, ['A', 'B']), // diamond: needs both
   skill('L3', 1, [], { level: 3 }), // pure level gate
   skill('STRgate', 1, [], { level: 99, attributePoints: 2, attributes: ['STR'] }), // attr-path only
+  // Active strikes for the useSkill damage-calc op: constant and attribute-based.
+  { ...skill('Strike', 1, []), formulas: { Weapon_Damage: '25' } },
+  { ...skill('StrongStrike', 1, []), formulas: { Weapon_Damage: '(5 + 1.5 * STR)' } },
 ]
 
 const item = (
@@ -300,6 +303,49 @@ describe('recompute — gear → derived sheet (M3 U3, R6)', () => {
   it('reverts the sheet when gear is removed', () => {
     expect(rc([]).derived.Pyromantic_Power).toBeUndefined()
     expect(rc([]).gearStats).toEqual({})
+  })
+
+  it('records per-stat gear deltas in gearContribution for the sheet display', () => {
+    const ch = rc([eq('body', 'robe'), eq('ring', 'ring1'), eq('boots', 'greaves')])
+    expect(ch.gearContribution.Magic_Power).toBe(9) // 6 + 3 across pieces
+    expect(ch.gearContribution.Legs_DEF).toBe(5) // slot-derived stats mirror in
+    expect(rc([]).gearContribution).toEqual({}) // empty when bare
+  })
+})
+
+describe('recompute — useSkill active strike (damage calc)', () => {
+  const useS = (skill: string) => ({ op: 'useSkill', skill }) as const
+
+  it("applies the used skill's Weapon_Damage formula to per-hit damage", () => {
+    const base = rc([eq('main_hand', 'sword'), addS('Strike')])
+    expect(base.usedSkill).toBeUndefined()
+    expect(base.combat.damage[0].modified).toBe(10) // 10 × 100%
+    const ch = rc([eq('main_hand', 'sword'), addS('Strike'), useS('Strike')])
+    expect(ch.usedSkill).toBe('Strike')
+    expect(ch.combat.damage[0].modified).toBe(12.5) // 10 × (100 + 25)%
+  })
+
+  it('resolves attribute-based strike formulas against the current scope', () => {
+    const ch = rc([eq('main_hand', 'sword'), addS('StrongStrike'), useS('StrongStrike')])
+    expect(ch.combat.damage[0].modified).toBe(12) // 10 × (100 + 5 + 1.5×10)%
+  })
+
+  it('ignores a useSkill whose skill is not currently taken', () => {
+    const ch = rc([eq('main_hand', 'sword'), useS('Strike')])
+    expect(ch.usedSkill).toBeUndefined()
+    expect(ch.combat.damage[0].modified).toBe(10)
+  })
+
+  it('lets the last useSkill win', () => {
+    const ch = rc([
+      eq('main_hand', 'sword'),
+      up, // level 2 → 3 skill points for both strikes
+      addS('Strike'),
+      addS('StrongStrike'),
+      useS('Strike'),
+      useS('StrongStrike'),
+    ])
+    expect(ch.usedSkill).toBe('StrongStrike')
   })
 })
 

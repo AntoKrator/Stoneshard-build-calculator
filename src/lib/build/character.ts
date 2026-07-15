@@ -32,6 +32,8 @@ import { aggregateGear } from './gear'
 import { computeCombat, type CombatSheet } from './combat'
 import { computeMatchup, type MatchupSheet } from './matchup'
 import { KNOWN_STAT_IDENTIFIERS } from '../formula/identifiers'
+import { evaluate } from '../formula/eval'
+import { buildScope } from '../formula/scope'
 import { earnedAttributePoints, earnedSkillPoints, isUnlocked, type Attributes } from './economy'
 
 /* ------------------------------------------------------------------ */
@@ -60,6 +62,8 @@ export const LedgerEntry = z.discriminatedUnion('op', [
     id: z.string().min(1),
     abilities: z.array(z.string().min(1)).max(MAX_ENEMY_ABILITIES).default([]),
   }),
+  /** Use an active skill as the strike in the damage calc. Absence = basic attack. */
+  z.object({ op: z.literal('useSkill'), skill: z.string().min(1) }),
 ])
 export type LedgerEntry = z.infer<typeof LedgerEntry>
 
@@ -100,8 +104,15 @@ export interface Character {
   /** Gear stats with no formula identifier (resistances, raw weapon damage, …),
    *  keyed by their snake_case item key — for the equipped-stats view. */
   gearStats: Record<string, number>
+  /** Per-derived-stat delta contributed by equipped gear (positive or negative),
+   *  for the sheet's "total (+x)" display. Empty when nothing relevant is equipped. */
+  gearContribution: Record<string, number>
   /** Derived combat view (self damage output + mitigation), read-only for UI (M4). */
   combat: CombatSheet
+  /** The active skill used as the strike in the damage calc, or undefined for the
+   *  basic attack. Only ever a currently-taken active skill whose Weapon_Damage
+   *  formula resolved. */
+  usedSkill?: string
   /** The selected enemy (M5), or undefined when none is chosen. */
   enemy?: Enemy
   /** The derived two-way matchup against `enemy`, read-only for UI (M5). Undefined
@@ -319,6 +330,10 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
   const { known, enumerated } = identifierSetsFor(statModel)
   const gear = aggregateGear(equipped, known)
   const gearStats: Record<string, number> = Object.assign(Object.create(null), gear.display)
+  const gearContribution: Record<string, number> = Object.assign(
+    Object.create(null),
+    gear.contributions,
+  )
   for (const [id, v] of Object.entries(gear.contributions)) {
     derived[id] = (derived[id] ?? 0) + v
     // A contribution to an enumerated stat shows in its main sheet row; one to a
@@ -335,6 +350,34 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
   //     tooltips resolve with armor and degrade to the neutral marker without it.
   if (equipped.body) derived.Body_DEF = equipped.body.stats.protection ?? 0
   if (equipped.boots) derived.Legs_DEF = equipped.boots.stats.protection ?? 0
+  // Their whole value is gear-sourced, so mirror them into the contribution view.
+  if (equipped.body) gearContribution.Body_DEF = derived.Body_DEF
+  if (equipped.boots) gearContribution.Legs_DEF = derived.Legs_DEF
+
+  // 7c. Active-skill strike (damage calc): the LAST `useSkill` wins. A skill's
+  //     `Weapon_Damage` formula is the game's "+X% Weapon Damage" strike modifier,
+  //     so its resolved value adds to the sheet's Weapon_Damage before the
+  //     combat/matchup derivation. Only a currently-taken active skill applies —
+  //     a refunded or stale ref is silently ignored (refund-after-select is a
+  //     normal interactive flow, not patch drift), as is a formula that doesn't
+  //     resolve (the UI only offers resolvable skills).
+  //     ponytail: strike modifier only — Stagger/Bleed/AoE side-formulas are not
+  //     modeled; revisit when a full skill-damage model lands.
+  let usedSkill: string | undefined
+  for (let i = entries.length - 1; i >= 0; i--) {
+    const e = entries[i]
+    if (e.op !== 'useSkill') continue
+    const s = skillByKey.get(e.skill)
+    const wd = s?.formulas?.Weapon_Damage
+    if (s && !s.isPassive && taken.has(s.key) && wd) {
+      const res = evaluate(wd, buildScope(attributes, derived, statModel))
+      if (res.kind === 'value') {
+        derived.Weapon_Damage = (derived.Weapon_Damage ?? 100) + res.value
+        usedSkill = s.key
+      }
+    }
+    break
+  }
 
   // 8. Combat view (M4): self damage output + mitigation, derived purely from the
   //    sheet, gear bag, and equipped items. Read-only — consumed by UI, not scope.
@@ -398,7 +441,9 @@ export function recompute(entries: Ledger, dataset: Dataset): Character {
     takenOrder,
     equipped,
     gearStats,
+    gearContribution,
     combat,
+    ...(usedSkill ? { usedSkill } : {}),
     ...(enemy ? { enemy } : {}),
     ...(matchup ? { matchup } : {}),
     attributeBudget,

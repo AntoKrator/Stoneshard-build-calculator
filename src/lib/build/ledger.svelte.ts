@@ -242,6 +242,35 @@ export class BuildLedger {
   }
 
   /**
+   * Use an active skill as the strike in the damage calc. Last-wins, collapsing
+   * any prior `useSkill` entry; `null` reverts to the basic attack (no entry).
+   * The key must name a known active skill — takenness/resolvability are
+   * enforced by recompute, which silently ignores a stale ref.
+   */
+  useSkill(key: string | null): LedgerResult {
+    if (key !== null) {
+      const s = this.#skillByKey[key]
+      if (!s || s.isPassive) return { ok: false, reason: 'not-found' }
+    }
+    this.#removeUseSkill()
+    if (key !== null) this.entries.push({ op: 'useSkill', skill: key })
+    return { ok: true }
+  }
+
+  /** Remove every `useSkill` entry; returns whether any was removed (collapse-all,
+   *  mirroring #removeSelectEnemy). */
+  #removeUseSkill(): boolean {
+    let removed = false
+    for (let i = this.entries.length - 1; i >= 0; i--) {
+      if (this.entries[i].op === 'useSkill') {
+        this.entries.splice(i, 1)
+        removed = true
+      }
+    }
+    return removed
+  }
+
+  /**
    * Toggle one of the selected enemy's abilities on/off. The `abilities` array is
    * kept sorted + de-duplicated so the same enemy+ability *set* always encodes to
    * the same share code regardless of toggle order (F16). The key must be one the
