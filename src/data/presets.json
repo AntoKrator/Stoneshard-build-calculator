@@ -2,16 +2,29 @@
   {
     "id": "verren",
     "name": "Verren",
-    "attributes": { "STR": 10, "AGI": 10, "PER": 10, "VIT": 10, "WIL": 10 },
+    "attributes": {
+      "STR": 10,
+      "AGI": 10,
+      "PER": 10,
+      "VIT": 10,
+      "WIL": 10
+    },
     "startingSkills": [],
     "trait": "Artifact Knowledge",
     "affinities": [],
-    "dlc": false
+    "dlc": false,
+    "icon": "img/characters/verren.png"
   },
   {
     "id": "velmir",
     "name": "Velmir",
-    "attributes": { "STR": 11, "AGI": 11, "PER": 11, "VIT": 10, "WIL": 10 },
+    "attributes": {
+      "STR": 11,
+      "AGI": 11,
+      "PER": 11,
+      "VIT": 10,
+      "WIL": 10
+    },
     "startingSkills": [],
     "trait": "With Great Vengeance",
     "affinities": [
@@ -22,21 +35,42 @@
       "two-handed_axes",
       "two-handed_maces"
     ],
-    "dlc": false
+    "dlc": false,
+    "icon": "img/characters/velmir.png"
   },
   {
     "id": "jorgrim",
     "name": "Jorgrim",
-    "attributes": { "STR": 11, "AGI": 10, "PER": 11, "VIT": 11, "WIL": 10 },
+    "attributes": {
+      "STR": 11,
+      "AGI": 10,
+      "PER": 11,
+      "VIT": 11,
+      "WIL": 10
+    },
     "startingSkills": [],
     "trait": "Gore and Glory",
-    "affinities": ["swords", "axes", "maces", "two-handed_axes", "dual_wielding", "warfare"],
-    "dlc": false
+    "affinities": [
+      "swords",
+      "axes",
+      "maces",
+      "two-handed_axes",
+      "dual_wielding",
+      "warfare"
+    ],
+    "dlc": false,
+    "icon": "img/characters/jorgrim.png"
   },
   {
     "id": "arna",
     "name": "Arna",
-    "attributes": { "STR": 11, "AGI": 11, "PER": 10, "VIT": 11, "WIL": 10 },
+    "attributes": {
+      "STR": 11,
+      "AGI": 11,
+      "PER": 10,
+      "VIT": 11,
+      "WIL": 10
+    },
     "startingSkills": [],
     "trait": "Vow of the Feat",
     "affinities": [
@@ -47,51 +81,126 @@
       "armored_combat",
       "warfare"
     ],
-    "dlc": false
+    "dlc": false,
+    "icon": "img/characters/arna.png"
   },
   {
     "id": "dirwin",
     "name": "Dirwin",
-    "attributes": { "STR": 10, "AGI": 11, "PER": 11, "VIT": 11, "WIL": 10 },
-    "startingSkills": ["halt"],
+    "attributes": {
+      "STR": 10,
+      "AGI": 11,
+      "PER": 11,
+      "VIT": 11,
+      "WIL": 10
+    },
+    "startingSkills": [
+      "halt"
+    ],
     "trait": "Ranger's Gift",
-    "affinities": ["daggers", "staves", "ranged_weapons", "axes", "athletics", "two-handed_axes"],
-    "dlc": false
+    "affinities": [
+      "daggers",
+      "staves",
+      "ranged_weapons",
+      "axes",
+      "athletics",
+      "two-handed_axes"
+    ],
+    "dlc": false,
+    "icon": "img/characters/dirwin.png"
   },
   {
     "id": "jonna",
     "name": "Jonna",
-    "attributes": { "STR": 10, "AGI": 10, "PER": 11, "VIT": 11, "WIL": 11 },
+    "attributes": {
+      "STR": 10,
+      "AGI": 10,
+      "PER": 11,
+      "VIT": 11,
+      "WIL": 11
+    },
     "startingSkills": [],
     "trait": "Magical Erudition",
-    "affinities": ["pyromancy", "geomancy", "electromancy", "arcanistics", "staves", "magic_mastery"],
-    "dlc": false
+    "affinities": [
+      "pyromancy",
+      "geomancy",
+      "electromancy",
+      "arcanistics",
+      "staves",
+      "magic_mastery"
+    ],
+    "dlc": false,
+    "icon": "img/characters/jonna.png"
   },
   {
     "id": "mahir",
     "name": "Mahir",
-    "attributes": { "STR": 10, "AGI": 11, "PER": 11, "VIT": 10, "WIL": 11 },
+    "attributes": {
+      "STR": 10,
+      "AGI": 11,
+      "PER": 11,
+      "VIT": 10,
+      "WIL": 11
+    },
     "startingSkills": [],
     "trait": "Lifelong Journey",
-    "affinities": ["daggers", "dual_wielding", "staves", "athletics", "pyromancy", "arcanistics"],
-    "dlc": true
+    "affinities": [
+      "daggers",
+      "dual_wielding",
+      "staves",
+      "athletics",
+      "pyromancy",
+      "arcanistics"
+    ],
+    "dlc": true,
+    "icon": "img/characters/mahir.png"
   },
   {
     "id": "leosthenes",
     "name": "Leosthenes",
-    "attributes": { "STR": 11, "AGI": 10, "PER": 10, "VIT": 11, "WIL": 11 },
+    "attributes": {
+      "STR": 11,
+      "AGI": 10,
+      "PER": 10,
+      "VIT": 11,
+      "WIL": 11
+    },
     "startingSkills": [],
     "trait": "Might and Magic",
-    "affinities": ["maces", "two-handed_maces", "shields", "armored_combat", "warfare", "geomancy"],
-    "dlc": true
+    "affinities": [
+      "maces",
+      "two-handed_maces",
+      "shields",
+      "armored_combat",
+      "warfare",
+      "geomancy"
+    ],
+    "dlc": true,
+    "icon": "img/characters/leosthenes.png"
   },
   {
     "id": "hilda",
     "name": "Hilda",
-    "attributes": { "STR": 11, "AGI": 11, "PER": 10, "VIT": 11, "WIL": 10 },
-    "startingSkills": ["resourcefulness"],
+    "attributes": {
+      "STR": 11,
+      "AGI": 11,
+      "PER": 10,
+      "VIT": 11,
+      "WIL": 10
+    },
+    "startingSkills": [
+      "resourcefulness"
+    ],
     "trait": "Wild Hunt",
-    "affinities": ["spears", "ranged_weapons", "athletics", "magic_mastery", "axes", "two-handed_axes"],
-    "dlc": true
+    "affinities": [
+      "spears",
+      "ranged_weapons",
+      "athletics",
+      "magic_mastery",
+      "axes",
+      "two-handed_axes"
+    ],
+    "dlc": true,
+    "icon": "img/characters/hilda.png"
   }
 ]
