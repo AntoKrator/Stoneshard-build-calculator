@@ -32,6 +32,17 @@ describe('parseDataset', () => {
     expect(ds.constants.startingLevel).toBe(1)
   })
 
+  it('defaults maxAttributeValue to 30 when omitted', () => {
+    const ds = parseDataset(baseDataset())
+    expect(ds.constants.maxAttributeValue).toBe(30)
+  })
+
+  it('honors an explicit maxAttributeValue', () => {
+    const d = baseDataset()
+    ;(d.constants as Record<string, unknown>).maxAttributeValue = 25
+    expect(parseDataset(d).constants.maxAttributeValue).toBe(25)
+  })
+
   it('rejects an unknown attribute key', () => {
     const bad = baseDataset()
     bad.attributes[0].key = 'LUCK'

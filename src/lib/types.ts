@@ -138,6 +138,9 @@ export const Constants = z.object({
   skillPointsPerLevel: z.number().nonnegative().default(0),
   /** The value every attribute starts at before allocation (10 in Stoneshard). */
   baseAttributeValue: z.number().int().positive().default(10),
+  /** Hard ceiling for any single primary attribute (30 in Stoneshard). Point
+   *  allocation can never raise an attribute above this; mirrors `maxLevel`. */
+  maxAttributeValue: z.number().int().positive().default(30),
   /** Recognized damage types, kept as data to avoid hardcoding a guess. */
   damageTypes: z.array(z.string()).default([]),
   /**

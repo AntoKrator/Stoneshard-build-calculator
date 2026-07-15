@@ -89,6 +89,7 @@ const dataset: Dataset = {
     attributePointsPerLevel: 1,
     skillPointsPerLevel: 1,
     baseAttributeValue: 10,
+    maxAttributeValue: 30,
     damageTypes: [],
     itemStatKeys: [],
     enemyStatKeys: [],
@@ -151,6 +152,18 @@ describe('BuildLedger — level + attribute economy', () => {
     expect(l.addAttribute('STR')).toEqual({ ok: true })
     expect(l.character.attributes.STR).toBe(11)
     expect(l.addAttribute('STR')).toEqual({ ok: false, reason: 'no-points' })
+  })
+
+  it('refuses an at-cap attribute even with budget remaining, and spends elsewhere (R1)', () => {
+    const l = new BuildLedger(dataset)
+    for (let i = 0; i < 25; i++) l.levelUp() // budget 25
+    for (let i = 0; i < 20; i++) expect(l.addAttribute('STR').ok).toBe(true) // STR 10 -> 30
+    expect(l.character.attributes.STR).toBe(30)
+    // at cap, refused with 'at-cap' (NOT 'no-points' — 5 budget still remains)
+    expect(l.addAttribute('STR')).toEqual({ ok: false, reason: 'at-cap' })
+    // the un-spent budget is still usable on another attribute
+    expect(l.addAttribute('AGI')).toEqual({ ok: true })
+    expect(l.character.attributes.AGI).toBe(11)
   })
 })
 

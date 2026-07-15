@@ -111,6 +111,7 @@ const dataset: Dataset = {
     attributePointsPerLevel: 1,
     skillPointsPerLevel: 1,
     baseAttributeValue: 10,
+    maxAttributeValue: 30,
     damageTypes: [],
     itemStatKeys: [],
     enemyStatKeys: [],
@@ -200,6 +201,32 @@ describe('recompute — attribute LIFO sacrifice (R4)', () => {
     expect(trimmed.attributeBudget).toBe(3)
     expect(trimmed.attributes).toMatchObject({ STR: 11, AGI: 11, PER: 11, VIT: 10, WIL: 10 })
     expect(trimmed.attributesSpent).toBe(3)
+  })
+})
+
+describe('recompute — per-attribute cap of 30 (R1)', () => {
+  it('clamps a single attribute at 30 and rolls freed budget forward, not sacrificing it', () => {
+    // Budget 22; 22 STR ops -> 20 applied (STR 30), 2 cap-skipped WITHOUT spending;
+    // 2 AGI then consume the rolled-forward budget.
+    const entries: Ledger = [
+      ...Array(22).fill(up),
+      ...Array(22).fill(addA('STR')),
+      addA('AGI'),
+      addA('AGI'),
+    ]
+    const ch = rc(entries)
+    expect(ch.attributes.STR).toBe(30) // clamped, not 32
+    // AGI 12 (not 10): the 2 cap-skipped STR points freed budget for AGI rather than
+    // being sacrificed like the over-budget case.
+    expect(ch.attributes.AGI).toBe(12)
+    expect(ch.invested.STR).toBe(20) // 30 - base 10
+  })
+
+  it('caps a preset-seeded attribute at 30 with invested reflecting the clamp', () => {
+    // 'strong' seeds STR 12; user piles STR ops on top — caps at 30.
+    const ch = rc([sel('strong'), ...Array(25).fill(up), ...Array(25).fill(addA('STR'))])
+    expect(ch.attributes.STR).toBe(30)
+    expect(ch.invested.STR).toBe(20)
   })
 })
 

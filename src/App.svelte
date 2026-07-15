@@ -223,6 +223,7 @@
         <AttributePanel
           attributes={dataset.attributes}
           {character}
+          maxAttributeValue={dataset.constants.maxAttributeValue}
           {onAdd}
           onRemove={onRemoveAttr}
         />
