@@ -34,7 +34,7 @@
 
 <section class="panel">
   <header class="head">
-    <h2>Enemy matchup</h2>
+    <h2>Enemy</h2>
     {#if selectedKey}
       <button class="clear" onclick={() => onClear()}>Clear</button>
     {/if}

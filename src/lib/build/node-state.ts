@@ -115,3 +115,150 @@ export function computeTreeLayout(
     height: maxTier * cellHeight,
   }
 }
+
+/* ------------------------------------------------------------------ */
+/* Connection shapes (game/wiki-faithful line routing)                 */
+/* ------------------------------------------------------------------ */
+
+/** Half the vertical gap between a bowtie's two brackets. */
+const BOWTIE_SPLIT = 7
+/** Vertical spacing between staggered rails of colliding components. */
+const LANE_SPACING = 8
+/** Horizontal margin under which two components' spans count as colliding. */
+const LANE_MARGIN = 12
+
+export interface BowtieShape {
+  /** Multi-segment SVG path: parent drops, upper bracket, center, lower bracket, child drops. */
+  d: string
+  cx: number
+  cy: number
+}
+
+export interface PlainEdge {
+  edge: LayoutEdge
+  /** The (possibly lane-staggered) y of this edge's horizontal rail segment. */
+  railY: number
+}
+
+export interface TreeShapes {
+  /** Fully cross-connected M×N (≥2×≥2) components, drawn as merge→junction→fan. */
+  bowties: BowtieShape[]
+  /** Everything else, drawn as per-edge elbows (overdraw yields the wiki look). */
+  plain: PlainEdge[]
+  /** Junction dots: wherever ≥3 line ends meet on a rail, plus bowtie centers. */
+  diamonds: { x: number; y: number }[]
+}
+
+export const railYOf = (e: LayoutEdge): number => (e.y1 + e.y2) / 2
+
+interface RailComponent {
+  edges: LayoutEdge[]
+  pxs: number[]
+  cxs: number[]
+  lo: number
+  hi: number
+  isBowtie: boolean
+  offset: number
+}
+
+/**
+ * Group edges by tier-pair rail, split each rail into connected components, and
+ * classify: a fully cross-connected M×N component (≥2 parents and ≥2 children)
+ * becomes the game's **bowtie** (per-edge elbows would overdraw it into an
+ * H-ladder — visibly wrong vs. the wiki tree images); everything else stays
+ * per-edge, with junction dots wherever ≥3 line ends meet (plain corners bare).
+ *
+ * Distinct components whose horizontal spans touch on the same rail are
+ * **staggered vertically** (like the wiki), so two unrelated structures — e.g.
+ * Daggers' tier-2 fan next to its tier-2 merge — can't fuse into one line that
+ * fakes a connection.
+ */
+export function computeTreeShapes(edges: LayoutEdge[]): TreeShapes {
+  const byRail: Record<number, LayoutEdge[]> = {}
+  for (const e of edges) (byRail[railYOf(e)] ??= []).push(e)
+
+  const bowties: BowtieShape[] = []
+  const plain: PlainEdge[] = []
+  const diamonds: { x: number; y: number }[] = []
+
+  for (const [yKey, rail] of Object.entries(byRail)) {
+    const y = Number(yKey)
+    // Connected components via node keys (path-compressing union-find).
+    const parent: Record<string, string> = {}
+    const find = (k: string): string => (parent[k] === k ? k : (parent[k] = find(parent[k])))
+    for (const e of rail) {
+      parent[e.from] ??= e.from
+      parent[e.to] ??= e.to
+      parent[find(e.from)] = find(e.to)
+    }
+    const grouped: Record<string, LayoutEdge[]> = {}
+    for (const e of rail) (grouped[find(e.from)] ??= []).push(e)
+
+    const comps: RailComponent[] = Object.values(grouped).map((comp) => {
+      const pxs = [...new Set(comp.map((e) => e.x1))]
+      const cxs = [...new Set(comp.map((e) => e.x2))]
+      const all = [...pxs, ...cxs]
+      return {
+        edges: comp,
+        pxs,
+        cxs,
+        lo: Math.min(...all),
+        hi: Math.max(...all),
+        isBowtie: comp.length === pxs.length * cxs.length && pxs.length >= 2 && cxs.length >= 2,
+        offset: 0,
+      }
+    })
+
+    // Lane-stagger horizontal-bearing components that touch: greedy interval
+    // scheduling by span, then spread lanes symmetrically around the rail.
+    const withRailSpan = comps.filter((c) => c.hi > c.lo).sort((a, b) => a.lo - b.lo)
+    const laneEnds: number[] = []
+    const laneOf: number[] = []
+    for (const c of withRailSpan) {
+      let lane = laneEnds.findIndex((end) => c.lo - end >= LANE_MARGIN)
+      if (lane === -1) {
+        lane = laneEnds.length
+        laneEnds.push(c.hi)
+      } else {
+        laneEnds[lane] = c.hi
+      }
+      laneOf.push(lane)
+    }
+    const lanes = laneEnds.length
+    withRailSpan.forEach((c, i) => {
+      c.offset = (laneOf[i] - (lanes - 1) / 2) * LANE_SPACING
+    })
+
+    for (const c of comps) {
+      const railY = y + c.offset
+      if (!c.isBowtie) {
+        for (const e of c.edges) plain.push({ edge: e, railY })
+        const all = [...new Set([...c.pxs, ...c.cxs])]
+        for (const x of all) {
+          const ends =
+            (c.pxs.includes(x) ? 1 : 0) +
+            (c.cxs.includes(x) ? 1 : 0) +
+            (x > c.lo ? 1 : 0) +
+            (x < c.hi ? 1 : 0)
+          if (ends >= 3) diamonds.push({ x, y: railY })
+        }
+        continue
+      }
+      // Bowtie: upper bracket (parents → center), junction, lower bracket
+      // (center → children).
+      const cx = (c.lo + c.hi) / 2
+      const upY = railY - BOWTIE_SPLIT
+      const loY = railY + BOWTIE_SPLIT
+      const py = c.edges[0].y1
+      const chy = c.edges[0].y2
+      const parts: string[] = []
+      for (const px of c.pxs) parts.push(`M ${px} ${py} V ${upY}`)
+      parts.push(`M ${Math.min(...c.pxs, cx)} ${upY} H ${Math.max(...c.pxs, cx)}`)
+      parts.push(`M ${cx} ${upY} V ${loY}`)
+      parts.push(`M ${Math.min(...c.cxs, cx)} ${loY} H ${Math.max(...c.cxs, cx)}`)
+      for (const chx of c.cxs) parts.push(`M ${chx} ${loY} V ${chy}`)
+      bowties.push({ d: parts.join(' '), cx, cy: railY })
+    }
+  }
+  return { bowties, plain, diamonds }
+}

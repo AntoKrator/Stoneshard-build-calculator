@@ -21,6 +21,7 @@
     "vendor:enemies": "tsx tools/wiki-extractor/fetch-enemies.ts",
     "vendor:item-icons": "tsx tools/wiki-extractor/fetch-icons.ts",
     "vendor:enemy-icons": "tsx tools/wiki-extractor/fetch-enemy-icons.ts",
+    "vendor:character-icons": "tsx tools/wiki-extractor/fetch-character-icons.ts",
     "transform-items": "tsx scripts/transform-items.ts",
     "transform-enemies": "tsx scripts/transform-enemies.ts"
   },

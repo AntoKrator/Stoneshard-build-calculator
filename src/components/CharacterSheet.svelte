@@ -19,12 +19,13 @@
     utility: 'Utility',
   }
 
-  type Row = { name: string; value: number; unit?: string }
+  type Row = { name: string; value: number; unit?: string; delta?: number }
   const groups = $derived.by(() => {
     const byCat: Record<string, Row[]> = {}
     for (const def of statModel.derivedStats) {
       const value = character.derived[def.key] ?? def.base
-      ;(byCat[def.category] ??= []).push({ name: def.name, value, unit: def.unit })
+      const delta = character.gearContribution[def.key]
+      ;(byCat[def.category] ??= []).push({ name: def.name, value, unit: def.unit, delta })
     }
     return CATEGORY_ORDER.filter((c) => byCat[c]).map((c) => [c, byCat[c]] as const)
   })
@@ -68,7 +69,13 @@
           {#each stats as s (s.name)}
             <div class="stat">
               <dt>{s.name}</dt>
-              <dd>{fmt(s.value, s.unit)}</dd>
+              <dd>
+                {fmt(s.value, s.unit)}{#if s.delta}
+                  <span class="delta" class:neg={s.delta < 0}>
+                    ({s.delta > 0 ? '+' : '−'}{fmt(Math.abs(s.delta), s.unit)})
+                  </span>
+                {/if}
+              </dd>
             </div>
           {/each}
         </dl>
@@ -141,5 +148,13 @@
     margin: 0;
     font-variant-numeric: tabular-nums;
     font-weight: 600;
+  }
+  .delta {
+    color: var(--ok);
+    font-weight: 500;
+    font-size: 0.8em;
+  }
+  .delta.neg {
+    color: var(--danger);
   }
 </style>
