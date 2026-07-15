@@ -7,9 +7,36 @@
   // hit landing and Protection is shown beside resistance-based effective-HP rather
   // than folded into one number (M5 owns enemy-vs-build resolution).
   import type { Character } from '../lib/build/character'
+  import type { Skill } from '../lib/types'
+  import { evaluate, type Scope } from '../lib/formula/eval'
 
-  let { character }: { character: Character } = $props()
+  let {
+    character,
+    skills,
+    scope,
+    onUseSkill,
+  }: {
+    character: Character
+    skills: Skill[]
+    scope: Scope
+    onUseSkill: (key: string | null) => void
+  } = $props()
   const combat = $derived(character.combat)
+
+  // Taken active skills whose Weapon_Damage formula (the game's "+X% weapon
+  // damage" strike modifier) resolves in the current scope — the usable strikes.
+  // Skills with other effect formulas only (stagger, bleed, …) are not strike
+  // modifiers in this model and stay out of the list.
+  const strikes = $derived(
+    skills.flatMap((s) => {
+      if (!character.taken.has(s.key) || s.isPassive) return []
+      const wd = s.formulas?.Weapon_Damage
+      if (!wd) return []
+      const res = evaluate(wd, scope)
+      return res.kind === 'value' ? [{ skill: s, delta: res.value }] : []
+    }),
+  )
+  const signed = (v: number) => `${v >= 0 ? '+' : '−'}${Math.abs(Number(v.toFixed(1)))}%`
 
   const POOLS = [
     ['head', 'Head'],
@@ -32,7 +59,35 @@
 <section class="panel">
   <h2>Combat</h2>
 
-  <h3>Damage <span class="dim">per hit</span></h3>
+  {#if strikes.length > 0}
+    <h3>Attack</h3>
+    <div class="strikes" role="group" aria-label="Attack used for the damage calc">
+      <button
+        class="strike"
+        class:active={!character.usedSkill}
+        aria-pressed={!character.usedSkill}
+        onclick={() => onUseSkill(null)}
+      >
+        Basic attack
+      </button>
+      {#each strikes as { skill, delta } (skill.key)}
+        <button
+          class="strike"
+          class:active={character.usedSkill === skill.key}
+          aria-pressed={character.usedSkill === skill.key}
+          title={`${skill.name.english}: ${signed(delta)} Weapon Damage`}
+          onclick={() => onUseSkill(character.usedSkill === skill.key ? null : skill.key)}
+        >
+          {skill.name.english} <span class="strike-delta">{signed(delta)}</span>
+        </button>
+      {/each}
+    </div>
+    <p class="note">
+      Strike modifier only (Weapon Damage) — other skill effects aren't modeled yet.
+    </p>
+  {/if}
+
+  <h3 class="damage-head">Damage <span class="dim">per hit</span></h3>
   {#if combat.hasWeapon && combat.damage.length > 0}
     <div class="dmg">
       <div class="dmg-row head">
@@ -113,8 +168,33 @@
     padding-bottom: 0.2rem;
     margin-bottom: 0.4rem;
   }
-  .defense-head {
+  .defense-head,
+  .damage-head {
     margin-top: 0.9rem;
+  }
+  .damage-head:first-of-type {
+    margin-top: 0;
+  }
+  .strikes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+  .strike {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.55rem;
+  }
+  .strike.active {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--bg-panel-2);
+  }
+  .strike-delta {
+    font-variant-numeric: tabular-nums;
+    color: var(--text-dim);
+  }
+  .strike.active .strike-delta {
+    color: inherit;
   }
   h4 {
     font-size: 0.78rem;
